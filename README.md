@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smart Hostel Portal + Alumni Network
 
-## Getting Started
+A production-quality hostel management and alumni network platform built with Next.js, TypeScript, Tailwind CSS, and Supabase.
 
-First, run the development server:
+## Features
+
+- **Home Page**: Hero section, latest notices, and featured alumni
+- **About Page**: Hostel information and statistics
+- **Achievements Page**: Display hostel achievements
+- **Gallery Page**: Image gallery with captions
+- **Alumni Network**: Browse alumni profiles, search/filter, and submit new profiles
+- **Contact Page**: Contact information and message form
+- **Admin Dashboard**: Protected admin panel for content management
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Database**: Supabase (PostgreSQL)
+- **Authentication**: Supabase Auth
+
+## Project Structure
+
+```
+/app
+  /page.tsx                 # Home page
+  /layout.tsx               # Root layout
+  /globals.css              # Global styles
+  /about/page.tsx           # About page
+  /achievements/page.tsx    # Achievements page
+  /gallery/page.tsx         # Gallery page
+  /alumni/page.tsx          # Alumni network page
+  /contact/page.tsx         # Contact page
+  /admin
+    /login/page.tsx         # Admin login
+    /dashboard/page.tsx     # Admin dashboard
+
+/components
+  Navbar.tsx                # Navigation component
+  Footer.tsx                # Footer component
+  NoticeCard.tsx            # Notice display card
+  AlumniCard.tsx            # Alumni profile card
+  FormInput.tsx             # Reusable form input
+
+/lib
+  supabaseClient.ts         # Supabase client configuration
+```
+
+## Setup Instructions
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Configure Supabase
+
+1. Create a Supabase project at [supabase.com](https://supabase.com)
+2. Copy your project URL and anon key
+3. Create `.env.local` file:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### 3. Set Up Database
+
+Follow the instructions in `SUPABASE_SETUP.md` to:
+- Create database tables
+- Set up Row Level Security policies
+- Create storage bucket
+- Add initial admin user
+
+### 4. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Admin Access
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Navigate to `/admin/login`
+2. Sign in with admin credentials
+3. Access dashboard to:
+   - Add notices
+   - Add achievements
+   - Upload gallery images
+   - Approve/reject alumni submissions
 
-## Learn More
+## Design Principles
 
-To learn more about Next.js, take a look at the following resources:
+- Clean, minimal UI with soft colors
+- Inter font family for modern typography
+- Card-based layouts with subtle shadows
+- Proper spacing and visual hierarchy
+- Mobile-responsive design
+- No excessive animations or gradients
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Security
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Protected admin routes with authentication
+- Role-based access control (admin/superadmin)
+- Row Level Security on database tables
+- Secure environment variables
 
-## Deploy on Vercel
+## Building for Production
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT
