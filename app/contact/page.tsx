@@ -7,28 +7,32 @@ export default function Contact() {
         <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
           <h2 className="text-xl font-semibold text-gray-900 mb-6">Get in Touch</h2>
           
-          <div className="space-y-4">
+          <div className="space-y-5">
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-1">Address</h3>
-              <p className="text-gray-600">Smart Hostel Campus</p>
-              <p className="text-gray-600">University Road</p>
-              <p className="text-gray-600">City, State - 123456</p>
+              <h3 className="text-sm font-medium text-gray-700 mb-2">Hostel</h3>
+              <p className="text-gray-900 font-medium">ORION Hostel (Hostel No. 7)</p>
+              <p className="text-gray-600">Jorhat Engineering College</p>
+              <p className="text-gray-600">Jorhat, Assam</p>
             </div>
 
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-1">Phone</h3>
-              <p className="text-gray-600">+91 1234567890</p>
+              <h3 className="text-sm font-medium text-gray-700 mb-2">Superintendent</h3>
+              <p className="text-gray-900 font-medium">Mr. Jiten Borgohain</p>
             </div>
 
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-1">Email</h3>
-              <p className="text-gray-600">info@smarthostel.edu</p>
+              <h3 className="text-sm font-medium text-gray-700 mb-2">Contact Number</h3>
+              <p className="text-gray-900 font-medium">+91 9101481714</p>
             </div>
 
             <div>
-              <h3 className="text-sm font-medium text-gray-700 mb-1">Office Hours</h3>
-              <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p className="text-gray-600">Saturday: 9:00 AM - 2:00 PM</p>
+              <h3 className="text-sm font-medium text-gray-700 mb-2">Established</h3>
+              <p className="text-gray-600">28–29 February 1982</p>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-medium text-gray-700 mb-2">Capacity</h3>
+              <p className="text-gray-600">75 Residents</p>
             </div>
           </div>
         </div>

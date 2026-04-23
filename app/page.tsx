@@ -57,12 +57,15 @@ export default function Home() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       {/* Hero Section */}
-      <section className="text-center mb-16">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Welcome to Smart Hostel
+      <section className="text-center mb-16 py-12">
+        <h1 className="text-5xl font-bold text-gray-900 mb-3">
+          ORION Hostel
         </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          A modern platform connecting current residents with our vibrant alumni network
+        <p className="text-xl text-gray-700 mb-4">
+          Hostel No. 7, Jorhat Engineering College
+        </p>
+        <p className="text-lg text-gray-600 italic max-w-2xl mx-auto">
+          "We are not known by names but by a race — ORIONITE"
         </p>
       </section>
 

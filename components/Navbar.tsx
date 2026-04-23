@@ -12,6 +12,7 @@ export default function Navbar() {
     { href: '/achievements', label: 'Achievements' },
     { href: '/gallery', label: 'Gallery' },
     { href: '/alumni', label: 'Alumni' },
+    { href: '/rules', label: 'Rules' },
     { href: '/contact', label: 'Contact' },
   ];
 
@@ -20,7 +21,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-xl font-semibold text-gray-900">
-            Smart Hostel
+            ORION Hostel
           </Link>
           
           <div className="flex gap-6">

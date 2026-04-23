@@ -4,8 +4,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Smart Hostel Portal',
-  description: 'Hostel management and alumni network platform',
+  title: 'ORION Hostel - Jorhat Engineering College',
+  description: 'Official portal of ORION Hostel (Hostel No. 7), Jorhat Engineering College. We are not known by names but by a race — ORIONITE',
 };
 
 export default function RootLayout({
