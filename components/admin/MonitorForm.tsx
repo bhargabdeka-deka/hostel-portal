@@ -16,11 +16,13 @@ interface Monitor {
 export default function MonitorForm({ monitor }: { monitor: Monitor }) {
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const router = useRouter();
 
   const handleSubmit = async (formData: FormData) => {
     setIsSaving(true);
     setSaveSuccess(false);
+    setErrorMsg(null);
     
     const name = formData.get('name') as string;
     const room = formData.get('room') as string;
@@ -28,12 +30,15 @@ export default function MonitorForm({ monitor }: { monitor: Monitor }) {
     
     try {
       const result = await updateMonitor(monitor.id, name, room, phone);
-      if (result && !result.error) {
+      if (result && result.success) {
         setSaveSuccess(true);
-        router.refresh(); // Force refresh the data
+        router.refresh();
         setTimeout(() => setSaveSuccess(false), 3000);
+      } else if (result?.error) {
+        setErrorMsg(result.error);
       }
-    } catch (error) {
+    } catch (error: any) {
+      setErrorMsg("An unexpected error occurred");
       console.error("Save failed:", error);
     } finally {
       setIsSaving(false);
@@ -130,6 +135,11 @@ export default function MonitorForm({ monitor }: { monitor: Monitor }) {
             </>
           )}
         </button>
+        {errorMsg && (
+          <p className="text-center text-red-600 font-black text-[9px] uppercase tracking-widest bg-red-50 p-3 rounded-xl border border-red-100">
+            Error: {errorMsg}
+          </p>
+        )}
         {saveSuccess && (
           <p className="text-center text-green-600 font-black text-[9px] uppercase tracking-widest animate-bounce">
             Live site updated!

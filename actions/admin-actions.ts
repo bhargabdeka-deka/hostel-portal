@@ -98,17 +98,22 @@ export async function uploadImage(formData: FormData, folder: 'gallery' | 'achie
 
 // MONITORS: Update
 export async function updateMonitor(id: string, name: string, room: string, phone?: string) {
-  await verifyAccess();
-  const supabase = await createClient();
-  
-  const { error } = await supabase
-    .from("monitors")
-    .update({ name, room, phone })
-    .eq("id", id);
+  try {
+    const role = await verifyAccess();
+    const supabase = await createClient();
+    
+    const { error } = await supabase
+      .from("monitors")
+      .update({ name, room, phone })
+      .eq("id", id);
 
-  if (!error) {
+    if (error) throw error;
+    
     revalidatePath("/contact");
     revalidatePath("/admin/manage-monitors");
+    return { success: true };
+  } catch (error: any) {
+    console.error("Monitor Update Error:", error);
+    return { error: error.message || "Failed to update monitor" };
   }
-  return { error };
 }
