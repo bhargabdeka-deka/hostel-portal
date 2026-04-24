@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { UserCheck, Shield, Home, Save, CheckCircle2, Phone } from 'lucide-react';
 import { updateMonitor } from "@/actions/admin-actions";
 
@@ -15,6 +16,7 @@ interface Monitor {
 export default function MonitorForm({ monitor }: { monitor: Monitor }) {
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (formData: FormData) => {
     setIsSaving(true);
@@ -28,6 +30,7 @@ export default function MonitorForm({ monitor }: { monitor: Monitor }) {
       const result = await updateMonitor(monitor.id, name, room, phone);
       if (result && !result.error) {
         setSaveSuccess(true);
+        router.refresh(); // Force refresh the data
         setTimeout(() => setSaveSuccess(false), 3000);
       }
     } catch (error) {
@@ -66,13 +69,20 @@ export default function MonitorForm({ monitor }: { monitor: Monitor }) {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Room Number</label>
+              <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Room Number (Digits Only)</label>
               <div className="relative">
                 <Home className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300" />
                 <input 
                   name="room"
                   type="text" 
-                  defaultValue={monitor.room}
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  defaultValue={monitor.room === 'N/A' ? '' : monitor.room}
+                  onKeyPress={(e) => {
+                    if (!/[0-9]/.test(e.key)) {
+                      e.preventDefault();
+                    }
+                  }}
                   className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-bold text-slate-900"
                   placeholder="e.g. 104"
                 />
@@ -111,7 +121,7 @@ export default function MonitorForm({ monitor }: { monitor: Monitor }) {
           ) : saveSuccess ? (
             <>
               <CheckCircle2 className="w-4 h-4" />
-              Changes Saved Successfully
+              Saved Successfully
             </>
           ) : (
             <>
