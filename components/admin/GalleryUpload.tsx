@@ -88,8 +88,8 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
               onChange={(e) => setCaption(e.target.value)}
               placeholder={type === 'achievement' ? "e.g. Cricket Champion" : "e.g. Annual Sports Meet 2024"}
               className={cn(
-                "w-full pl-11 pr-4 py-3 bg-slate-50 border rounded-xl outline-none transition-all text-sm font-medium",
-                error && !caption.trim() ? "border-red-200 bg-red-50" : "border-slate-100 focus:ring-2 ring-blue-500/20 focus:bg-white"
+                "w-full pl-11 pr-4 py-4 bg-white border-2 rounded-2xl outline-none transition-all text-sm font-black text-slate-900",
+                error && !caption.trim() ? "border-red-500/50 bg-red-50" : "border-slate-200 focus:border-blue-500 focus:ring-4 ring-blue-500/10"
               )}
             />
           </div>
