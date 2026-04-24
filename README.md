@@ -1,90 +1,71 @@
-# ORION Hostel Portal 🚀
+# ORION Hostel Portal Documentation
 
-A premium, production-ready portal for **ORION (Hostel No. 7)** at Jorhat Engineering College. This platform serves as the digital hub for students, alumni, and administrators, managing everything from professional networking to daily hostel governance.
+## Project Overview
+The ORION Hostel Portal is a comprehensive web application developed for Hostel No. 7 (ORION) at Jorhat Engineering College. The platform provides a digital infrastructure for managing hostel operations, alumni networking, and administrative governance. It serves three primary user groups: the general public, the hostel alumni network, and the administrative staff.
 
----
+## Technical Architecture
 
-## 🌟 Key Features
+### Core Technologies
+*   **Frontend Framework**: Next.js 16 (App Router) utilizing Server Components for optimized performance.
+*   **Backend as a Service**: Supabase (PostgreSQL database, Authentication, and Real-time subscriptions).
+*   **Styling**: Tailwind CSS for responsive and consistent user interface design.
+*   **Iconography**: Lucide React for standardized vector graphics.
+*   **Deployment**: Vercel for automated continuous integration and deployment.
 
-### 🏛️ Public Interface
-- **Dynamic Homepage**: High-impact editorial design featuring hostel legacy, stats, and real-time spirit indicators.
-- **Alumni Directory**: A professional networking hub where alumni can register, search for batch-mates, and link their professional profiles (LinkedIn).
-- **Interactive Notices**: Real-time broadcast system for official announcements.
-- **Faculty & Rules**: Dedicated sections for institutional transparency and hostel guidelines.
-- **Contact & Monitors**: Live-updated list of current student leadership (Monitors) and their room assignments.
+### System Infrastructure
+The application follows a modern serverless architecture. Database mutations are handled via Next.js Server Actions, ensuring secure server-side execution and reducing client-side overhead. Real-time data synchronization is implemented using Supabase Channels, specifically for the administrative notification system.
 
-### 🛡️ Admin Management (Private)
-- **Unified Admin Page**: A centralized command center for all administrative tasks.
-- **Real-time Notifications**: Interactive bell system that alerts admins of new pending alumni registrations via Supabase Realtime.
-- **Alumni Management**: Full CRUD (Create, Read, Update, Delete) capability for moderating the official directory, including approval/rejection workflows.
-- **Monitor Control**: Dynamic assignment of student leadership roles with room number restrictions (numeric only).
-- **Team Management (RBAC)**: Superadmin capability to provision and manage other administrative accounts with secure role-based access control.
-- **Secure Authentication**: Robust session management using Next.js Middleware and Supabase Auth.
+## Functional Modules
 
----
+### Public Interface
+*   **Homepage**: Displays institutional information, legacy statistics, and the latest official notices.
+*   **Alumni Directory**: A searchable database of verified alumni. Includes professional profile links and batch-wise filtering.
+*   **Notices Section**: A real-time announcement board for official hostel communications.
+*   **Contact Information**: Live directory of current student leadership (Monitors) and institutional contact details.
 
-## 🛠️ Tech Stack
+### Administrative Dashboard
+*   **Authentication & Authorization**: Role-Based Access Control (RBAC) enforced via Next.js Middleware and Supabase Auth.
+*   **Notification System**: An interactive notification module providing real-time alerts for new alumni registration requests.
+*   **Alumni Moderation**: Tools for verifying, approving, revoking, or deleting alumni records to maintain directory integrity.
+*   **Monitor Management**: Interface for assigning student monitors to specific roles and rooms with numeric validation logic.
+*   **Team Administration**: Superadmin capability to provision and manage administrative accounts and system permissions.
 
-- **Core**: [Next.js 16](https://nextjs.org/) (App Router & Server Actions)
-- **Database & Auth**: [Supabase](https://supabase.com/) (PostgreSQL + Auth + Realtime)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (Vanilla CSS for custom components)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **State Management**: React Hooks + Server-side Revalidation
-- **Infrastructure**: [Vercel](https://vercel.com/) (Automated Deployment & CI/CD)
+## Implementation Guide
 
----
+### 1. Database Configuration
+To initialize the database, execute the SQL schema provided in `supabase_schema.sql` within your Supabase SQL Editor. 
 
-## 🚀 Getting Started
+**Required Table Modifications**:
+Ensure the `monitors` table includes the following column definition for compatibility with current features:
+```sql
+ALTER TABLE monitors ADD COLUMN IF NOT EXISTS phone text;
+```
 
-### 1. Database Setup (Supabase)
-1. Create a project on [Supabase](https://supabase.com/).
-2. Run the SQL script found in `supabase_schema.sql` within the Supabase SQL Editor.
-3. **Critical Column Update**: Ensure the `monitors` table has a `phone` (text) column.
-   ```sql
-   ALTER TABLE monitors ADD COLUMN IF NOT EXISTS phone text;
-   ```
-4. Set up a storage bucket named `images` (Public access) for gallery uploads.
-
-### 2. Environment Variables
-Create a `.env.local` file with your credentials:
+### 2. Environment Configuration
+Create a `.env.local` file in the root directory with the following variables:
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_PROJECT_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY=YOUR_SUPABASE_SERVICE_ROLE_KEY
 ```
 
-### 3. Installation
-```bash
-npm install
-npm run dev
-```
+### 3. Deployment
+The project is optimized for deployment on Vercel. Ensure that all environment variables are correctly configured in the Vercel project settings prior to deployment.
+
+## Project Directory Structure
+
+*   `/app`: Contains all route segments and layouts (App Router).
+*   `/actions`: Server-side logic for database operations and cache revalidation.
+*   `/components`:
+    *   `/shared`: Global UI elements (Navbar, Footer).
+    *   `/admin`: Administrative specific forms, tables, and notification components.
+    *   `/alumni`: Directory list and search interfaces.
+*   `/lib`: Core configuration for Supabase clients and authentication utilities.
+*   `/public`: Static assets including branding and institutional imagery.
+
+## Security Standards
+Access to the administrative dashboard is strictly restricted via middleware. Role verification is performed at both the routing level (Middleware) and the operation level (Server Actions). A tiered hierarchy exists between Admin and Superadmin roles, with critical system operations reserved for the latter.
 
 ---
-
-## 📂 Project Structure
-
-- `/app`: Next.js App Router (Public routes and Protected Admin route groups).
-- `/actions`: Server Actions for database mutations (Securely handles permissions).
-- `/components`:
-  - `/shared`: Global components like Navbar and Footer.
-  - `/admin`: Specialized administrative tools (Forms, Uploaders, Management tables).
-  - `/alumni`: Public directory interfaces.
-- `/lib`: Supabase initialization and utility functions.
-- `/public`: Static assets (Logo, Branding images).
-
----
-
-## 🔐 Administrative Security
-
-The portal uses a tiered security model:
-1. **Superadmin**: Full access including user management and system-wide deletions.
-2. **Admin**: Standard access for content management (Notices, Monitors, Alumni moderation).
-3. **Emergency Bypass**: Pre-configured emails (e.g., Owner) have hardcoded superadmin access in `admin-actions.ts` for emergency recovery.
-
----
-
-## 📜 Motto
-*"We are not known by names but by a race — **ORIONITE**"*
-
----
-Developed for **Hostel No. 7, Jorhat Engineering College**. 🎓
+**Institutional Motto**
+"We are not known by names but by a race — ORIONITE"
