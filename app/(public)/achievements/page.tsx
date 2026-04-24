@@ -54,11 +54,7 @@ export default async function AchievementsPage() {
                   </div>
                 </div>
                 <div className="p-3 md:p-4 pt-0 space-y-1.5 md:space-y-2">
-                  <div className="flex items-center gap-1 text-[7px] md:text-[8px] font-black text-blue-400 uppercase tracking-widest">
-                    <Calendar className="w-2 md:w-2.5 h-2 md:h-2.5" />
-                    {new Date(achievement.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
-                  </div>
-                  <h3 className="text-[10px] md:text-base font-black text-white tracking-tight group-hover:text-blue-500 transition-colors leading-tight uppercase line-clamp-1">
+                  <h3 className="text-[10px] md:text-base font-black text-white tracking-tight group-hover:text-blue-500 transition-colors leading-tight uppercase line-clamp-2">
                     {achievement.title}
                   </h3>
                   <p className="text-slate-400 text-[8px] md:text-[10px] leading-relaxed line-clamp-2 font-medium opacity-70">
