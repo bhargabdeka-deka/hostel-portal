@@ -1,57 +1,90 @@
-# ORION Portal
+# ORION Hostel Portal 🚀
 
- hostel portal built with Next.js 16, Supabase, and Tailwind CSS.
+A premium, production-ready portal for **ORION (Hostel No. 7)** at Jorhat Engineering College. This platform serves as the digital hub for students, alumni, and administrators, managing everything from professional networking to daily hostel governance.
 
-## Features
+---
 
-- **Public Landing Page**: Beautifully designed hero section and latest notices.
-- **Complaint System**: Public form for students to report issues with real-time status updates on the admin dashboard.
-- **Admin Dashboard**: Comprehensive management of notices and student complaints.
-- **Role-Based Access**: Secure areas for Admin and Superadmin staff.
-- **Gallery & Achievements**: Showcasing hostel life and student success.
-- **Alumni Network**: Professional directory for ORION legacy.
+## 🌟 Key Features
 
-## Setup Instructions
+### 🏛️ Public Interface
+- **Dynamic Homepage**: High-impact editorial design featuring hostel legacy, stats, and real-time spirit indicators.
+- **Alumni Directory**: A professional networking hub where alumni can register, search for batch-mates, and link their professional profiles (LinkedIn).
+- **Interactive Notices**: Real-time broadcast system for official announcements.
+- **Faculty & Rules**: Dedicated sections for institutional transparency and hostel guidelines.
+- **Contact & Monitors**: Live-updated list of current student leadership (Monitors) and their room assignments.
 
-### 1. Supabase Project Setup
-1. Create a new project on [Supabase](https://supabase.com/).
-2. Open the **SQL Editor** in your Supabase dashboard.
-3. Copy the contents of `supabase_schema.sql` (found in this project's root) and run it.
-4. Go to **Storage** and create a bucket named `gallery`. Set its access to **Public**.
+### 🛡️ Admin Management (Private)
+- **Unified Admin Page**: A centralized command center for all administrative tasks.
+- **Real-time Notifications**: Interactive bell system that alerts admins of new pending alumni registrations via Supabase Realtime.
+- **Alumni Management**: Full CRUD (Create, Read, Update, Delete) capability for moderating the official directory, including approval/rejection workflows.
+- **Monitor Control**: Dynamic assignment of student leadership roles with room number restrictions (numeric only).
+- **Team Management (RBAC)**: Superadmin capability to provision and manage other administrative accounts with secure role-based access control.
+- **Secure Authentication**: Robust session management using Next.js Middleware and Supabase Auth.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Core**: [Next.js 16](https://nextjs.org/) (App Router & Server Actions)
+- **Database & Auth**: [Supabase](https://supabase.com/) (PostgreSQL + Auth + Realtime)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (Vanilla CSS for custom components)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **State Management**: React Hooks + Server-side Revalidation
+- **Infrastructure**: [Vercel](https://vercel.com/) (Automated Deployment & CI/CD)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Database Setup (Supabase)
+1. Create a project on [Supabase](https://supabase.com/).
+2. Run the SQL script found in `supabase_schema.sql` within the Supabase SQL Editor.
+3. **Critical Column Update**: Ensure the `monitors` table has a `phone` (text) column.
+   ```sql
+   ALTER TABLE monitors ADD COLUMN IF NOT EXISTS phone text;
+   ```
+4. Set up a storage bucket named `images` (Public access) for gallery uploads.
 
 ### 2. Environment Variables
-1. Create a `.env.local` file and fill in your Supabase credentials:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_project_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-   SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-   ```
+Create a `.env.local` file with your credentials:
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+```
 
-### 3. Initialize First Admin
-1. Sign up a new user via the `/login` page or the Supabase Auth dashboard.
-2. Go to the **Table Editor** in Supabase, select the `users` table.
-3. Find your user and change the `role` from `admin` to `superadmin` to unlock user management features.
-
-### 4. Local Development
-Run the following commands:
+### 3. Installation
 ```bash
 npm install
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## About ORION Hostel (Hostel No. 7)
-- **Established**: 1982 (28–29 Feb)
-- **Location**: Jorhat Engineering College
-- **Capacity**: 75
-- **Superintendent**: Mr. Jiten Borgohain
-- **Contact**: +91 91014 81714
+---
 
-*"We are not known by names but by a race — ORIONITE"*
+## 📂 Project Structure
 
-## Tech Stack
-- **Framework**: Next.js 16 (App Router)
-- **Database/Auth**: Supabase
-- **Styling**: Tailwind CSS
-- **Icons**: Lucide React
-- **Utilities**: clsx, tailwind-merge, browser-image-compression
+- `/app`: Next.js App Router (Public routes and Protected Admin route groups).
+- `/actions`: Server Actions for database mutations (Securely handles permissions).
+- `/components`:
+  - `/shared`: Global components like Navbar and Footer.
+  - `/admin`: Specialized administrative tools (Forms, Uploaders, Management tables).
+  - `/alumni`: Public directory interfaces.
+- `/lib`: Supabase initialization and utility functions.
+- `/public`: Static assets (Logo, Branding images).
+
+---
+
+## 🔐 Administrative Security
+
+The portal uses a tiered security model:
+1. **Superadmin**: Full access including user management and system-wide deletions.
+2. **Admin**: Standard access for content management (Notices, Monitors, Alumni moderation).
+3. **Emergency Bypass**: Pre-configured emails (e.g., Owner) have hardcoded superadmin access in `admin-actions.ts` for emergency recovery.
+
+---
+
+## 📜 Motto
+*"We are not known by names but by a race — **ORIONITE**"*
+
+---
+Developed for **Hostel No. 7, Jorhat Engineering College**. 🎓
