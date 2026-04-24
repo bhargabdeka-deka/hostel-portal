@@ -1,8 +1,8 @@
 "use client"
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import imageCompression from 'browser-image-compression'
-import { createClient } from '@/lib/supabase/client'
-import { Upload, X, Check, Loader2, Type } from 'lucide-react'
+import { uploadMedia } from '@/actions/media'
+import { Upload, X, Check, Loader2, Type, FileImage } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface GalleryUploadProps {
@@ -14,16 +14,27 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [caption, setCaption] = useState("")
-  const supabase = createClient()
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    if (file) {
+      setSelectedFile(file)
+      setError(null)
+    }
+  }
 
   async function handleUpload(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    const form = e.currentTarget
-    const fileInput = form.querySelector('input[type="file"]') as HTMLInputElement
-    const file = fileInput.files?.[0]
     
-    if (!file || !caption) {
-      setError("Please provide both an image and a title/caption")
+    if (!caption.trim()) {
+      setError("Achievement title is mandatory")
+      return
+    }
+
+    if (!selectedFile) {
+      setError("Please select an image to upload")
       return
     }
 
@@ -33,39 +44,31 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
 
     try {
       // 1. Compression
-      const options = { maxSizeMB: 0.8, maxWidthOrHeight: 1600 }
-      const compressedFile = await imageCompression(file, options)
+      const options = { maxSizeMB: 0.3, maxWidthOrHeight: 1200 }
+      const compressedFile = await imageCompression(selectedFile, options)
 
-      // 2. Upload to Storage
-      const folder = type === 'achievement' ? 'achievements' : 'gallery'
-      const fileName = `${Date.now()}-${file.name}`
-      const { data, error: uploadError } = await supabase.storage
-        .from('images')
-        .upload(`${folder}/${fileName}`, compressedFile)
+      // 2. Convert to Base64
+      const reader = new FileReader()
+      const base64Promise = new Promise<string>((resolve) => {
+        reader.onloadend = () => resolve(reader.result as string)
+        reader.readAsDataURL(compressedFile)
+      })
+      const base64Data = await base64Promise
 
-      if (uploadError) throw uploadError
+      // 3. Upload via Unified Server Action (Bypasses all client RLS and storage errors)
+      const result = await uploadMedia(base64Data, selectedFile.name, caption, type)
 
-      // 3. Insert Record
-      if (data) {
-        const { data: { publicUrl } } = supabase.storage.from('images').getPublicUrl(`${folder}/${fileName}`)
-        const table = type === 'achievement' ? 'achievements' : 'gallery'
+      if (!result.success) throw new Error(result.error)
         
-        const payload = type === 'achievement' 
-          ? { title: caption, image_url: publicUrl, description: 'Gold', date: new Date().getFullYear().toString() }
-          : { image_url: publicUrl, caption: caption }
-
-        const { error: insertError } = await supabase.from(table).insert([payload])
+      setSuccess(true)
+      setCaption("")
+      setSelectedFile(null)
+      if (fileInputRef.current) fileInputRef.current.value = ""
         
-        if (insertError) throw insertError
-        
-        setSuccess(true)
-        setCaption("")
-        form.reset()
-        setTimeout(() => window.location.reload(), 1500)
-      }
-    } catch (err: unknown) {
-      const error = err as Error
-      setError(error.message || "Upload failed")
+      // Refresh to show new data
+      setTimeout(() => window.location.reload(), 1000)
+    } catch (err: any) {
+      setError(err.message || "Upload failed")
     } finally {
       setLoading(false)
     }
@@ -76,7 +79,7 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
       <div className="space-y-4">
         <div className="relative">
           <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">
-            {type === 'achievement' ? 'Achievement Title' : 'Media Caption'}
+            {type === 'achievement' ? 'Achievement Title' : 'Media Caption'} <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <Type className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
@@ -84,35 +87,51 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
               placeholder={type === 'achievement' ? "e.g. Cricket Champion" : "e.g. Annual Sports Meet 2024"}
-              className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-100 rounded-xl outline-none focus:ring-2 ring-blue-500/20 focus:bg-white transition-all text-sm font-medium"
+              className={cn(
+                "w-full pl-11 pr-4 py-3 bg-slate-50 border rounded-xl outline-none transition-all text-sm font-medium",
+                error && !caption.trim() ? "border-red-200 bg-red-50" : "border-slate-100 focus:ring-2 ring-blue-500/20 focus:bg-white"
+              )}
             />
           </div>
         </div>
 
         <div className="group relative">
-          <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Select Image</label>
-          <div className="bg-slate-50 border-2 border-dashed border-slate-100 rounded-[2rem] p-8 text-center hover:border-blue-400 hover:bg-white transition-all duration-500 cursor-pointer relative overflow-hidden">
+          <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Select Image <span className="text-red-500">*</span></label>
+          <div 
+            onClick={() => fileInputRef.current?.click()}
+            className={cn(
+              "bg-slate-50 border-2 border-dashed rounded-[2rem] p-8 text-center transition-all duration-500 cursor-pointer relative overflow-hidden",
+              selectedFile ? "border-blue-400 bg-blue-50/30" : "border-slate-100 hover:border-blue-300 hover:bg-white"
+            )}
+          >
             <input 
+              ref={fileInputRef}
               type="file" 
-              className="absolute inset-0 opacity-0 cursor-pointer" 
+              className="hidden" 
               accept="image/*"
               disabled={loading}
-              name="file"
+              onChange={handleFileChange}
             />
             <div className="flex flex-col items-center">
               <div className={cn(
-                "w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-500",
+                "w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-500 shadow-sm",
                 loading ? "bg-blue-100 text-blue-600 animate-pulse" : 
                 success ? "bg-green-100 text-green-600" :
-                "bg-white text-slate-400 group-hover:text-blue-600 shadow-sm"
+                selectedFile ? "bg-blue-600 text-white" : "bg-white text-slate-400 group-hover:text-blue-600"
               )}>
                 {loading ? <Loader2 className="w-6 h-6 animate-spin" /> : 
                  success ? <Check className="w-6 h-6" /> : 
+                 selectedFile ? <FileImage className="w-6 h-6" /> :
                  <Upload className="w-6 h-6" />}
               </div>
-              <p className="text-xs font-bold text-slate-500 group-hover:text-blue-600 transition-colors">
-                {loading ? "Optimizing..." : "Drop file or click to browse"}
-              </p>
+              <div className="space-y-1">
+                <p className="text-[11px] font-black text-slate-900 uppercase tracking-wider">
+                  {selectedFile ? selectedFile.name : "Drop file or click to browse"}
+                </p>
+                <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+                  {selectedFile ? `${(selectedFile.size / 1024 / 1024).toFixed(2)} MB` : "PNG, JPG up to 300KB"}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -129,11 +148,11 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
         type="submit"
         disabled={loading || success}
         className={cn(
-          "w-full py-4 bg-slate-900 text-white rounded-xl text-xs font-bold uppercase tracking-[0.2em] hover:bg-slate-800 transition-all active:scale-[0.98] disabled:opacity-50 disabled:active:scale-100",
-          success && "bg-green-600 hover:bg-green-600"
+          "w-full py-4 bg-slate-900 text-white rounded-xl text-xs font-bold uppercase tracking-[0.2em] hover:bg-slate-800 transition-all active:scale-[0.98] disabled:opacity-50 disabled:active:scale-100 shadow-xl",
+          success && "bg-green-600 hover:bg-green-600 shadow-green-200"
         )}
       >
-        {loading ? "Uploading..." : success ? "Ready!" : "Confirm Upload"}
+        {loading ? "Processing..." : success ? "Entry Saved!" : "Confirm Upload"}
       </button>
     </form>
   )

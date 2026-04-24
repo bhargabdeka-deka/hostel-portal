@@ -102,3 +102,10 @@ CREATE POLICY "Admin All Alumni" ON alumni FOR ALL USING (auth.uid() IN (SELECT 
 ALTER TABLE complaints ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Public Insert Complaints" ON complaints FOR INSERT WITH CHECK (true);
 CREATE POLICY "Admin Manage Complaints" ON complaints FOR ALL USING (auth.uid() IN (SELECT id FROM users WHERE role IN ('admin', 'superadmin')));
+
+-- STORAGE POLICIES
+-- Run these in your Supabase SQL Editor to enable image uploads
+-- INSERT INTO storage.buckets (id, name, public) VALUES ('images', 'images', true) ON CONFLICT (id) DO NOTHING;
+-- CREATE POLICY "Public Access" ON storage.objects FOR SELECT USING (bucket_id = 'images');
+-- CREATE POLICY "Admin Insert" ON storage.objects FOR INSERT WITH CHECK (bucket_id = 'images');
+-- CREATE POLICY "Admin Delete" ON storage.objects FOR DELETE USING (bucket_id = 'images');
