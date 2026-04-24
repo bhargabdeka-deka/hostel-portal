@@ -58,7 +58,7 @@ export default function MonitorForm({ monitor }: { monitor: Monitor }) {
           </div>
           <div>
             <div className="text-[10px] font-black text-blue-500 uppercase tracking-widest">{monitor.role}</div>
-            <div className="text-xl font-bold text-white tracking-tight">Active Assignment</div>
+            <div className="text-xl font-bold text-white tracking-tight">CURRENT MONITOR</div>
           </div>
         </div>
 
