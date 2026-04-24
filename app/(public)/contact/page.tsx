@@ -17,7 +17,7 @@ export default async function ContactPage() {
   ];
 
   return (
-    <main className="bg-background min-h-screen selection:bg-blue-500/20 overflow-x-hidden">
+    <main className="bg-transparent min-h-screen selection:bg-blue-500/20 overflow-x-hidden">
       {/* Header Section */}
       <section className="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-12 md:pb-16 text-center space-y-6">
         <div className="flex items-center justify-center gap-4">

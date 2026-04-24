@@ -11,7 +11,7 @@ export default async function AlumniPage() {
     .order('batch', { ascending: false });
 
   return (
-    <main className="bg-background min-h-screen selection:bg-blue-500/20">
+    <main className="bg-transparent min-h-screen selection:bg-blue-500/20">
       {/* Header Section */}
       <section className="max-w-7xl mx-auto px-6 pt-24 pb-16 space-y-6">
         <div className="flex items-center gap-4">

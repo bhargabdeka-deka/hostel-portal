@@ -73,7 +73,7 @@ export default async function HomePage() {
   ];
 
   return (
-    <main className="bg-background min-h-screen relative selection:bg-blue-500/20 overflow-x-hidden">
+    <main className="bg-transparent min-h-screen relative selection:bg-blue-500/20 overflow-x-hidden">
       {/* Background is handled by GridBackground in layout.tsx */}
 
       {/* Hero Section */}

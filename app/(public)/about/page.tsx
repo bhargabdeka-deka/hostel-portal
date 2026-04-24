@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function AboutPage() {
   return (
-    <main className="bg-background selection:bg-blue-500/20 overflow-x-hidden">
+    <main className="bg-transparent selection:bg-blue-500/20 overflow-x-hidden">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 py-16 md:py-20 lg:py-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="flex-1 space-y-6 md:space-y-8 text-center lg:text-left">
