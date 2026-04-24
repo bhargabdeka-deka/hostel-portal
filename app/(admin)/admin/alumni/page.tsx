@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server"
-import { updateAlumniStatus, deleteAlumni } from "@/actions/admin-actions"
-import { Users, Check, X, ExternalLink, Briefcase, Trash2 } from 'lucide-react'
+import { updateAlumniStatus } from "@/actions/admin-actions"
+import { Users, Check, X, ExternalLink, Briefcase } from 'lucide-react'
+import DeleteAlumniButton from "@/components/admin/DeleteAlumniButton"
 import { cn } from "@/lib/utils"
 import { revalidatePath } from "next/cache"
 
@@ -129,14 +130,7 @@ export default async function AdminAlumni() {
                       </form>
                     )}
 
-                    <form action={async () => {
-                      "use server"
-                      await deleteAlumni(person.id)
-                    }}>
-                      <button className="p-3 bg-red-50 text-red-600 rounded-xl hover:bg-red-600 hover:text-white transition-all active:scale-95 border border-red-100 group/del" title="Delete Registration">
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </form>
+                    <DeleteAlumniButton id={person.id} />
                   </div>
                 </td>
               </tr>
