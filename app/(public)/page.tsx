@@ -73,19 +73,19 @@ export default async function HomePage() {
   ];
 
   return (
-    <main className="bg-white min-h-screen relative selection:bg-blue-100 overflow-x-hidden">
+    <main className="bg-background min-h-screen relative selection:bg-blue-500/20 overflow-x-hidden">
       {/* Premium Background Elements */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-60">
-        <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-blue-100/30 rounded-full blur-[120px]"></div>
-        <div className="absolute top-[40%] right-[-10%] w-[45%] h-[45%] bg-slate-100/40 rounded-full blur-[140px]"></div>
-        <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] bg-blue-50/20 rounded-full blur-[100px]"></div>
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-30">
+        <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-blue-900/30 rounded-full blur-[120px]"></div>
+        <div className="absolute top-[40%] right-[-10%] w-[45%] h-[45%] bg-slate-900/40 rounded-full blur-[140px]"></div>
+        <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] bg-blue-900/20 rounded-full blur-[100px]"></div>
       </div>
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6">
         <div className="absolute inset-0 z-0">
           <img src="/hero-hostel.jpeg" alt="Orion Hostel" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]"></div>
+          <div className="absolute inset-0 bg-[#020617]/70 backdrop-blur-[2px]"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto py-24 text-center space-y-8 md:space-y-10">
@@ -114,13 +114,13 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {stats.map((stat, i) => (
-            <div key={i} className="p-6 md:p-8 bg-white border border-slate-100 rounded-3xl shadow-xl shadow-slate-900/5 flex items-center gap-6">
-              <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0">
+            <div key={i} className="p-6 md:p-8 bg-[#020617]/80 backdrop-blur-xl border border-white/5 rounded-3xl shadow-2xl flex items-center gap-6">
+              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0">
                 {stat.icon}
               </div>
               <div>
-                <div className="text-xl md:text-2xl font-black text-slate-900">{stat.value}</div>
-                <div className="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-widest">{stat.label}</div>
+                <div className="text-xl md:text-2xl font-black text-white">{stat.value}</div>
+                <div className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest">{stat.label}</div>
               </div>
             </div>
           ))}
@@ -128,14 +128,14 @@ export default async function HomePage() {
       </section>
 
       {/* Spirit Section */}
-      <section className="max-w-7xl mx-auto px-6 py-24 text-center">
-        <h2 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-12">The Orion Spirit</h2>
+      <section className="max-w-7xl mx-auto px-6 py-32 text-center">
+        <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-16">The Orion Spirit</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {spirits.map((spirit, i) => (
-            <div key={i} className={`p-8 md:p-10 ${spirit.bg} rounded-[2.5rem] text-left space-y-6 transition-all hover:-translate-y-2`}>
-              <div className={`${spirit.text}`}>{spirit.icon}</div>
-              <h3 className={`text-xl font-black ${spirit.text} uppercase tracking-tight`}>{spirit.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed font-medium">
+            <div key={i} className={`p-8 md:p-10 bg-white/5 border border-white/5 rounded-[2.5rem] text-left space-y-6 transition-all hover:-translate-y-2 hover:bg-white/10 group`}>
+              <div className="text-blue-400 group-hover:scale-110 transition-transform">{spirit.icon}</div>
+              <h3 className={`text-xl font-black text-white uppercase tracking-tight`}>{spirit.title}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed font-medium">
                 {spirit.desc}
               </p>
             </div>
@@ -146,29 +146,29 @@ export default async function HomePage() {
       {/* Notices Section */}
       <section className="max-w-3xl mx-auto px-6 py-24">
         <div className="text-center space-y-4 mb-12">
-          <h2 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Updates & Information</h2>
-          <h3 className="text-3xl md:text-4xl font-black text-slate-900 flex items-center justify-center gap-3 uppercase tracking-tighter">
-            Latest Notices <Megaphone className="w-6 h-6 text-blue-600" />
+          <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Updates & Information</h2>
+          <h3 className="text-3xl md:text-4xl font-black text-white flex items-center justify-center gap-3 uppercase tracking-tighter">
+            Latest Notices <Megaphone className="w-6 h-6 text-blue-500" />
           </h3>
         </div>
         
-        <div className="border border-slate-100 rounded-[3rem] overflow-hidden shadow-2xl shadow-slate-900/5">
+        <div className="border border-white/5 rounded-[3rem] overflow-hidden shadow-2xl bg-[#020617]/50 backdrop-blur-md">
           {notices && notices.length > 0 ? (
             notices.map((notice, i) => (
-              <div key={notice.id} className={`p-6 md:p-8 bg-white hover:bg-slate-50 transition-colors ${i !== notices.length - 1 ? 'border-b border-slate-50' : ''}`}>
-                <div className="text-[10px] font-black text-slate-400 uppercase mb-3 flex items-center gap-2 tracking-widest">
+              <div key={notice.id} className={`p-6 md:p-8 hover:bg-white/5 transition-colors ${i !== notices.length - 1 ? 'border-b border-white/5' : ''}`}>
+                <div className="text-[10px] font-black text-slate-500 uppercase mb-3 flex items-center gap-2 tracking-widest">
                   <Calendar className="w-3 h-3" />
                   {new Date(notice.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                 </div>
-                <h4 className="font-bold text-slate-900 text-base md:text-lg leading-tight hover:text-blue-600 cursor-pointer transition-colors">
+                <h4 className="font-bold text-white text-base md:text-lg leading-tight hover:text-blue-400 cursor-pointer transition-colors">
                   {notice.title}
                 </h4>
               </div>
             ))
           ) : (
-            <div className="p-20 text-center text-slate-400 font-medium italic">No active notices found</div>
+            <div className="p-20 text-center text-slate-500 font-medium italic">No active notices found</div>
           )}
-          <Link href="/notices" className="block w-full py-6 bg-slate-900 text-center text-[10px] font-black uppercase tracking-[0.2em] text-white hover:bg-slate-800 transition-all">
+          <Link href="/notices" className="block w-full py-6 bg-white text-center text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:bg-slate-100 transition-all">
             Browse All Notices
           </Link>
         </div>
