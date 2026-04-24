@@ -35,7 +35,7 @@ export default async function ContactPage() {
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {mainContacts.map((c, i) => (
-            <div key={i} className="p-8 md:p-10 bg-white/5 border border-white/5 rounded-[2.5rem] shadow-2xl hover:bg-white/10 transition-all duration-500 text-center space-y-6 group">
+            <div key={i} className="p-8 md:p-10 bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2.5rem] shadow-2xl hover:bg-slate-900 transition-all duration-500 text-center space-y-6 group">
               <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/5 flex items-center justify-center mx-auto text-blue-400 group-hover:scale-110 transition-transform duration-500 shrink-0`}>
                 {c.icon}
               </div>
@@ -50,7 +50,7 @@ export default async function ContactPage() {
 
       {/* Superintendent Section */}
       <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="bg-[#020617] border border-white/5 rounded-[3rem] md:rounded-[3.5rem] p-8 md:p-12 lg:p-20 relative overflow-hidden text-white shadow-2xl">
+        <div className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[3rem] md:rounded-[3.5rem] p-8 md:p-12 lg:p-20 relative overflow-hidden text-white shadow-2xl">
           <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-[8px] md:text-[10px] font-black uppercase tracking-widest backdrop-blur-md">
@@ -81,7 +81,7 @@ export default async function ContactPage() {
 
       {/* Monitors Section */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="bg-white/5 border border-white/5 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 space-y-12 md:space-y-16">
+        <div className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 space-y-12 md:space-y-16">
           <div className="text-center">
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase italic">Current Monitors</h2>
           </div>

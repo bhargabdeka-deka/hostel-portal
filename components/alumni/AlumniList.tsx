@@ -29,7 +29,7 @@ export function AlumniList({ alumni }: AlumniProps) {
           </Link>
         </div>
 
-        <div className="flex items-stretch gap-2 bg-white/5 p-2 md:p-4 rounded-3xl md:rounded-[2.5rem] border border-white/5 shadow-2xl">
+        <div className="flex items-stretch gap-2 bg-slate-950/90 backdrop-blur-xl p-2 md:p-4 rounded-3xl md:rounded-[2.5rem] border border-white/10 shadow-2xl">
           <div className="relative flex-1 group">
             <Search className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-slate-500 group-focus-within:text-blue-400 transition-colors" />
             <input 
@@ -50,7 +50,7 @@ export function AlumniList({ alumni }: AlumniProps) {
           filteredAlumni.map((person) => {
             const initials = person.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
             return (
-              <div key={person.id} className="bg-white/5 border border-white/5 rounded-[2rem] p-6 space-y-6 shadow-2xl">
+              <div key={person.id} className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 space-y-6 shadow-2xl">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white/5 text-slate-400 rounded-2xl flex items-center justify-center font-black text-xs border border-white/5 shrink-0">
                     {initials}
@@ -101,7 +101,7 @@ export function AlumniList({ alumni }: AlumniProps) {
             )
           })
         ) : (
-          <div className="py-20 text-center bg-white/5 rounded-[2rem] border border-white/5">
+          <div className="py-20 text-center bg-slate-950/90 backdrop-blur-xl rounded-[2rem] border border-white/10">
             <Users className="w-12 h-12 text-slate-700 mx-auto mb-4" />
             <h3 className="text-sm font-black text-slate-500 uppercase tracking-widest">No matching alumni</h3>
           </div>
@@ -109,7 +109,7 @@ export function AlumniList({ alumni }: AlumniProps) {
       </div>
 
       {/* Desktop View: Table Layout */}
-      <div className="hidden lg:block overflow-hidden bg-white/5 border border-white/5 rounded-[3rem] shadow-2xl">
+      <div className="hidden lg:block overflow-hidden bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[3rem] shadow-2xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>

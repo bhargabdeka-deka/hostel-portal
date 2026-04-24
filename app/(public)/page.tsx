@@ -74,12 +74,7 @@ export default async function HomePage() {
 
   return (
     <main className="bg-background min-h-screen relative selection:bg-blue-500/20 overflow-x-hidden">
-      {/* Premium Background Elements */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-30">
-        <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-blue-900/30 rounded-full blur-[120px]"></div>
-        <div className="absolute top-[40%] right-[-10%] w-[45%] h-[45%] bg-slate-900/40 rounded-full blur-[140px]"></div>
-        <div className="absolute bottom-[-10%] left-[20%] w-[40%] h-[40%] bg-blue-900/20 rounded-full blur-[100px]"></div>
-      </div>
+      {/* Background is handled by GridBackground in layout.tsx */}
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6">
@@ -114,7 +109,7 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {stats.map((stat, i) => (
-            <div key={i} className="p-6 md:p-8 bg-[#020617]/80 backdrop-blur-xl border border-white/5 rounded-3xl shadow-2xl flex items-center gap-6">
+            <div key={i} className="p-6 md:p-8 bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl flex items-center gap-6">
               <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0">
                 {stat.icon}
               </div>
@@ -132,7 +127,7 @@ export default async function HomePage() {
         <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-16">The Orion Spirit</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {spirits.map((spirit, i) => (
-            <div key={i} className={`p-8 md:p-10 bg-white/5 border border-white/5 rounded-[2.5rem] text-left space-y-6 transition-all hover:-translate-y-2 hover:bg-white/10 group`}>
+            <div key={i} className={`p-8 md:p-10 bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2.5rem] text-left space-y-6 transition-all hover:-translate-y-2 hover:bg-slate-900 group`}>
               <div className="text-blue-400 group-hover:scale-110 transition-transform">{spirit.icon}</div>
               <h3 className={`text-xl font-black text-white uppercase tracking-tight`}>{spirit.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-medium">
@@ -152,7 +147,7 @@ export default async function HomePage() {
           </h3>
         </div>
         
-        <div className="border border-white/5 rounded-[3rem] overflow-hidden shadow-2xl bg-[#020617]/50 backdrop-blur-md">
+        <div className="border border-white/10 rounded-[3rem] overflow-hidden shadow-2xl bg-slate-950/90 backdrop-blur-xl">
           {notices && notices.length > 0 ? (
             notices.map((notice, i) => (
               <div key={notice.id} className={`p-6 md:p-8 hover:bg-white/5 transition-colors ${i !== notices.length - 1 ? 'border-b border-white/5' : ''}`}>

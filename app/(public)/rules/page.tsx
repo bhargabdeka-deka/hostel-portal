@@ -38,7 +38,7 @@ export default function RulesPage() {
 
       <div className="grid gap-6 md:gap-8">
         {rules.map((rule, i) => (
-          <div key={i} className="group bg-white/5 border border-white/5 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col sm:flex-row gap-6 md:gap-8 items-start hover:shadow-2xl hover:bg-white/10 transition-all duration-500">
+          <div key={i} className="group bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col sm:flex-row gap-6 md:gap-8 items-start hover:shadow-2xl hover:border-blue-500/50 transition-all duration-500">
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white/5 rounded-2xl flex items-center justify-center text-slate-500 group-hover:bg-white group-hover:text-slate-900 transition-all duration-500 shadow-2xl shrink-0">
               {rule.icon}
             </div>
@@ -50,7 +50,7 @@ export default function RulesPage() {
         ))}
       </div>
 
-      <div className="mt-16 md:mt-20 p-8 md:p-12 bg-blue-500/5 border border-white/5 rounded-[2rem] md:rounded-[2.5rem] flex flex-col md:flex-row items-center gap-8 md:gap-10">
+      <div className="mt-16 md:mt-20 p-8 md:p-12 bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2rem] md:rounded-[2.5rem] flex flex-col md:flex-row items-center gap-8 md:gap-10">
         <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center text-blue-400 shadow-2xl shrink-0 border border-white/10">
           <HelpCircle className="w-8 h-8" />
         </div>

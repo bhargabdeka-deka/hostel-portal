@@ -74,7 +74,7 @@ export default function ComplaintPage() {
           </div>
         </div>
 
-        <div className="bg-white/5 border border-white/10 p-8 rounded-[2rem] shadow-2xl">
+        <div className="bg-slate-950/90 backdrop-blur-xl border border-white/10 p-8 rounded-[2rem] shadow-2xl">
           <form action={handleSubmit} className="space-y-6">
             <div className="space-y-4">
               <div>

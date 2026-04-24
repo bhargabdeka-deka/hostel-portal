@@ -36,7 +36,7 @@ export default function AboutPage() {
             { icon: <Users className="w-6 h-6 text-green-400" />, value: "800+", label: "Glorious Alumni" },
             { icon: <GraduationCap className="w-6 h-6 text-purple-400" />, value: "JEC", label: "Hostel 7 Identity" },
           ].map((stat, i) => (
-            <div key={i} className="bg-white/5 border border-white/5 rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-2xl hover:bg-white/10 transition-all duration-500">
+            <div key={i} className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-2xl hover:bg-slate-900 transition-all duration-500">
               <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6">
                 {stat.icon}
               </div>
@@ -49,7 +49,7 @@ export default function AboutPage() {
 
       {/* History & Culture */}
       <section className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-        <div className="bg-white/5 border border-white/5 rounded-[2.5rem] p-8 md:p-12 shadow-2xl">
+        <div className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
               <History className="w-6 h-6 text-white" />
@@ -66,7 +66,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="bg-blue-500/5 border border-blue-500/10 rounded-[2.5rem] p-8 md:p-12">
+        <div className="bg-slate-950/90 backdrop-blur-xl border border-blue-500/20 rounded-[2.5rem] p-8 md:p-12">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shadow-sm shrink-0">
               <Users2 className="w-6 h-6 text-blue-400" />
@@ -93,7 +93,7 @@ export default function AboutPage() {
 
       {/* Facilities & Infrastructure Section */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="bg-white/5 border border-white/5 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 relative overflow-hidden">
+        <div className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 relative overflow-hidden">
           <div className="max-w-4xl space-y-8 relative z-10">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[8px] md:text-[10px] font-black uppercase tracking-widest">
               Hostel Infrastructure
