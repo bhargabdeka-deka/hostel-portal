@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Outfit, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono, Outfit, Playfair_Display, Orbitron } from "next/font/google";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
 import "./globals.css";
@@ -24,6 +24,11 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "ORION Hostel Portal | Excellence Since 1998",
   description: "Official resident portal for ORION Hostel. Manage your stay, connect with alumni, and stay updated with official notices.",
@@ -41,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${playfair.variable} h-full antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${playfair.variable} ${orbitron.variable} h-full antialiased`}>
       <body className="min-h-full bg-background text-foreground font-sans antialiased relative">
         <GridBackground />
         <Torchlight />

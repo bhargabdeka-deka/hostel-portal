@@ -21,8 +21,8 @@ export default async function AchievementsPage() {
           <div className="h-px w-8 md:w-12 bg-white/10"></div>
           <span className="text-[8px] md:text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Honoring Excellence</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tight uppercase leading-[1.1]">
-          Excellence <span className="text-blue-500">&</span> Milestones
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[1.1] font-quantum">
+          Excellence <span className="text-blue-500 font-sans">&</span> Milestones
         </h1>
         <p className="text-base md:text-xl text-slate-400 font-medium max-w-2xl leading-relaxed">
           A visual legacy of determination and sportsmanship. Explore the milestones that define the collective spirit of ORION Hostel.
@@ -31,7 +31,7 @@ export default async function AchievementsPage() {
 
       {/* Achievements Grid */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
-        <h2 className="text-[10px] font-black text-white uppercase tracking-[0.2em] mb-12 flex items-center gap-4">
+        <h2 className="text-[10px] font-black text-white uppercase tracking-[0.4em] mb-12 flex items-center gap-4 font-quantum">
           Major Milestones <div className="h-px flex-1 bg-white/5"></div>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
@@ -82,7 +82,7 @@ export default async function AchievementsPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 md:via-slate-950/80 to-transparent z-10"></div>
           
           <div className="relative z-20 p-8 md:p-12 lg:p-24 max-w-2xl space-y-6 md:space-y-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight uppercase">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter leading-tight uppercase font-quantum">
               Built on Tradition, <br/><span className="text-blue-400">Forged in Grit</span>
             </h2>
             <p className="text-slate-400 font-medium leading-relaxed text-sm md:text-lg">

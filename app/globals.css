@@ -138,3 +138,7 @@
 .font-serif-premium {
   font-family: var(--font-playfair), serif;
 }
+
+.font-quantum {
+  font-family: var(--font-orbitron), sans-serif;
+}

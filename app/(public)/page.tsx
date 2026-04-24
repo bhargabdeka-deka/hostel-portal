@@ -132,7 +132,7 @@ export default async function HomePage() {
 
       {/* Spirit Section */}
       <section className="max-w-7xl mx-auto px-6 py-32 text-center">
-        <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-16">The Orion Spirit</h2>
+        <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] mb-16 font-quantum">The Orion Spirit</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {spirits.map((spirit, i) => (
             <div 
@@ -153,7 +153,7 @@ export default async function HomePage() {
       {/* Notices Section */}
       <section className="max-w-3xl mx-auto px-6 py-24">
         <div className="text-center space-y-4 mb-12">
-          <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Updates & Information</h2>
+          <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] font-quantum">Updates & Information</h2>
           <h3 className="text-3xl md:text-4xl font-black text-white flex items-center justify-center gap-3 uppercase tracking-tighter">
             Latest Notices <Megaphone className="w-6 h-6 text-blue-500" />
           </h3>
