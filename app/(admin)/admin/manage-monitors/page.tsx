@@ -31,8 +31,8 @@ export default async function ManageMonitors() {
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {monitors?.map((monitor) => (
-          <MonitorForm key={monitor.id} monitor={monitor} />
+        {monitors?.map((monitor, index) => (
+          <MonitorForm key={monitor.id} monitor={monitor} index={index} />
         ))}
       </div>
     </div>
