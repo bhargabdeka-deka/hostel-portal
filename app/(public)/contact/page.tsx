@@ -83,34 +83,38 @@ export default async function ContactPage() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 space-y-12 md:space-y-16">
           <div className="text-center">
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase italic">Current Monitors</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase font-quantum">Current Monitors</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {monitors && monitors.length > 0 ? (
-              monitors.map((m) => (
-                <div key={m.id} className="bg-[#020617] p-5 rounded-3xl border border-white/5 shadow-2xl hover:bg-white/5 transition-all group flex flex-col gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
-                      <User className="w-5 h-5" />
+              monitors.map((m, i) => (
+                <div 
+                  key={m.id} 
+                  className="bg-slate-950 p-6 rounded-[2rem] border border-white/5 shadow-2xl hover:border-blue-500/30 hover:bg-white/[0.02] transition-all duration-500 group flex flex-col gap-4 animate-float"
+                  style={{ animationDelay: `${i * 0.3}s` }}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-500">
+                      <User className="w-6 h-6" />
                     </div>
                     <div className="min-w-0">
-                      <div className="text-[8px] font-black text-blue-400 uppercase tracking-widest truncate">{m.role}</div>
-                      <div className="text-sm font-black text-white tracking-tight truncate uppercase">{m.name}</div>
+                      <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest truncate">{m.role}</div>
+                      <div className="text-lg font-black text-white tracking-tight truncate font-serif-premium group-hover:text-blue-400 transition-colors">{m.name}</div>
                     </div>
                   </div>
                   
-                  <div className="flex flex-col gap-2 pt-3 border-t border-white/5">
-                    <div className="flex items-center gap-2 text-slate-500 text-[9px] font-black uppercase tracking-widest">
-                      <Shield className="w-3 h-3" />
+                  <div className="flex flex-col gap-3 pt-4 border-t border-white/5">
+                    <div className="flex items-center gap-2.5 text-slate-400 text-[10px] font-black uppercase tracking-widest">
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
                       Room {m.room}
                     </div>
                     {m.phone && (
                       <a 
                         href={`tel:${m.phone}`}
-                        className="flex items-center gap-2 text-blue-400 text-[9px] font-black uppercase tracking-widest hover:text-blue-300 transition-colors"
+                        className="flex items-center gap-2.5 text-blue-400 text-[10px] font-black uppercase tracking-widest hover:text-blue-300 transition-colors"
                       >
-                        <Phone className="w-3 h-3" />
+                        <Phone className="w-3.5 h-3.5" />
                         {m.phone}
                       </a>
                     )}
