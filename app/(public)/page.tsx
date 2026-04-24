@@ -22,9 +22,9 @@ export default async function HomePage() {
     .limit(4);
 
   const stats = [
-    { label: 'Established', value: '1982', icon: <Calendar className="w-5 h-5 text-blue-600" /> },
-    { label: 'Capacity', value: '75', icon: <Users className="w-5 h-5 text-green-600" /> },
-    { label: 'Legacy', value: '40+ Years', icon: <Award className="w-5 h-5 text-purple-600" /> },
+    { label: 'Established', value: '1982', icon: <Calendar className="w-5 h-5" />, color: 'text-rose-500', border: 'border-rose-500/20', shadow: 'shadow-rose-500/10' },
+    { label: 'Capacity', value: '75', icon: <Users className="w-5 h-5" />, color: 'text-emerald-500', border: 'border-emerald-500/20', shadow: 'shadow-emerald-500/10' },
+    { label: 'Legacy', value: '40+ Years', icon: <Award className="w-5 h-5" />, color: 'text-amber-500', border: 'border-amber-500/20', shadow: 'shadow-amber-500/10' },
   ];
 
   const spirits = [
@@ -32,22 +32,25 @@ export default async function HomePage() {
       title: 'Brotherhood', 
       desc: 'More than just roommates, we are a family. The bonds formed within these walls last a lifetime, creating a support system that spans generations.', 
       icon: <Users2 className="w-6 h-6" />,
-      bg: 'bg-blue-50',
-      text: 'text-blue-700'
+      color: 'text-cyan-400',
+      border: 'border-cyan-500/20',
+      shadow: 'shadow-cyan-500/10'
     },
     { 
       title: 'Academics', 
       desc: 'A legacy of engineering excellence. Orionites consistently rank among the toppers of Jorhat Engineering College, fostering a culture of peer learning.', 
       icon: <GraduationCap className="w-6 h-6" />,
-      bg: 'bg-green-50',
-      text: 'text-green-700'
+      color: 'text-violet-400',
+      border: 'border-violet-500/20',
+      shadow: 'shadow-violet-500/10'
     },
     { 
       title: 'Sports Excellence', 
       desc: 'Dominating the field. From the cricket pitch to the football ground, the Orionite grit is unmatched in every inter-hostel competition.', 
       icon: <Trophy className="w-6 h-6" />,
-      bg: 'bg-purple-50',
-      text: 'text-purple-700'
+      color: 'text-pink-400',
+      border: 'border-pink-500/20',
+      shadow: 'shadow-pink-500/10'
     },
   ];
 
@@ -109,13 +112,17 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {stats.map((stat, i) => (
-            <div key={i} className="p-6 md:p-8 bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl flex items-center gap-6">
-              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0">
+            <div 
+              key={i} 
+              className={`p-6 md:p-8 bg-slate-950/90 backdrop-blur-xl border ${stat.border} rounded-3xl shadow-2xl flex items-center gap-6 animate-float ${stat.shadow}`}
+              style={{ animationDelay: `${i * 0.5}s` }}
+            >
+              <div className={`w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 ${stat.color}`}>
                 {stat.icon}
               </div>
               <div>
-                <div className="text-xl md:text-2xl font-black text-white">{stat.value}</div>
-                <div className="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest">{stat.label}</div>
+                <div className={`text-2xl md:text-3xl font-black ${stat.color} font-stylish tracking-tighter`}>{stat.value}</div>
+                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{stat.label}</div>
               </div>
             </div>
           ))}
@@ -127,9 +134,13 @@ export default async function HomePage() {
         <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-16">The Orion Spirit</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {spirits.map((spirit, i) => (
-            <div key={i} className={`p-8 md:p-10 bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2.5rem] text-left space-y-6 transition-all hover:-translate-y-2 hover:bg-slate-900 group`}>
-              <div className="text-blue-400 group-hover:scale-110 transition-transform">{spirit.icon}</div>
-              <h3 className={`text-xl font-black text-white uppercase tracking-tight`}>{spirit.title}</h3>
+            <div 
+              key={i} 
+              className={`p-8 md:p-10 bg-slate-950/90 backdrop-blur-xl border ${spirit.border} rounded-[2.5rem] text-left space-y-6 transition-all hover:bg-slate-900 group animate-float ${spirit.shadow}`}
+              style={{ animationDelay: `${(i + 3) * 0.8}s` }}
+            >
+              <div className={`${spirit.color} group-hover:scale-110 transition-transform`}>{spirit.icon}</div>
+              <h3 className={`text-2xl font-black text-white uppercase tracking-tighter font-stylish group-hover:${spirit.color} transition-colors`}>{spirit.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-medium">
                 {spirit.desc}
               </p>
