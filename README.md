@@ -1,6 +1,6 @@
 # ORION Hostel Portal
 
-Smart Hostel Portal for Hostel No. 7 (ORION), Jorhat Engineering College.
+ Hostel Portal for Hostel No. 7 (ORION), Jorhat Engineering College.
 
 ## Features
 
