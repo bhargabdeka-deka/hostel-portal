@@ -32,15 +32,15 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {[
-            { icon: <Calendar className="w-6 h-6 text-blue-400" />, value: "42+", label: "Years of History" },
-            { icon: <Users className="w-6 h-6 text-green-400" />, value: "800+", label: "Glorious Alumni" },
-            { icon: <GraduationCap className="w-6 h-6 text-purple-400" />, value: "JEC", label: "Hostel 7 Identity" },
+            { icon: <Calendar className="w-6 h-6" />, value: "42+", label: "Years of History", color: 'text-cyan-400', border: 'border-cyan-500/20' },
+            { icon: <Users className="w-6 h-6" />, value: "800+", label: "Glorious Alumni", color: 'text-emerald-400', border: 'border-emerald-500/20' },
+            { icon: <GraduationCap className="w-6 h-6" />, value: "JEC", label: "Hostel 7 Identity", color: 'text-violet-400', border: 'border-violet-500/20' },
           ].map((stat, i) => (
-            <div key={i} className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-2xl hover:bg-slate-900 transition-all duration-500">
-              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6">
+            <div key={i} className={`bg-slate-950/90 backdrop-blur-xl border ${stat.border} rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-2xl hover:bg-slate-900 transition-all duration-500 animate-float`} style={{ animationDelay: `${i * 0.6}s` }}>
+              <div className={`w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 ${stat.color}`}>
                 {stat.icon}
               </div>
-              <div className="text-3xl font-black text-white mb-1">{stat.value}</div>
+              <div className={`text-4xl font-black ${stat.color} mb-1 font-stylish tracking-tighter`}>{stat.value}</div>
               <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{stat.label}</div>
             </div>
           ))}
@@ -49,12 +49,12 @@ export default function AboutPage() {
 
       {/* History & Culture */}
       <section className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-        <div className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl">
+        <div className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl animate-float" style={{ animationDelay: '1.2s' }}>
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-              <History className="w-6 h-6 text-white" />
+              <History className="w-6 h-6 text-blue-500" />
             </div>
-            <h2 className="text-2xl font-black text-white tracking-tight uppercase">Our History</h2>
+            <h2 className="text-3xl font-black text-white tracking-tighter uppercase font-stylish">Our History</h2>
           </div>
           <div className="space-y-6 text-slate-400 leading-relaxed font-medium text-sm md:text-base">
             <p>
@@ -66,12 +66,12 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="bg-slate-950/90 backdrop-blur-xl border border-blue-500/20 rounded-[2.5rem] p-8 md:p-12">
+        <div className="bg-slate-950/90 backdrop-blur-xl border border-blue-500/20 rounded-[2.5rem] p-8 md:p-12 shadow-2xl animate-float" style={{ animationDelay: '1.8s' }}>
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shadow-sm shrink-0">
-              <Users2 className="w-6 h-6 text-blue-400" />
+              <Users2 className="w-6 h-6 text-emerald-400" />
             </div>
-            <h2 className="text-2xl font-black text-white tracking-tight uppercase">The Culture</h2>
+            <h2 className="text-3xl font-black text-white tracking-tighter uppercase font-stylish">The Culture</h2>
           </div>
           <p className="text-slate-400 leading-relaxed font-medium mb-8 text-sm md:text-base">
             Hostel 7 is renowned for its unique "Sevenite" culture—a blend of fierce loyalty, intellectual rigor, and celebratory spirit.
@@ -126,14 +126,14 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-12">
               {[
-                { label: "32 Resident Rooms", sub: "Spacious Living" },
-                { label: "Common Room", sub: "Legacy Center" },
-                { label: "Gym & Library", sub: "Dual Wellness" },
-                { label: "Modern Facilities", sub: "Hygiene Focused" },
+                { label: "32 Resident Rooms", sub: "Spacious Living", color: 'text-blue-400', border: 'border-blue-500/20' },
+                { label: "Common Room", sub: "Legacy Center", color: 'text-amber-400', border: 'border-amber-500/20' },
+                { label: "Gym & Library", sub: "Dual Wellness", color: 'text-rose-400', border: 'border-rose-500/20' },
+                { label: "Modern Facilities", sub: "Hygiene Focused", color: 'text-teal-400', border: 'border-teal-500/20' },
               ].map((item, i) => (
-                <div key={i} className="bg-[#020617] p-6 md:p-8 rounded-3xl border border-white/5 shadow-2xl text-center space-y-2 group hover:bg-white/5 transition-all duration-500">
-                  <div className="text-sm md:text-base font-black text-white leading-tight">{item.label}</div>
-                  <div className="text-[8px] font-black text-blue-500 uppercase tracking-widest">{item.sub}</div>
+                <div key={i} className={`bg-slate-950 p-6 md:p-8 rounded-3xl border ${item.border} shadow-2xl text-center space-y-2 group hover:bg-white/5 transition-all duration-500 animate-float`} style={{ animationDelay: `${i * 0.4}s` }}>
+                  <div className={`text-sm md:text-base font-black text-white leading-tight font-stylish group-hover:${item.color}`}>{item.label}</div>
+                  <div className={`text-[8px] font-black ${item.color} uppercase tracking-widest`}>{item.sub}</div>
                 </div>
               ))}
             </div>
