@@ -1,6 +1,6 @@
-# Smart Hostel Management Portal
+# ORION Portal
 
-A modern, high-performance hostel management portal built with Next.js 15, Supabase, and Tailwind CSS.
+A modern, high-performance hostel management portal built with Next.js 16, Supabase, and Tailwind CSS.
 
 ## Features
 
@@ -29,7 +29,7 @@ A modern, high-performance hostel management portal built with Next.js 15, Supab
 
 ### 3. Initialize First Admin
 1. Sign up a new user via the `/login` page or the Supabase Auth dashboard.
-2. Go to the **Table Editor** in Supabase, select the `profiles` table.
+2. Go to the **Table Editor** in Supabase, select the `users` table.
 3. Find your user and change the `role` from `admin` to `superadmin` to unlock user management features.
 
 ### 4. Local Development
@@ -41,7 +41,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Tech Stack
-- **Framework**: Next.js 15 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Database/Auth**: Supabase
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide React
