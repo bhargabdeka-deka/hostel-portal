@@ -63,10 +63,10 @@ export default function AlumniRegistration() {
           <div className="inline-flex p-3 bg-blue-600/10 rounded-2xl mb-6">
             <GraduationCap className="w-8 h-8 text-blue-600" />
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 mb-6">
+          <h1 className="text-4xl font-extrabold tracking-tight text-white mb-6">
             Join the <span className="text-blue-600">Alumni Network</span>
           </h1>
-          <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+          <p className="text-lg text-slate-400 mb-8 leading-relaxed">
             Stay connected with ORION Hostel. Join our network to mentor current residents, network with peers, and stay updated with alumni events.
           </p>
           
@@ -74,7 +74,7 @@ export default function AlumniRegistration() {
             {["Professional Networking", "Mentorship Opportunities", "Annual Alumni Meets"].map((item, i) => (
               <div key={i} className="flex items-center gap-3">
                 <div className="flex-none w-2 h-2 bg-blue-600 rounded-full"></div>
-                <span className="font-bold text-slate-700">{item}</span>
+                <span className="font-bold text-slate-300">{item}</span>
               </div>
             ))}
           </div>
