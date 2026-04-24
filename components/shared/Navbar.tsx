@@ -99,12 +99,6 @@ export function Navbar() {
             {link.name}
           </Link>
         ))}
-        <Link 
-          href="/login"
-          className="mt-12 px-12 py-5 bg-slate-900 text-white rounded-full text-xs font-black uppercase tracking-[0.2em]"
-        >
-          Admin Portal
-        </Link>
       </div>
     </>
   );
