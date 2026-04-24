@@ -27,6 +27,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { Torchlight } from "@/components/shared/Torchlight";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,7 +36,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} h-full antialiased`}>
-      <body className="min-h-full bg-background text-foreground font-sans antialiased">
+      <body className="min-h-full bg-background text-foreground font-sans antialiased relative">
+        <Torchlight />
         {children}
       </body>
     </html>
