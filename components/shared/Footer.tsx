@@ -2,7 +2,7 @@ import { Navigation } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-transparent pt-24 pb-12 px-6 relative overflow-hidden border-t border-white/5">
+    <footer className="bg-slate-950/90 backdrop-blur-xl pt-24 pb-12 px-6 relative overflow-hidden border-t border-white/5">
       {/* Decorative Gradient */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
       
