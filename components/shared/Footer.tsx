@@ -28,9 +28,6 @@ export function Footer() {
             </div>
 
             <div className="space-y-2">
-              <p className="text-slate-300 text-sm md:text-base font-medium">
-                Courtesy of 2019-2023 batch
-              </p>
               <p className="text-white text-base md:text-lg font-bold">
                 Copyright © BhargabDeka 2026.
               </p>
