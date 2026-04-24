@@ -34,23 +34,24 @@ export default async function AchievementsPage() {
         <h2 className="text-[10px] font-black text-white uppercase tracking-[0.4em] mb-12 flex items-center gap-4 font-quantum">
           Major Milestones <div className="h-px flex-1 bg-white/5"></div>
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {achievements && achievements.length > 0 ? (
             achievements.map((achievement) => (
               <div key={achievement.id} className="group bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden hover:bg-slate-900 transition-all duration-700 shadow-2xl">
-                <div className="aspect-[4/3] relative overflow-hidden">
-                  <img 
-                    src={achievement.image_url || "/placeholder-achievement.png"} 
-                    alt={achievement.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 grayscale-[20%] group-hover:grayscale-0"
-                  />
-                  <div className="absolute top-6 right-6 md:top-8 md:right-8">
-                    <div className="px-4 py-1.5 md:px-5 md:py-2 bg-slate-950/80 backdrop-blur-md text-white text-[8px] md:text-[9px] font-black uppercase tracking-widest rounded-full border border-white/20 flex items-center gap-2">
-                      <Award className="w-3 h-3 text-yellow-400" />
-                      Achievement
+                <div className="p-3">
+                  <div className="aspect-[3/4] relative overflow-hidden rounded-2xl bg-slate-900/50">
+                    <img 
+                      src={achievement.image_url || "/placeholder-achievement.png"} 
+                      alt={achievement.title}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-1000"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <div className="px-3 py-1 bg-slate-950/80 backdrop-blur-md text-white text-[7px] font-black uppercase tracking-widest rounded-full border border-white/20 flex items-center gap-1.5">
+                        <Award className="w-2.5 h-2.5 text-yellow-400" />
+                        Achievement
+                      </div>
                     </div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 <div className="p-6 md:p-8 space-y-3">
                   <div className="flex items-center gap-2 text-[10px] font-black text-blue-400 uppercase tracking-widest">
