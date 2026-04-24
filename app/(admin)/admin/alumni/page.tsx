@@ -1,6 +1,6 @@
 import { createClient } from "@/lib/supabase/server"
-import { updateAlumniStatus } from "@/actions/admin-actions"
-import { Users, Check, X, ExternalLink, Briefcase } from 'lucide-react'
+import { updateAlumniStatus, deleteAlumni } from "@/actions/admin-actions"
+import { Users, Check, X, ExternalLink, Briefcase, Trash2 } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import { revalidatePath } from "next/cache"
 
@@ -107,26 +107,37 @@ export default async function AdminAlumni() {
                     {person.status}
                   </span>
                 </td>
-                <td className="px-10 py-8 text-right">
-                  {person.status === 'pending' ? (
+                <td className="px-10 py-8">
+                  <div className="flex items-center justify-end gap-3">
+                    {person.status === 'pending' ? (
+                      <form action={async () => {
+                        "use server"
+                        await updateAlumniStatus(person.id, 'approved')
+                      }}>
+                        <button className="bg-blue-600 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-blue-700 transition-all active:scale-95 shadow-lg shadow-blue-600/10">
+                          Approve
+                        </button>
+                      </form>
+                    ) : (
+                      <form action={async () => {
+                        "use server"
+                        await updateAlumniStatus(person.id, 'pending')
+                      }}>
+                        <button className="bg-slate-900 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-800 transition-all active:scale-95">
+                          Revoke
+                        </button>
+                      </form>
+                    )}
+
                     <form action={async () => {
                       "use server"
-                      await updateAlumniStatus(person.id, 'approved')
+                      await deleteAlumni(person.id)
                     }}>
-                      <button className="bg-blue-600 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-blue-700 transition-all active:scale-95 shadow-lg shadow-blue-600/10">
-                        Approve
+                      <button className="p-3 bg-red-50 text-red-600 rounded-xl hover:bg-red-600 hover:text-white transition-all active:scale-95 border border-red-100 group/del" title="Delete Registration">
+                        <Trash2 className="w-4 h-4" />
                       </button>
                     </form>
-                  ) : (
-                    <form action={async () => {
-                      "use server"
-                      await updateAlumniStatus(person.id, 'pending')
-                    }}>
-                      <button className="bg-slate-900 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-800 transition-all active:scale-95">
-                        Revoke
-                      </button>
-                    </form>
-                  )}
+                  </div>
                 </td>
               </tr>
             ))}

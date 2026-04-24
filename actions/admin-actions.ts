@@ -32,6 +32,20 @@ export async function updateAlumniStatus(id: string, status: 'approved' | 'pendi
   if (!error) revalidatePath("/admin/alumni");
 }
 
+// ALUMNI: Delete
+export async function deleteAlumni(id: string) {
+  await verifyAccess();
+  const supabase = await createClient();
+  
+  const { error } = await supabase
+    .from("alumni")
+    .delete()
+    .eq("id", id);
+
+  if (!error) revalidatePath("/admin/alumni");
+  return { success: !error, error };
+}
+
 // NOTICES: Add
 export async function addNotice(title: string, content: string) {
   await verifyAccess();
