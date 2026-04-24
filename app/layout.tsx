@@ -29,6 +29,11 @@ const orbitron = Orbitron({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "ORION Hostel Portal | Excellence Since 1998",
   description: "Official resident portal for ORION Hostel. Manage your stay, connect with alumni, and stay updated with official notices.",
@@ -46,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${playfair.variable} ${orbitron.variable} h-full antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${playfair.variable} ${orbitron.variable} ${inter.variable} h-full antialiased`}>
       <body className="min-h-full bg-background text-foreground font-sans antialiased relative">
         <GridBackground />
         <Torchlight />

@@ -3,7 +3,7 @@
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
-  --font-heading: var(--font-outfit), var(--font-sans);
+  --font-heading: var(--font-inter), var(--font-sans);
   
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -132,15 +132,15 @@
 }
 
 .font-stylish {
-  font-family: var(--font-outfit), var(--font-heading), sans-serif;
+  font-family: var(--font-inter), var(--font-sans), sans-serif;
 }
 
 .font-serif-premium {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-inter), var(--font-sans), sans-serif;
 }
 
 .font-quantum {
-  font-family: var(--font-orbitron), sans-serif;
+  font-family: var(--font-inter), var(--font-sans), sans-serif;
 }
 
 @keyframes spin {
