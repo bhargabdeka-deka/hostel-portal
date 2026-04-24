@@ -38,7 +38,7 @@ export default async function AchievementsPage() {
           {achievements && achievements.length > 0 ? (
             achievements.map((achievement) => (
               <div key={achievement.id} className="group bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden hover:bg-slate-900 transition-all duration-700 shadow-2xl">
-                <div className="aspect-[4/5] relative overflow-hidden">
+                <div className="aspect-[4/3] relative overflow-hidden">
                   <img 
                     src={achievement.image_url || "/placeholder-achievement.png"} 
                     alt={achievement.title}
@@ -52,7 +52,7 @@ export default async function AchievementsPage() {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div className="p-8 md:p-10 space-y-4">
+                <div className="p-6 md:p-8 space-y-3">
                   <div className="flex items-center gap-2 text-[10px] font-black text-blue-400 uppercase tracking-widest">
                     <Calendar className="w-3.5 h-3.5" />
                     {new Date(achievement.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
