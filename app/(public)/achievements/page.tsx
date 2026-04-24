@@ -38,30 +38,30 @@ export default async function AchievementsPage() {
           {achievements && achievements.length > 0 ? (
             achievements.map((achievement) => (
               <div key={achievement.id} className="group bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden hover:bg-slate-900 transition-all duration-700 shadow-2xl">
-                <div className="p-3">
-                  <div className="aspect-[3/4] relative overflow-hidden rounded-2xl bg-slate-900/50">
+                <div className="p-2">
+                  <div className="aspect-[16/10] relative overflow-hidden rounded-xl bg-slate-900/50">
                     <img 
                       src={achievement.image_url || "/placeholder-achievement.png"} 
                       alt={achievement.title}
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-1000"
                     />
-                    <div className="absolute top-4 right-4">
-                      <div className="px-3 py-1 bg-slate-950/80 backdrop-blur-md text-white text-[7px] font-black uppercase tracking-widest rounded-full border border-white/20 flex items-center gap-1.5">
-                        <Award className="w-2.5 h-2.5 text-yellow-400" />
+                    <div className="absolute top-2 right-2">
+                      <div className="px-2 py-0.5 bg-slate-950/80 backdrop-blur-md text-white text-[6px] font-black uppercase tracking-widest rounded-full border border-white/10 flex items-center gap-1">
+                        <Award className="w-2 h-2 text-yellow-400" />
                         Achievement
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="p-6 md:p-8 space-y-3">
-                  <div className="flex items-center gap-2 text-[10px] font-black text-blue-400 uppercase tracking-widest">
-                    <Calendar className="w-3.5 h-3.5" />
-                    {new Date(achievement.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+                <div className="p-4 pt-0 space-y-2">
+                  <div className="flex items-center gap-1.5 text-[8px] font-black text-blue-400 uppercase tracking-widest">
+                    <Calendar className="w-2.5 h-2.5" />
+                    {new Date(achievement.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
                   </div>
-                  <h3 className="text-xl md:text-2xl font-black text-white tracking-tight group-hover:text-blue-500 transition-colors leading-tight uppercase">
+                  <h3 className="text-sm md:text-base font-black text-white tracking-tight group-hover:text-blue-500 transition-colors leading-tight uppercase line-clamp-1">
                     {achievement.title}
                   </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed line-clamp-3 font-medium">
+                  <p className="text-slate-400 text-[10px] leading-relaxed line-clamp-2 font-medium">
                     {achievement.description}
                   </p>
                 </div>
