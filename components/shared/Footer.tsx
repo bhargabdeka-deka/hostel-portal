@@ -2,12 +2,12 @@ import { Navigation } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950/90 backdrop-blur-xl pt-24 pb-12 px-6 relative overflow-hidden border-t border-white/5">
+    <footer className="bg-[#030712]/95 backdrop-blur-xl pt-16 pb-8 px-6 relative overflow-hidden border-t border-white/5">
       {/* Decorative Gradient */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start mb-20 gap-16">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-12">
           <div className="max-w-sm space-y-6">
             <h3 className="text-2xl font-black tracking-tighter text-white uppercase font-heading">
               ORION
@@ -35,7 +35,7 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="pt-10 border-t border-white/5 flex justify-center md:justify-start">
+        <div className="pt-6 border-t border-white/5 flex justify-center md:justify-start">
           <p className="text-slate-600 text-[10px] font-black uppercase tracking-[0.3em]">
             Sevenite Legacy • Est. 1982
           </p>
