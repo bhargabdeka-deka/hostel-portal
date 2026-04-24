@@ -25,7 +25,7 @@ export function AlumniList({ alumni }: AlumniProps) {
         <div className="flex justify-end">
           <Link href="/alumni/register" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-[0.2em] hover:bg-blue-50 transition shadow-2xl active:scale-95">
             <Users className="w-4 h-4" />
-            Join Directory
+            Register as an Alumni
           </Link>
         </div>
 
@@ -50,8 +50,13 @@ export function AlumniList({ alumni }: AlumniProps) {
           filteredAlumni.map((person) => {
             const initials = person.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
             return (
-              <div key={person.id} className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 space-y-6 shadow-2xl">
-                <div className="flex items-center gap-4">
+              <div key={person.id} className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2rem] p-5 space-y-4 shadow-2xl group hover:shadow-blue-500/10 transition-all duration-500 relative overflow-hidden">
+                {/* Lighting highlight */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-600/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                
+                <div className="relative z-10 space-y-6">
+                  <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white/5 text-slate-400 rounded-2xl flex items-center justify-center font-black text-xs border border-white/5 shrink-0">
                     {initials}
                   </div>
@@ -97,6 +102,7 @@ export function AlumniList({ alumni }: AlumniProps) {
                       </div>
                    )}
                 </div>
+                </div>
               </div>
             )
           })
@@ -114,11 +120,11 @@ export function AlumniList({ alumni }: AlumniProps) {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-white/5 border-b border-white/5">
-                <th className="px-10 py-8 text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Sevenite Identity</th>
-                <th className="px-10 py-8 text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Graduation</th>
-                <th className="px-10 py-8 text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Communication</th>
-                <th className="px-10 py-8 text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Professional Info</th>
-                <th className="px-10 py-8 text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] text-center">Portfolio</th>
+                <th className="px-10 py-5 text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Identity</th>
+                <th className="px-10 py-5 text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Graduation</th>
+                <th className="px-10 py-5 text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Communication</th>
+                <th className="px-10 py-5 text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Professional Info</th>
+                <th className="px-10 py-5 text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] text-center">Portfolio</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
@@ -126,8 +132,11 @@ export function AlumniList({ alumni }: AlumniProps) {
                 filteredAlumni.map((person) => {
                   const initials = person.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
                   return (
-                    <tr key={person.id} className="hover:bg-white/5 transition-colors group">
-                      <td className="px-10 py-8">
+                    <tr key={person.id} className="hover:bg-blue-600/[0.04] transition-all duration-500 group relative border-b border-white/[0.02] last:border-0 overflow-hidden">
+                      {/* Dynamic Lighting Highlight via pseudo-elements on the tr is not reliable, so we put it in the first td and span it or just use the tr background */}
+                      <td className="px-10 py-5 relative z-10">
+                        {/* Glow Indicator */}
+                        <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="flex items-center gap-4">
                           <div className="w-12 h-12 bg-white/5 text-slate-400 rounded-2xl flex items-center justify-center font-black text-xs border border-white/5 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-500 shrink-0">
                             {initials}
@@ -135,21 +144,21 @@ export function AlumniList({ alumni }: AlumniProps) {
                           <span className="font-black text-white uppercase tracking-tight text-base">{person.name}</span>
                         </div>
                       </td>
-                      <td className="px-10 py-8">
+                      <td className="px-10 py-5 relative z-10">
                         <span className="text-[10px] text-blue-400 font-black uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-400/20">
                           Batch {person.batch}
                         </span>
                       </td>
-                      <td className="px-10 py-8">
+                      <td className="px-10 py-5 relative z-10">
                         <span className="text-sm font-bold text-slate-400 tracking-tight">{person.phone || 'N/A'}</span>
                       </td>
-                      <td className="px-10 py-8">
+                      <td className="px-10 py-5 relative z-10">
                         <div className="flex flex-col">
                           <span className="text-sm font-black text-white uppercase tracking-tight">{person.job}</span>
                           <span className="text-xs text-slate-500 font-medium italic">at {person.company}</span>
                         </div>
                       </td>
-                      <td className="px-10 py-8 text-center">
+                      <td className="px-10 py-5 text-center relative z-10">
                         {person.social_link ? (
                           <a 
                             href={person.social_link} 

@@ -10,7 +10,7 @@ export default function AboutPage() {
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-[8px] md:text-[10px] font-black uppercase tracking-widest">
             Established Feb 1982
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter leading-[1.1] uppercase font-quantum">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter leading-[1.1] uppercase font-heading">
             A Legacy of Excellence: <br/><span className="text-blue-500">The Orion Story</span>
           </h1>
           <p className="text-base md:text-xl text-slate-400 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
@@ -98,7 +98,7 @@ export default function AboutPage() {
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[8px] md:text-[10px] font-black uppercase tracking-widest">
               Hostel Infrastructure
             </div>
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-tight font-quantum">
+            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-tight font-heading">
               A Home Built for <span className="text-blue-500 font-sans">Excellence.</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-4">

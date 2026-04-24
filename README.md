@@ -67,6 +67,45 @@ A professional networking module for the ORION legacy.
 *   **Notices**: A real-time announcement system managed by admins and displayed chronologically on the landing page.
 *   **Contact Interface**: Dynamic display of current hostel monitors, including direct contact links and room assignments.
 
+## Design & Aesthetics (Premium Overhaul)
+
+The portal has undergone a significant visual transformation to achieve a high-end, institutional "dark mode" aesthetic.
+
+### 1. Typography Standards
+*   **Font Purge**: Removed generic and "robotic" fonts (Orbitron) in favor of **Outfit**, a modern, geometric sans-serif that ensures professional readability across all headers and labels.
+*   **Institutional Branding**: Standardized text contrast and spacing to align with high-end editorial and academic designs.
+
+### 2. Premium Lighting System
+*   **Dynamic Highlights**: Implemented a multi-layered lighting system for administrative cards and registration rows. These components feature subtle gradient overlays that activate on hover, creating a sense of depth and tactility.
+*   **Hover Interactivity**: Added soft blue glows and vertical "glow-border" indicators that provide immediate visual feedback during user interaction.
+
+### 3. Live Border Animations
+*   **Continuously Circulating Borders**: Added a custom CSS utility (`.live-border`) utilizing rotating conic gradients. This provides a "live" visual effect where colored light continuously moves around the edges of primary administrative cards and sections.
+*   **Glassmorphism Integration**: All lighting and border effects are layered atop existing backdrop-blur effects to maintain a sophisticated, translucent "glass" feel.
+
+---
+
+### Latest Premium Enhancements (v2.1)
+
+#### 🏛️ Administrative Portal
+- **Brand Identity**: Replaced generic icons with the official **circular ORION logo** on the login gateway.
+- **Header Refinement**: Rebranded the "Central Dashboard" to **Admin Panel** and removed global search for a cleaner, more focused management interface.
+- **UX Fixes**: Resolved icon overlap issues in login inputs and optimized text contrast for readability on dark backgrounds.
+
+#### 🎓 Alumni Directory
+- **Precision Alignment**: Restructured the directory table to ensure perfect mapping between headers (Identity, Graduation, Communication, Professional Info, Portfolio) and resident data.
+- **Interactivity**: Updated social links to use dedicated **LinkedIn** branding and restored the registration call-to-action as "Register as an Alumni".
+- **Compact Layout**: Reduced vertical density for a more professional, information-rich view.
+
+#### 📱 Contact & Connectivity
+- **Social Integration**: Replaced legacy email cards with a direct **Instagram** integration (@orion_jec) featuring one-click redirection.
+- **Smart Mapping**: Integrated **Google Maps** directly into the location card for instant navigation to the hostel.
+- **Monitor Cards**: Fixed name truncation issues and centered room/contact details for better visual balance across all devices.
+
+#### 🛠️ Technical Stability
+- **Lucide Icon Engine**: Upgraded to `lucide-react@0.477.0` to resolve missing icon exports and ensure future-proof icon rendering.
+- **Type Safety**: Introduced explicit interfaces for notice mapping and resolved path alias conflicts in the Next.js app router.
+
 ## Security and Authentication
 
 ### Route Protection

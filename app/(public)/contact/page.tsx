@@ -1,5 +1,6 @@
-import { MapPin, Mail, Phone, Clock, User, Shield, Info } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock, User, Shield, Info, Instagram } from 'lucide-react';
 import { createClient } from '@/lib/supabase/server';
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
@@ -12,8 +13,8 @@ export default async function ContactPage() {
     .order('role', { ascending: true });
 
   const mainContacts = [
-    { icon: <MapPin className="w-5 h-5" />, title: "Location", detail: "Hostel No 7, JEC Road, Jorhat, Assam 785007", color: "text-blue-600" },
-    { icon: <Mail className="w-5 h-5" />, title: "Official Email", detail: "info@orionhostel.jec.ac.in", color: "text-green-600" },
+    { icon: <MapPin className="w-5 h-5" />, title: "Location", detail: "Hostel No 7, JEC Road, Jorhat, Assam 785007", color: "text-blue-600", link: "https://www.google.com/maps/search/?api=1&query=Hostel+No+7+Jorhat+Engineering+College" },
+    { icon: <Instagram className="w-5 h-5" />, title: "Instagram", detail: "@orion_jec", color: "text-pink-600", link: "https://www.instagram.com/orion_jec?igsh=azA3enkzZmZ3Y3Fu" },
   ];
 
   return (
@@ -34,17 +35,29 @@ export default async function ContactPage() {
       {/* Main Contact Cards */}
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-          {mainContacts.map((c, i) => (
-            <div key={i} className="p-8 md:p-10 bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2.5rem] shadow-2xl hover:bg-slate-900 transition-all duration-500 text-center space-y-6 group">
-              <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/5 flex items-center justify-center mx-auto text-blue-400 group-hover:scale-110 transition-transform duration-500 shrink-0`}>
-                {c.icon}
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{c.title}</h3>
-                <p className="text-base md:text-lg font-black text-white leading-tight uppercase tracking-tight">{c.detail}</p>
-              </div>
-            </div>
-          ))}
+          {mainContacts.map((c, i) => {
+            const Wrapper = c.link ? 'a' : 'div';
+            return (
+              <Wrapper 
+                key={i} 
+                href={c.link || undefined}
+                target={c.link ? "_blank" : undefined}
+                rel={c.link ? "noopener noreferrer" : undefined}
+                className={cn(
+                  "p-8 md:p-10 bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2.5rem] shadow-2xl hover:bg-slate-900 transition-all duration-500 text-center space-y-6 group block",
+                  c.link && "cursor-pointer active:scale-95"
+                )}
+              >
+                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/5 flex items-center justify-center mx-auto text-blue-400 group-hover:scale-110 transition-transform duration-500 shrink-0`}>
+                  {c.icon}
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{c.title}</h3>
+                  <p className="text-base md:text-lg font-black text-white leading-tight uppercase tracking-tight">{c.detail}</p>
+                </div>
+              </Wrapper>
+            );
+          })}
         </div>
       </section>
 
@@ -83,7 +96,7 @@ export default async function ContactPage() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 space-y-12 md:space-y-16">
           <div className="text-center">
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase font-quantum">Current Monitors</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase font-heading">Current Monitors</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -108,20 +121,20 @@ export default async function ContactPage() {
                         <User className="w-6 h-6" />
                       </div>
                       <div className="min-w-0">
-                        <div className={`text-[9px] font-black ${color.text} opacity-70 uppercase tracking-widest truncate`}>{m.role}</div>
-                        <div className="text-lg font-black text-white tracking-tight truncate font-serif-premium group-hover:text-blue-400 transition-colors">{m.name}</div>
+                        <div className={`text-[9px] font-black ${color.text} opacity-70 uppercase tracking-widest`}>{m.role}</div>
+                        <div className="text-lg font-black text-white tracking-tight font-serif-premium group-hover:text-blue-400 transition-colors leading-tight">{m.name}</div>
                       </div>
                     </div>
                     
                     <div className="flex flex-col gap-3 pt-4 border-t border-white/5">
-                      <div className="flex items-center gap-2.5 text-slate-400 text-[10px] font-black uppercase tracking-widest">
+                      <div className="flex items-center justify-center gap-2.5 text-slate-400 text-[10px] font-black uppercase tracking-widest">
                         <div className={`w-1.5 h-1.5 rounded-full ${color.bg.replace('/10', '')} shadow-[0_0_10px_currentColor]`}></div>
                         Room {m.room}
                       </div>
                       {m.phone && (
                         <a 
                           href={`tel:${m.phone}`}
-                          className={`flex items-center gap-2.5 ${color.text} text-[10px] font-black uppercase tracking-widest hover:opacity-80 transition-colors`}
+                          className={`flex items-center justify-center gap-2.5 ${color.text} text-[10px] font-black uppercase tracking-widest hover:opacity-80 transition-colors`}
                         >
                           <Phone className="w-3.5 h-3.5" />
                           {m.phone}

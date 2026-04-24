@@ -18,13 +18,13 @@ export default async function ManageMonitors() {
     <div className="p-12 lg:p-20 space-y-12">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-black text-slate-900 tracking-tight uppercase">Monitor Management</h1>
+          <h1 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase font-heading">Monitor Management</h1>
           <p className="text-slate-500 mt-1 font-medium">Update current student leadership and room assignments.</p>
         </div>
       </div>
 
       {error && (
-        <div className="p-6 bg-red-50 border-2 border-red-100 rounded-[2rem] text-red-600">
+        <div className="p-6 bg-red-500/10 border-2 border-red-500/20 rounded-[2rem] text-red-500">
           <p className="font-black uppercase tracking-widest text-[10px] mb-2">Database Error</p>
           <p className="font-bold">{error.message}</p>
         </div>

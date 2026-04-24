@@ -24,7 +24,7 @@ export default function DeleteAlumniButton({ id }: { id: string }) {
     <button 
       onClick={handleDelete}
       disabled={isDeleting}
-      className="p-3 bg-red-50 text-red-600 rounded-xl hover:bg-red-600 hover:text-white transition-all active:scale-95 border border-red-100 group/del disabled:opacity-50 disabled:cursor-not-allowed"
+      className="p-3 bg-red-500/10 text-red-500 rounded-xl hover:bg-red-600 hover:text-white transition-all active:scale-95 border border-red-500/20 group/del disabled:opacity-50 disabled:cursor-not-allowed"
       title="Delete Registration"
     >
       {isDeleting ? (

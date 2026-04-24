@@ -26,7 +26,7 @@ export function DeleteUserButton({ userId, email }: { userId: string, email: str
     <button 
       onClick={handleDelete}
       disabled={isDeleting}
-      className="p-3 text-slate-300 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all active:scale-90 disabled:opacity-50"
+      className="p-3 text-slate-500 hover:text-red-500 hover:bg-red-500/10 rounded-xl transition-all active:scale-90 disabled:opacity-50 border border-transparent hover:border-red-500/20"
       title="Remove Member"
       suppressHydrationWarning
     >

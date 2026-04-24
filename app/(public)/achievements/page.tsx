@@ -21,7 +21,7 @@ export default async function AchievementsPage() {
           <div className="h-px w-6 md:w-12 bg-white/10"></div>
           <span className="text-[7px] md:text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Honoring Excellence</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[1.1] font-quantum">
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[1.1] font-heading">
           Excellence <span className="text-blue-500 font-sans">&</span> Milestones
         </h1>
         <p className="text-sm md:text-xl text-slate-400 font-medium max-w-2xl leading-relaxed opacity-80">
@@ -31,7 +31,7 @@ export default async function AchievementsPage() {
 
       {/* Achievements Grid */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
-        <h2 className="text-[8px] md:text-[10px] font-black text-white uppercase tracking-[0.4em] mb-8 md:mb-12 flex items-center gap-4 font-quantum">
+        <h2 className="text-[8px] md:text-[10px] font-black text-white uppercase tracking-[0.4em] mb-8 md:mb-12 flex items-center gap-4 font-heading">
           Major Milestones <div className="h-px flex-1 bg-white/5"></div>
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
@@ -83,7 +83,7 @@ export default async function AchievementsPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 md:via-slate-950/80 to-transparent z-10"></div>
           
           <div className="relative z-20 p-8 md:p-12 lg:p-24 max-w-2xl space-y-6 md:space-y-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter leading-tight uppercase font-quantum">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter leading-tight uppercase font-heading">
               Built on Tradition, <br/><span className="text-blue-400">Forged in Grit</span>
             </h2>
             <p className="text-slate-400 font-medium leading-relaxed text-sm md:text-lg">
