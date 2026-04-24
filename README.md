@@ -1,6 +1,6 @@
 # ORION Portal
 
-A modern, high-performance hostel management portal built with Next.js 16, Supabase, and Tailwind CSS.
+ hostel portal built with Next.js 16, Supabase, and Tailwind CSS.
 
 ## Features
 
