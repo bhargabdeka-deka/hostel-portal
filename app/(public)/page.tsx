@@ -122,7 +122,7 @@ export default async function HomePage() {
                 {stat.icon}
               </div>
               <div>
-                <div className={`text-2xl md:text-3xl font-black ${stat.color} font-stylish tracking-tighter`}>{stat.value}</div>
+                <div className={`text-2xl md:text-3xl font-black ${stat.color} font-serif-premium tracking-tight`}>{stat.value}</div>
                 <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{stat.label}</div>
               </div>
             </div>
@@ -141,7 +141,7 @@ export default async function HomePage() {
               style={{ animationDelay: `${(i + 3) * 0.8}s` }}
             >
               <div className={`${spirit.color} group-hover:scale-110 transition-transform`}>{spirit.icon}</div>
-              <h3 className={`text-2xl font-black text-white uppercase tracking-tighter font-stylish group-hover:${spirit.color} transition-colors`}>{spirit.title}</h3>
+              <h3 className={`text-2xl font-black text-white tracking-tight font-serif-premium group-hover:${spirit.color} transition-colors`}>{spirit.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed font-medium">
                 {spirit.desc}
               </p>

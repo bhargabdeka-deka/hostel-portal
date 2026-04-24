@@ -40,7 +40,7 @@ export default function AboutPage() {
               <div className={`w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 ${stat.color}`}>
                 {stat.icon}
               </div>
-              <div className={`text-4xl font-black ${stat.color} mb-1 font-stylish tracking-tighter`}>{stat.value}</div>
+              <div className={`text-4xl font-black ${stat.color} mb-1 font-serif-premium tracking-tight`}>{stat.value}</div>
               <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{stat.label}</div>
             </div>
           ))}
@@ -54,7 +54,7 @@ export default function AboutPage() {
             <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
               <History className="w-6 h-6 text-blue-500" />
             </div>
-            <h2 className="text-3xl font-black text-white tracking-tighter uppercase font-stylish">Our History</h2>
+            <h2 className="text-3xl font-black text-white tracking-tight font-serif-premium">Our History</h2>
           </div>
           <div className="space-y-6 text-slate-400 leading-relaxed font-medium text-sm md:text-base">
             <p>
@@ -71,7 +71,7 @@ export default function AboutPage() {
             <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center shadow-sm shrink-0">
               <Users2 className="w-6 h-6 text-emerald-400" />
             </div>
-            <h2 className="text-3xl font-black text-white tracking-tighter uppercase font-stylish">The Culture</h2>
+            <h2 className="text-3xl font-black text-white tracking-tight font-serif-premium">The Culture</h2>
           </div>
           <p className="text-slate-400 leading-relaxed font-medium mb-8 text-sm md:text-base">
             Hostel 7 is renowned for its unique "Sevenite" culture—a blend of fierce loyalty, intellectual rigor, and celebratory spirit.
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 { label: "Modern Facilities", sub: "Hygiene Focused", color: 'text-teal-400', border: 'border-teal-500/20' },
               ].map((item, i) => (
                 <div key={i} className={`bg-slate-950 p-6 md:p-8 rounded-3xl border ${item.border} shadow-2xl text-center space-y-2 group hover:bg-white/5 transition-all duration-500 animate-float`} style={{ animationDelay: `${i * 0.4}s` }}>
-                  <div className={`text-sm md:text-base font-black text-white leading-tight font-stylish group-hover:${item.color}`}>{item.label}</div>
+                  <div className={`text-sm md:text-base font-black text-white leading-tight font-serif-premium group-hover:${item.color}`}>{item.label}</div>
                   <div className={`text-[8px] font-black ${item.color} uppercase tracking-widest`}>{item.sub}</div>
                 </div>
               ))}
