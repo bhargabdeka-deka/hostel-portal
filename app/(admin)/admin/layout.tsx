@@ -17,10 +17,42 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Footer } from '@/components/shared/Footer';
+import { createClient } from '@/lib/supabase/client';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [pendingCount, setPendingCount] = useState(0);
+
+  // Fetch pending alumni count
+  useEffect(() => {
+    const fetchPendingCount = async () => {
+      const supabase = createClient();
+      const { count, error } = await supabase
+        .from('alumni')
+        .select('*', { count: 'exact', head: true })
+        .eq('status', 'pending');
+      
+      if (!error && count !== null) {
+        setPendingCount(count);
+      }
+    };
+
+    fetchPendingCount();
+    
+    // Set up real-time subscription
+    const supabase = createClient();
+    const channel = supabase
+      .channel('alumni-changes')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'alumni' }, () => {
+        fetchPendingCount();
+      })
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
 
   // Close sidebar on navigation
   useEffect(() => {
@@ -66,6 +98,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 <span className={cn("text-[10px] font-black uppercase tracking-widest", isActive ? "text-white" : "group-hover:text-slate-900")}>
                   {item.name}
                 </span>
+                {item.name === 'Alumni' && pendingCount > 0 && (
+                  <div className="w-5 h-5 rounded-full bg-blue-600 text-white text-[9px] font-black flex items-center justify-center animate-pulse">
+                    {pendingCount}
+                  </div>
+                )}
               </div>
             </Link>
           );
@@ -137,10 +174,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
           
           <div className="flex items-center gap-3 lg:gap-6 ml-4">
-            <button className="relative p-2 text-slate-400 hover:text-slate-900 transition-colors hidden sm:block">
+            <Link 
+              href="/admin/alumni"
+              className="relative p-2 text-slate-400 hover:text-slate-900 transition-colors hidden sm:block"
+            >
               <Bell className="w-5 h-5" />
-              <div className="absolute top-2.5 right-2.5 w-2 h-2 bg-blue-600 rounded-full border-2 border-white"></div>
-            </button>
+              {pendingCount > 0 && (
+                <div className="absolute top-2.5 right-2.5 w-4 h-4 bg-blue-600 rounded-full border-2 border-white flex items-center justify-center">
+                  <span className="text-[7px] font-black text-white">{pendingCount}</span>
+                </div>
+              )}
+            </Link>
             <div className="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border border-slate-100 shadow-sm shrink-0">
               <img src="/hostel_logo.jpeg" alt="Admin" className="w-full h-full object-cover" />
             </div>
