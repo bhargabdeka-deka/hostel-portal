@@ -42,7 +42,10 @@ export async function deleteAlumni(id: string) {
     .delete()
     .eq("id", id);
 
-  if (!error) revalidatePath("/admin/alumni");
+  if (!error) {
+    revalidatePath("/admin/alumni");
+    revalidatePath("/alumni");
+  }
   return { success: !error, error };
 }
 
