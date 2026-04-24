@@ -176,7 +176,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
              >
                <Menu className="w-6 h-6" />
              </button>
-             <div className="hidden sm:block text-sm font-black text-slate-900 uppercase tracking-tight">Admin Hub</div>
+             <div className="hidden sm:block text-sm font-black text-slate-900 uppercase tracking-tight">Admin Page</div>
              <div className="relative max-w-md w-full ml-auto lg:ml-0">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                 <input 
