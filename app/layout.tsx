@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Outfit, Playfair_Display, Orbitron } from "next/font/google";
+import { Geist, Geist_Mono, Outfit, Playfair_Display, Orbitron, Inter } from "next/font/google";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
 import "./globals.css";
