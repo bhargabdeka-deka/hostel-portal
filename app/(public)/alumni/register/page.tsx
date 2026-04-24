@@ -84,33 +84,33 @@ export default function AlumniRegistration() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Full Name</label>
+                <label className="text-xs font-bold text-slate-600 uppercase tracking-widest">Full Name</label>
                 <input name="name" required placeholder="John Doe" className="input-field" />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Phone Number</label>
+                <label className="text-xs font-bold text-slate-600 uppercase tracking-widest">Phone Number</label>
                 <input name="phone" required placeholder="+1 234..." className="input-field" />
               </div>
             </div>
             
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Batch (Year of Passing)</label>
+              <label className="text-xs font-bold text-slate-600 uppercase tracking-widest">Batch (Year of Passing)</label>
               <input name="batch" required placeholder="e.g. 2018-2022" className="input-field" />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Designation</label>
+                <label className="text-xs font-bold text-slate-600 uppercase tracking-widest">Designation</label>
                 <input name="job" required placeholder="Software Engineer" className="input-field" />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Company</label>
+                <label className="text-xs font-bold text-slate-600 uppercase tracking-widest">Company</label>
                 <input name="company" required placeholder="Google" className="input-field" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Social Link (LinkedIn/Portfolio)</label>
+              <label className="text-xs font-bold text-slate-600 uppercase tracking-widest">Social Link (LinkedIn/Portfolio)</label>
               <input name="social_link" placeholder="https://linkedin.com/in/..." className="input-field" />
             </div>
 
