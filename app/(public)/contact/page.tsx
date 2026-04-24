@@ -88,39 +88,49 @@ export default async function ContactPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {monitors && monitors.length > 0 ? (
-              monitors.map((m, i) => (
-                <div 
-                  key={m.id} 
-                  className="bg-slate-950 p-6 rounded-[2rem] border border-white/5 shadow-2xl hover:border-blue-500/30 hover:bg-white/[0.02] transition-all duration-500 group flex flex-col gap-4 animate-float"
-                  style={{ animationDelay: `${i * 0.3}s` }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-500">
-                      <User className="w-6 h-6" />
+              monitors.map((m, i) => {
+                const colors = [
+                  { text: 'text-cyan-400', bg: 'bg-cyan-500/10', border: 'border-cyan-500/20', glow: 'shadow-cyan-500/10' },
+                  { text: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', glow: 'shadow-emerald-500/10' },
+                  { text: 'text-violet-400', bg: 'bg-violet-500/10', border: 'border-violet-500/20', glow: 'shadow-violet-500/10' },
+                  { text: 'text-amber-400', bg: 'bg-amber-500/10', border: 'border-amber-500/20', glow: 'shadow-amber-500/10' },
+                ];
+                const color = colors[i % colors.length];
+
+                return (
+                  <div 
+                    key={m.id} 
+                    className={`bg-slate-950 p-6 rounded-[2rem] border ${color.border} shadow-2xl hover:bg-white/[0.02] transition-all duration-500 group flex flex-col gap-4 animate-float ${color.glow}`}
+                    style={{ animationDelay: `${i * 0.3}s` }}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className={`w-12 h-12 rounded-2xl ${color.bg} ${color.text} flex items-center justify-center shrink-0 group-hover:scale-110 transition-all duration-500`}>
+                        <User className="w-6 h-6" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className={`text-[9px] font-black ${color.text} opacity-70 uppercase tracking-widest truncate`}>{m.role}</div>
+                        <div className="text-lg font-black text-white tracking-tight truncate font-serif-premium group-hover:text-blue-400 transition-colors">{m.name}</div>
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest truncate">{m.role}</div>
-                      <div className="text-lg font-black text-white tracking-tight truncate font-serif-premium group-hover:text-blue-400 transition-colors">{m.name}</div>
+                    
+                    <div className="flex flex-col gap-3 pt-4 border-t border-white/5">
+                      <div className="flex items-center gap-2.5 text-slate-400 text-[10px] font-black uppercase tracking-widest">
+                        <div className={`w-1.5 h-1.5 rounded-full ${color.bg.replace('/10', '')} shadow-[0_0_10px_currentColor]`}></div>
+                        Room {m.room}
+                      </div>
+                      {m.phone && (
+                        <a 
+                          href={`tel:${m.phone}`}
+                          className={`flex items-center gap-2.5 ${color.text} text-[10px] font-black uppercase tracking-widest hover:opacity-80 transition-colors`}
+                        >
+                          <Phone className="w-3.5 h-3.5" />
+                          {m.phone}
+                        </a>
+                      )}
                     </div>
                   </div>
-                  
-                  <div className="flex flex-col gap-3 pt-4 border-t border-white/5">
-                    <div className="flex items-center gap-2.5 text-slate-400 text-[10px] font-black uppercase tracking-widest">
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
-                      Room {m.room}
-                    </div>
-                    {m.phone && (
-                      <a 
-                        href={`tel:${m.phone}`}
-                        className="flex items-center gap-2.5 text-blue-400 text-[10px] font-black uppercase tracking-widest hover:text-blue-300 transition-colors"
-                      >
-                        <Phone className="w-3.5 h-3.5" />
-                        {m.phone}
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))
+                );
+              })
             ) : (
               <div className="col-span-full py-12 text-center text-slate-500 italic font-medium">
                 Leadership roles for the current semester are being finalized.
