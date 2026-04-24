@@ -31,7 +31,14 @@ export async function middleware(request: NextRequest) {
       }
     )
 
-    const { data: { user } } = await supabase.auth.getUser()
+    let user = null;
+    try {
+      const { data } = await supabase.auth.getUser();
+      user = data.user;
+    } catch (e) {
+      // Ignore auth errors for missing/invalid tokens to prevent crashing public pages
+      console.warn("Auth check failed, proceeding as unauthenticated:", e);
+    }
 
     if (request.nextUrl.pathname.startsWith('/admin')) {
       if (!user) return NextResponse.redirect(new URL('/login', request.url));
@@ -60,7 +67,8 @@ export async function middleware(request: NextRequest) {
       }
     }
   } catch (err) {
-    console.error("Middleware error:", err);
+    // Top-level safety catch
+    return response;
   }
 
   return response
