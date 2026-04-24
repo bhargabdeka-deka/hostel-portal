@@ -19,12 +19,17 @@ export function Footer() {
           
           <div className="flex flex-col gap-8">
             <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Navigation className="w-5 h-5 text-white fill-white shrink-0 -rotate-45" />
-                <p className="text-white text-base md:text-lg font-medium tracking-tight border-b border-white/20 pb-1">
+              <a 
+                href="https://maps.app.goo.gl/93zEARsiTheLytSk6" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-start gap-3 group cursor-pointer"
+              >
+                <Navigation className="w-5 h-5 text-white fill-white shrink-0 -rotate-45 group-hover:text-blue-400 group-hover:fill-blue-400 transition-colors" />
+                <p className="text-white text-base md:text-lg font-medium tracking-tight border-b border-white/20 pb-1 group-hover:border-blue-400/50 group-hover:text-blue-400 transition-all">
                   Jorhat Engineering College, Garmur, Jorhat, Assam, 785007, India
                 </p>
-              </div>
+              </a>
             </div>
 
             <div className="space-y-2">
