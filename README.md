@@ -1,0 +1,57 @@
+# ORION Portal
+
+A modern, high-performance hostel management portal built with Next.js 16, Supabase, and Tailwind CSS.
+
+## Features
+
+- **Public Landing Page**: Beautifully designed hero section and latest notices.
+- **Complaint System**: Public form for students to report issues with real-time status updates on the admin dashboard.
+- **Admin Dashboard**: Comprehensive management of notices and student complaints.
+- **Role-Based Access**: Secure areas for Admin and Superadmin staff.
+- **Gallery & Achievements**: Showcasing hostel life and student success.
+- **Alumni Network**: Professional directory for ORION legacy.
+
+## Setup Instructions
+
+### 1. Supabase Project Setup
+1. Create a new project on [Supabase](https://supabase.com/).
+2. Open the **SQL Editor** in your Supabase dashboard.
+3. Copy the contents of `supabase_schema.sql` (found in this project's root) and run it.
+4. Go to **Storage** and create a bucket named `gallery`. Set its access to **Public**.
+
+### 2. Environment Variables
+1. Create a `.env.local` file and fill in your Supabase credentials:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_project_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+   SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+   ```
+
+### 3. Initialize First Admin
+1. Sign up a new user via the `/login` page or the Supabase Auth dashboard.
+2. Go to the **Table Editor** in Supabase, select the `users` table.
+3. Find your user and change the `role` from `admin` to `superadmin` to unlock user management features.
+
+### 4. Local Development
+Run the following commands:
+```bash
+npm install
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## About ORION Hostel (Hostel No. 7)
+- **Established**: 1982 (28–29 Feb)
+- **Location**: Jorhat Engineering College
+- **Capacity**: 75
+- **Superintendent**: Mr. Jiten Borgohain
+- **Contact**: +91 91014 81714
+
+*"We are not known by names but by a race — ORIONITE"*
+
+## Tech Stack
+- **Framework**: Next.js 16 (App Router)
+- **Database/Auth**: Supabase
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Utilities**: clsx, tailwind-merge, browser-image-compression
