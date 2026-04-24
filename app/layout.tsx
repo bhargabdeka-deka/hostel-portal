@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 };
 
 import { Torchlight } from "@/components/shared/Torchlight";
+import { GridBackground } from "@/components/shared/GridBackground";
 
 export default function RootLayout({
   children,
@@ -37,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} h-full antialiased`}>
       <body className="min-h-full bg-background text-foreground font-sans antialiased relative">
+        <GridBackground />
         <Torchlight />
         {children}
       </body>
