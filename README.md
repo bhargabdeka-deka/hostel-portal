@@ -1,71 +1,96 @@
 # ORION Hostel Portal Documentation
 
 ## Project Overview
-The ORION Hostel Portal is a comprehensive web application developed for Hostel No. 7 (ORION) at Jorhat Engineering College. The platform provides a digital infrastructure for managing hostel operations, alumni networking, and administrative governance. It serves three primary user groups: the general public, the hostel alumni network, and the administrative staff.
+The ORION Hostel Portal is a centralized digital management system designed for Hostel No. 7 (ORION) at Jorhat Engineering College. The platform streamlines hostel administration, facilitates professional alumni engagement, and provides an official communication channel for residents and the public.
 
 ## Technical Architecture
 
-### Core Technologies
-*   **Frontend Framework**: Next.js 16 (App Router) utilizing Server Components for optimized performance.
-*   **Backend as a Service**: Supabase (PostgreSQL database, Authentication, and Real-time subscriptions).
-*   **Styling**: Tailwind CSS for responsive and consistent user interface design.
-*   **Iconography**: Lucide React for standardized vector graphics.
-*   **Deployment**: Vercel for automated continuous integration and deployment.
+### Core Stack
+*   **Framework**: Next.js 16 (App Router)
+*   **Database**: Supabase (PostgreSQL)
+*   **Authentication**: Supabase Auth with JWT-based session management
+*   **Real-time**: Supabase Realtime (Postgres Changes)
+*   **Styling**: Tailwind CSS with custom utility configurations
+*   **Icons**: Lucide React
+*   **Deployment**: Vercel
 
-### System Infrastructure
-The application follows a modern serverless architecture. Database mutations are handled via Next.js Server Actions, ensuring secure server-side execution and reducing client-side overhead. Real-time data synchronization is implemented using Supabase Channels, specifically for the administrative notification system.
-
-## Functional Modules
-
-### Public Interface
-*   **Homepage**: Displays institutional information, legacy statistics, and the latest official notices.
-*   **Alumni Directory**: A searchable database of verified alumni. Includes professional profile links and batch-wise filtering.
-*   **Notices Section**: A real-time announcement board for official hostel communications.
-*   **Contact Information**: Live directory of current student leadership (Monitors) and institutional contact details.
-
-### Administrative Dashboard
-*   **Authentication & Authorization**: Role-Based Access Control (RBAC) enforced via Next.js Middleware and Supabase Auth.
-*   **Notification System**: An interactive notification module providing real-time alerts for new alumni registration requests.
-*   **Alumni Moderation**: Tools for verifying, approving, revoking, or deleting alumni records to maintain directory integrity.
-*   **Monitor Management**: Interface for assigning student monitors to specific roles and rooms with numeric validation logic.
-*   **Team Administration**: Superadmin capability to provision and manage administrative accounts and system permissions.
-
-## Implementation Guide
-
-### 1. Database Configuration
-To initialize the database, execute the SQL schema provided in `supabase_schema.sql` within your Supabase SQL Editor. 
-
-**Required Table Modifications**:
-Ensure the `monitors` table includes the following column definition for compatibility with current features:
-```sql
-ALTER TABLE monitors ADD COLUMN IF NOT EXISTS phone text;
-```
-
-### 2. Environment Configuration
-Create a `.env.local` file in the root directory with the following variables:
-```env
-NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_PROJECT_URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
-SUPABASE_SERVICE_ROLE_KEY=YOUR_SUPABASE_SERVICE_ROLE_KEY
-```
-
-### 3. Deployment
-The project is optimized for deployment on Vercel. Ensure that all environment variables are correctly configured in the Vercel project settings prior to deployment.
+### Data Architecture
+The application utilizes a hybrid rendering model:
+*   **Static Rendering**: Institutional pages (About, Rules) for optimal performance.
+*   **Dynamic Rendering**: Admin Dashboard and Alumni Directory to ensure data freshness.
+*   **Server Actions**: Secure, server-side functions used for all database mutations (CRUD), replacing traditional API endpoints.
 
 ## Project Directory Structure
 
-*   `/app`: Contains all route segments and layouts (App Router).
-*   `/actions`: Server-side logic for database operations and cache revalidation.
-*   `/components`:
-    *   `/shared`: Global UI elements (Navbar, Footer).
-    *   `/admin`: Administrative specific forms, tables, and notification components.
-    *   `/alumni`: Directory list and search interfaces.
-*   `/lib`: Core configuration for Supabase clients and authentication utilities.
-*   `/public`: Static assets including branding and institutional imagery.
+```text
+hostel-portal/
+├── actions/                # Server-side business logic and database mutations
+│   ├── admin-actions.ts    # Secured administrative operations
+│   └── public-actions.ts   # Publicly accessible data submission logic
+├── app/                    # Next.js 16 App Router directory
+│   ├── (admin)/            # Route group for protected administrative pages
+│   │   └── admin/          # Root of the administrative dashboard
+│   ├── (public)/           # Route group for user-facing pages (About, Contact, etc.)
+│   ├── auth/               # Authentication route handlers and callback logic
+│   ├── login/              # Admin authentication interface
+│   ├── layout.tsx          # Root application layout and metadata configuration
+│   └── page.tsx            # Application landing page
+├── components/             # Reusable UI components
+│   ├── admin/              # Dashboard-specific components (Forms, Tables, Popups)
+│   ├── alumni/             # Directory search and list interfaces
+│   ├── shared/             # Global components (Navbar, Footer, Search)
+│   └── ui/                 # Atomic design components (Buttons, Inputs, Cards)
+├── lib/                    # Configuration and utility libraries
+│   ├── supabase/           # Client/Server/Admin initialization scripts
+│   └── utils.ts            # Tailwind merging and common utility functions
+├── public/                 # Static assets (Branding, Institutional Logos)
+├── supabase_schema.sql     # Database schema and RLS policy documentation
+└── middleware.ts           # Authentication and route protection logic
+```
 
-## Security Standards
-Access to the administrative dashboard is strictly restricted via middleware. Role verification is performed at both the routing level (Middleware) and the operation level (Server Actions). A tiered hierarchy exists between Admin and Superadmin roles, with critical system operations reserved for the latter.
+## System Modules
+
+### 1. Administrative Dashboard
+The dashboard provides a secure interface for hostel management.
+*   **Notification System**: Employs Supabase Realtime to monitor the `alumni` table. An interactive notification card provides immediate alerts for new registrations without page reloads.
+*   **Alumni Moderation**: A full-featured management table allowing administrators to approve professional profiles, revoke status, or permanently delete records.
+*   **Monitor Management**: Direct interface for updating student leadership data. Inputs are validated to ensure numeric-only room assignments.
+*   **Role-Based Access Control (RBAC)**: Tiers of access (Admin vs. Superadmin) managed via database roles and validated in the Next.js Middleware.
+
+### 2. Alumni Directory
+A professional networking module for the ORION legacy.
+*   **Registration**: Public form for alumni to submit professional details.
+*   **Verification**: Multi-stage workflow where submissions remain in a 'pending' state until verified by an administrator.
+*   **Search Engine**: Client-side filtering allowing users to search by name, batch, or professional keywords.
+
+### 3. Communication System
+*   **Notices**: A real-time announcement system managed by admins and displayed chronologically on the landing page.
+*   **Contact Interface**: Dynamic display of current hostel monitors, including direct contact links and room assignments.
+
+## Security and Authentication
+
+### Route Protection
+Route security is enforced in `middleware.ts`. All requests to the `/admin` segment are intercepted to verify a valid session and an authorized user role. Unauthorized requests are automatically redirected to the `/login` segment.
+
+### Server Action Security
+Every administrative Server Action executes a `verifyAccess()` helper at the start of its lifecycle. This utility validates the user's identity and permissions server-side, preventing unauthorized database mutations even if client-side security is bypassed.
+
+## Production Implementation Guide
+
+### Database Initialization
+1. Initialize a Supabase project.
+2. Execute the `supabase_schema.sql` script.
+3. **Important**: Verify the `monitors` table schema includes the `phone` column:
+   ```sql
+   ALTER TABLE monitors ADD COLUMN IF NOT EXISTS phone text;
+   ```
+
+### Environment Variables
+Configure the following in your production environment:
+*   `NEXT_PUBLIC_SUPABASE_URL`
+*   `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+*   `SUPABASE_SERVICE_ROLE_KEY` (Required for administrative actions)
 
 ---
-**Institutional Motto**
-"We are not known by names but by a race — ORIONITE"
+**Institutional Maintenance**
+Developed for Hostel No. 7, Jorhat Engineering College. All data remains the property of the ORION Administrative Team.
