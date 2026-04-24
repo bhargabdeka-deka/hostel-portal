@@ -37,6 +37,7 @@ export function AlumniList({ alumni }: AlumniProps) {
               placeholder="Search by name or batch..." 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              suppressHydrationWarning
               className="w-full pl-10 md:pl-16 pr-4 md:pr-6 py-4 md:py-5 bg-white border border-slate-200 rounded-2xl md:rounded-3xl outline-none focus:ring-4 focus:ring-blue-500/5 focus:border-blue-500 transition-all font-bold text-slate-700 text-sm md:text-base placeholder:text-slate-300 placeholder:font-medium"
             />
           </div>
