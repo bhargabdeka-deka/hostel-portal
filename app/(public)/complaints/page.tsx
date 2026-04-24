@@ -43,71 +43,71 @@ export default function ComplaintPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto py-20 px-6">
+    <div className="max-w-4xl mx-auto py-20 px-6 min-h-screen">
       <div className="grid md:grid-cols-2 gap-16">
         <div>
-          <div className="inline-flex p-3 bg-blue-600/10 rounded-2xl mb-6">
-            <MessageSquare className="w-8 h-8 text-blue-600" />
+          <div className="inline-flex p-3 bg-blue-500/10 rounded-2xl mb-6">
+            <MessageSquare className="w-8 h-8 text-blue-400" />
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 mb-6">
-            Report an <span className="text-blue-600">Issue</span>
+          <h1 className="text-4xl font-extrabold tracking-tight text-white mb-6 uppercase">
+            Report an <span className="text-blue-500">Issue</span>
           </h1>
-          <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+          <p className="text-lg text-slate-400 mb-8 leading-relaxed">
             Help us maintain a comfortable environment for everyone. Please provide as much detail as possible about the issue you&apos;re facing.
           </p>
           
           <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="flex-none w-1 h-auto bg-blue-600 rounded-full"></div>
+              <div className="flex-none w-1 h-auto bg-blue-500 rounded-full"></div>
               <div>
-                <h3 className="font-bold text-slate-900">Swift Action</h3>
+                <h3 className="font-bold text-white uppercase text-sm">Swift Action</h3>
                 <p className="text-slate-500 text-sm">Most maintenance issues are resolved within 48 hours.</p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="flex-none w-1 h-auto bg-slate-200 rounded-full"></div>
+              <div className="flex-none w-1 h-auto bg-white/10 rounded-full"></div>
               <div>
-                <h3 className="font-bold text-slate-900">Direct Tracking</h3>
+                <h3 className="font-bold text-white uppercase text-sm">Direct Tracking</h3>
                 <p className="text-slate-500 text-sm">Management receives your report instantly on their dashboard.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="premium-card p-8 bg-white border-slate-200 shadow-lg">
+        <div className="bg-white/5 border border-white/10 p-8 rounded-[2rem] shadow-2xl">
           <form action={handleSubmit} className="space-y-6">
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">Your Name (Optional)</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-2 uppercase tracking-widest">Your Name (Optional)</label>
                 <input 
                   name="name" 
                   placeholder="e.g. John Doe"
-                  className="input-field" 
+                  className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all" 
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">Room Number</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-2 uppercase tracking-widest">Room Number</label>
                 <input 
                   name="room" 
                   required 
                   placeholder="e.g. B-204"
-                  className="input-field" 
+                  className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all" 
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">Issue Description</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-2 uppercase tracking-widest">Issue Description</label>
                 <textarea 
                   name="issue" 
                   required 
                   rows={4} 
                   placeholder="Describe what's wrong..."
-                  className="input-field resize-none" 
+                  className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all resize-none" 
                 />
               </div>
             </div>
 
             {error && (
-              <div className="p-4 bg-red-50 text-red-600 text-sm rounded-xl border border-red-100">
+              <div className="p-4 bg-red-500/10 text-red-400 text-xs rounded-xl border border-red-500/20">
                 {error}
               </div>
             )}
@@ -115,7 +115,7 @@ export default function ComplaintPage() {
             <button 
               disabled={loading}
               className={cn(
-                "w-full flex items-center justify-center gap-2 btn-primary",
+                "w-full flex items-center justify-center gap-2 bg-white text-slate-900 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-blue-50 transition-all shadow-2xl active:scale-95",
                 loading && "opacity-70 cursor-not-allowed"
               )}
             >
