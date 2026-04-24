@@ -16,52 +16,52 @@ export default async function AchievementsPage() {
   return (
     <main className="bg-transparent min-h-screen selection:bg-blue-500/20 overflow-x-hidden">
       {/* Header Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-12 md:pb-16 space-y-6">
-        <div className="flex items-center gap-4">
-          <div className="h-px w-8 md:w-12 bg-white/10"></div>
-          <span className="text-[8px] md:text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Honoring Excellence</span>
+      <section className="max-w-7xl mx-auto px-6 pt-12 md:pt-24 pb-8 md:pb-16 space-y-4 md:space-y-6">
+        <div className="flex items-center gap-3">
+          <div className="h-px w-6 md:w-12 bg-white/10"></div>
+          <span className="text-[7px] md:text-[10px] font-black text-slate-500 uppercase tracking-[0.3em]">Honoring Excellence</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[1.1] font-quantum">
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[1.1] font-quantum">
           Excellence <span className="text-blue-500 font-sans">&</span> Milestones
         </h1>
-        <p className="text-base md:text-xl text-slate-400 font-medium max-w-2xl leading-relaxed">
+        <p className="text-sm md:text-xl text-slate-400 font-medium max-w-2xl leading-relaxed opacity-80">
           A visual legacy of determination and sportsmanship. Explore the milestones that define the collective spirit of ORION Hostel.
         </p>
       </section>
 
       {/* Achievements Grid */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
-        <h2 className="text-[10px] font-black text-white uppercase tracking-[0.4em] mb-12 flex items-center gap-4 font-quantum">
+        <h2 className="text-[8px] md:text-[10px] font-black text-white uppercase tracking-[0.4em] mb-8 md:mb-12 flex items-center gap-4 font-quantum">
           Major Milestones <div className="h-px flex-1 bg-white/5"></div>
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {achievements && achievements.length > 0 ? (
             achievements.map((achievement) => (
-              <div key={achievement.id} className="group bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden hover:bg-slate-900 transition-all duration-700 shadow-2xl">
-                <div className="p-2">
+              <div key={achievement.id} className="group bg-slate-950/90 backdrop-blur-xl border border-white/10 rounded-2xl md:rounded-[2.5rem] overflow-hidden hover:bg-slate-900 transition-all duration-700 shadow-2xl">
+                <div className="p-1.5 md:p-2">
                   <div className="aspect-[16/10] relative overflow-hidden rounded-xl bg-slate-900/50">
                     <img 
                       src={achievement.image_url || "/placeholder-achievement.png"} 
                       alt={achievement.title}
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-1000"
                     />
-                    <div className="absolute top-2 right-2">
-                      <div className="px-2 py-0.5 bg-slate-950/80 backdrop-blur-md text-white text-[6px] font-black uppercase tracking-widest rounded-full border border-white/10 flex items-center gap-1">
-                        <Award className="w-2 h-2 text-yellow-400" />
-                        Achievement
+                    <div className="absolute top-1.5 right-1.5 md:top-2 md:right-2">
+                      <div className="px-1.5 py-0.5 bg-slate-950/80 backdrop-blur-md text-white text-[5px] md:text-[6px] font-black uppercase tracking-widest rounded-full border border-white/10 flex items-center gap-1">
+                        <Award className="w-1.5 h-1.5 md:w-2 md:h-2 text-yellow-400" />
+                        <span className="hidden xs:inline">Achievement</span>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="p-4 pt-0 space-y-2">
-                  <div className="flex items-center gap-1.5 text-[8px] font-black text-blue-400 uppercase tracking-widest">
-                    <Calendar className="w-2.5 h-2.5" />
+                <div className="p-3 md:p-4 pt-0 space-y-1.5 md:space-y-2">
+                  <div className="flex items-center gap-1 text-[7px] md:text-[8px] font-black text-blue-400 uppercase tracking-widest">
+                    <Calendar className="w-2 md:w-2.5 h-2 md:h-2.5" />
                     {new Date(achievement.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
                   </div>
-                  <h3 className="text-sm md:text-base font-black text-white tracking-tight group-hover:text-blue-500 transition-colors leading-tight uppercase line-clamp-1">
+                  <h3 className="text-[10px] md:text-base font-black text-white tracking-tight group-hover:text-blue-500 transition-colors leading-tight uppercase line-clamp-1">
                     {achievement.title}
                   </h3>
-                  <p className="text-slate-400 text-[10px] leading-relaxed line-clamp-2 font-medium">
+                  <p className="text-slate-400 text-[8px] md:text-[10px] leading-relaxed line-clamp-2 font-medium opacity-70">
                     {achievement.description}
                   </p>
                 </div>
