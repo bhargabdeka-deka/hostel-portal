@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
@@ -13,7 +13,8 @@ import {
   Bell,
   ShieldCheck,
   Menu,
-  X
+  X,
+  ChevronRight
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Footer } from '@/components/shared/Footer';
@@ -23,6 +24,19 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const pathname = usePathname();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [pendingCount, setPendingCount] = useState(0);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const notificationRef = useRef<HTMLDivElement>(null);
+
+  // Close notifications when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (notificationRef.current && !notificationRef.current.contains(event.target as Node)) {
+        setShowNotifications(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Fetch pending alumni count
   useEffect(() => {
@@ -173,9 +187,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
              </div>
           </div>
           
-          <div className="flex items-center gap-3 lg:gap-6 ml-4">
-            <Link 
-              href="/admin/alumni"
+          <div className="flex items-center gap-3 lg:gap-6 ml-4 relative" ref={notificationRef}>
+            <button 
+              onClick={() => setShowNotifications(!showNotifications)}
               className="relative p-2 text-slate-400 hover:text-slate-900 transition-colors hidden sm:block"
             >
               <Bell className="w-5 h-5" />
@@ -184,7 +198,61 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   <span className="text-[7px] font-black text-white">{pendingCount}</span>
                 </div>
               )}
-            </Link>
+            </button>
+
+            {/* Notification Dropdown Card */}
+            {showNotifications && (
+              <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-slate-100 rounded-3xl shadow-2xl shadow-slate-900/10 animate-in slide-in-from-top-2 duration-300 z-[100] overflow-hidden">
+                <div className="p-6 border-b border-slate-50">
+                  <div className="flex items-center justify-between mb-1">
+                    <h3 className="text-xs font-black text-slate-900 uppercase tracking-widest">Notifications</h3>
+                    <span className="text-[9px] font-black text-blue-600 uppercase bg-blue-50 px-2 py-0.5 rounded-full">{pendingCount} New</span>
+                  </div>
+                  <p className="text-[10px] text-slate-400 font-medium">Recent updates across your portal</p>
+                </div>
+                
+                <div className="max-h-80 overflow-y-auto">
+                  {pendingCount > 0 ? (
+                    <Link 
+                      href="/admin/alumni"
+                      onClick={() => setShowNotifications(false)}
+                      className="flex items-start gap-4 p-5 hover:bg-slate-50 transition-colors group"
+                    >
+                      <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <Users className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 space-y-1">
+                        <div className="text-[11px] font-black text-slate-900 uppercase tracking-tight leading-tight">
+                          Alumni Registration Notification
+                        </div>
+                        <p className="text-[10px] text-slate-500 leading-relaxed">
+                          There are <span className="font-black text-blue-600">{pendingCount}</span> new alumni requests waiting for your approval.
+                        </p>
+                        <div className="flex items-center gap-1 text-[9px] font-black text-blue-600 uppercase tracking-widest pt-1">
+                          Review Now <ChevronRight className="w-3 h-3" />
+                        </div>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className="p-12 text-center space-y-3">
+                      <Bell className="w-10 h-10 text-slate-100 mx-auto" />
+                      <p className="text-[10px] font-black text-slate-300 uppercase tracking-widest">All caught up!</p>
+                    </div>
+                  )}
+                </div>
+                
+                {pendingCount > 0 && (
+                  <Link 
+                    href="/admin/alumni"
+                    onClick={() => setShowNotifications(false)}
+                    className="block p-4 bg-slate-50 text-center text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] hover:bg-slate-100 transition-colors border-t border-slate-100"
+                  >
+                    View All Activity
+                  </Link>
+                )}
+              </div>
+            )}
+
             <div className="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border border-slate-100 shadow-sm shrink-0">
               <img src="/hostel_logo.jpeg" alt="Admin" className="w-full h-full object-cover" />
             </div>
