@@ -99,7 +99,7 @@ export default function MonitorForm({ monitor }: { monitor: Monitor }) {
           disabled={isSaving}
           className={`w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest transition-all active:scale-95 shadow-lg ${
             saveSuccess 
-              ? "bg-green-600 text-white shadow-green-100" 
+              ? "bg-green-600 text-white shadow-green-100 ring-4 ring-green-500/20" 
               : "bg-slate-900 text-white shadow-slate-100 hover:bg-slate-800"
           } disabled:opacity-70 disabled:cursor-not-allowed`}
         >
@@ -111,7 +111,7 @@ export default function MonitorForm({ monitor }: { monitor: Monitor }) {
           ) : saveSuccess ? (
             <>
               <CheckCircle2 className="w-4 h-4" />
-              Saved Successfully
+              Changes Saved Successfully
             </>
           ) : (
             <>
@@ -120,6 +120,11 @@ export default function MonitorForm({ monitor }: { monitor: Monitor }) {
             </>
           )}
         </button>
+        {saveSuccess && (
+          <p className="text-center text-green-600 font-black text-[9px] uppercase tracking-widest animate-bounce">
+            Live site updated!
+          </p>
+        )}
       </form>
     </div>
   );

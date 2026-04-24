@@ -1,6 +1,8 @@
 import { createClient } from "@/lib/supabase/server";
 import MonitorForm from "@/components/admin/MonitorForm";
 
+export const dynamic = 'force-dynamic';
+
 export default async function ManageMonitors() {
   const supabase = await createClient();
   const { data: monitors, error } = await supabase

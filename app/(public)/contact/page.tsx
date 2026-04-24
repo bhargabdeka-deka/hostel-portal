@@ -2,6 +2,8 @@ import { MapPin, Mail, Phone, Clock, User, Shield, Info } from 'lucide-react';
 import { createClient } from '@/lib/supabase/server';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ContactPage() {
   const supabase = await createClient();
   const { data: monitors } = await supabase
