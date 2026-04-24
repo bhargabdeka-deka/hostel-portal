@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import { Navigation } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-background pt-24 pb-12 px-6 relative overflow-hidden border-t border-white/5">
+    <footer className="bg-transparent pt-24 pb-12 px-6 relative overflow-hidden border-t border-white/5">
       {/* Decorative Gradient */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
       
@@ -17,26 +17,30 @@ export function Footer() {
             </p>
           </div>
           
-          <div className="flex flex-wrap gap-12 md:gap-24">
+          <div className="flex flex-col gap-8">
             <div className="space-y-4">
-              <h4 className="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em] mb-6">Legal & Privacy</h4>
-              <div className="flex flex-col gap-3">
-                <Link href="/privacy" className="text-slate-300 hover:text-white text-sm font-medium transition-all hover:translate-x-1 inline-block">Privacy Policy</Link>
-                <Link href="/terms" className="text-slate-300 hover:text-white text-sm font-medium transition-all hover:translate-x-1 inline-block">Terms of Service</Link>
+              <div className="flex items-start gap-3">
+                <Navigation className="w-5 h-5 text-white fill-white shrink-0 -rotate-45" />
+                <p className="text-white text-base md:text-lg font-medium tracking-tight border-b border-white/20 pb-1">
+                  Jorhat Engineering College, Garmur, Jorhat, Assam, 785007, India
+                </p>
               </div>
             </div>
-            <div className="space-y-4">
-              <h4 className="text-[10px] font-black text-blue-500 uppercase tracking-[0.2em] mb-6">Navigation</h4>
-              <div className="flex flex-col gap-3">
-                <Link href="https://maps.app.goo.gl/oPsdHkdkfGTbJfZ19" target="_blank" className="text-slate-300 hover:text-white text-sm font-medium transition-all hover:translate-x-1 inline-block">Campus Map</Link>
-              </div>
+
+            <div className="space-y-2">
+              <p className="text-slate-300 text-sm md:text-base font-medium">
+                Courtesy of 2019-2023 batch
+              </p>
+              <p className="text-white text-base md:text-lg font-bold">
+                Copyright © BhargabDeka 2026.
+              </p>
             </div>
           </div>
         </div>
         
         <div className="pt-10 border-t border-white/5 flex justify-center md:justify-start">
-          <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">
-            © 2024 ORION Hostel 7 • All rights reserved.
+          <p className="text-slate-600 text-[10px] font-black uppercase tracking-[0.3em]">
+            Sevenite Legacy • Est. 1982
           </p>
         </div>
       </div>
