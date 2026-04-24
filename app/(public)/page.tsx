@@ -75,6 +75,14 @@ export default async function HomePage() {
     }
   ];
 
+  const orionLetters = [
+    { char: 'O', color: 'text-rose-500' },
+    { char: 'R', color: 'text-emerald-500' },
+    { char: 'I', color: 'text-amber-500' },
+    { char: 'O', color: 'text-cyan-500' },
+    { char: 'N', color: 'text-violet-500' },
+  ];
+
   return (
     <main className="bg-transparent min-h-screen relative selection:bg-blue-500/20 overflow-x-hidden">
       {/* Background is handled by GridBackground in layout.tsx */}
@@ -87,13 +95,17 @@ export default async function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto py-24 text-center space-y-8 md:space-y-10">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-[8px] md:text-[10px] font-black uppercase tracking-widest backdrop-blur-md">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-[8px] md:text-[10px] font-black uppercase tracking-widest backdrop-blur-md animate-float">
             Hostel No 7 • Jorhat Engineering College
           </div>
           
           <div className="space-y-4">
-            <h1 className="text-5xl sm:text-7xl md:text-9xl font-black text-white tracking-tighter uppercase leading-none">
-              ORION
+            <h1 className="text-6xl sm:text-8xl md:text-[12rem] font-black tracking-tighter uppercase leading-none cursor-default transition-all duration-1000 hover:scale-110 group perspective-1000">
+              {orionLetters.map((l, i) => (
+                <span key={i} className={`${l.color} inline-block transition-all duration-700 group-hover:drop-shadow-[0_0_50px_rgba(255,255,255,0.4)]`}>
+                  {l.char}
+                </span>
+              ))}
             </h1>
             <p className="text-lg sm:text-xl md:text-3xl text-blue-100 font-medium italic opacity-90 max-w-2xl mx-auto px-4 leading-tight">
               "We are not known by names but by a race — <span className="text-white font-bold not-italic">ORIONITE</span>"
