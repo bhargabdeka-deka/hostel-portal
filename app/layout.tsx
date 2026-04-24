@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "ORION Hostel Portal | Excellence Since 1998",
   description: "Official resident portal for ORION Hostel. Manage your stay, connect with alumni, and stay updated with official notices.",
   icons: {
-    icon: "/hostel_logo.jpeg",
+    icon: "/icon.jpeg",
   },
 };
 
