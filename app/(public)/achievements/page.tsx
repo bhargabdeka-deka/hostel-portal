@@ -45,21 +45,12 @@ export default async function AchievementsPage() {
                       alt={achievement.title}
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-1000"
                     />
-                    <div className="absolute top-1.5 right-1.5 md:top-2 md:right-2">
-                      <div className="px-1.5 py-0.5 bg-slate-950/80 backdrop-blur-md text-white text-[5px] md:text-[6px] font-black uppercase tracking-widest rounded-full border border-white/10 flex items-center gap-1">
-                        <Award className="w-1.5 h-1.5 md:w-2 md:h-2 text-yellow-400" />
-                        <span className="hidden xs:inline">Achievement</span>
-                      </div>
-                    </div>
                   </div>
                 </div>
-                <div className="p-3 md:p-4 pt-0 space-y-1.5 md:space-y-2">
+                <div className="p-3 md:p-4 pt-0 pb-6 md:pb-8">
                   <h3 className="text-[10px] md:text-base font-black text-white tracking-tight group-hover:text-blue-500 transition-colors leading-tight uppercase line-clamp-2">
                     {achievement.title}
                   </h3>
-                  <p className="text-slate-400 text-[8px] md:text-[10px] leading-relaxed line-clamp-2 font-medium opacity-70">
-                    {achievement.description}
-                  </p>
                 </div>
               </div>
             ))
