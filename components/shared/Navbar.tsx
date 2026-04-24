@@ -36,7 +36,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="bg-[#020617]/50 backdrop-blur-xl sticky top-0 z-[100] border-b border-white/5 shadow-sm">
+      <nav className="bg-slate-900/40 backdrop-blur-xl sticky top-0 z-[100] border-b border-white/10 shadow-sm">
         <div className="max-w-[1440px] mx-auto px-6 md:px-8 h-20 md:h-24 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 text-xl font-black tracking-tighter text-white group">
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-sm border border-white/10">
