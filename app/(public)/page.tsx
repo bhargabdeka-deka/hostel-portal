@@ -76,7 +76,7 @@ export default async function HomePage() {
       {/* Background is handled by GridBackground in layout.tsx */}
 
       {/* Hero Section */}
-      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden px-6 bg-slate-50">
+      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden px-6">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/hero-hostel.jpeg" 
@@ -85,7 +85,7 @@ export default async function HomePage() {
             priority
             className="object-cover" 
           />
-          <div className="absolute inset-0 bg-white/75"></div>
+          <div className="absolute inset-0 bg-white/35"></div>
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto py-32 text-center space-y-12">
@@ -93,20 +93,16 @@ export default async function HomePage() {
             Hostel No 7 • Jorhat Engineering College
           </div>
           
-          <div className="space-y-6">
-            <h1 className="text-7xl sm:text-9xl md:text-[14rem] font-bold tracking-tighter uppercase leading-none cursor-default text-slate-900 drop-shadow-sm font-heading">
+          <div className="space-y-10 md:space-y-16">
+            <h1 className="text-7xl sm:text-9xl md:text-[14rem] font-bold tracking-tighter uppercase leading-none cursor-default text-slate-900 drop-shadow-sm">
               ORION
             </h1>
-            <p className="text-xl sm:text-2xl md:text-4xl text-slate-700 font-medium italic max-w-4xl mx-auto px-4 leading-tight font-sans">
-              "We are not known by names but by a race — <span className="text-blue-700 font-bold not-italic drop-shadow-sm">ORIONITE</span>"
+            <p className="text-xl sm:text-2xl md:text-4xl text-slate-900 font-bold italic max-w-4xl mx-auto px-4 leading-tight drop-shadow-sm">
+              "We are not known by names but by a race — <span className="text-blue-700 font-black not-italic tracking-tight">ORIONITE</span>"
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-8 pt-10">
-            <Link href="/about" className="w-full sm:w-auto bg-slate-900 text-white hover:bg-slate-800 px-16 py-6 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] transition-all shadow-2xl hover:shadow-slate-200 flex items-center justify-center gap-2 group">
-              Know About Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+
         </div>
       </section>
 

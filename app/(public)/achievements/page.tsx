@@ -17,7 +17,7 @@ export default async function AchievementsPage() {
     .order('created_at', { ascending: true });
 
   return (
-    <main className="bg-transparent min-h-screen selection:bg-blue-500/20 overflow-x-hidden">
+    <main className="bg-[#f5f3ff] min-h-screen selection:bg-purple-500/20 overflow-x-hidden">
       {/* Header Section */}
       <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-8 md:pb-16 space-y-4 md:space-y-6">
         <div className="flex items-center gap-3">
@@ -47,6 +47,7 @@ export default async function AchievementsPage() {
                       src={achievement.image_url || "/placeholder-achievement.png"} 
                       alt={achievement.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>

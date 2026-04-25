@@ -13,7 +13,7 @@ export default async function AlumniPage() {
     .order('batch', { ascending: false });
 
   return (
-    <main className="bg-transparent min-h-screen selection:bg-blue-500/20">
+    <main className="bg-[#fcfaff] min-h-screen selection:bg-indigo-500/20">
       {/* Header Section */}
       <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-16 space-y-6">
         <div className="flex items-center gap-4">

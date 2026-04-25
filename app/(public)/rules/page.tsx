@@ -27,7 +27,8 @@ export default function RulesPage() {
   ];
 
   return (
-    <div className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-5xl mx-auto overflow-x-hidden min-h-screen">
+    <main className="bg-[#fffbf2] min-h-screen selection:bg-amber-500/20">
+    <div className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-5xl mx-auto overflow-x-hidden">
       <div className="text-center mb-16 md:mb-20">
         <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-6 text-blue-600">
           Code of Conduct
@@ -71,5 +72,6 @@ export default function RulesPage() {
         </div>
       </div>
     </div>
+    </main>
   );
 }
