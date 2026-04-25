@@ -101,7 +101,7 @@ export default async function HomePage() {
             priority
             className="object-cover" 
           />
-          <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]"></div>
+          <div className="absolute inset-0 bg-white/40"></div>
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto py-32 text-center space-y-12">
