@@ -2,7 +2,7 @@ import { Navigation } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-indigo-50 pt-20 pb-12 px-6 relative overflow-hidden">
+    <footer className="bg-blue-100/50 pt-20 pb-12 px-6 relative overflow-hidden border-t border-blue-200/50">
       {/* Decorative Gradient removed */}
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -24,8 +24,8 @@ export function Footer() {
                 rel="noopener noreferrer" 
                 className="flex items-start gap-3 group cursor-pointer"
               >
-                <Navigation className="w-5 h-5 text-slate-900 fill-slate-900 shrink-0 -rotate-45 group-hover:text-indigo-600 group-hover:fill-indigo-600 transition-colors" />
-                <p className="text-slate-900 text-base md:text-lg font-medium tracking-tight border-b border-slate-300 pb-1 group-hover:border-indigo-600/50 group-hover:text-indigo-600 transition-all">
+                <Navigation className="w-5 h-5 text-slate-900 fill-slate-900 shrink-0 -rotate-45 group-hover:text-blue-600 group-hover:fill-blue-600 transition-colors" />
+                <p className="text-slate-900 text-base md:text-lg font-medium tracking-tight border-b border-blue-200 pb-1 group-hover:border-blue-600/50 group-hover:text-blue-600 transition-all">
                   Jorhat Engineering College, Garmur, Jorhat, Assam, 785007, India
                 </p>
               </a>
@@ -39,8 +39,8 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-indigo-200 flex justify-center md:justify-start">
-          <p className="text-indigo-600 text-[10px] font-bold tracking-[0.3em] font-sans">
+        <div className="pt-8 border-t border-blue-200/50 flex justify-center md:justify-start">
+          <p className="text-blue-600 text-[10px] font-bold tracking-[0.3em] font-sans">
             The Orionite Legacy • Established 1982
           </p>
         </div>

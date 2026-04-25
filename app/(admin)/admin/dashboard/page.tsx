@@ -93,11 +93,11 @@ export default async function AdminDashboard() {
 
         {/* Right: Broadcast & Notices */}
         <div className="lg:col-span-5 space-y-8 md:space-y-10">
-          <section className="p-8 md:p-10 bg-indigo-50/50 border border-indigo-100 rounded-[3rem] shadow-lg relative group">
-            <div className="relative z-10 space-y-8">
+          <section className="p-5 md:p-10 bg-indigo-50/50 border border-indigo-100 rounded-[2.5rem] md:rounded-[3rem] shadow-lg relative group">
+            <div className="relative z-10 space-y-6 md:space-y-8">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white shadow-lg shrink-0 border border-indigo-500">
-                  <Megaphone className="w-6 h-6" />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:2xl bg-indigo-600 flex items-center justify-center text-white shadow-lg shrink-0 border border-indigo-500">
+                  <Megaphone className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <h2 className="text-lg md:text-xl font-bold tracking-tight text-slate-900">Broadcast Notice</h2>
               </div>
@@ -123,16 +123,16 @@ export default async function AdminDashboard() {
             </div>
           </section>
 
-          <section className="p-8 md:p-10 bg-amber-50/50 border border-amber-100 rounded-[3rem] shadow-lg space-y-8">
+          <section className="p-5 md:p-10 bg-amber-50/50 border border-amber-100 rounded-[2.5rem] md:rounded-[3rem] shadow-lg space-y-6 md:space-y-8">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-bold text-slate-900 tracking-tight">Active Board</h2>
               <div className="px-3 py-1 bg-emerald-50 text-emerald-600 border border-emerald-100 rounded-full text-[10px] font-bold tracking-tight">Live</div>
             </div>
             <div className="space-y-4">
               {notices?.map((notice) => (
-                <div key={notice.id} className="p-5 bg-slate-50 rounded-2xl flex items-center justify-between group hover:border-blue-100 transition-all duration-300 border border-slate-100 relative overflow-hidden">
-                  <div className="relative z-10 flex items-center justify-between w-full">
-                    <div className="min-w-0 pr-4 overflow-hidden">
+                <div key={notice.id} className="p-4 md:p-5 bg-slate-50 rounded-2xl flex items-center justify-between group hover:border-blue-100 transition-all duration-300 border border-slate-100 relative overflow-hidden">
+                  <div className="relative z-10 flex items-center justify-between w-full min-w-0">
+                    <div className="min-w-0 pr-4 flex-1">
                       <h4 className="text-sm font-bold text-slate-900 truncate tracking-tight">{notice.title}</h4>
                       <p className="text-[11px] text-slate-400 font-medium tracking-tight mt-1 flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-indigo-500" /> {new Date(notice.created_at).toLocaleDateString()}
@@ -141,8 +141,8 @@ export default async function AdminDashboard() {
                     <form action={async () => {
                       "use server"
                       await deleteNotice(notice.id)
-                    }}>
-                      <button className="p-3 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all active:scale-90">
+                    }} className="shrink-0">
+                      <button className="p-2.5 md:p-3 text-slate-300 hover:text-red-500 hover:bg-red-50 rounded-xl transition-all active:scale-90">
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </form>

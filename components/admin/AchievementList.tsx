@@ -43,33 +43,33 @@ export function AchievementList({ initialAchievements }: AchievementListProps) {
       ) : (
         <div className="grid gap-4">
           {achievements.map((achievement) => (
-            <div key={achievement.id} className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex items-center justify-between group hover:border-blue-100 transition-all duration-300 relative overflow-hidden">
-              <div className="relative z-10 flex items-center justify-between w-full">
-              <div className="space-y-1 pr-4">
-                <div className="flex items-center gap-2 text-[8px] font-bold text-slate-400 uppercase tracking-widest">
-                  <Calendar className="w-3 h-3 text-blue-600" />
-                  {achievement.date}
+            <div key={achievement.id} className="bg-white p-4 md:p-6 rounded-[2rem] md:rounded-3xl border border-slate-100 shadow-sm flex items-center justify-between group hover:border-blue-100 transition-all duration-300 relative overflow-hidden">
+              <div className="relative z-10 flex items-center justify-between w-full min-w-0">
+                <div className="space-y-1 pr-4 min-w-0 flex-1">
+                  <div className="flex items-center gap-2 text-[8px] font-bold text-slate-400 uppercase tracking-widest">
+                    <Calendar className="w-3 h-3 text-blue-600" />
+                    {achievement.date}
+                  </div>
+                  <h4 className="text-sm font-bold text-slate-900 truncate tracking-tight">
+                    {achievement.title}
+                  </h4>
                 </div>
-                <h4 className="text-sm font-bold text-slate-900 truncate max-w-[200px] tracking-tight">
-                  {achievement.title}
-                </h4>
+                
+                <button 
+                  onClick={() => handleDelete(achievement.id)}
+                  disabled={deletingId === achievement.id}
+                  className="p-2.5 md:p-3 bg-slate-50 text-slate-300 hover:bg-red-50 hover:text-red-500 rounded-xl transition-all duration-300 border border-slate-100 shrink-0"
+                >
+                  {deletingId === achievement.id ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Trash2 className="w-4 h-4" />
+                  )}
+                </button>
               </div>
-              
-              <button 
-                onClick={() => handleDelete(achievement.id)}
-                disabled={deletingId === achievement.id}
-                className="p-3 bg-slate-50 text-slate-300 hover:bg-red-50 hover:text-red-500 rounded-xl transition-all duration-300 border border-slate-100"
-              >
-                {deletingId === achievement.id ? (
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                ) : (
-                  <Trash2 className="w-4 h-4" />
-                )}
-              </button>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       )}
     </div>
   )
