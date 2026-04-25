@@ -120,13 +120,13 @@ export default async function ContactPage() {
                         <User className="w-6 h-6" />
                       </div>
                       <div className="min-w-0">
-                        <div className={`text-[9px] font-bold ${color.text} opacity-70 uppercase tracking-widest`}>{m.role}</div>
+                        <div className={`text-[9px] font-bold ${color.text} uppercase tracking-widest`}>{m.role}</div>
                         <div className="text-lg font-bold text-slate-900 tracking-tight font-serif-premium group-hover:text-blue-600 transition-colors leading-tight">{m.name}</div>
                       </div>
                     </div>
                     
-                    <div className="flex flex-col gap-3 pt-4 border-t border-slate-50">
-                      <div className="flex items-center justify-center gap-2.5 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
+                    <div className="flex flex-col gap-3 pt-4 border-t border-black/5">
+                      <div className="flex items-center justify-center gap-2.5 text-slate-600 text-[10px] font-bold uppercase tracking-widest">
                         Room {m.room}
                       </div>
                       {m.phone && (
