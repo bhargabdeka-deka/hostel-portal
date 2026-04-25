@@ -22,7 +22,7 @@ export default async function AchievementsPage() {
       <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-8 md:pb-16 space-y-4 md:space-y-6">
         <div className="flex items-center gap-3">
           <div className="h-px w-6 md:w-12 bg-slate-200"></div>
-          <span className="text-[7px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] font-heading">Capturing Moments</span>
+          <span className="text-[10px] md:text-[12px] font-bold text-indigo-600 tracking-[0.3em] font-jakarta">Capturing moments</span>
         </div>
         <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter leading-[1.1] font-jakarta">
           Hostel <span className="text-indigo-600">Gallery</span>
@@ -34,8 +34,8 @@ export default async function AchievementsPage() {
 
       {/* Gallery Grid */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
-        <h2 className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.4em] mb-8 md:mb-12 flex items-center gap-4 font-heading">
-          Visual History <div className="h-px flex-1 bg-slate-100"></div>
+        <h2 className="text-[10px] md:text-[12px] font-bold text-indigo-600 tracking-[0.4em] mb-8 md:mb-12 flex items-center gap-4 font-jakarta">
+          Visual history <div className="h-px flex-1 bg-indigo-100"></div>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
           {achievements && achievements.length > 0 ? (

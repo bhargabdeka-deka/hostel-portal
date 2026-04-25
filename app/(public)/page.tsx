@@ -89,7 +89,7 @@ export default async function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto py-32 text-center space-y-12">
-          <div className="inline-flex items-center px-5 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] md:text-[12px] font-bold uppercase tracking-[0.2em] backdrop-blur-md">
+          <div className="inline-flex items-center px-5 py-2 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-[10px] md:text-[12px] font-bold tracking-[0.2em] backdrop-blur-md">
             Hostel No 7 • Jorhat Engineering College
           </div>
           
@@ -98,7 +98,7 @@ export default async function HomePage() {
               ORION
             </h1>
             <p className="text-xl sm:text-2xl md:text-4xl text-slate-900 font-bold italic max-w-4xl mx-auto px-4 leading-tight drop-shadow-sm">
-              "We are not known by names but by a race — <span className="text-blue-700 font-black not-italic tracking-tight">ORIONITE</span>"
+              "We are not known by names but by a race — <span className="text-indigo-700 font-black not-italic tracking-tight">Orionite</span>"
             </p>
           </div>
 
@@ -119,10 +119,10 @@ export default async function HomePage() {
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between gap-4 mb-0.5">
-                  <div className={`text-2xl md:text-3xl font-bold text-slate-900 tracking-tight font-heading`}>{stat.value}</div>
-                  <span className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em] font-heading">{stat.tag}</span>
+                  <div className={`text-2xl md:text-3xl font-bold text-slate-900 tracking-tight font-jakarta`}>{stat.value}</div>
+                  <span className="text-[10px] font-bold text-indigo-600 tracking-[0.2em] font-jakarta">{stat.tag}</span>
                 </div>
-                <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest font-heading">{stat.label}</div>
+                <div className="text-[12px] font-bold text-slate-500 tracking-widest font-jakarta">{stat.label}</div>
               </div>
             </div>
           ))}
@@ -131,7 +131,7 @@ export default async function HomePage() {
 
       {/* Spirit Section */}
       <section className="max-w-7xl mx-auto px-6 py-40 text-center">
-        <h2 className="text-[12px] font-bold text-blue-600 uppercase tracking-[0.6em] mb-20 font-heading">The Orion Spirit</h2>
+        <h2 className="text-[12px] font-bold text-indigo-600 tracking-[0.6em] mb-20 font-jakarta">The Orion spirit</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {spirits.map((spirit, i) => (
             <div 
@@ -141,7 +141,7 @@ export default async function HomePage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-bl-full -mr-16 -mt-16 group-hover:bg-white/60 transition-colors"></div>
               <div className="flex items-center justify-between mb-8 relative z-10">
                 <div className={`${spirit.color} p-4 bg-white rounded-2xl inline-block shadow-sm group-hover:scale-110 transition-transform duration-500`}>{spirit.icon}</div>
-                <span className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] font-heading">{spirit.tag}</span>
+                <span className="text-[10px] md:text-[12px] font-bold text-indigo-600 tracking-[0.2em] font-jakarta">{spirit.tag}</span>
               </div>
               <div className="space-y-4 relative z-10">
                 <h3 className={`text-3xl font-bold text-slate-900 tracking-tight font-heading uppercase`}>{spirit.title}</h3>
@@ -159,9 +159,9 @@ export default async function HomePage() {
       {/* Notices Section */}
       <section className="max-w-4xl mx-auto px-6 py-40">
         <div className="text-center space-y-6 mb-20">
-          <h2 className="text-[12px] font-bold text-blue-600 uppercase tracking-[0.6em] font-heading text-center">Stay Informed</h2>
-          <h3 className="text-4xl md:text-6xl font-bold text-slate-900 flex items-center justify-center gap-4 uppercase tracking-tighter">
-            Bulletin <Megaphone className="w-8 h-8 text-blue-600" />
+          <h2 className="text-[12px] font-bold text-indigo-600 tracking-[0.6em] font-jakarta text-center">Stay informed</h2>
+          <h3 className="text-4xl md:text-6xl font-bold text-slate-900 flex items-center justify-center gap-4 tracking-tighter">
+            Bulletin <Megaphone className="w-8 h-8 text-indigo-600" />
           </h3>
         </div>
         

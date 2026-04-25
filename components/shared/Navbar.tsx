@@ -43,12 +43,12 @@ export function Navbar() {
             <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-110 transition-all duration-500 relative shadow-lg border-2 border-white">
               <Image 
                 src="/hostel_logo.jpeg" 
-                alt="ORION Hostel Logo" 
+                alt="Orion Hostel Logo" 
                 fill
                 className="object-cover scale-110" 
               />
             </div>
-            ORION
+            Orion
           </Link>
 
           {/* Desktop Nav */}
@@ -60,11 +60,11 @@ export function Navbar() {
                 className="text-[15px] font-semibold tracking-tight transition-all duration-300 relative h-full flex items-center group font-jakarta"
               >
                 {pathname === link.href && (
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-blue-700 rounded-full"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-indigo-600 rounded-full"></div>
                 )}
                 <span className={cn(
                   "transition-all duration-300 drop-shadow-sm",
-                  pathname === link.href ? 'text-blue-700' : 'text-slate-900 group-hover:text-blue-600'
+                  pathname === link.href ? 'text-indigo-700' : 'text-slate-900 group-hover:text-indigo-600'
                 )}>
                   {link.name}
                 </span>
@@ -88,14 +88,14 @@ export function Navbar() {
         isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
       )}>
         {navLinks.map((link, i) => (
-          <Link 
-            key={link.href} 
-            href={link.href}
-            className={cn(
-              "text-2xl font-bold uppercase tracking-widest transition-all duration-500",
-              pathname === link.href ? "text-blue-600 scale-110" : "text-slate-500",
-              isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            )}
+            <Link 
+              key={link.href} 
+              href={link.href}
+              className={cn(
+                "text-2xl font-bold tracking-widest transition-all duration-500",
+                pathname === link.href ? "text-indigo-600 scale-110" : "text-slate-500",
+                isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              )}
             style={{ transitionDelay: `${i * 50}ms` }}
           >
             {link.name}

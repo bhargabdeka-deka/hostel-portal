@@ -47,10 +47,10 @@ export default function AboutPage() {
                 <div className={`w-14 h-14 rounded-2xl bg-white flex items-center justify-center ${stat.color} shadow-sm group-hover:scale-110 transition-transform`}>
                   {stat.icon}
                 </div>
-                <span className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em] font-heading">{stat.tag}</span>
+                <span className="text-[10px] font-bold text-indigo-600 tracking-[0.2em] font-jakarta">{stat.tag}</span>
               </div>
               <div className={`text-4xl font-bold ${stat.color} mb-1 tracking-tight font-heading`}>{stat.value}</div>
-              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest font-heading">{stat.label}</div>
+              <div className="text-[12px] font-bold text-slate-900 tracking-tight font-jakarta">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -142,12 +142,12 @@ export default function AboutPage() {
               ].map((item, i) => (
                 <div key={i} className={`bg-white p-6 md:p-8 rounded-3xl border ${item.border} shadow-lg text-center space-y-4 group transition-all duration-300 hover:scale-105`}>
                   <div className="flex items-center justify-between gap-4 mb-2">
-                    <span className="text-[7px] font-bold text-slate-300 uppercase tracking-widest font-heading">{item.tag}</span>
-                    <CheckCircle2 className={`w-3.5 h-3.5 ${item.color} opacity-20 group-hover:opacity-100 transition-opacity`} />
+                    <span className="text-[10px] font-bold text-indigo-600 tracking-widest font-jakarta">{item.tag}</span>
+                    <CheckCircle2 className={`w-4 h-4 ${item.color} opacity-20 group-hover:opacity-100 transition-opacity`} />
                   </div>
                   <div className="space-y-1">
-                    <div className={`text-sm md:text-base font-bold text-slate-900 leading-tight group-hover:${item.color} font-heading`}>{item.label}</div>
-                    <div className={`text-[8px] font-bold ${item.color} uppercase tracking-widest font-heading`}>{item.sub}</div>
+                    <div className={`text-base font-bold text-slate-900 leading-tight group-hover:${item.color} font-jakarta`}>{item.label}</div>
+                    <div className={`text-[10px] font-bold ${item.color} tracking-widest font-jakarta`}>{item.sub}</div>
                   </div>
                 </div>
               ))}

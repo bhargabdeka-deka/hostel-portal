@@ -30,10 +30,10 @@ export default function RulesPage() {
     <main className="bg-[#fffbf2] min-h-screen selection:bg-amber-500/20">
     <div className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-5xl mx-auto overflow-x-hidden">
       <div className="text-center mb-16 md:mb-20">
-        <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-6 text-blue-600">
-          Code of Conduct
+        <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-indigo-50 border border-indigo-100 rounded-full text-[10px] font-bold tracking-widest mb-6 text-indigo-600 font-jakarta">
+          Code of conduct
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight mb-4 uppercase">HOSTEL RULES</h1>
+        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight mb-4 font-jakarta">Hostel rules</h1>
         <p className="text-base md:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
           Maintaining a respectful and organized environment is key to our community success. Please adhere to the following guidelines.
         </p>
@@ -54,7 +54,7 @@ export default function RulesPage() {
                 {rule.icon}
               </div>
               <div className="space-y-3">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight uppercase font-heading">{rule.title}</h3>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight font-jakarta">{rule.title}</h3>
                 <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed font-sans">{rule.details}</p>
               </div>
             </div>
@@ -63,11 +63,11 @@ export default function RulesPage() {
       </div>
 
       <div className="mt-16 md:mt-20 p-8 md:p-12 bg-slate-50 border border-slate-200 rounded-[2rem] md:rounded-[2.5rem] flex flex-col md:flex-row items-center gap-8 md:gap-10">
-        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-blue-600 shadow-md shrink-0 border border-slate-200">
+        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-indigo-600 shadow-md shrink-0 border border-slate-200">
           <HelpCircle className="w-8 h-8" />
         </div>
         <div className="text-center md:text-left">
-           <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2 uppercase">Have specific questions?</h4>
+           <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2 font-jakarta">Have specific questions?</h4>
            <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed">Contact the warden or superintendent for clarifications regarding any policy.</p>
         </div>
       </div>
