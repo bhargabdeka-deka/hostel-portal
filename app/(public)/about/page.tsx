@@ -1,3 +1,4 @@
+import { Calendar, Users, GraduationCap, History, Users2, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Lightbox from '@/components/ui/Lightbox';
