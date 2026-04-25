@@ -23,14 +23,12 @@ export default function AboutPage() {
         </div>
         <div className="flex-1 w-full max-w-2xl lg:max-w-none">
           <div className="aspect-[4/3] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 relative">
-            <Lightbox src="/hostel_about.jpeg" alt="ORION Hostel - A Legacy of Excellence">
-              <Image 
-                src="/hostel_about.jpeg" 
-                alt="ORION Hostel" 
-                fill
-                className="object-cover"
-              />
-            </Lightbox>
+            <Image 
+              src="/hostel_about.jpeg" 
+              alt="ORION Hostel" 
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
