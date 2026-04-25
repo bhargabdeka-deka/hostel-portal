@@ -96,7 +96,7 @@ export default async function HomePage() {
           </div>
           
           <div className="space-y-10 md:space-y-16">
-            <h1 className="text-7xl sm:text-9xl md:text-[14rem] font-bold tracking-tighter leading-none cursor-default text-slate-900 font-sans">
+            <h1 className="text-7xl sm:text-9xl md:text-[14rem] font-bold tracking-tighter leading-none cursor-default bg-gradient-to-b from-indigo-950 via-indigo-900 to-indigo-800 bg-clip-text text-transparent font-sans">
               ORION
             </h1>
             <p className="text-xl sm:text-2xl md:text-4xl text-slate-900 font-bold italic max-w-4xl mx-auto px-4 leading-tight drop-shadow-sm">
