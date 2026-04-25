@@ -48,7 +48,7 @@ export default function AboutPage() {
                 </div>
                 <span className={`text-[11px] font-bold ${stat.color} tracking-tight font-sans`}>{stat.tag}</span>
               </div>
-              <div className={`text-4xl font-bold ${stat.color} mb-1 tracking-tight font-heading`}>{stat.value}</div>
+              <div className={`text-4xl font-bold ${stat.color} mb-1 tracking-tight font-sans`}>{stat.value}</div>
               <div className="text-[12px] font-bold text-slate-900 tracking-tight font-jakarta">{stat.label}</div>
             </div>
           ))}
@@ -145,7 +145,7 @@ export default function AboutPage() {
                     <CheckCircle2 className={`w-4 h-4 ${item.color} opacity-20 group-hover:opacity-100 transition-opacity`} />
                   </div>
                   <div className="space-y-1">
-                    <div className={`text-base font-bold text-slate-900 leading-tight group-hover:${item.color} font-sans`}>{item.label}</div>
+                    <div className={`text-base font-bold ${item.color} leading-tight font-sans`}>{item.label}</div>
                     <div className={`text-[10px] font-bold ${item.color} tracking-tight font-sans`}>{item.sub}</div>
                   </div>
                 </div>

@@ -121,7 +121,7 @@ export default async function HomePage() {
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between gap-4 mb-0.5">
-                  <div className={`text-2xl md:text-3xl font-bold text-slate-900 tracking-tight font-sans`}>{stat.value}</div>
+                  <div className={`text-2xl md:text-3xl font-bold ${stat.color} tracking-tight font-sans`}>{stat.value}</div>
                   <span className={`text-[11px] font-bold ${stat.color} tracking-tight font-sans`}>{stat.tag}</span>
                 </div>
                 <div className="text-[12px] font-bold text-slate-500 tracking-tight font-sans">{stat.label}</div>
