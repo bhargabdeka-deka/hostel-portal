@@ -85,7 +85,7 @@ export default async function HomePage() {
             priority
             className="object-cover" 
           />
-          <div className="absolute inset-0 bg-white/40"></div>
+          <div className="absolute inset-0 bg-white/75"></div>
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto py-32 text-center space-y-12">
@@ -94,11 +94,11 @@ export default async function HomePage() {
           </div>
           
           <div className="space-y-6">
-            <h1 className="text-7xl sm:text-9xl md:text-[14rem] font-bold tracking-tighter uppercase leading-none cursor-default text-slate-900 drop-shadow-sm">
+            <h1 className="text-7xl sm:text-9xl md:text-[14rem] font-bold tracking-tighter uppercase leading-none cursor-default text-slate-900 drop-shadow-sm font-heading">
               ORION
             </h1>
-            <p className="text-xl sm:text-2xl md:text-4xl text-slate-600 font-medium italic max-w-3xl mx-auto px-4 leading-tight">
-              "We are not known by names but by a race — <span className="text-blue-600 font-bold not-italic">ORIONITE</span>"
+            <p className="text-xl sm:text-2xl md:text-4xl text-slate-700 font-medium italic max-w-4xl mx-auto px-4 leading-tight font-sans">
+              "We are not known by names but by a race — <span className="text-blue-700 font-bold not-italic drop-shadow-sm">ORIONITE</span>"
             </p>
           </div>
 
