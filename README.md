@@ -1,6 +1,6 @@
-# ORION Portal - Hostel No. 7
+# ORION Hostel 7, Jorhat Engineering College
 
-This is the official web portal for Hostel No. 7 (ORION) at Jorhat Engineering College. The system is designed to manage hostel administration, maintain an alumni directory, and provide a communication platform for current residents.
+This is the official web portal for ORION Hostel (Hostel No. 7) at Jorhat Engineering College. The system is designed to manage hostel administration, maintain an alumni directory, and provide a communication platform for current residents.
 
 ## Features
 
