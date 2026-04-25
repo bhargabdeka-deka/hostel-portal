@@ -46,7 +46,7 @@ export default async function AdminDashboard() {
             </div>
 
             <div className="relative z-10 space-y-6 md:space-y-8">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[11px] font-bold tracking-tight">
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-[11px] font-bold tracking-tight">
                 Our Legacy
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
@@ -80,9 +80,9 @@ export default async function AdminDashboard() {
                 { title: "Foster Innovation", desc: "Support the technical and creative pursuits of residents." },
                 { title: "Build Community", desc: "Strengthen the bond between residents and alumni." }
               ].map((motto, i) => (
-                <div key={i} className="p-6 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-blue-100 transition-all duration-300 relative overflow-hidden">
+                <div key={i} className="p-6 bg-white/50 rounded-2xl border border-indigo-100 group hover:border-indigo-300 transition-all duration-300 relative overflow-hidden">
                   <div className="relative z-10">
-                    <div className="text-[11px] font-bold text-blue-600 tracking-tight mb-2">{motto.title}</div>
+                    <div className="text-[11px] font-bold text-indigo-600 tracking-tight mb-2">{motto.title}</div>
                     <p className="text-sm text-slate-600 font-medium leading-relaxed">{motto.desc}</p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export default async function AdminDashboard() {
 
         {/* Right: Broadcast & Notices */}
         <div className="lg:col-span-5 space-y-8 md:space-y-10">
-          <section className="p-8 md:p-10 bg-blue-50/50 border border-blue-100 rounded-[3rem] shadow-lg relative group">
+          <section className="p-8 md:p-10 bg-indigo-50/50 border border-indigo-100 rounded-[3rem] shadow-lg relative group">
             <div className="relative z-10 space-y-8">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white shadow-lg shrink-0 border border-indigo-500">
@@ -110,11 +110,11 @@ export default async function AdminDashboard() {
               }} className="space-y-6">
                 <div>
                   <label className="text-[11px] font-bold text-slate-500 mb-2 block tracking-tight ml-1">Notice Title</label>
-                  <input name="title" required placeholder="e.g. Water Supply Notice" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
+                  <input name="title" required placeholder="e.g. Water Supply Notice" className="w-full px-5 py-4 bg-white/50 border border-indigo-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
                 </div>
                 <div>
                   <label className="text-[11px] font-bold text-slate-500 mb-2 block tracking-tight ml-1">Message Body</label>
-                  <textarea name="content" required placeholder="Provide details here..." rows={4} className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500/50 transition-all text-slate-900 font-bold resize-none placeholder:text-slate-400"></textarea>
+                  <textarea name="content" required placeholder="Provide details here..." rows={4} className="w-full px-5 py-4 bg-white/50 border border-indigo-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold resize-none placeholder:text-slate-300 text-sm"></textarea>
                 </div>
                 <button type="submit" className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-bold text-sm tracking-tight hover:bg-indigo-500 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-xl shadow-indigo-900/20">
                   Send Notice
@@ -135,7 +135,7 @@ export default async function AdminDashboard() {
                     <div className="min-w-0 pr-4 overflow-hidden">
                       <h4 className="text-sm font-bold text-slate-900 truncate tracking-tight">{notice.title}</h4>
                       <p className="text-[11px] text-slate-400 font-medium tracking-tight mt-1 flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-blue-500" /> {new Date(notice.created_at).toLocaleDateString()}
+                        <Clock className="w-3.5 h-3.5 text-indigo-500" /> {new Date(notice.created_at).toLocaleDateString()}
                       </p>
                     </div>
                     <form action={async () => {

@@ -61,7 +61,7 @@ export default function MonitorForm({ monitor, index = 0 }: { monitor: Monitor, 
     <div className={cn("p-6 sm:p-10 rounded-[2.5rem] border border-slate-200 shadow-lg space-y-8 group transition-all duration-300 relative overflow-hidden", color.cardBg)}>
       <div className="relative z-10 space-y-8">
         <div className="flex items-center gap-4">
-          <div className={`w-14 h-14 rounded-2xl ${color.bg} ${color.text} flex items-center justify-center transition-all duration-300 border ${color.border} group-hover:bg-blue-600 group-hover:text-white`}>
+          <div className={`w-14 h-14 rounded-2xl ${color.bg} ${color.text} flex items-center justify-center transition-all duration-300 border ${color.border} group-hover:bg-indigo-600 group-hover:text-white`}>
             <UserCheck className="w-7 h-7" />
           </div>
           <div>
@@ -124,7 +124,7 @@ export default function MonitorForm({ monitor, index = 0 }: { monitor: Monitor, 
             "w-full flex items-center justify-center gap-2 py-4.5 rounded-2xl font-bold text-sm tracking-tight transition-all active:scale-95 shadow-xl disabled:opacity-70 disabled:cursor-not-allowed",
             saveSuccess 
               ? "bg-green-600 text-white shadow-green-900/20" 
-              : `bg-indigo-600 text-white hover:bg-indigo-500 shadow-indigo-900/20`
+              : `${color.btn} text-white`
           )}
         >
           {isSaving ? (

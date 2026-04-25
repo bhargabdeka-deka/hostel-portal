@@ -59,8 +59,8 @@ export default async function TeamManagement() {
           <section className="bg-rose-50/50 border border-rose-100 rounded-[2.5rem] shadow-lg flex flex-col relative overflow-hidden">
             <div className="p-8 border-b border-slate-100 flex items-center justify-between bg-slate-50">
               <h2 className="text-lg md:text-xl font-bold text-slate-900 tracking-tight font-jakarta">Active Team Members</h2>
-              <div className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-[11px] font-bold tracking-tight border border-blue-100">
-                {profiles.length} Users
+              <div className="px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-[11px] font-bold tracking-tight border border-indigo-100">
+                {profiles.length} Members
               </div>
             </div>
             
@@ -70,7 +70,7 @@ export default async function TeamManagement() {
                   <div className="flex items-center gap-6">
                     <div className={cn(
                       "w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-sm border",
-                      profile.role === 'superadmin' ? "bg-blue-600 text-white border-blue-500" : "bg-white text-slate-400 border-slate-200 group-hover:border-blue-200"
+                      profile.role === 'superadmin' ? "bg-indigo-600 text-white border-indigo-500" : "bg-white text-slate-400 border-slate-200 group-hover:border-indigo-200"
                     )}>
                       {profile.role === 'superadmin' ? <ShieldCheck className="w-7 h-7" /> : <User className="w-7 h-7" />}
                     </div>
@@ -79,7 +79,7 @@ export default async function TeamManagement() {
                         <span className="font-bold text-slate-900 text-lg tracking-tight capitalize">{profile.email.split('@')[0]}</span>
                         <div className="flex gap-2">
                           {profile.email === currentUser?.email && (
-                            <span className="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full border border-blue-100">You</span>
+                            <span className="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[10px] font-bold rounded-full border border-indigo-100">You</span>
                           )}
                           {profile.email === 'bhargab1234deka@gmail.com' && (
                             <span className="px-2 py-0.5 bg-slate-900 text-white text-[10px] font-bold rounded-full">Owner</span>

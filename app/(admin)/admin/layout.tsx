@@ -74,7 +74,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }, [pathname]);
 
   const menu = [
-    { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard, color: 'text-blue-500' },
+    { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard, color: 'text-indigo-500' },
     { name: 'Monitors', href: '/admin/manage-monitors', icon: UserCheck, color: 'text-emerald-500' },
     { name: 'Gallery', href: '/admin/manage-achievements', icon: Trophy, color: 'text-violet-500' },
     { name: 'Alumni', href: '/admin/alumni', icon: Users, color: 'text-amber-500' },
@@ -113,7 +113,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   {item.name}
                 </span>
                 {item.name === 'Alumni' && pendingCount > 0 && (
-                  <div className="w-5 h-5 rounded-full bg-blue-600 text-white text-[9px] font-black flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-full bg-indigo-600 text-white text-[9px] font-black flex items-center justify-center">
                     {pendingCount}
                   </div>
                 )}
@@ -197,7 +197,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             >
               <Bell className="w-5 h-5" />
               {pendingCount > 0 && (
-                <div className="absolute top-2.5 right-2.5 w-4 h-4 bg-blue-600 rounded-full border-2 border-white flex items-center justify-center">
+                <div className="absolute top-2.5 right-2.5 w-4 h-4 bg-indigo-600 rounded-full border-2 border-white flex items-center justify-center">
                   <span className="text-[7px] font-black text-white">{pendingCount}</span>
                 </div>
               )}

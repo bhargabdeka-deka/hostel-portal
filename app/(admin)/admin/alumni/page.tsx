@@ -33,12 +33,12 @@ export default async function AdminAlumni() {
              "use server"
              revalidatePath("/admin/alumni")
            }}>
-             <button className="px-6 py-3 bg-emerald-600 text-white rounded-2xl shadow-lg text-[11px] font-bold tracking-tight flex items-center gap-2 hover:bg-emerald-500 transition-all active:scale-95 shadow-emerald-900/20">
+             <button className="px-6 py-3 bg-emerald-600 text-white rounded-2xl shadow-lg text-xs font-semibold tracking-wide flex items-center gap-2 hover:bg-emerald-500 transition-all active:scale-95 shadow-emerald-900/20">
                Sync data
              </button>
            </form>
-           <div className="px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl shadow-sm text-[11px] font-bold tracking-tight flex items-center gap-2 text-slate-900">
-             <Users className="w-4 h-4 text-blue-600" />
+           <div className="px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl shadow-sm text-xs font-semibold tracking-wide flex items-center gap-2 text-slate-900">
+             <Users className="w-4 h-4 text-indigo-600" />
              {alumni?.length || 0} Registered
            </div>
         </div>
@@ -46,7 +46,7 @@ export default async function AdminAlumni() {
 
       {error && (
         <div className="mb-10 p-6 bg-red-50 border-2 border-red-100 rounded-2xl text-red-600">
-          <p className="font-black uppercase tracking-widest text-[10px] mb-2">Database Error</p>
+          <p className="font-bold tracking-tight text-[11px] mb-2">Database Error</p>
           <p className="font-bold">{error.message || "An unexpected error occurred while fetching alumni data."}</p>
           {error.code && <p className="text-[10px] mt-2 opacity-50">Error Code: {error.code}</p>}
         </div>
@@ -59,13 +59,13 @@ export default async function AdminAlumni() {
             
             <div className="relative z-10 space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center font-black text-xl border border-blue-100 shrink-0">
+                <div className="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center font-bold text-xl border border-indigo-100 shrink-0">
                   {person.name?.[0] || '?'}
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-black text-slate-900 text-lg tracking-tight uppercase truncate">{person.name}</h3>
+                  <h3 className="font-bold text-slate-900 text-lg tracking-tight truncate">{person.name}</h3>
                   <div className="flex flex-wrap gap-2 mt-1">
-                    <span className="text-[9px] font-black text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                    <span className="text-[9px] font-bold text-indigo-600 tracking-tight bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
                       Batch {person.batch}
                     </span>
                     <span className={cn(
@@ -82,21 +82,21 @@ export default async function AdminAlumni() {
 
               <div className="grid grid-cols-1 gap-4 pt-4 border-t border-slate-100">
                 <div className="space-y-1">
-                  <div className="text-[8px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-                    <Briefcase className="w-3 h-3" />
-                    Professional Role
+                  <div className="text-[9px] font-bold text-slate-400 tracking-tight flex items-center gap-1.5">
+                    <Briefcase className="w-3.5 h-3.5" />
+                    Professional role
                   </div>
-                  <div className="text-xs font-bold text-slate-600">
+                  <div className="text-sm font-bold text-slate-600">
                     {person.job} at {person.company}
                   </div>
                 </div>
                 
                 <div className="space-y-1">
-                  <div className="text-[8px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-                    <Users className="w-3 h-3" />
-                    Contact Number
+                  <div className="text-[9px] font-bold text-slate-400 tracking-tight flex items-center gap-1.5">
+                    <Users className="w-3.5 h-3.5" />
+                    Contact number
                   </div>
-                  <div className="text-xs font-bold text-slate-600">{person.phone || 'N/A'}</div>
+                  <div className="text-sm font-bold text-slate-600">{person.phone || 'N/A'}</div>
                 </div>
               </div>
 
@@ -107,7 +107,7 @@ export default async function AdminAlumni() {
                       "use server"
                       await updateAlumniStatus(person.id, 'approved')
                     }} className="flex-1">
-                      <button className="w-full bg-blue-600 text-white py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-blue-500 transition-all active:scale-95 shadow-lg shadow-blue-900/20">
+                      <button className="w-full bg-indigo-600 text-white py-4 rounded-2xl text-[11px] font-bold tracking-tight hover:bg-indigo-500 transition-all active:scale-95 shadow-lg shadow-indigo-900/20">
                         Approve
                       </button>
                     </form>
@@ -116,7 +116,7 @@ export default async function AdminAlumni() {
                       "use server"
                       await updateAlumniStatus(person.id, 'pending')
                     }} className="flex-1">
-                      <button className="w-full bg-slate-100 text-slate-900 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-200 transition-all active:scale-95">
+                      <button className="w-full bg-slate-100 text-slate-900 py-4 rounded-2xl text-[11px] font-bold tracking-tight hover:bg-slate-200 transition-all active:scale-95">
                         Revoke
                       </button>
                     </form>
@@ -129,10 +129,10 @@ export default async function AdminAlumni() {
                     href={person.social_link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-4 bg-slate-50 border border-slate-100 text-slate-900 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-100 transition-all"
+                    className="w-full flex items-center justify-center gap-2 py-4 bg-slate-50 border border-slate-100 text-slate-900 rounded-2xl text-[11px] font-bold tracking-tight hover:bg-slate-100 transition-all"
                   >
-                    <ExternalLink className="w-3 h-3 text-blue-600" />
-                    LinkedIn Profile
+                    <ExternalLink className="w-3.5 h-3.5 text-indigo-600" />
+                    LinkedIn profile
                   </a>
                 )}
               </div>
