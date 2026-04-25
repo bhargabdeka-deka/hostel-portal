@@ -13,7 +13,7 @@ export default async function AllNoticesPage() {
   return (
     <div className="max-w-5xl mx-auto pt-32 pb-16 md:pt-40 md:pb-24 px-6 overflow-x-hidden">
       <div className="mb-12 md:mb-16">
-        <Link href="/" className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-bold text-[10px] tracking-widest mb-8 transition-colors">
+        <Link href="/" className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-bold text-[11px] tracking-tight mb-8 transition-colors font-sans">
           <ArrowLeft className="w-4 h-4" />
           Back to home
         </Link>
@@ -39,7 +39,7 @@ export default async function AllNoticesPage() {
                     {notice.title}
                   </h2>
                 </div>
-                <div className="flex items-center gap-2 text-[10px] font-bold text-indigo-600 tracking-widest bg-indigo-50 px-4 py-2 rounded-full w-fit">
+                <div className="flex items-center gap-2 text-[11px] font-bold text-indigo-600 tracking-tight bg-indigo-50 px-4 py-2 rounded-full w-fit font-sans">
                   <Calendar className="w-3.5 h-3.5" />
                   {formatDate(notice.created_at)}
                 </div>
@@ -52,8 +52,8 @@ export default async function AllNoticesPage() {
         ) : (
           <div className="py-24 md:py-32 text-center bg-slate-50 rounded-[3rem] border-2 border-dashed border-slate-200">
             <Bell className="w-12 h-12 md:w-16 md:h-16 text-slate-200 mx-auto mb-4" />
-            <h3 className="text-lg md:text-xl font-bold text-slate-400 tracking-widest">No current announcements</h3>
-            <p className="text-slate-400 font-medium text-sm mt-2 font-jakarta">The board is currently clear.</p>
+            <h3 className="text-lg md:text-xl font-bold text-slate-400 tracking-tight font-sans">No current announcements</h3>
+            <p className="text-slate-400 font-medium text-sm mt-2 font-sans">The board is currently clear.</p>
           </div>
         )}
       </div>

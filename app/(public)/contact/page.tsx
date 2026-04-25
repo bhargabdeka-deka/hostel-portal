@@ -23,7 +23,7 @@ export default async function ContactPage() {
       <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-12 md:pb-16 text-center space-y-6">
         <div className="flex items-center justify-center gap-4">
           <div className="h-px w-8 md:w-12 bg-slate-200"></div>
-          <span className="text-[10px] md:text-[12px] font-bold text-indigo-600 tracking-[0.3em] font-jakarta">Contact information</span>
+          <span className="text-[11px] md:text-[13px] font-bold text-indigo-600 tracking-tight font-sans">Contact information</span>
           <div className="h-px w-8 md:w-12 bg-slate-200"></div>
         </div>
         <h1 className="text-4xl md:text-7xl font-bold text-slate-900 tracking-tight leading-none font-jakarta">Connect.</h1>
@@ -52,8 +52,8 @@ export default async function ContactPage() {
                   {c.icon}
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-[10px] font-bold text-indigo-600 tracking-widest font-jakarta">{c.title}</h3>
-                  <p className="text-base md:text-lg font-bold text-slate-900 leading-tight tracking-tight font-jakarta">{c.detail}</p>
+                  <h3 className="text-[11px] font-bold text-indigo-600 tracking-tight font-sans">{c.title}</h3>
+                  <p className="text-base md:text-lg font-bold text-slate-900 leading-tight tracking-tight font-sans">{c.detail}</p>
                 </div>
               </Wrapper>
             );
@@ -66,7 +66,7 @@ export default async function ContactPage() {
         <div className="bg-slate-50 border border-slate-200 rounded-[3rem] md:rounded-[3.5rem] p-8 md:p-12 lg:p-20 relative overflow-hidden shadow-xl">
           <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-600 text-[10px] font-bold tracking-widest font-jakarta">
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-600 text-[11px] font-bold tracking-tight font-sans">
                 Administrative leadership
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight font-jakarta">Office of the <br/>Superintendent</h2>
@@ -77,8 +77,8 @@ export default async function ContactPage() {
             
             <div className="w-full lg:w-auto">
               <div className="bg-indigo-50 border border-indigo-100 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 min-w-0 md:min-w-[400px] shadow-lg shadow-indigo-200/20">
-                <div className="text-[10px] font-bold text-indigo-600 tracking-widest mb-4 font-jakarta">Current superintendent</div>
-                <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 tracking-tight font-jakarta">Mr. Jiten Borgohain</div>
+                <div className="text-[11px] font-bold text-indigo-600 tracking-tight mb-4 font-sans">Current superintendent</div>
+                <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 tracking-tight font-sans">Mr. Jiten Borgohain</div>
                 <a 
                   href="tel:+919101481714" 
                   className="flex items-center justify-center gap-4 p-5 bg-indigo-600 text-white rounded-2xl font-bold text-xs tracking-widest hover:bg-indigo-700 transition-all active:scale-95 shadow-lg"
@@ -120,19 +120,19 @@ export default async function ContactPage() {
                         <User className="w-6 h-6" />
                       </div>
                       <div className="min-w-0">
-                        <div className={`text-[10px] font-bold ${color.text} tracking-widest font-jakarta`}>{m.role}</div>
-                        <div className="text-lg font-bold text-slate-900 tracking-tight font-jakarta group-hover:text-indigo-600 transition-colors leading-tight">{m.name}</div>
+                        <div className={`text-[11px] font-bold ${color.text} tracking-tight font-sans uppercase`}>{m.role}</div>
+                        <div className="text-lg font-bold text-slate-900 tracking-tight font-sans group-hover:text-indigo-600 transition-colors leading-tight">{m.name}</div>
                       </div>
                     </div>
                     
                     <div className="flex flex-col gap-3 pt-4 border-t border-black/5">
-                      <div className="flex items-center justify-center gap-2.5 text-indigo-600 text-[10px] font-bold tracking-widest font-jakarta">
+                      <div className="flex items-center justify-center gap-2.5 text-indigo-600 text-[11px] font-bold tracking-tight font-sans">
                         Room {m.room}
                       </div>
                       {m.phone && (
                         <a 
                           href={`tel:${m.phone}`}
-                          className={`flex items-center justify-center gap-2.5 ${color.text} text-[10px] font-bold uppercase tracking-widest hover:opacity-80 transition-colors`}
+                          className={`flex items-center justify-center gap-2.5 ${color.text} text-[11px] font-bold uppercase tracking-tight hover:opacity-80 transition-colors font-sans`}
                         >
                           <Phone className="w-3.5 h-3.5" />
                           {m.phone}

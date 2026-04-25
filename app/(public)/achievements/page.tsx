@@ -23,7 +23,7 @@ export default async function AchievementsPage() {
       <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-8 md:pb-16 space-y-4 md:space-y-6">
         <div className="flex items-center gap-3">
           <div className="h-px w-6 md:w-12 bg-slate-200"></div>
-          <span className="text-[10px] md:text-[12px] font-bold text-indigo-600 tracking-[0.3em] font-jakarta">Capturing moments</span>
+          <span className="text-[11px] md:text-[13px] font-bold text-indigo-600 tracking-tight font-sans">Capturing moments</span>
         </div>
         <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter leading-[1.1] font-jakarta">
           Hostel <span className="text-indigo-600">Gallery</span>
@@ -35,7 +35,7 @@ export default async function AchievementsPage() {
 
       {/* Gallery Grid */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
-        <h2 className="text-[10px] md:text-[12px] font-bold text-indigo-600 tracking-[0.4em] mb-8 md:mb-12 flex items-center gap-4 font-jakarta">
+        <h2 className="text-[11px] md:text-[13px] font-bold text-indigo-600 tracking-tight mb-8 md:mb-12 flex items-center gap-4 font-sans">
           Visual history <div className="h-px flex-1 bg-indigo-100"></div>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
