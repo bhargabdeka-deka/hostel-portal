@@ -36,7 +36,7 @@ export function AddAdminForm({ isSuperAdmin }: { isSuperAdmin: boolean }) {
   }
 
   return (
-    <section className="bg-indigo-50/50 border border-indigo-100 p-6 sm:p-8 rounded-[2rem] shadow-lg space-y-8 relative group">
+    <section className="bg-indigo-50/50 border border-indigo-100 p-5 md:p-8 rounded-[2rem] shadow-lg space-y-6 md:space-y-8 relative group">
       <div className="relative z-10">
         <div className="flex items-center gap-4">
         <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-indigo-600 shadow-sm border border-indigo-100">
@@ -90,7 +90,7 @@ export function AddAdminForm({ isSuperAdmin }: { isSuperAdmin: boolean }) {
           
           <div className="space-y-4">
             <label className="text-[13px] font-bold text-slate-600 ml-1">Access Role</label>
-            <div className="flex gap-8 items-center pl-1">
+            <div className="flex flex-wrap gap-6 md:gap-8 items-center pl-1">
               <label className="flex items-center gap-3 cursor-pointer group">
                 <input 
                   type="radio" 

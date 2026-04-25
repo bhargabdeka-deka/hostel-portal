@@ -57,32 +57,32 @@ export default async function TeamManagement() {
         {/* Right: Active Team Members */}
         <div className="lg:col-span-8">
           <section className="bg-rose-50/50 border border-rose-100 rounded-[2.5rem] shadow-lg flex flex-col relative overflow-hidden">
-            <div className="p-8 border-b border-slate-100 flex items-center justify-between bg-slate-50">
-              <h2 className="text-lg md:text-xl font-bold text-slate-900 tracking-tight font-jakarta">Active Team Members</h2>
-              <div className="px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-[11px] font-bold tracking-tight border border-indigo-100">
+            <div className="p-5 md:p-8 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+              <h2 className="text-base md:text-xl font-bold text-slate-900 tracking-tight font-jakarta">Active Team Members</h2>
+              <div className="px-3 md:px-4 py-1 md:py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-[10px] md:text-[11px] font-bold tracking-tight border border-indigo-100 whitespace-nowrap">
                 {profiles.length} Members
               </div>
             </div>
             
             <div className="divide-y divide-slate-100">
               {profiles.length > 0 ? profiles.map((profile) => (
-                <div key={profile.id} className="p-8 flex items-center justify-between hover:bg-slate-50/50 transition-all group">
-                  <div className="flex items-center gap-6">
+                <div key={profile.id} className="p-4 md:p-8 flex items-center justify-between hover:bg-slate-50/50 transition-all group gap-3 md:gap-6">
+                  <div className="flex items-center gap-3 md:gap-6 min-w-0">
                     <div className={cn(
-                      "w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-sm border",
+                      "w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex-shrink-0 flex items-center justify-center transition-all duration-300 shadow-sm border",
                       profile.role === 'superadmin' ? "bg-indigo-600 text-white border-indigo-500" : "bg-white text-slate-400 border-slate-200 group-hover:border-indigo-200"
                     )}>
-                      {profile.role === 'superadmin' ? <ShieldCheck className="w-7 h-7" /> : <User className="w-7 h-7" />}
+                      {profile.role === 'superadmin' ? <ShieldCheck className="w-6 h-6 md:w-7 md:h-7" /> : <User className="w-6 h-6 md:w-7 md:h-7" />}
                     </div>
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-3">
-                        <span className="font-bold text-slate-900 text-lg tracking-tight capitalize">{profile.email.split('@')[0]}</span>
-                        <div className="flex gap-2">
+                    <div className="space-y-0.5 md:space-y-1 min-w-0">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                        <span className="font-bold text-slate-900 text-base md:text-lg tracking-tight capitalize truncate">{profile.email.split('@')[0]}</span>
+                        <div className="flex gap-1.5">
                           {profile.email === currentUser?.email && (
-                            <span className="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[10px] font-bold rounded-full border border-indigo-100">You</span>
+                            <span className="px-1.5 py-0.5 bg-indigo-50 text-indigo-600 text-[9px] md:text-[10px] font-bold rounded-full border border-indigo-100">You</span>
                           )}
                           {profile.email === 'bhargab1234deka@gmail.com' && (
-                            <span className="px-2 py-0.5 bg-slate-900 text-white text-[10px] font-bold rounded-full">Owner</span>
+                            <span className="px-1.5 py-0.5 bg-slate-900 text-white text-[9px] md:text-[10px] font-bold rounded-full">Owner</span>
                           )}
                         </div>
                       </div>
@@ -95,7 +95,9 @@ export default async function TeamManagement() {
                   {profile.email !== currentUser?.email && profile.email !== 'bhargab1234deka@gmail.com' && (
                     (profile.role === 'admin') || (isSuperAdmin && profile.role === 'superadmin')
                   ) && (
-                    <DeleteUserButton userId={profile.id} email={profile.email} />
+                    <div className="flex-shrink-0">
+                      <DeleteUserButton userId={profile.id} email={profile.email} />
+                    </div>
                   )}
                 </div>
               )) : (
@@ -107,8 +109,8 @@ export default async function TeamManagement() {
               )}
             </div>
             
-            <div className="p-10 bg-slate-50/30 border-t border-slate-100 text-center">
-              <p className="text-[12px] text-slate-400 font-medium leading-relaxed tracking-tight max-w-lg mx-auto">
+            <div className="p-6 md:p-10 bg-slate-50/30 border-t border-slate-100 text-center">
+              <p className="text-[11px] md:text-[12px] text-slate-400 font-medium leading-relaxed tracking-tight max-w-lg mx-auto">
                 Administrators can manage other team members. Only the primary SuperAdmin is protected from removal to ensure system integrity.
               </p>
             </div>
