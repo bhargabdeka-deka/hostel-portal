@@ -136,7 +136,7 @@ export default function AboutPage() {
               {[
                 { tag: 'Housing', label: "32 Resident Rooms", sub: "Spacious Living", color: 'text-blue-600', border: 'border-blue-100' },
                 { tag: 'Social', label: "Common Room", sub: "Legacy Center", color: 'text-amber-600', border: 'border-amber-100' },
-                { tag: 'Health', label: "Gym & Library", sub: "Dual Wellness", color: 'text-rose-600', border: 'border-rose-100' },
+                { tag: 'Health', label: "Gym & Library", sub: "Dual Wellness", color: 'text-indigo-600', border: 'border-indigo-100' },
                 { tag: 'Standard', label: "Modern Facilities", sub: "Hygiene Focused", color: 'text-teal-600', border: 'border-teal-100' },
               ].map((item, i) => (
                 <div key={i} className={`bg-white p-6 md:p-8 rounded-3xl border ${item.border} shadow-lg text-center space-y-4 group transition-all duration-300 hover:scale-105`}>

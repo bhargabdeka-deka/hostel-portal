@@ -115,11 +115,11 @@ export function AlumniList({ alumni }: AlumniProps) {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-100">
-                <th className="px-10 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Identity</th>
-                <th className="px-10 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Graduation</th>
-                <th className="px-10 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Communication</th>
-                <th className="px-10 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Professional Info</th>
-                <th className="px-10 py-5 text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] text-center">Portfolio</th>
+                <th className="px-10 py-5 text-[10px] font-bold text-sky-500 uppercase tracking-[0.3em]">Identity</th>
+                <th className="px-10 py-5 text-[10px] font-bold text-emerald-500 uppercase tracking-[0.3em]">Graduation</th>
+                <th className="px-10 py-5 text-[10px] font-bold text-indigo-500 uppercase tracking-[0.3em]">Communication</th>
+                <th className="px-10 py-5 text-[10px] font-bold text-amber-600 uppercase tracking-[0.3em]">Professional Info</th>
+                <th className="px-10 py-5 text-[10px] font-bold text-rose-500 uppercase tracking-[0.3em] text-center">Portfolio</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -127,7 +127,7 @@ export function AlumniList({ alumni }: AlumniProps) {
                 filteredAlumni.map((person) => {
                   const initials = person.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
                   return (
-                    <tr key={person.id} className="hover:bg-slate-50 transition-all duration-300 group relative border-b border-slate-50 last:border-0 overflow-hidden">
+                    <tr key={person.id} className="hover:bg-slate-50 even:bg-slate-50/40 transition-all duration-300 group relative border-b border-slate-50 last:border-0 overflow-hidden">
                       <td className="px-10 py-5 relative z-10">
                         <div className="flex items-center gap-4">
                           <div className="w-12 h-12 bg-slate-50 text-slate-400 rounded-2xl flex items-center justify-center font-bold text-xs border border-slate-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shrink-0">

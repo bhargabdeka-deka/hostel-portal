@@ -33,7 +33,7 @@ export default async function HomePage() {
   const typedNotices = (notices || []) as Notice[];
 
   const stats = [
-    { tag: 'Legacy', label: 'Established', value: '1982', icon: <Calendar className="w-5 h-5" />, color: 'text-rose-600', bgColor: 'bg-rose-50', borderColor: 'border-rose-100' },
+    { tag: 'Legacy', label: 'Established', value: '1982', icon: <Calendar className="w-5 h-5" />, color: 'text-sky-600', bgColor: 'bg-sky-50', borderColor: 'border-sky-100' },
     { tag: 'Community', label: 'Capacity', value: '75', icon: <Users className="w-5 h-5" />, color: 'text-emerald-600', bgColor: 'bg-emerald-50', borderColor: 'border-emerald-100' },
     { tag: 'Tradition', label: 'Legacy', value: '40+ Years', icon: <Award className="w-5 h-5" />, color: 'text-amber-600', bgColor: 'bg-amber-50', borderColor: 'border-amber-100' },
   ];
@@ -62,9 +62,9 @@ export default async function HomePage() {
       title: 'Sports Excellence', 
       desc: 'Dominating the field. From the cricket pitch to the football ground, the Orionite grit is unmatched in every inter-hostel competition.', 
       icon: <Trophy className="w-6 h-6" />,
-      color: 'text-rose-600',
-      bgColor: 'bg-rose-50',
-      borderColor: 'border-rose-100',
+      color: 'text-violet-600',
+      bgColor: 'bg-violet-50',
+      borderColor: 'border-violet-100',
     },
   ];
 

@@ -40,7 +40,7 @@ export function Footer() {
         </div>
         
         <div className="pt-8 border-t border-indigo-200 flex justify-center md:justify-start">
-          <p className="text-indigo-600 text-[10px] font-bold tracking-[0.3em] font-jakarta">
+          <p className="text-indigo-600 text-[10px] font-bold tracking-[0.3em] font-sans">
             The Orionite Legacy • Established 1982
           </p>
         </div>

@@ -30,7 +30,7 @@ export default function RulesPage() {
     <main className="bg-transparent min-h-screen selection:bg-amber-500/20">
     <div className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-5xl mx-auto overflow-x-hidden">
       <div className="text-center mb-16 md:mb-20">
-        <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-indigo-50 border border-indigo-100 rounded-full text-[11px] font-bold tracking-tight mb-6 text-indigo-600 font-sans">
+        <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-amber-50 border border-amber-100 rounded-full text-[11px] font-bold tracking-tight mb-6 text-amber-600 font-sans">
           Institutional code of conduct
         </div>
         <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight mb-4 font-sans">Hostel rules</h1>

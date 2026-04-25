@@ -22,9 +22,9 @@ export default async function ContactPage() {
       {/* Header Section */}
       <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-12 md:pb-16 text-center space-y-6">
         <div className="flex items-center justify-center gap-4">
-          <div className="h-px w-8 md:w-12 bg-slate-200"></div>
+          <div className="h-px w-8 md:w-12 bg-indigo-200"></div>
           <span className="text-[11px] md:text-[13px] font-bold text-indigo-600 tracking-tight font-sans">Contact information</span>
-          <div className="h-px w-8 md:w-12 bg-slate-200"></div>
+          <div className="h-px w-8 md:w-12 bg-indigo-200"></div>
         </div>
         <h1 className="text-4xl md:text-7xl font-bold text-slate-900 tracking-tight leading-none font-jakarta">Connect.</h1>
         <p className="text-base md:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed px-4">

@@ -59,12 +59,12 @@ export function Navbar() {
                 href={link.href}
                 className="text-[15px] font-semibold tracking-tight transition-all duration-300 relative h-full flex items-center group font-jakarta"
               >
-                {pathname === link.href && (
+                {(pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) && (
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-indigo-600 rounded-full"></div>
                 )}
                 <span className={cn(
                   "transition-all duration-300 drop-shadow-sm",
-                  pathname === link.href ? 'text-indigo-700' : 'text-slate-900 group-hover:text-indigo-600'
+                  (pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) ? 'text-indigo-700' : 'text-slate-900 group-hover:text-indigo-600'
                 )}>
                   {link.name}
                 </span>
