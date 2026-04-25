@@ -64,7 +64,7 @@ export default function MonitorForm({ monitor, index = 0 }: { monitor: Monitor, 
             <UserCheck className="w-7 h-7" />
           </div>
           <div>
-            <div className={`text-[10px] font-black uppercase tracking-widest ${color.text}`}>{monitor.role}</div>
+            <div className={`text-[10px] font-bold uppercase tracking-widest ${color.text}`}>{monitor.role}</div>
             <div className="text-xl font-bold text-slate-900 tracking-tight">CURRENT MONITOR</div>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function MonitorForm({ monitor, index = 0 }: { monitor: Monitor, 
       <form action={handleSubmit} className="space-y-6">
         <div className="space-y-4">
           <div>
-            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Full Name</label>
+            <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 ml-1">Full Name</label>
             <div className="relative">
               <Shield className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300" />
               <input 
@@ -86,7 +86,7 @@ export default function MonitorForm({ monitor, index = 0 }: { monitor: Monitor, 
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Room Number</label>
+              <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 ml-1">Room Number</label>
               <div className="relative">
                 <Home className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300" />
                 <input 
@@ -106,7 +106,7 @@ export default function MonitorForm({ monitor, index = 0 }: { monitor: Monitor, 
               </div>
             </div>
             <div>
-              <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Phone (Optional)</label>
+              <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 ml-1">Phone (Optional)</label>
               <div className="relative">
                 <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300" />
                 <input 
@@ -124,7 +124,7 @@ export default function MonitorForm({ monitor, index = 0 }: { monitor: Monitor, 
         <button 
           type="submit" 
           disabled={isSaving}
-          className={`w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest transition-all active:scale-95 shadow-xl ${
+          className={`w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-[10px] uppercase tracking-widest transition-all active:scale-95 shadow-xl ${
             saveSuccess 
               ? "bg-green-600 text-white shadow-green-900/20 ring-4 ring-green-500/20" 
               : `${color.btn} text-white`
@@ -148,12 +148,12 @@ export default function MonitorForm({ monitor, index = 0 }: { monitor: Monitor, 
           )}
         </button>
         {errorMsg && (
-          <p className="text-center text-red-600 font-black text-[9px] uppercase tracking-widest bg-red-50 p-3 rounded-xl border border-red-100">
+          <p className="text-center text-red-600 font-bold text-[9px] uppercase tracking-widest bg-red-50 p-3 rounded-xl border border-red-100">
             Error: {errorMsg}
           </p>
         )}
         {saveSuccess && (
-          <p className="text-center text-green-500 font-black text-[9px] uppercase tracking-widest animate-bounce">
+          <p className="text-center text-green-500 font-bold text-[9px] uppercase tracking-widest animate-bounce">
             Live site updated!
           </p>
         )}

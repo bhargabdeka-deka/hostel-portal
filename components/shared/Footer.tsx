@@ -2,13 +2,13 @@ import { Navigation } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-slate-50 pt-16 pb-8 px-6 relative overflow-hidden border-t border-slate-200">
+    <footer className="bg-blue-100 pt-20 pb-12 px-6 relative overflow-hidden">
       {/* Decorative Gradient removed */}
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-12">
           <div className="max-w-sm space-y-6">
-            <h3 className="text-2xl font-black tracking-tighter text-slate-900 uppercase font-heading">
+            <h3 className="text-2xl font-bold tracking-tighter text-slate-900 uppercase font-heading">
               ORION
             </h3>
             <p className="text-slate-600 text-sm leading-relaxed font-medium">
@@ -32,16 +32,16 @@ export function Footer() {
             </div>
 
             <div className="space-y-2">
-              <p className="text-slate-900 text-base md:text-lg font-bold">
+              <p className="text-slate-900 text-sm md:text-base font-bold font-heading tracking-tight">
                 Copyright © BhargabDeka 2026.
               </p>
             </div>
           </div>
         </div>
         
-        <div className="pt-6 border-t border-slate-200 flex justify-center md:justify-start">
-          <p className="text-slate-500 text-[10px] font-black uppercase tracking-[0.3em]">
-            Sevenite Legacy • Est. 1982
+        <div className="pt-8 border-t border-blue-200 flex justify-center md:justify-start">
+          <p className="text-slate-500 text-[11px] font-bold uppercase tracking-[0.4em] font-heading">
+            ORIONITE LEGACY .EST. 1982
           </p>
         </div>
       </div>

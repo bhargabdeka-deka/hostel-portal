@@ -20,13 +20,13 @@ export default async function ContactPage() {
   return (
     <main className="bg-transparent min-h-screen selection:bg-blue-500/20 overflow-x-hidden">
       {/* Header Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-12 md:pb-16 text-center space-y-6">
+      <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-12 md:pb-16 text-center space-y-6">
         <div className="flex items-center justify-center gap-4">
           <div className="h-px w-8 md:w-12 bg-slate-200"></div>
-          <span className="text-[8px] md:text-[10px] font-black text-blue-600 uppercase tracking-[0.3em]">Get in Touch</span>
+          <span className="text-[8px] md:text-[10px] font-bold text-blue-600 uppercase tracking-[0.3em]">Get in Touch</span>
           <div className="h-px w-8 md:w-12 bg-slate-200"></div>
         </div>
-        <h1 className="text-4xl md:text-7xl font-black text-slate-900 tracking-tight uppercase leading-none">Connect.</h1>
+        <h1 className="text-4xl md:text-7xl font-bold text-slate-900 tracking-tight uppercase leading-none">Connect.</h1>
         <p className="text-base md:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed px-4">
           Have questions about admission or residency? Our administration team and monitors are here to assist you.
         </p>
@@ -52,8 +52,8 @@ export default async function ContactPage() {
                   {c.icon}
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{c.title}</h3>
-                  <p className="text-base md:text-lg font-black text-slate-900 leading-tight uppercase tracking-tight">{c.detail}</p>
+                  <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{c.title}</h3>
+                  <p className="text-base md:text-lg font-bold text-slate-900 leading-tight uppercase tracking-tight">{c.detail}</p>
                 </div>
               </Wrapper>
             );
@@ -66,10 +66,10 @@ export default async function ContactPage() {
         <div className="bg-slate-50 border border-slate-200 rounded-[3rem] md:rounded-[3.5rem] p-8 md:p-12 lg:p-20 relative overflow-hidden shadow-xl">
           <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-100 border border-blue-200 text-blue-600 text-[8px] md:text-[10px] font-black uppercase tracking-widest">
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-100 border border-blue-200 text-blue-600 text-[8px] md:text-[10px] font-bold uppercase tracking-widest">
                 Administrative Head
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight uppercase leading-tight">Office of the <br/>Superintendent</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight uppercase leading-tight">Office of the <br/>Superintendent</h2>
               <p className="text-slate-600 font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-sm md:text-base">
                 For official queries, admission approvals, and high-level administrative matters, please contact the Superintendent directly.
               </p>
@@ -77,11 +77,11 @@ export default async function ContactPage() {
             
             <div className="w-full lg:w-auto">
               <div className="bg-white border border-slate-200 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 min-w-0 md:min-w-[400px] shadow-lg">
-                <div className="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-4">Current Superintendent</div>
-                <div className="text-2xl md:text-3xl font-black text-slate-900 mb-8 uppercase tracking-tight">Mr. Jiten Borgohain</div>
+                <div className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-4">Current Superintendent</div>
+                <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 uppercase tracking-tight">Mr. Jiten Borgohain</div>
                 <a 
                   href="tel:+919101481714" 
-                  className="flex items-center justify-center gap-4 p-5 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-blue-700 transition-all active:scale-95 shadow-lg"
+                  className="flex items-center justify-center gap-4 p-5 bg-blue-600 text-white rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-blue-700 transition-all active:scale-95 shadow-lg"
                 >
                   <Phone className="w-4 h-4" />
                   +91 91014 81714
@@ -96,7 +96,7 @@ export default async function ContactPage() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="bg-white border border-slate-100 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 space-y-12 md:space-y-16 shadow-xl">
           <div className="text-center">
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase font-heading">Current Monitors</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tighter uppercase font-heading">Current Monitors</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -120,19 +120,19 @@ export default async function ContactPage() {
                         <User className="w-6 h-6" />
                       </div>
                       <div className="min-w-0">
-                        <div className={`text-[9px] font-black ${color.text} opacity-70 uppercase tracking-widest`}>{m.role}</div>
-                        <div className="text-lg font-black text-slate-900 tracking-tight font-serif-premium group-hover:text-blue-600 transition-colors leading-tight">{m.name}</div>
+                        <div className={`text-[9px] font-bold ${color.text} opacity-70 uppercase tracking-widest`}>{m.role}</div>
+                        <div className="text-lg font-bold text-slate-900 tracking-tight font-serif-premium group-hover:text-blue-600 transition-colors leading-tight">{m.name}</div>
                       </div>
                     </div>
                     
                     <div className="flex flex-col gap-3 pt-4 border-t border-slate-50">
-                      <div className="flex items-center justify-center gap-2.5 text-slate-400 text-[10px] font-black uppercase tracking-widest">
+                      <div className="flex items-center justify-center gap-2.5 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
                         Room {m.room}
                       </div>
                       {m.phone && (
                         <a 
                           href={`tel:${m.phone}`}
-                          className={`flex items-center justify-center gap-2.5 ${color.text} text-[10px] font-black uppercase tracking-widest hover:opacity-80 transition-colors`}
+                          className={`flex items-center justify-center gap-2.5 ${color.text} text-[10px] font-bold uppercase tracking-widest hover:opacity-80 transition-colors`}
                         >
                           <Phone className="w-3.5 h-3.5" />
                           {m.phone}

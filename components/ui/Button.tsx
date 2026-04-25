@@ -16,7 +16,7 @@ export const Button = ({ children, variant = 'primary', className, ...props }: B
   return (
     <button 
       className={cn(
-        "px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 active:scale-[0.98] disabled:opacity-50 disabled:active:scale-100 flex items-center justify-center gap-2",
+        "px-8 py-4 rounded-2xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 active:scale-[0.98] disabled:opacity-50 disabled:active:scale-100 flex items-center justify-center gap-2",
         styles[variant],
         className
       )} 

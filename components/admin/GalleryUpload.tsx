@@ -78,7 +78,7 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
     <form onSubmit={handleUpload} className="space-y-6">
       <div className="space-y-4">
         <div className="relative">
-          <label className="block text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-2 ml-1">
+          <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2 ml-1">
             {type === 'achievement' ? 'Achievement Title' : 'Media Caption'} <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -88,7 +88,7 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
               onChange={(e) => setCaption(e.target.value)}
               placeholder={type === 'achievement' ? "e.g. Cricket Champion" : "e.g. Annual Sports Meet 2024"}
               className={cn(
-                "w-full pl-11 pr-4 py-4 bg-slate-50 border-2 rounded-2xl outline-none transition-all text-sm font-black text-slate-900 placeholder:text-slate-400",
+                "w-full pl-11 pr-4 py-4 bg-slate-50 border-2 rounded-2xl outline-none transition-all text-sm font-bold text-slate-900 placeholder:text-slate-400",
                 error && !caption.trim() ? "border-red-500/50 bg-red-50" : "border-slate-100 focus:border-blue-500 focus:ring-4 ring-blue-500/10"
               )}
             />
@@ -96,7 +96,7 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
         </div>
 
         <div className="group relative">
-          <label className="block text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-2 ml-1">Select Image <span className="text-red-500">*</span></label>
+          <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2 ml-1">Select Image <span className="text-red-500">*</span></label>
           <div 
             onClick={() => fileInputRef.current?.click()}
             className={cn(
@@ -125,7 +125,7 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
                  <Upload className="w-6 h-6" />}
               </div>
               <div className="space-y-1">
-                <p className="text-[11px] font-black text-slate-900 uppercase tracking-wider">
+                <p className="text-[11px] font-bold text-slate-900 uppercase tracking-wider">
                   {selectedFile ? selectedFile.name : "Drop file or click to browse"}
                 </p>
                 <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
@@ -138,7 +138,7 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
       </div>
 
       {error && (
-        <div className="p-4 bg-red-50 text-red-600 text-[10px] font-black uppercase tracking-widest rounded-xl border border-red-100 flex items-center gap-2">
+        <div className="p-4 bg-red-50 text-red-600 text-[10px] font-bold uppercase tracking-widest rounded-xl border border-red-100 flex items-center gap-2">
           <X className="w-4 h-4" />
           {error}
         </div>
@@ -148,7 +148,7 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
         type="submit"
         disabled={loading || success}
         className={cn(
-          "w-full py-5 bg-blue-600 text-white rounded-2xl text-xs font-black uppercase tracking-[0.2em] hover:bg-blue-500 transition-all active:scale-[0.98] disabled:opacity-50 disabled:active:scale-100 shadow-xl shadow-blue-900/20",
+          "w-full py-5 bg-blue-600 text-white rounded-2xl text-xs font-bold uppercase tracking-[0.2em] hover:bg-blue-500 transition-all active:scale-[0.98] disabled:opacity-50 disabled:active:scale-100 shadow-xl shadow-blue-900/20",
           success && "bg-green-600 hover:bg-green-600 shadow-green-900/20"
         )}
       >

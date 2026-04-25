@@ -34,7 +34,7 @@ export function AchievementList({ initialAchievements }: AchievementListProps) {
 
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-black text-slate-900 mb-8 uppercase tracking-tighter font-heading">Active Achievements</h3>
+      <h3 className="text-xl font-bold text-slate-900 mb-8 uppercase tracking-tighter font-heading">Active Achievements</h3>
       
       {achievements.length === 0 ? (
         <div className="p-12 text-center bg-slate-50 border border-dashed border-slate-200 rounded-[2.5rem]">
@@ -47,7 +47,7 @@ export function AchievementList({ initialAchievements }: AchievementListProps) {
             <div key={achievement.id} className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex items-center justify-between group hover:border-blue-100 transition-all duration-300 relative overflow-hidden">
               <div className="relative z-10 flex items-center justify-between w-full">
               <div className="space-y-1 pr-4">
-                <div className="flex items-center gap-2 text-[8px] font-black text-slate-400 uppercase tracking-widest">
+                <div className="flex items-center gap-2 text-[8px] font-bold text-slate-400 uppercase tracking-widest">
                   <Calendar className="w-3 h-3 text-blue-600" />
                   {achievement.date}
                 </div>

@@ -27,12 +27,12 @@ export default function RulesPage() {
   ];
 
   return (
-    <div className="py-16 md:py-24 px-6 max-w-5xl mx-auto overflow-x-hidden min-h-screen">
+    <div className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-5xl mx-auto overflow-x-hidden min-h-screen">
       <div className="text-center mb-16 md:mb-20">
-        <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest mb-6 text-blue-600">
+        <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-6 text-blue-600">
           Code of Conduct
         </div>
-        <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4 uppercase">HOSTEL RULES</h1>
+        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight mb-4 uppercase">HOSTEL RULES</h1>
         <p className="text-base md:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
           Maintaining a respectful and organized environment is key to our community success. Please adhere to the following guidelines.
         </p>
@@ -45,7 +45,7 @@ export default function RulesPage() {
               {rule.icon}
             </div>
             <div className="space-y-3">
-              <h3 className="text-xl md:text-2xl font-black text-slate-900 tracking-tight uppercase">{rule.title}</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight uppercase">{rule.title}</h3>
               <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed">{rule.details}</p>
             </div>
           </div>
@@ -57,7 +57,7 @@ export default function RulesPage() {
           <HelpCircle className="w-8 h-8" />
         </div>
         <div className="text-center md:text-left">
-           <h4 className="text-lg md:text-xl font-black text-slate-900 mb-2 uppercase">Have specific questions?</h4>
+           <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2 uppercase">Have specific questions?</h4>
            <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed">Contact the warden or superintendent for clarifications regarding any policy.</p>
         </div>
       </div>

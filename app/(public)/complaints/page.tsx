@@ -43,7 +43,7 @@ export default function ComplaintPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto py-20 px-6 min-h-screen">
+    <div className="max-w-4xl mx-auto pt-32 pb-20 px-6 min-h-screen">
       <div className="grid md:grid-cols-2 gap-16">
         <div>
           <div className="inline-flex p-3 bg-blue-50 rounded-2xl mb-6">
@@ -78,7 +78,7 @@ export default function ComplaintPage() {
           <form action={handleSubmit} className="space-y-6">
             <div className="space-y-4">
               <div>
-                <label className="block text-[10px] font-black text-slate-400 mb-2 uppercase tracking-widest">Your Name (Optional)</label>
+                <label className="block text-[10px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Your Name (Optional)</label>
                 <input 
                   name="name" 
                   placeholder="e.g. John Doe"
@@ -86,7 +86,7 @@ export default function ComplaintPage() {
                 />
               </div>
               <div>
-                <label className="block text-[10px] font-black text-slate-400 mb-2 uppercase tracking-widest">Room Number</label>
+                <label className="block text-[10px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Room Number</label>
                 <input 
                   name="room" 
                   required 
@@ -95,7 +95,7 @@ export default function ComplaintPage() {
                 />
               </div>
               <div>
-                <label className="block text-[10px] font-black text-slate-400 mb-2 uppercase tracking-widest">Issue Description</label>
+                <label className="block text-[10px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Issue Description</label>
                 <textarea 
                   name="issue" 
                   required 
@@ -115,7 +115,7 @@ export default function ComplaintPage() {
             <button 
               disabled={loading}
               className={cn(
-                "w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-slate-800 transition-all shadow-lg active:scale-95",
+                "w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-slate-800 transition-all shadow-lg active:scale-95",
                 loading && "opacity-70 cursor-not-allowed"
               )}
             >

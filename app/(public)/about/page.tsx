@@ -8,12 +8,12 @@ export default function AboutPage() {
   return (
     <main className="bg-transparent selection:bg-blue-500/20 overflow-x-hidden">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20 lg:py-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <section className="max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-48 lg:pb-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="flex-1 space-y-6 md:space-y-8 text-center lg:text-left">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[8px] md:text-[10px] font-black uppercase tracking-widest">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[8px] md:text-[10px] font-bold uppercase tracking-widest">
             Established Feb 1982
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-[1.1] uppercase font-heading">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter leading-[1.1] uppercase font-heading">
             A Legacy of Excellence: <br/><span className="text-blue-600">The Orion Story</span>
           </h1>
           <p className="text-base md:text-xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
@@ -36,16 +36,16 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {[
-            { icon: <Calendar className="w-6 h-6" />, value: "42+", label: "Years of History", color: 'text-cyan-600', border: 'border-slate-100' },
-            { icon: <Users className="w-6 h-6" />, value: "800+", label: "Glorious Alumni", color: 'text-emerald-600', border: 'border-slate-100' },
-            { icon: <GraduationCap className="w-6 h-6" />, value: "JEC", label: "Hostel 7 Identity", color: 'text-violet-600', border: 'border-slate-100' },
+            { icon: <Calendar className="w-6 h-6" />, value: "42+", label: "Years of History", color: 'text-sky-600', bgColor: 'bg-sky-50', borderColor: 'border-sky-100' },
+            { icon: <Users className="w-6 h-6" />, value: "800+", label: "Glorious Alumni", color: 'text-emerald-600', bgColor: 'bg-emerald-50', borderColor: 'border-emerald-100' },
+            { icon: <GraduationCap className="w-6 h-6" />, value: "JEC", label: "Hostel 7 Identity", color: 'text-violet-600', bgColor: 'bg-violet-50', borderColor: 'border-violet-100' },
           ].map((stat, i) => (
-            <div key={i} className={`bg-white border ${stat.border} rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-lg transition-all duration-300`}>
-              <div className={`w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center mb-6 ${stat.color}`}>
+            <div key={i} className={`${stat.bgColor} border ${stat.borderColor} rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-lg transition-all duration-300`}>
+              <div className={`w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-6 ${stat.color} shadow-sm`}>
                 {stat.icon}
               </div>
-              <div className={`text-4xl font-black ${stat.color} mb-1 tracking-tight`}>{stat.value}</div>
-              <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{stat.label}</div>
+              <div className={`text-4xl font-bold ${stat.color} mb-1 tracking-tight`}>{stat.value}</div>
+              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -53,12 +53,12 @@ export default function AboutPage() {
 
       {/* History & Culture */}
       <section className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-        <div className="bg-white border border-slate-100 rounded-[2.5rem] p-8 md:p-12 shadow-lg">
+        <div className="bg-blue-50/50 border border-blue-100 rounded-[2.5rem] p-8 md:p-12 shadow-lg">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-sm">
               <History className="w-6 h-6 text-blue-600" />
             </div>
-            <h2 className="text-3xl font-black text-slate-900 tracking-tight font-serif-premium">Our History</h2>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight font-heading">Our History</h2>
           </div>
           <div className="space-y-6 text-slate-600 leading-relaxed font-medium text-sm md:text-base">
             <p>
@@ -70,12 +70,12 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="bg-white border border-slate-100 rounded-[2.5rem] p-8 md:p-12 shadow-lg">
+        <div className="bg-emerald-50/50 border border-emerald-100 rounded-[2.5rem] p-8 md:p-12 shadow-lg">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center shadow-sm shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm shrink-0">
               <Users2 className="w-6 h-6 text-emerald-600" />
             </div>
-            <h2 className="text-3xl font-black text-slate-900 tracking-tight font-serif-premium">The Culture</h2>
+            <h2 className="text-3xl font-bold text-slate-900 tracking-tight font-heading">The Culture</h2>
           </div>
           <p className="text-slate-600 leading-relaxed font-medium mb-8 text-sm md:text-base">
             Hostel 7 is renowned for its unique "Sevenite" culture—a blend of fierce loyalty, intellectual rigor, and celebratory spirit.
@@ -86,7 +86,7 @@ export default function AboutPage() {
               "Legacy of Inter-Hostel Sports Dominance",
               "Mentorship-driven Senior-Junior relationships"
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-3 text-slate-700 font-black text-xs md:text-sm uppercase tracking-tight">
+              <li key={i} className="flex items-center gap-3 text-slate-700 font-bold text-xs md:text-sm uppercase tracking-tight">
                 <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" />
                 {item}
               </li>
@@ -99,10 +99,10 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="bg-slate-50 border border-slate-200 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 relative overflow-hidden">
           <div className="max-w-4xl space-y-8 relative z-10">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-100 border border-blue-200 text-blue-600 text-[8px] md:text-[10px] font-black uppercase tracking-widest">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-100 border border-blue-200 text-blue-600 text-[8px] md:text-[10px] font-bold uppercase tracking-widest">
               Hostel Infrastructure
             </div>
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-tight font-heading">
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tighter uppercase leading-tight font-heading">
               A Home Built for <span className="text-blue-600 font-sans">Excellence.</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-4">
@@ -120,7 +120,7 @@ export default function AboutPage() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {["Table Tennis", "Chess", "Cricket", "Football", "Volleyball", "Badminton"].map((sport) => (
-                    <span key={sport} className="px-3 py-1 bg-white border border-slate-200 rounded-full text-[8px] font-black uppercase text-slate-500 tracking-widest shadow-sm">
+                    <span key={sport} className="px-3 py-1 bg-white border border-slate-200 rounded-full text-[8px] font-bold uppercase text-slate-500 tracking-widest shadow-sm">
                       {sport}
                     </span>
                   ))}
@@ -136,8 +136,8 @@ export default function AboutPage() {
                 { label: "Modern Facilities", sub: "Hygiene Focused", color: 'text-teal-600', border: 'border-teal-100' },
               ].map((item, i) => (
                 <div key={i} className={`bg-white p-6 md:p-8 rounded-3xl border ${item.border} shadow-lg text-center space-y-2 group transition-all duration-300`}>
-                  <div className={`text-sm md:text-base font-black text-slate-900 leading-tight group-hover:${item.color}`}>{item.label}</div>
-                  <div className={`text-[8px] font-black ${item.color} uppercase tracking-widest`}>{item.sub}</div>
+                  <div className={`text-sm md:text-base font-bold text-slate-900 leading-tight group-hover:${item.color}`}>{item.label}</div>
+                  <div className={`text-[8px] font-bold ${item.color} uppercase tracking-widest`}>{item.sub}</div>
                 </div>
               ))}
             </div>
@@ -147,12 +147,12 @@ export default function AboutPage() {
 
       {/* CTA Section */}
       <section className="max-w-7xl mx-auto px-6 py-24 md:py-32 text-center space-y-8">
-        <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight uppercase">Want to know more?</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight uppercase">Want to know more?</h2>
         <p className="text-slate-500 font-medium text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-4">
           Reach out to us for any queries regarding admissions, rules, or alumni registration.
         </p>
         <div className="flex justify-center pt-10">
-          <Link href="/contact" className="w-full sm:w-auto bg-slate-900 text-white px-16 py-6 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-slate-800 transition shadow-2xl hover:shadow-slate-200">
+          <Link href="/contact" className="w-full sm:w-auto bg-slate-900 text-white px-16 py-6 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] hover:bg-slate-800 transition shadow-2xl hover:shadow-slate-200">
             Contact Us
           </Link>
         </div>

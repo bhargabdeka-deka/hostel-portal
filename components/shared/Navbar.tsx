@@ -37,10 +37,10 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="bg-white/80 backdrop-blur-xl sticky top-0 z-[100] border-b border-slate-200 shadow-sm">
+      <nav className="absolute top-0 left-0 right-0 z-[100] transition-all duration-300">
         <div className="max-w-[1440px] mx-auto px-6 md:px-8 h-20 md:h-24 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 text-xl font-black tracking-tighter text-slate-900 group">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-sm border border-slate-200 relative">
+          <Link href="/" className="flex items-center gap-3 text-xl font-bold tracking-tighter text-slate-900 group">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-110 transition-all duration-500 relative">
               <Image 
                 src="/hostel_logo.jpeg" 
                 alt="ORION Hostel Logo" 
@@ -57,10 +57,10 @@ export function Navbar() {
               <Link 
                 key={link.href} 
                 href={link.href}
-                className="text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 relative h-full flex items-center group"
+                className="text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300 relative h-full flex items-center group"
               >
                 {pathname === link.href && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-1 bg-blue-600 rounded-b-full"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 rounded-full"></div>
                 )}
                 <span className={cn(
                   "transition-colors",
@@ -92,7 +92,7 @@ export function Navbar() {
             key={link.href} 
             href={link.href}
             className={cn(
-              "text-2xl font-black uppercase tracking-widest transition-all duration-500",
+              "text-2xl font-bold uppercase tracking-widest transition-all duration-500",
               pathname === link.href ? "text-blue-600 scale-110" : "text-slate-500",
               isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             )}

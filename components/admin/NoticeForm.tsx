@@ -28,11 +28,11 @@ export function NoticeForm() {
 
   return (
     <div className="bg-white border border-slate-100 p-10 rounded-[2.5rem] shadow-sm">
-      <h3 className="text-xl font-black text-slate-900 mb-8 uppercase tracking-tight">Post New Notice</h3>
+      <h3 className="text-xl font-bold text-slate-900 mb-8 uppercase tracking-tight">Post New Notice</h3>
       <form id="notice-form" action={handleSubmit} className="space-y-6">
         <div className="space-y-4">
           <div>
-            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Title</label>
+            <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Title</label>
             <input 
               name="title" 
               required 
@@ -41,7 +41,7 @@ export function NoticeForm() {
             />
           </div>
           <div>
-            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Content</label>
+            <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Content</label>
             <textarea 
               name="content" 
               required 
@@ -53,7 +53,7 @@ export function NoticeForm() {
         </div>
 
         {error && (
-          <div className="p-4 bg-red-50 text-red-600 text-[10px] font-black uppercase rounded-xl border border-red-100">
+          <div className="p-4 bg-red-50 text-red-600 text-[10px] font-bold uppercase rounded-xl border border-red-100">
             {error}
           </div>
         )}
@@ -61,7 +61,7 @@ export function NoticeForm() {
         <button 
           disabled={loading || success}
           className={cn(
-            "w-full py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] transition-all active:scale-95 shadow-xl flex items-center justify-center gap-2",
+            "w-full py-5 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] transition-all active:scale-95 shadow-xl flex items-center justify-center gap-2",
             success ? "bg-green-600 text-white" : "bg-blue-600 text-white hover:bg-blue-700 shadow-blue-900/20"
           )}
         >

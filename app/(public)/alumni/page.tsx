@@ -15,12 +15,12 @@ export default async function AlumniPage() {
   return (
     <main className="bg-transparent min-h-screen selection:bg-blue-500/20">
       {/* Header Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-24 pb-16 space-y-6">
+      <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-16 space-y-6">
         <div className="flex items-center gap-4">
           <div className="h-px w-12 bg-slate-200"></div>
           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Our Community</span>
         </div>
-        <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tight uppercase">
+        <h1 className="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight uppercase">
           Global <span className="text-blue-600">Alumni</span> Network
         </h1>
         <p className="text-xl text-slate-600 font-medium max-w-2xl leading-relaxed">

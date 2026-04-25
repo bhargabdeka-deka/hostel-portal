@@ -9,7 +9,7 @@ export default function PrivacyPage() {
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-bold uppercase tracking-widest">
             Data Integrity
           </div>
-          <h1 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight font-heading">
+          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight font-heading">
             Privacy Policy
           </h1>
           <p className="text-slate-500 font-medium max-w-2xl mx-auto text-lg">

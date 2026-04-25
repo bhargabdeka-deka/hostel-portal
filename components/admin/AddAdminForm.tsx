@@ -133,7 +133,7 @@ export function AddAdminForm({ isSuperAdmin }: { isSuperAdmin: boolean }) {
           disabled={loading || success}
           suppressHydrationWarning
           className={cn(
-            "w-full py-4 rounded-xl font-black text-xs uppercase tracking-widest transition-all active:scale-95 shadow-xl disabled:opacity-50 flex items-center justify-center gap-2",
+            "w-full py-4 rounded-xl font-bold text-xs uppercase tracking-widest transition-all active:scale-95 shadow-xl disabled:opacity-50 flex items-center justify-center gap-2",
             success 
               ? "bg-green-600 text-white shadow-green-900/20" 
               : "bg-blue-600 text-white hover:bg-blue-500 shadow-blue-900/20"
