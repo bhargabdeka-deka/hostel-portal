@@ -31,7 +31,7 @@ export default function RulesPage() {
     <div className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-5xl mx-auto overflow-x-hidden">
       <div className="text-center mb-16 md:mb-20">
         <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-indigo-50 border border-indigo-100 rounded-full text-[10px] font-bold tracking-widest mb-6 text-indigo-600 font-jakarta">
-          Code of conduct
+          Institutional code of conduct
         </div>
         <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight mb-4 font-jakarta">Hostel rules</h1>
         <p className="text-base md:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">

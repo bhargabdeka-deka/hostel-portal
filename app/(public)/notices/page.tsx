@@ -21,7 +21,7 @@ export default async function AllNoticesPage() {
           <div className="p-3 bg-indigo-50 text-indigo-600 rounded-2xl shrink-0">
             <Bell className="w-6 h-6" />
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-none font-jakarta">Official board</h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-none font-jakarta">Official notice board</h1>
         </div>
         <p className="text-base md:text-lg text-slate-500 font-medium max-w-2xl leading-relaxed">
           Stay informed with the latest updates, event announcements, and official news from the ORION Hostel administration.
@@ -52,7 +52,7 @@ export default async function AllNoticesPage() {
         ) : (
           <div className="py-24 md:py-32 text-center bg-slate-50 rounded-[3rem] border-2 border-dashed border-slate-200">
             <Bell className="w-12 h-12 md:w-16 md:h-16 text-slate-200 mx-auto mb-4" />
-            <h3 className="text-lg md:text-xl font-bold text-slate-400 tracking-widest">No active notices</h3>
+            <h3 className="text-lg md:text-xl font-bold text-slate-400 tracking-widest">No current announcements</h3>
             <p className="text-slate-400 font-medium text-sm mt-2 font-jakarta">The board is currently clear.</p>
           </div>
         )}

@@ -23,7 +23,7 @@ export default async function ContactPage() {
       <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-12 md:pb-16 text-center space-y-6">
         <div className="flex items-center justify-center gap-4">
           <div className="h-px w-8 md:w-12 bg-slate-200"></div>
-          <span className="text-[10px] md:text-[12px] font-bold text-indigo-600 tracking-[0.3em] font-jakarta">Get in touch</span>
+          <span className="text-[10px] md:text-[12px] font-bold text-indigo-600 tracking-[0.3em] font-jakarta">Contact information</span>
           <div className="h-px w-8 md:w-12 bg-slate-200"></div>
         </div>
         <h1 className="text-4xl md:text-7xl font-bold text-slate-900 tracking-tight leading-none font-jakarta">Connect.</h1>
@@ -67,7 +67,7 @@ export default async function ContactPage() {
           <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-600 text-[10px] font-bold tracking-widest font-jakarta">
-                Administrative head
+                Administrative leadership
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight font-jakarta">Office of the <br/>Superintendent</h2>
               <p className="text-slate-600 font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-sm md:text-base">
