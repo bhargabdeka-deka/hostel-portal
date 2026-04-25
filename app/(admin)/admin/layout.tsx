@@ -90,7 +90,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
           <div>
             <span className="font-black text-slate-900 tracking-tighter text-2xl block leading-none font-jakarta">Orion</span>
-            <span className="text-[10px] text-indigo-600 font-bold uppercase tracking-widest">Admin Hub</span>
+            <span className="text-[11px] text-indigo-600 font-bold uppercase tracking-[0.3em]">Admin</span>
           </div>
         </Link>
       </div>
