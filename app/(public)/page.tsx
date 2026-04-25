@@ -122,7 +122,7 @@ export default async function HomePage() {
               <div className="flex-1">
                 <div className="flex items-center justify-between gap-4 mb-0.5">
                   <div className={`text-2xl md:text-3xl font-bold text-slate-900 tracking-tight font-sans`}>{stat.value}</div>
-                  <span className="text-[11px] font-bold text-indigo-600 tracking-tight font-sans">{stat.tag}</span>
+                  <span className={`text-[11px] font-bold ${stat.color} tracking-tight font-sans`}>{stat.tag}</span>
                 </div>
                 <div className="text-[12px] font-bold text-slate-500 tracking-tight font-sans">{stat.label}</div>
               </div>
@@ -143,7 +143,7 @@ export default async function HomePage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-bl-full -mr-16 -mt-16 group-hover:bg-white/60 transition-colors"></div>
               <div className="flex items-center justify-between mb-8 relative z-10">
                 <div className={`${spirit.color} p-4 bg-white rounded-2xl inline-block shadow-sm group-hover:scale-110 transition-transform duration-500`}>{spirit.icon}</div>
-                <span className="text-[11px] md:text-[13px] font-bold text-indigo-600 tracking-tight font-sans">{spirit.tag}</span>
+                <span className={`text-[11px] md:text-[13px] font-bold ${spirit.color} tracking-tight font-sans`}>{spirit.tag}</span>
               </div>
               <div className="space-y-4 relative z-10">
                 <h3 className={`text-3xl font-bold text-slate-900 tracking-tight font-sans`}>{spirit.title}</h3>

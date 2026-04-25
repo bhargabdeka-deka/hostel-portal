@@ -46,7 +46,7 @@ export default function AboutPage() {
                 <div className={`w-14 h-14 rounded-2xl bg-white flex items-center justify-center ${stat.color} shadow-sm group-hover:scale-110 transition-transform`}>
                   {stat.icon}
                 </div>
-                <span className="text-[11px] font-bold text-indigo-600 tracking-tight font-sans">{stat.tag}</span>
+                <span className={`text-[11px] font-bold ${stat.color} tracking-tight font-sans`}>{stat.tag}</span>
               </div>
               <div className={`text-4xl font-bold ${stat.color} mb-1 tracking-tight font-heading`}>{stat.value}</div>
               <div className="text-[12px] font-bold text-slate-900 tracking-tight font-jakarta">{stat.label}</div>
@@ -141,7 +141,7 @@ export default function AboutPage() {
               ].map((item, i) => (
                 <div key={i} className={`bg-white p-6 md:p-8 rounded-3xl border ${item.border} shadow-lg text-center space-y-4 group transition-all duration-300 hover:scale-105`}>
                   <div className="flex items-center justify-between gap-4 mb-2">
-                    <span className="text-[10px] font-bold text-indigo-600 tracking-tight font-sans">{item.tag}</span>
+                    <span className={`text-[10px] font-bold ${item.color} tracking-tight font-sans`}>{item.tag}</span>
                     <CheckCircle2 className={`w-4 h-4 ${item.color} opacity-20 group-hover:opacity-100 transition-opacity`} />
                   </div>
                   <div className="space-y-1">
