@@ -1,3 +1,4 @@
+import { Calendar, Trophy } from 'lucide-react';
 import { createClient } from '@/lib/supabase/server';
 import Image from 'next/image';
 import Lightbox from '@/components/ui/Lightbox';
