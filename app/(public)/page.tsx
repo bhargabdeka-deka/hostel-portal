@@ -83,6 +83,8 @@ export default async function HomePage() {
             alt="Orion Hostel" 
             fill
             priority
+            quality={85}
+            sizes="100vw"
             className="object-cover" 
           />
           <div className="absolute inset-0 bg-white/35"></div>

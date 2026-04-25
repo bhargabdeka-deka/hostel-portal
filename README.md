@@ -63,6 +63,14 @@ hostel-portal/
    npm run dev
    ```
 
+## Performance & Storage Optimization
+
+To ensure the portal remains lightning-fast and stays within storage limits (1GB Supabase limit), the following measures are in place:
+
+- **Image Compression**: All administrative uploads (Gallery, Achievements) are automatically compressed on the client-side to under **300KB** using `browser-image-compression`.
+- **Responsive Media**: Every image is served using Next.js `next/image` with optimized `sizes` and `quality` settings to minimize bandwidth usage on mobile devices.
+- **Global Responsiveness**: The entire UI is built with a mobile-first approach, ensuring a premium experience on everything from smartphones to high-resolution monitors.
+
 ## Development and Maintenance
 
 The portal is maintained by the ORION administrative team at Jorhat Engineering College. All code changes should be verified for security and performance before being pushed to the master branch.
