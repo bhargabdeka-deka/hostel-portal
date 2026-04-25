@@ -74,11 +74,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }, [pathname]);
 
   const menu = [
-    { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
-    { name: 'Monitors', href: '/admin/manage-monitors', icon: UserCheck },
-    { name: 'Achievements', href: '/admin/manage-achievements', icon: Trophy },
-    { name: 'Alumni', href: '/admin/alumni', icon: Users },
-    { name: 'Access Control', href: '/admin/manage-users', icon: ShieldCheck },
+    { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard, color: 'text-blue-500' },
+    { name: 'Monitors', href: '/admin/manage-monitors', icon: UserCheck, color: 'text-emerald-500' },
+    { name: 'Gallery', href: '/admin/manage-achievements', icon: Trophy, color: 'text-violet-500' },
+    { name: 'Alumni', href: '/admin/alumni', icon: Users, color: 'text-amber-500' },
+    { name: 'Access Control', href: '/admin/manage-users', icon: ShieldCheck, color: 'text-rose-500' },
   ];
 
   const SidebarContent = () => (
@@ -89,8 +89,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <img src="/hostel_logo.jpeg" alt="ORION Logo" className="w-full h-full object-cover scale-110" />
           </div>
           <div>
-            <span className="font-black text-slate-900 tracking-tighter text-xl block leading-none uppercase font-heading">ORION</span>
-            <span className="text-[9px] text-blue-600 font-bold uppercase tracking-widest">Admin Hub</span>
+            <span className="font-black text-slate-900 tracking-tighter text-2xl block leading-none font-jakarta">Orion</span>
+            <span className="text-[10px] text-indigo-600 font-bold uppercase tracking-widest">Admin Hub</span>
           </div>
         </Link>
       </div>
@@ -104,12 +104,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               href={item.href} 
               className={cn(
                 "group flex items-center justify-between p-4 rounded-2xl transition-all duration-300",
-                isActive ? "bg-blue-600 text-white shadow-lg shadow-blue-200" : "hover:bg-slate-100 text-slate-500"
+                isActive ? "bg-indigo-600 text-white shadow-xl shadow-indigo-200" : "hover:bg-slate-100 text-slate-500"
               )}
             >
               <div className="flex items-center gap-4">
-                <item.icon className={cn("w-5 h-5", isActive ? "text-white" : "text-slate-400 group-hover:text-slate-900")} />
-                <span className={cn("text-[10px] font-black uppercase tracking-widest", isActive ? "text-white" : "group-hover:text-slate-900")}>
+                <item.icon className={cn("w-5 h-5 transition-colors", isActive ? "text-white" : item.color)} />
+                <span className={cn("text-[15px] font-bold tracking-tight", isActive ? "text-white" : "group-hover:text-slate-900")}>
                   {item.name}
                 </span>
                 {item.name === 'Alumni' && pendingCount > 0 && (
@@ -127,7 +127,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <form action="/auth/signout" method="post">
           <button 
             suppressHydrationWarning
-            className="w-full flex items-center gap-4 p-4 text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-red-500 transition-all group"
+            className="w-full flex items-center gap-4 p-4 text-[13px] font-bold text-slate-500 hover:text-red-500 transition-all group tracking-tight"
           >
             <LogOut className="w-5 h-5 text-slate-400 group-hover:text-red-500" />
             Logout
@@ -140,12 +140,23 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <img src="/hostel_logo.jpeg" alt="Admin" className="w-full h-full object-cover" />
         </div>
         <div className="overflow-hidden">
-          <div className="text-[11px] font-bold text-slate-900 truncate">Admin User</div>
-          <div className="text-[10px] text-slate-500 font-black uppercase truncate tracking-widest">ORION Admin</div>
+          <div className="text-[13px] font-bold text-slate-900 truncate tracking-tight">Admin User</div>
+          <div className="text-[10px] text-slate-500 font-bold tracking-tight truncate">Orion Administrator</div>
         </div>
       </div>
     </>
   );
+
+  const bgColors: Record<string, string> = {
+    '/admin/dashboard': 'bg-[#fafafc]',
+    '/admin/manage-monitors': 'bg-[#fafaf5]',
+    '/admin/manage-achievements': 'bg-[#f9f9ff]',
+    '/admin/alumni': 'bg-[#fdfdfd]',
+    '/admin/manage-users': 'bg-[#fff9f9]',
+    '/admin/manage-notices': 'bg-[#fffdf5]',
+  };
+
+  const currentBg = bgColors[pathname] || 'bg-white';
 
   return (
     <div className="flex min-h-screen bg-transparent font-sans selection:bg-blue-500/20">
@@ -166,9 +177,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       </aside>
 
       {/* Main Area */}
-      <main className="flex-1 min-w-0 flex flex-col">
+      <main className={cn("flex-1 min-w-0 flex flex-col transition-colors duration-500", currentBg)}>
         {/* Top Header */}
-        <header className="h-20 bg-white/80 backdrop-blur-xl border-b border-slate-200 flex items-center justify-between px-6 lg:px-10 sticky top-0 z-50">
+        <header className="h-20 bg-white/40 backdrop-blur-xl border-b border-slate-200 flex items-center justify-between px-6 lg:px-10 sticky top-0 z-50">
           <div className="flex items-center gap-4 lg:gap-6 flex-1">
              <button 
                onClick={() => setIsSidebarOpen(true)}
@@ -194,54 +205,57 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
             {/* Notification Dropdown Card */}
             {showNotifications && (
-              <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-slate-200 rounded-3xl shadow-xl z-[100] overflow-hidden transition-all duration-300">
-                <div className="p-6 border-b border-slate-100">
-                  <div className="flex items-center justify-between mb-1">
-                    <h3 className="text-xs font-black text-slate-900 uppercase tracking-widest">Notifications</h3>
-                    <span className="text-[9px] font-black text-white uppercase bg-blue-600 px-2 py-0.5 rounded-full">{pendingCount} New</span>
+              <div className={cn(
+                "absolute right-0 top-full mt-4 w-96 bg-indigo-50/95 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-indigo-100 overflow-hidden transition-all duration-300 origin-top-right z-50",
+                showNotifications ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-4 pointer-events-none"
+              )}>
+                <div className="p-8 border-b border-slate-50 flex items-center justify-between">
+                  <div>
+                    <h3 className="text-base font-bold text-slate-900 tracking-tight">Notifications</h3>
+                    <p className="text-[11px] text-slate-600 font-medium">Recent portal updates</p>
                   </div>
-                  <p className="text-[10px] text-slate-500 font-medium">Recent updates across your portal</p>
+                  {pendingCount > 0 && (
+                    <div className="px-3 py-1 bg-indigo-600 text-white rounded-full text-[10px] font-bold tracking-tight">
+                      {pendingCount} New
+                    </div>
+                  )}
                 </div>
-                
-                <div className="max-h-80 overflow-y-auto">
+
+                <div className="max-h-[400px] overflow-y-auto">
                   {pendingCount > 0 ? (
                     <Link 
-                      href="/admin/alumni"
+                      href="/admin/alumni" 
+                      className="flex items-center gap-6 p-8 hover:bg-white/50 transition-colors group"
                       onClick={() => setShowNotifications(false)}
-                      className="flex items-start gap-4 p-5 hover:bg-slate-50 transition-colors group"
                     >
-                      <div className="w-10 h-10 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                        <Users className="w-5 h-5" />
+                      <div className="w-14 h-14 rounded-2xl bg-white text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all shrink-0 shadow-sm border border-indigo-100">
+                        <Users className="w-7 h-7" />
                       </div>
                       <div className="flex-1 space-y-1">
-                        <div className="text-[11px] font-black text-slate-900 uppercase tracking-tight leading-tight">
-                          Alumni Registration Notification
+                        <div className="text-sm font-bold text-slate-900 tracking-tight leading-tight">
+                          Alumni Request
                         </div>
-                        <p className="text-[10px] text-slate-500 leading-relaxed">
-                          There are <span className="font-black text-blue-600">{pendingCount}</span> new alumni requests waiting for your approval.
+                        <p className="text-[12px] text-slate-600 font-medium">
+                          <span className="font-bold text-indigo-600">{pendingCount}</span> Pending
                         </p>
-                        <div className="flex items-center gap-1 text-[9px] font-black text-blue-500 uppercase tracking-widest pt-1">
-                          Review Now <ChevronRight className="w-3 h-3" />
+                        <div className="flex items-center gap-1 text-[11px] font-bold text-indigo-600 pt-1 tracking-tight">
+                          Review request <ChevronRight className="w-3.5 h-3.5" />
                         </div>
                       </div>
                     </Link>
                   ) : (
                     <div className="p-12 text-center space-y-3">
-                      <Bell className="w-10 h-10 text-slate-200 mx-auto" />
-                      <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest">All caught up!</p>
+                      <Bell className="w-10 h-10 text-indigo-200 mx-auto" />
+                      <p className="text-[11px] font-bold text-slate-400 tracking-tight">All caught up!</p>
                     </div>
                   )}
                 </div>
-                
-                {pendingCount > 0 && (
-                    <Link 
-                      href="/admin/alumni"
-                      onClick={() => setShowNotifications(false)}
-                      className="block p-4 bg-slate-50 text-center text-[9px] font-black text-slate-500 uppercase tracking-[0.2em] hover:bg-slate-100 transition-colors border-t border-slate-200"
-                    >
-                    View All Activity
-                  </Link>
-                )}
+
+                <div className="p-6 bg-indigo-100/30 text-center border-t border-indigo-50">
+                  <button className="text-[11px] font-bold text-indigo-600 hover:text-indigo-900 transition-colors tracking-tight">
+                    View all activity
+                  </button>
+                </div>
               </div>
             )}
 

@@ -34,7 +34,6 @@ export function AchievementList({ initialAchievements }: AchievementListProps) {
 
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-bold text-slate-900 mb-8 uppercase tracking-tighter font-heading">Active Achievements</h3>
       
       {achievements.length === 0 ? (
         <div className="p-12 text-center bg-slate-50 border border-dashed border-slate-200 rounded-[2.5rem]">

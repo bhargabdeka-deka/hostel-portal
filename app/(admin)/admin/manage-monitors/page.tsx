@@ -18,8 +18,8 @@ export default async function ManageMonitors() {
     <div className="p-12 lg:p-20 space-y-12">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase font-heading">Monitor Management</h1>
-          <p className="text-slate-600 mt-1 font-medium">Update current student leadership and room assignments.</p>
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight font-jakarta">Monitor Management</h1>
+          <p className="text-slate-600 mt-2 font-medium">Update current student leadership and room assignments.</p>
         </div>
       </div>
 

@@ -25,7 +25,7 @@ export default async function AdminAlumni() {
     <div className="py-20 px-4 md:px-12 lg:px-20 antialiased">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-8 border-b border-slate-200 pb-12">
         <div>
-          <h1 className="text-4xl font-black text-slate-900 tracking-tighter uppercase font-heading">ALUMNI MANAGEMENT</h1>
+          <h1 className="text-4xl font-bold text-slate-900 tracking-tight leading-tight font-jakarta">Alumni Management</h1>
           <p className="text-slate-600 mt-2 font-medium">Verify and curate the official ORION alumni directory.</p>
         </div>
         <div className="flex items-center gap-4">
@@ -33,11 +33,11 @@ export default async function AdminAlumni() {
              "use server"
              revalidatePath("/admin/alumni")
            }}>
-             <button className="px-6 py-3 bg-blue-600 text-white rounded-2xl shadow-lg text-[10px] font-black uppercase tracking-widest flex items-center gap-2 hover:bg-blue-500 transition-all active:scale-95 shadow-blue-900/20">
-               Sync Data
+             <button className="px-6 py-3 bg-emerald-600 text-white rounded-2xl shadow-lg text-[11px] font-bold tracking-tight flex items-center gap-2 hover:bg-emerald-500 transition-all active:scale-95 shadow-emerald-900/20">
+               Sync data
              </button>
            </form>
-           <div className="px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl shadow-sm text-[10px] font-black uppercase tracking-widest flex items-center gap-2 text-slate-900">
+           <div className="px-6 py-3 bg-slate-50 border border-slate-100 rounded-2xl shadow-sm text-[11px] font-bold tracking-tight flex items-center gap-2 text-slate-900">
              <Users className="w-4 h-4 text-blue-600" />
              {alumni?.length || 0} Registered
            </div>
@@ -69,12 +69,12 @@ export default async function AdminAlumni() {
                       Batch {person.batch}
                     </span>
                     <span className={cn(
-                      "text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full border",
+                      "text-[10px] font-bold px-3 py-1 rounded-full border tracking-tight",
                       person.status === 'approved' 
                       ? "bg-green-50 text-green-700 border-green-100" 
                       : "bg-amber-50 text-amber-700 border-amber-100"
                     )}>
-                      {person.status}
+                      {person.status.charAt(0).toUpperCase() + person.status.slice(1)}
                     </span>
                   </div>
                 </div>
@@ -142,7 +142,7 @@ export default async function AdminAlumni() {
 
         {(!alumni || alumni.length === 0) && !error && (
           <div className="py-20 text-center bg-slate-50 rounded-[2.5rem] border border-slate-100">
-            <p className="text-slate-400 font-black uppercase tracking-widest text-[10px]">No registration requests found.</p>
+            <p className="text-slate-400 font-bold tracking-tight text-sm">No registration requests found.</p>
           </div>
         )}
       </div>
@@ -152,11 +152,11 @@ export default async function AdminAlumni() {
         <div className="overflow-x-auto">
           <table className="w-full text-left min-w-[800px]">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-100">
-                <th className="px-10 py-6 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Candidate</th>
-                <th className="px-10 py-6 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Professional</th>
-                <th className="px-10 py-6 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] text-center">Status</th>
-                <th className="px-10 py-6 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] text-right">Actions</th>
+              <tr className="bg-slate-50/50 border-b border-slate-100">
+                <th className="px-10 py-6 text-[13px] font-bold text-slate-900 tracking-tight font-jakarta">Candidate</th>
+                <th className="px-10 py-6 text-[13px] font-bold text-slate-900 tracking-tight font-jakarta">Professional Details</th>
+                <th className="px-10 py-6 text-[13px] font-bold text-slate-900 tracking-tight font-jakarta text-center">Status</th>
+                <th className="px-10 py-6 text-[13px] font-bold text-slate-900 tracking-tight font-jakarta text-right pr-12">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -168,30 +168,30 @@ export default async function AdminAlumni() {
                   <td className="px-10 py-5 relative">
                     <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-blue-600/0 group-hover:bg-blue-600/40 transition-all duration-300" />
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center font-black text-lg border border-blue-100">
+                      <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center font-bold text-lg border border-blue-100">
                         {person.name?.[0] || '?'}
                       </div>
                       <div>
-                        <p className="font-black text-slate-900 text-lg tracking-tight uppercase">{person.name}</p>
+                        <p className="font-bold text-slate-900 text-lg tracking-tight">{person.name}</p>
                         <div className="flex items-center gap-3 mt-1">
-                          <p className="text-[10px] font-black text-blue-600 uppercase tracking-widest">Batch {person.batch}</p>
-                          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Tel: {person.phone}</p>
+                          <p className="text-[11px] font-bold text-blue-600 tracking-tight">Batch {person.batch}</p>
+                          <p className="text-[11px] font-medium text-slate-400 tracking-tight">Tel: {person.phone}</p>
                         </div>
                       </div>
                     </div>
                   </td>
                   <td className="px-10 py-5">
                     <div className="flex flex-col gap-1.5">
-                      <div className="flex items-center gap-1.5 text-slate-600 font-bold text-sm">
-                        <Briefcase className="w-3.5 h-3.5 text-slate-400" />
-                        {person.job} at {person.company}
+                      <div className="flex items-center gap-1.5 text-slate-900 font-bold text-sm tracking-tight">
+                        <Briefcase className="w-4 h-4 text-indigo-500" />
+                        {person.job} <span className="text-slate-400 font-medium">at</span> {person.company}
                       </div>
                       {person.social_link && (
                         <a 
                           href={person.social_link} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 text-blue-600 hover:text-blue-700 text-[10px] font-black uppercase tracking-widest transition-colors"
+                          className="flex items-center gap-1.5 text-indigo-600 hover:text-indigo-700 text-[11px] font-bold tracking-tight transition-colors"
                         >
                           <ExternalLink className="w-3 h-3" />
                           LinkedIn Profile
@@ -201,12 +201,12 @@ export default async function AdminAlumni() {
                   </td>
                   <td className="px-10 py-8 text-center">
                     <span className={cn(
-                      "inline-flex px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border",
+                      "inline-flex px-4 py-1.5 rounded-full text-[10px] font-bold border tracking-tight",
                       person.status === 'approved' 
                       ? "bg-green-50 text-green-700 border-green-100" 
                       : "bg-amber-50 text-amber-700 border-amber-100"
                     )}>
-                      {person.status}
+                      {person.status.charAt(0).toUpperCase() + person.status.slice(1)}
                     </span>
                   </td>
                   <td className="px-10 py-5">
@@ -216,7 +216,7 @@ export default async function AdminAlumni() {
                           "use server"
                           await updateAlumniStatus(person.id, 'approved')
                         }}>
-                          <button className="bg-blue-600 text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-blue-500 transition-all active:scale-95 shadow-lg shadow-blue-900/20">
+                          <button className="bg-indigo-600 text-white px-6 py-3 rounded-xl text-[12px] font-bold tracking-tight hover:bg-indigo-500 transition-all active:scale-95 shadow-lg shadow-indigo-900/20">
                             Approve
                           </button>
                         </form>
@@ -225,7 +225,7 @@ export default async function AdminAlumni() {
                           "use server"
                           await updateAlumniStatus(person.id, 'pending')
                         }}>
-                          <button className="bg-slate-100 text-slate-900 px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-200 transition-all active:scale-95">
+                          <button className="bg-slate-100 text-slate-900 px-6 py-3 rounded-xl text-[12px] font-bold tracking-tight hover:bg-slate-200 transition-all active:scale-95">
                             Revoke
                           </button>
                         </form>
@@ -241,7 +241,7 @@ export default async function AdminAlumni() {
 
           {(!alumni || alumni.length === 0) && !error && (
             <div className="py-32 text-center bg-slate-50">
-              <p className="text-slate-400 font-black uppercase tracking-widest text-[10px]">No registration requests found.</p>
+              <p className="text-slate-400 font-bold tracking-tight text-sm">No registration requests found.</p>
             </div>
           )}
         </div>

@@ -43,8 +43,8 @@ export default async function TeamManagement() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <h1 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase font-heading">Team Management</h1>
-          <p className="text-slate-600 mt-1 text-sm font-medium">Manage administrator access and roles for the ORION portal.</p>
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight font-jakarta">Team Management</h1>
+          <p className="text-slate-600 mt-2 text-base font-medium">Manage administrator access and roles for the ORION portal.</p>
         </div>
       </div>
 
@@ -56,43 +56,40 @@ export default async function TeamManagement() {
 
         {/* Right: Active Team Members */}
         <div className="lg:col-span-8">
-          <section className="bg-white border border-slate-200 rounded-[2.5rem] shadow-lg flex flex-col relative overflow-hidden">
-            <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
-              <h2 className="text-lg font-bold text-slate-900 uppercase tracking-tight font-heading">Active Team Members</h2>
-              <div className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-[10px] font-black uppercase tracking-widest border border-blue-100">
+          <section className="bg-rose-50/50 border border-rose-100 rounded-[2.5rem] shadow-lg flex flex-col relative overflow-hidden">
+            <div className="p-8 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+              <h2 className="text-lg md:text-xl font-bold text-slate-900 tracking-tight font-jakarta">Active Team Members</h2>
+              <div className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-[11px] font-bold tracking-tight border border-blue-100">
                 {profiles.length} Users
               </div>
             </div>
             
             <div className="divide-y divide-slate-100">
               {profiles.length > 0 ? profiles.map((profile) => (
-                <div key={profile.id} className="p-6 flex items-center justify-between hover:bg-slate-50 transition-all group">
-                  <div className="flex items-center gap-4">
+                <div key={profile.id} className="p-8 flex items-center justify-between hover:bg-slate-50/50 transition-all group">
+                  <div className="flex items-center gap-6">
                     <div className={cn(
-                      "w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 shadow-inner border border-transparent",
-                      profile.role === 'superadmin' ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-400 group-hover:bg-blue-600/10 group-hover:text-blue-600 group-hover:border-blue-100"
+                      "w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-sm border",
+                      profile.role === 'superadmin' ? "bg-blue-600 text-white border-blue-500" : "bg-white text-slate-400 border-slate-200 group-hover:border-blue-200"
                     )}>
-                      {profile.role === 'superadmin' ? <ShieldCheck className="w-6 h-6" /> : <User className="w-6 h-6" />}
+                      {profile.role === 'superadmin' ? <ShieldCheck className="w-7 h-7" /> : <User className="w-7 h-7" />}
                     </div>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="font-bold text-slate-900 text-base tracking-tight capitalize">{profile.email.split('@')[0]}</span>
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-3">
+                        <span className="font-bold text-slate-900 text-lg tracking-tight capitalize">{profile.email.split('@')[0]}</span>
+                        <div className="flex gap-2">
                           {profile.email === currentUser?.email && (
-                            <span className="px-1.5 py-0.5 bg-blue-600 text-white text-[7px] font-black uppercase tracking-widest rounded-md">YOU</span>
+                            <span className="px-2 py-0.5 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full border border-blue-100">You</span>
                           )}
                           {profile.email === 'bhargab1234deka@gmail.com' && (
-                            <span className="px-1.5 py-0.5 bg-slate-900 text-white text-[7px] font-black uppercase tracking-widest rounded-md">OWNER</span>
+                            <span className="px-2 py-0.5 bg-slate-900 text-white text-[10px] font-bold rounded-full">Owner</span>
                           )}
                         </div>
-                        <div className={cn(
-                          "px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest border flex items-center gap-2 shadow-sm mt-1 w-fit",
-                          profile.role === 'superadmin' 
-                          ? "bg-blue-50 text-blue-600 border-blue-100" 
-                          : "bg-slate-50 text-slate-400 border-slate-100"
-                        )}>
-                          {profile.role === 'superadmin' ? 'Super Admin' : 'Admin'}
-                        </div>
                       </div>
+                      <div className="text-[12px] font-medium text-slate-400 flex items-center gap-2">
+                        {profile.role === 'superadmin' ? 'Super Administrator' : 'Administrator'}
+                      </div>
+                    </div>
                   </div>
 
                   {profile.email !== currentUser?.email && profile.email !== 'bhargab1234deka@gmail.com' && (
@@ -104,15 +101,15 @@ export default async function TeamManagement() {
               )) : (
                 <div className="p-20 text-center">
                   <UserPlus className="w-16 h-16 text-slate-200 mx-auto mb-4" />
-                  <p className="text-slate-400 font-bold uppercase tracking-widest">No team members found</p>
+                  <p className="text-slate-400 font-bold tracking-tight">No team members found</p>
                   <p className="text-xs text-slate-500 mt-2 font-medium">Add a new administrator using the form on the left.</p>
                 </div>
               )}
             </div>
             
-            <div className="p-6 bg-slate-50 border-t border-slate-100 text-center">
-              <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest leading-relaxed">
-                Administrators can manage other administrators. Only the Primary SuperAdmin is protected from removal.
+            <div className="p-10 bg-slate-50/30 border-t border-slate-100 text-center">
+              <p className="text-[12px] text-slate-400 font-medium leading-relaxed tracking-tight max-w-lg mx-auto">
+                Administrators can manage other team members. Only the primary SuperAdmin is protected from removal to ensure system integrity.
               </p>
             </div>
           </section>

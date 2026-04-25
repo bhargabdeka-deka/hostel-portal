@@ -91,7 +91,7 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans);
+    font-family: var(--font-jakarta), var(--font-sans);
   }
 }
 
@@ -124,15 +124,15 @@
 
 
 .font-stylish {
-  font-family: var(--font-inter), var(--font-sans), sans-serif;
+  font-family: var(--font-jakarta), var(--font-sans), sans-serif;
 }
 
 .font-serif-premium {
-  font-family: var(--font-inter), var(--font-sans), sans-serif;
+  font-family: var(--font-jakarta), var(--font-sans), sans-serif;
 }
 
 .font-quantum {
-  font-family: var(--font-inter), var(--font-sans), sans-serif;
+  font-family: var(--font-jakarta), var(--font-sans), sans-serif;
 }
 
 @keyframes spin {

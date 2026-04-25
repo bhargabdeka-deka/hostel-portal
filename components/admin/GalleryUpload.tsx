@@ -21,6 +21,12 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
     if (file) {
+      if (file.size > 300 * 1024) {
+        setError("File size exceeds 300KB limit. Please optimize your image.")
+        setSelectedFile(null)
+        if (fileInputRef.current) fileInputRef.current.value = ""
+        return
+      }
       setSelectedFile(file)
       setError(null)
     }
@@ -85,25 +91,25 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
     <form onSubmit={handleUpload} className="space-y-6">
       <div className="space-y-4">
         <div className="relative">
-          <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2 ml-1">
-            {type === 'achievement' ? 'Achievement Title' : 'Media Caption'} <span className="text-red-500">*</span>
+          <label className="block text-[11px] font-bold text-slate-500 mb-2 ml-1 tracking-tight">
+            Gallery Title <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <Type className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
             <input 
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
-              placeholder={type === 'achievement' ? "e.g. Cricket Champion" : "e.g. Annual Sports Meet"}
+              placeholder="e.g. Batch 2024, Sports Meet"
               className={cn(
                 "w-full pl-11 pr-4 py-4 bg-slate-50 border-2 rounded-2xl outline-none transition-all text-sm font-bold text-slate-900 placeholder:text-slate-400",
-                error && !caption.trim() ? "border-red-500/50 bg-red-50" : "border-slate-100 focus:border-blue-500 focus:ring-4 ring-blue-500/10"
+                error && !caption.trim() ? "border-red-500/50 bg-red-50" : "border-slate-100 focus:border-indigo-500 focus:ring-4 ring-indigo-500/10"
               )}
             />
           </div>
         </div>
 
         <div className="relative">
-          <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2 ml-1">
+          <label className="block text-[11px] font-bold text-slate-500 mb-2 ml-1 tracking-tight">
             Event Year <span className="text-red-500">*</span>
           </label>
           <div className="relative">
@@ -115,19 +121,19 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
               placeholder="YYYY"
               className={cn(
                 "w-full pl-11 pr-4 py-4 bg-slate-50 border-2 rounded-2xl outline-none transition-all text-sm font-bold text-slate-900 placeholder:text-slate-400",
-                error && (year < 1982 || year > 2100) ? "border-red-500/50 bg-red-50" : "border-slate-100 focus:border-blue-500 focus:ring-4 ring-blue-500/10"
+                error && (year < 1982 || year > 2100) ? "border-red-500/50 bg-red-50" : "border-slate-100 focus:border-indigo-500 focus:ring-4 ring-indigo-500/10"
               )}
             />
           </div>
         </div>
 
         <div className="group relative">
-          <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2 ml-1">Select Image <span className="text-red-500">*</span></label>
+          <label className="block text-[11px] font-bold text-slate-500 mb-2 ml-1 tracking-tight">Image Attachment <span className="text-red-500">*</span></label>
           <div 
             onClick={() => fileInputRef.current?.click()}
             className={cn(
-              "bg-slate-50 border-2 border-dashed rounded-[2rem] p-8 text-center transition-all duration-300 cursor-pointer relative overflow-hidden",
-              selectedFile ? "border-blue-500 bg-blue-50" : "border-slate-100 hover:border-blue-500/50 hover:bg-slate-100/50"
+              "bg-white border-2 border-dashed rounded-[2rem] p-6 sm:p-10 text-center transition-all duration-300 cursor-pointer relative overflow-hidden",
+              selectedFile ? "border-indigo-500 bg-indigo-50" : "border-slate-100 hover:border-indigo-500/50 hover:bg-slate-100/50"
             )}
           >
             <input 
@@ -141,9 +147,9 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
             <div className="flex flex-col items-center">
               <div className={cn(
                 "w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 shadow-sm",
-                loading ? "bg-blue-100 text-blue-600 animate-pulse" : 
+                loading ? "bg-indigo-100 text-indigo-600 animate-pulse" : 
                 success ? "bg-green-100 text-green-600" :
-                selectedFile ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-400 group-hover:text-blue-600"
+                selectedFile ? "bg-indigo-600 text-white" : "bg-slate-100 text-slate-400 group-hover:text-indigo-600"
               )}>
                 {loading ? <Loader2 className="w-6 h-6 animate-spin" /> : 
                  success ? <Check className="w-6 h-6" /> : 
@@ -151,11 +157,11 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
                  <Upload className="w-6 h-6" />}
               </div>
               <div className="space-y-1">
-                <p className="text-[11px] font-bold text-slate-900 uppercase tracking-wider">
-                  {selectedFile ? selectedFile.name : "Drop file or click to browse"}
+                <p className="text-[11px] font-bold text-slate-900 tracking-tight">
+                  {selectedFile ? selectedFile.name : "Select Gallery Image"}
                 </p>
-                <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
-                  {selectedFile ? `${(selectedFile.size / 1024 / 1024).toFixed(2)} MB` : "PNG, JPG up to 300KB"}
+                <p className="text-[10px] font-bold text-indigo-600 tracking-tight">
+                  {selectedFile ? `${(selectedFile.size / 1024).toFixed(0)} KB` : "Maximum allowed: 300 KB"}
                 </p>
               </div>
             </div>
@@ -164,7 +170,7 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
       </div>
 
       {error && (
-        <div className="p-4 bg-red-50 text-red-600 text-[10px] font-bold uppercase tracking-widest rounded-xl border border-red-100 flex items-center gap-2">
+        <div className="p-4 bg-red-50 text-red-600 text-[11px] font-bold rounded-xl border border-red-100 flex items-center gap-2 tracking-tight">
           <X className="w-4 h-4" />
           {error}
         </div>
@@ -174,7 +180,7 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
         type="submit"
         disabled={loading || success}
         className={cn(
-          "w-full py-5 bg-blue-600 text-white rounded-2xl text-xs font-bold uppercase tracking-[0.2em] hover:bg-blue-500 transition-all active:scale-[0.98] disabled:opacity-50 disabled:active:scale-100 shadow-xl shadow-blue-900/20",
+          "w-full py-5 bg-indigo-600 text-white rounded-2xl text-sm font-bold tracking-tight hover:bg-indigo-500 transition-all active:scale-[0.98] disabled:opacity-50 disabled:active:scale-100 shadow-xl shadow-indigo-900/20",
           success && "bg-green-600 hover:bg-green-600 shadow-green-900/20"
         )}
       >
