@@ -1,6 +1,6 @@
-import { Calendar, Users, GraduationCap, History, Users2, ShieldCheck, Waves, HeartPulse, Zap, CheckCircle2, Download } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Lightbox from '@/components/ui/Lightbox';
 
 export const revalidate = 86400; // Revalidate once a day
 
@@ -10,11 +10,11 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-48 lg:pb-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="flex-1 space-y-6 md:space-y-8 text-center lg:text-left">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[8px] md:text-[10px] font-bold uppercase tracking-widest">
-            Established Feb 1982
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-[10px] font-bold tracking-tight">
+            Established February 1982
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter leading-[1.1] uppercase font-heading">
-            A Legacy of Excellence: <br/><span className="text-blue-600">The Orion Story</span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter leading-[1.1] font-jakarta">
+            A Legacy of Excellence: <br/><span className="text-indigo-600">The Orion Story</span>
           </h1>
           <p className="text-base md:text-xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
             Deeply rooted in the academic excellence of Jorhat Engineering College, Hostel 7—famously known as ORION—has been a cornerstone of student life for over four decades.
@@ -22,12 +22,14 @@ export default function AboutPage() {
         </div>
         <div className="flex-1 w-full max-w-2xl lg:max-w-none">
           <div className="aspect-[4/3] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 relative">
-            <Image 
-              src="/hostel_about.jpeg" 
-              alt="ORION Hostel" 
-              fill
-              className="object-cover"
-            />
+            <Lightbox src="/hostel_about.jpeg" alt="ORION Hostel - A Legacy of Excellence">
+              <Image 
+                src="/hostel_about.jpeg" 
+                alt="ORION Hostel" 
+                fill
+                className="object-cover"
+              />
+            </Lightbox>
           </div>
         </div>
       </section>
@@ -102,11 +104,11 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="bg-slate-50 border border-slate-200 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 relative overflow-hidden">
           <div className="max-w-4xl space-y-8 relative z-10">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-100 border border-blue-200 text-blue-600 text-[8px] md:text-[10px] font-bold uppercase tracking-widest">
-              Hostel Infrastructure
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-600 text-[10px] font-bold tracking-tight">
+              Hostel infrastructure
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tighter uppercase leading-tight font-heading">
-              A Home Built for <span className="text-blue-600 font-sans">Excellence.</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tighter leading-tight font-jakarta">
+              A Home Built for <span className="text-indigo-600 font-sans">Excellence.</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-4">
               <div className="space-y-6 text-slate-600 font-medium leading-relaxed text-sm md:text-base">

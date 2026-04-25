@@ -1,6 +1,6 @@
-import { Calendar, Trophy, Medal, Award } from 'lucide-react';
 import { createClient } from '@/lib/supabase/server';
 import Image from 'next/image';
+import Lightbox from '@/components/ui/Lightbox';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -24,8 +24,8 @@ export default async function AchievementsPage() {
           <div className="h-px w-6 md:w-12 bg-slate-200"></div>
           <span className="text-[7px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] font-heading">Capturing Moments</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter uppercase leading-[1.1] font-heading">
-          Hostel <span className="text-blue-600">Gallery</span>
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter leading-[1.1] font-jakarta">
+          Hostel <span className="text-indigo-600">Gallery</span>
         </h1>
         <p className="text-sm md:text-xl text-slate-600 font-medium max-w-2xl leading-relaxed font-sans">
           A visual legacy of our history, achievements, and brotherhood. From festive celebrations to major sports titles, explore the spirit of ORION.
@@ -42,24 +42,26 @@ export default async function AchievementsPage() {
             achievements.map((achievement) => (
               <div key={achievement.id} className="group bg-white border border-slate-100 rounded-2xl md:rounded-[3rem] overflow-hidden hover:border-blue-100 transition-all duration-500 shadow-xl shadow-slate-200/50">
                 <div className="p-3">
-                  <div className="aspect-[16/10] relative overflow-hidden rounded-[2rem] bg-slate-50">
-                    <Image 
-                      src={achievement.image_url || "/placeholder-achievement.png"} 
-                      alt={achievement.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
+                  <Lightbox src={achievement.image_url || "/placeholder-achievement.png"} alt={achievement.title}>
+                    <div className="aspect-[16/10] relative overflow-hidden rounded-[2rem] bg-slate-50">
+                      <Image 
+                        src={achievement.image_url || "/placeholder-achievement.png"} 
+                        alt={achievement.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    </div>
+                  </Lightbox>
                 </div>
                 <div className="p-4 md:p-6 pt-0 pb-6 md:pb-8">
                   <div className="mb-3">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-[9px] font-bold text-blue-600 uppercase tracking-widest font-heading">
-                      <Calendar className="w-2.5 h-2.5" />
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 border border-indigo-100 rounded-full text-[10px] font-bold text-indigo-600 tracking-tight">
+                      <Calendar className="w-3 h-3" />
                       {achievement.year || (achievement.date ? new Date(achievement.date).getFullYear() : 'N/A')}
                     </div>
                   </div>
-                  <h3 className="text-base md:text-lg font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors leading-snug uppercase font-heading">
+                  <h3 className="text-base md:text-lg font-bold text-slate-900 tracking-tight group-hover:text-indigo-600 transition-colors leading-snug">
                     {achievement.title}
                   </h3>
                 </div>
@@ -81,20 +83,20 @@ export default async function AchievementsPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 md:via-white/40 to-transparent z-10"></div>
           
           <div className="relative z-20 p-8 md:p-12 lg:p-24 max-w-2xl space-y-6 md:space-y-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tighter leading-tight uppercase font-heading">
-              A Legacy of <br/><span className="text-blue-600">Celebrations</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tighter leading-tight font-jakarta">
+              A Legacy of <br/><span className="text-indigo-600">Celebrations</span>
             </h2>
             <p className="text-slate-600 font-medium leading-relaxed text-sm md:text-lg font-sans">
               Our gallery captures the soul of Orion. From the high-octane energy of inter-hostel sports to the vibrant colors of Diwali and Holi, every photo tells a story of brotherhood.
             </p>
             <div className="flex gap-8 md:gap-16 pt-4">
               <div>
-                <div className="text-3xl md:text-5xl font-bold text-slate-900 mb-1 font-heading">40+</div>
-                <div className="text-[8px] md:text-[10px] font-bold text-blue-600 uppercase tracking-widest font-heading">Years of Memories</div>
+                <div className="text-3xl md:text-5xl font-bold text-slate-900 mb-1 font-jakarta">40+</div>
+                <div className="text-[10px] font-bold text-indigo-600 tracking-tight">Years of memories</div>
               </div>
               <div>
-                <div className="text-3xl md:text-5xl font-bold text-slate-900 mb-1 font-heading">100%</div>
-                <div className="text-[8px] md:text-[10px] font-bold text-blue-600 uppercase tracking-widest font-heading">Orionite Spirit</div>
+                <div className="text-3xl md:text-5xl font-bold text-slate-900 mb-1 font-jakarta">100%</div>
+                <div className="text-[10px] font-bold text-indigo-600 tracking-tight">Orionite spirit</div>
               </div>
             </div>
           </div>
