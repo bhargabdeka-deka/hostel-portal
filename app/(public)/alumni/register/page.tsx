@@ -59,6 +59,7 @@ export default function AlumniRegistration() {
     )
   }
 
+  return (
     <main className="bg-transparent min-h-screen selection:bg-indigo-500/10">
       <div className="max-w-6xl mx-auto py-32 px-6">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
