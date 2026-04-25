@@ -138,7 +138,7 @@ export default async function HomePage() {
           {spirits.map((spirit, i) => (
             <div 
               key={i} 
-              className={`p-10 md:p-14 ${spirit.bgColor} border ${spirit.borderColor} rounded-[3rem] text-left space-y-8 transition-all hover:shadow-2xl hover:shadow-slate-200 group relative overflow-hidden`}
+              className={`p-6 md:p-14 ${spirit.bgColor} border ${spirit.borderColor} rounded-[3rem] text-left space-y-8 transition-all hover:shadow-2xl hover:shadow-slate-200 group relative overflow-hidden`}
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-bl-full -mr-16 -mt-16 group-hover:bg-white/60 transition-colors"></div>
               <div className="flex items-center justify-between mb-8 relative z-10">
@@ -170,7 +170,7 @@ export default async function HomePage() {
         <div className="border border-slate-200 rounded-[3rem] overflow-hidden shadow-2xl bg-white">
           {typedNotices.length > 0 ? (
             typedNotices.map((notice: Notice, i: number) => (
-              <div key={notice.id} className={`p-8 md:p-12 hover:bg-slate-50 transition-all cursor-default group ${i !== typedNotices.length - 1 ? 'border-b border-slate-100' : ''}`}>
+              <div key={notice.id} className={`p-6 md:p-12 hover:bg-slate-50 transition-all cursor-default group ${i !== typedNotices.length - 1 ? 'border-b border-slate-100' : ''}`}>
                 <div className="flex items-center justify-between gap-4 mb-4">
                   <div className="text-[11px] font-bold text-slate-400 flex items-center gap-2 tracking-tight font-sans">
                     <Calendar className="w-3.5 h-3.5" />

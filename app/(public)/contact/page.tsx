@@ -113,20 +113,19 @@ export default async function ContactPage() {
                 return (
                   <div 
                     key={m.id} 
-                    className={`${color.bg} p-6 rounded-[2rem] border ${color.border} shadow-md hover:border-blue-200 transition-all duration-300 group flex flex-col gap-4`}
+                    className={`${color.bg} p-6 md:p-8 rounded-[2.5rem] border ${color.border} shadow-md hover:border-blue-200 transition-all duration-300 group flex flex-col items-center text-center gap-6`}
                   >
-                    <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-2xl ${color.bg} ${color.text} flex items-center justify-center shrink-0 group-hover:scale-105 transition-all duration-300`}>
-                        <User className="w-6 h-6" />
-                      </div>
-                      <div className="min-w-0">
-                        <div className={`text-[11px] font-bold ${color.text} tracking-tight font-sans uppercase`}>{m.role}</div>
-                        <div className="text-lg font-bold text-slate-900 tracking-tight font-sans group-hover:text-indigo-600 transition-colors leading-tight">{m.name}</div>
-                      </div>
+                    <div className={`w-14 h-14 rounded-2xl ${color.bg} ${color.text} flex items-center justify-center shrink-0 group-hover:scale-110 transition-all duration-300 shadow-sm`}>
+                      <User className="w-6 h-6" />
                     </div>
                     
-                    <div className="flex flex-col gap-3 pt-4 border-t border-black/5">
-                      <div className="flex items-center justify-center gap-2.5 text-indigo-600 text-[11px] font-bold tracking-tight font-sans">
+                    <div className="space-y-2">
+                      <div className={`text-[11px] font-bold ${color.text} tracking-tight font-sans uppercase`}>{m.role}</div>
+                      <div className="text-xl font-bold text-slate-900 tracking-tight font-sans group-hover:text-indigo-600 transition-colors leading-tight">{m.name}</div>
+                    </div>
+                    
+                    <div className="w-full pt-6 border-t border-black/5 space-y-3">
+                      <div className="flex items-center justify-center gap-2 text-indigo-600 text-[11px] font-bold tracking-tight font-sans">
                         Room {m.room}
                       </div>
                       {m.phone && (

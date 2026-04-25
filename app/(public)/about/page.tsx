@@ -41,7 +41,7 @@ export default function AboutPage() {
             { tag: 'Community', icon: <Users className="w-6 h-6" />, value: "800+", label: "Glorious Alumni", color: 'text-emerald-600', bgColor: 'bg-emerald-50', borderColor: 'border-emerald-100' },
             { tag: 'Branding', icon: <GraduationCap className="w-6 h-6" />, value: "JEC", label: "Hostel 7 Identity", color: 'text-violet-600', bgColor: 'bg-violet-50', borderColor: 'border-violet-100' },
           ].map((stat, i) => (
-            <div key={i} className={`group ${stat.bgColor} border ${stat.borderColor} rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-lg transition-all duration-300 hover:scale-105`}>
+            <div key={i} className={`group ${stat.bgColor} border ${stat.borderColor} rounded-3xl p-6 md:p-10 flex flex-col items-center text-center shadow-lg transition-all duration-300 hover:scale-105`}>
               <div className="w-full flex items-center justify-between mb-6">
                 <div className={`w-14 h-14 rounded-2xl bg-white flex items-center justify-center ${stat.color} shadow-sm group-hover:scale-110 transition-transform`}>
                   {stat.icon}
@@ -57,7 +57,7 @@ export default function AboutPage() {
 
       {/* History & Culture */}
       <section className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-        <div className="bg-blue-50/50 border border-blue-100 rounded-[2.5rem] p-8 md:p-12 shadow-lg">
+        <div className="bg-blue-50/50 border border-blue-100 rounded-[2.5rem] p-6 md:p-12 shadow-lg">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-sm">
               <History className="w-6 h-6 text-blue-600" />
@@ -74,7 +74,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="bg-emerald-50/50 border border-emerald-100 rounded-[2.5rem] p-8 md:p-12 shadow-lg">
+        <div className="bg-emerald-50/50 border border-emerald-100 rounded-[2.5rem] p-6 md:p-12 shadow-lg">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm shrink-0">
               <Users2 className="w-6 h-6 text-emerald-600" />
@@ -101,7 +101,7 @@ export default function AboutPage() {
 
       {/* Facilities & Infrastructure Section */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="bg-slate-50 border border-slate-200 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 relative overflow-hidden">
+        <div className="bg-slate-50 border border-slate-200 rounded-[3rem] md:rounded-[4rem] p-6 md:p-12 lg:p-20 relative overflow-hidden">
           <div className="max-w-4xl space-y-8 relative z-10">
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-600 text-[10px] font-bold tracking-tight">
               Hostel infrastructure
