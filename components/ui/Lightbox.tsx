@@ -29,7 +29,7 @@ export default function Lightbox({ src, alt, children }: LightboxProps) {
     <>
       <div 
         onClick={() => setIsOpen(true)} 
-        className="group relative cursor-pointer overflow-hidden"
+        className="group relative cursor-pointer overflow-hidden w-full h-full"
       >
         {children}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
