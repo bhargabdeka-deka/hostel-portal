@@ -82,7 +82,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-slate-900 tracking-tight font-heading">The Culture</h2>
           </div>
           <p className="text-slate-600 leading-relaxed font-medium mb-8 text-sm md:text-base">
-            Hostel 7 is renowned for its unique "Sevenite" culture—a blend of fierce loyalty, intellectual rigor, and celebratory spirit.
+            Hostel 7 is renowned for its unique "Orionite" culture—a blend of fierce loyalty, intellectual rigor, and celebratory spirit.
           </p>
           <ul className="space-y-4">
             {[

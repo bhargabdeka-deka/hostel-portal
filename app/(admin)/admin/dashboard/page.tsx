@@ -75,7 +75,7 @@ export default async function AdminDashboard() {
             <h3 className="text-lg md:text-xl font-bold text-slate-900 tracking-tight">Administrator Motto</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {[
-                { title: "Preserve Discipline", desc: "Maintain the decorum that defines a Sevenite." },
+                { title: "Preserve Discipline", desc: "Maintain the decorum that defines an Orionite." },
                 { title: "Empower Students", desc: "Ensure every voice is heard and every issue resolved." },
                 { title: "Foster Innovation", desc: "Support the technical and creative pursuits of residents." },
                 { title: "Build Community", desc: "Strengthen the bond between residents and alumni." }

@@ -24,7 +24,7 @@ export default async function AlumniPage() {
           Global <span className="text-blue-600">Alumni</span> Network
         </h1>
         <p className="text-xl text-slate-600 font-medium max-w-2xl leading-relaxed">
-          The ORION legacy lives on through our residents who are now leading in top global organizations. Connect, network, and grow with the Sevenite family.
+          The ORION legacy lives on through our residents who are now leading in top global organizations. Connect, network, and grow with the Orionite family.
         </p>
       </section>
 
