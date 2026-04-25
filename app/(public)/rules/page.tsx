@@ -27,7 +27,7 @@ export default function RulesPage() {
   ];
 
   return (
-    <main className="bg-[#fffbf2] min-h-screen selection:bg-amber-500/20">
+    <main className="bg-transparent min-h-screen selection:bg-amber-500/20">
     <div className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-5xl mx-auto overflow-x-hidden">
       <div className="text-center mb-16 md:mb-20">
         <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-indigo-50 border border-indigo-100 rounded-full text-[11px] font-bold tracking-tight mb-6 text-indigo-600 font-sans">

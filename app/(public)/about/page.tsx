@@ -7,7 +7,7 @@ export const revalidate = 86400; // Revalidate once a day
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#fffcf5] min-h-screen selection:bg-amber-500/20 overflow-x-hidden">
+    <main className="bg-transparent min-h-screen selection:bg-amber-500/20 overflow-x-hidden">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-48 lg:pb-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="flex-1 space-y-6 md:space-y-8 text-center lg:text-left">
