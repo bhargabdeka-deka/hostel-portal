@@ -9,12 +9,12 @@ export default async function AchievementsPage() {
   const { data: achievements } = await supabase
     .from('achievements')
     .select('*')
-    .order('date', { ascending: false });
+    .order('date', { ascending: true });
 
   const { data: gallery } = await supabase
     .from('gallery')
     .select('*')
-    .order('created_at', { ascending: false });
+    .order('created_at', { ascending: true });
 
   return (
     <main className="bg-transparent min-h-screen selection:bg-blue-500/20 overflow-x-hidden">
@@ -22,37 +22,43 @@ export default async function AchievementsPage() {
       <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-8 md:pb-16 space-y-4 md:space-y-6">
         <div className="flex items-center gap-3">
           <div className="h-px w-6 md:w-12 bg-slate-200"></div>
-          <span className="text-[7px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Honoring Excellence</span>
+          <span className="text-[7px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] font-heading">Capturing Moments</span>
         </div>
         <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter uppercase leading-[1.1] font-heading">
-          Excellence <span className="text-blue-600 font-sans">&</span> Milestones
+          Hostel <span className="text-blue-600">Gallery</span>
         </h1>
-        <p className="text-sm md:text-xl text-slate-600 font-medium max-w-2xl leading-relaxed">
-          A visual legacy of determination and sportsmanship. Explore the milestones that define the collective spirit of ORION Hostel.
+        <p className="text-sm md:text-xl text-slate-600 font-medium max-w-2xl leading-relaxed font-sans">
+          A visual legacy of our history, achievements, and brotherhood. From festive celebrations to major sports titles, explore the spirit of ORION.
         </p>
       </section>
 
-      {/* Achievements Grid */}
+      {/* Gallery Grid */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
         <h2 className="text-[8px] md:text-[10px] font-bold text-slate-400 uppercase tracking-[0.4em] mb-8 md:mb-12 flex items-center gap-4 font-heading">
-          Major Milestones <div className="h-px flex-1 bg-slate-100"></div>
+          Visual History <div className="h-px flex-1 bg-slate-100"></div>
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
           {achievements && achievements.length > 0 ? (
             achievements.map((achievement) => (
-              <div key={achievement.id} className="group bg-white border border-slate-100 rounded-2xl md:rounded-[2.5rem] overflow-hidden hover:border-blue-100 transition-all duration-300 shadow-lg">
-                <div className="p-2">
-                  <div className="aspect-[16/10] relative overflow-hidden rounded-2xl bg-slate-50">
+              <div key={achievement.id} className="group bg-white border border-slate-100 rounded-2xl md:rounded-[3rem] overflow-hidden hover:border-blue-100 transition-all duration-500 shadow-xl shadow-slate-200/50">
+                <div className="p-3">
+                  <div className="aspect-[16/10] relative overflow-hidden rounded-[2rem] bg-slate-50">
                     <Image 
                       src={achievement.image_url || "/placeholder-achievement.png"} 
                       alt={achievement.title}
                       fill
-                      className="object-contain transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                 </div>
-                <div className="p-3 md:p-4 pt-0 pb-6 md:pb-8">
-                  <h3 className="text-[10px] md:text-base font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors leading-tight uppercase line-clamp-2">
+                <div className="p-4 md:p-6 pt-0 pb-6 md:pb-8">
+                  <div className="mb-3">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-[9px] font-bold text-blue-600 uppercase tracking-widest font-heading">
+                      <Calendar className="w-2.5 h-2.5" />
+                      {achievement.year || (achievement.date ? new Date(achievement.date).getFullYear() : 'N/A')}
+                    </div>
+                  </div>
+                  <h3 className="text-base md:text-lg font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors leading-snug uppercase font-heading">
                     {achievement.title}
                   </h3>
                 </div>
@@ -61,8 +67,8 @@ export default async function AchievementsPage() {
           ) : (
             <div className="col-span-full py-24 md:py-40 text-center bg-white rounded-[2rem] md:rounded-[3rem] border border-slate-100 shadow-lg">
                <Trophy className="w-12 h-12 md:w-16 md:h-16 text-slate-200 mx-auto mb-6" />
-               <h3 className="text-lg font-bold text-slate-400 uppercase tracking-widest">No achievements yet</h3>
-               <p className="text-slate-400 font-medium mt-2">The trophy cabinet is waiting for its first entry.</p>
+               <h3 className="text-lg font-bold text-slate-400 uppercase tracking-widest">No entries yet</h3>
+               <p className="text-slate-400 font-medium mt-2">The gallery is waiting for its first photo.</p>
             </div>
           )}
         </div>
@@ -71,33 +77,33 @@ export default async function AchievementsPage() {
       {/* Featured Trophy Section */}
       <section className="max-w-7xl mx-auto px-6 pb-32">
         <div className="bg-slate-50 border border-slate-200 rounded-[3rem] md:rounded-[4rem] overflow-hidden relative min-h-[400px] md:min-h-[500px] flex items-center shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 md:via-white/80 to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 md:via-white/40 to-transparent z-10"></div>
           
           <div className="relative z-20 p-8 md:p-12 lg:p-24 max-w-2xl space-y-6 md:space-y-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tighter leading-tight uppercase font-heading">
-              Built on Tradition, <br/><span className="text-blue-600">Forged in Grit</span>
+              A Legacy of <br/><span className="text-blue-600">Celebrations</span>
             </h2>
-            <p className="text-slate-600 font-medium leading-relaxed text-sm md:text-lg">
-              Our trophy cabinet isn't just full of metal and wood; it's filled with stories of early morning practices, late-night strategy sessions, and the unbreakable bond of the ORION family.
+            <p className="text-slate-600 font-medium leading-relaxed text-sm md:text-lg font-sans">
+              Our gallery captures the soul of Orion. From the high-octane energy of inter-hostel sports to the vibrant colors of Diwali and Holi, every photo tells a story of brotherhood.
             </p>
             <div className="flex gap-8 md:gap-16 pt-4">
               <div>
-                <div className="text-3xl md:text-5xl font-bold text-slate-900 mb-1">15+</div>
-                <div className="text-[8px] md:text-[10px] font-bold text-blue-600 uppercase tracking-widest">Major Titles</div>
+                <div className="text-3xl md:text-5xl font-bold text-slate-900 mb-1 font-heading">40+</div>
+                <div className="text-[8px] md:text-[10px] font-bold text-blue-600 uppercase tracking-widest font-heading">Years of Memories</div>
               </div>
               <div>
-                <div className="text-3xl md:text-5xl font-bold text-slate-900 mb-1">08+</div>
-                <div className="text-[8px] md:text-[10px] font-bold text-blue-600 uppercase tracking-widest">Sports Categories</div>
+                <div className="text-3xl md:text-5xl font-bold text-slate-900 mb-1 font-heading">100%</div>
+                <div className="text-[8px] md:text-[10px] font-bold text-blue-600 uppercase tracking-widest font-heading">Orionite Spirit</div>
               </div>
             </div>
           </div>
 
-          <div className="absolute right-0 top-0 h-full w-full md:w-1/2">
+          <div className="absolute right-0 top-0 h-full w-full md:w-2/3">
             <Image 
               src="/hostel_about.jpeg" 
-              alt="Trophy" 
+              alt="Gallery" 
               fill
-              className="object-cover opacity-30 md:opacity-50"
+              className="object-cover opacity-80 md:opacity-100"
             />
           </div>
         </div>

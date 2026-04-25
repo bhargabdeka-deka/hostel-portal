@@ -13,8 +13,8 @@ export default async function ContactPage() {
     .order('role', { ascending: true });
 
   const mainContacts = [
-    { icon: <MapPin className="w-5 h-5" />, title: "Location", detail: "Hostel No 7, JEC Road, Jorhat, Assam 785007", color: "text-blue-600", link: "https://www.google.com/maps/search/?api=1&query=Hostel+No+7+Jorhat+Engineering+College" },
-    { icon: <Instagram className="w-5 h-5" />, title: "Instagram", detail: "@orion_jec", color: "text-pink-600", link: "https://www.instagram.com/orion_jec?igsh=azA3enkzZmZ3Y3Fu" },
+    { icon: <MapPin className="w-5 h-5" />, title: "Location", detail: "Hostel No 7, JEC Road, Jorhat, Assam 785007", color: "text-blue-600", bgColor: "bg-blue-50/50", borderColor: "border-blue-100", link: "https://www.google.com/maps/search/?api=1&query=Hostel+No+7+Jorhat+Engineering+College" },
+    { icon: <Instagram className="w-5 h-5" />, title: "Instagram", detail: "@orion_jec", color: "text-pink-600", bgColor: "bg-pink-50/50", borderColor: "border-pink-100", link: "https://www.instagram.com/orion_jec?igsh=azA3enkzZmZ3Y3Fu" },
   ];
 
   return (
@@ -44,16 +44,16 @@ export default async function ContactPage() {
                 target={c.link ? "_blank" : undefined}
                 rel={c.link ? "noopener noreferrer" : undefined}
                 className={cn(
-                  "p-8 md:p-10 bg-white border border-slate-100 rounded-[2.5rem] shadow-lg hover:border-blue-100 transition-all duration-300 text-center space-y-6 group block",
-                  c.link && "cursor-pointer active:scale-95"
+                  `p-8 md:p-10 ${c.bgColor} border ${c.borderColor} rounded-[2.5rem] shadow-lg hover:border-blue-100 transition-all duration-300 text-center space-y-6 group block`,
+                  c.link && "cursor-pointer active:scale-95 shadow-slate-200/50"
                 )}
               >
-                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-slate-50 flex items-center justify-center mx-auto text-blue-600 group-hover:scale-105 transition-transform duration-300 shrink-0`}>
+                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white flex items-center justify-center mx-auto ${c.color} group-hover:scale-105 transition-transform duration-300 shrink-0 shadow-sm`}>
                   {c.icon}
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{c.title}</h3>
-                  <p className="text-base md:text-lg font-bold text-slate-900 leading-tight uppercase tracking-tight">{c.detail}</p>
+                  <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest font-heading">{c.title}</h3>
+                  <p className="text-base md:text-lg font-bold text-slate-900 leading-tight uppercase tracking-tight font-heading">{c.detail}</p>
                 </div>
               </Wrapper>
             );
@@ -76,9 +76,9 @@ export default async function ContactPage() {
             </div>
             
             <div className="w-full lg:w-auto">
-              <div className="bg-white border border-slate-200 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 min-w-0 md:min-w-[400px] shadow-lg">
-                <div className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-4">Current Superintendent</div>
-                <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 uppercase tracking-tight">Mr. Jiten Borgohain</div>
+              <div className="bg-blue-50 border border-blue-100 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 min-w-0 md:min-w-[400px] shadow-lg shadow-blue-200/20">
+                <div className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-4 font-heading">Current Superintendent</div>
+                <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 uppercase tracking-tight font-heading">Mr. Jiten Borgohain</div>
                 <a 
                   href="tel:+919101481714" 
                   className="flex items-center justify-center gap-4 p-5 bg-blue-600 text-white rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-blue-700 transition-all active:scale-95 shadow-lg"
@@ -113,7 +113,7 @@ export default async function ContactPage() {
                 return (
                   <div 
                     key={m.id} 
-                    className={`bg-white p-6 rounded-[2rem] border ${color.border} shadow-md hover:border-blue-200 transition-all duration-300 group flex flex-col gap-4`}
+                    className={`${color.bg} p-6 rounded-[2rem] border ${color.border} shadow-md hover:border-blue-200 transition-all duration-300 group flex flex-col gap-4`}
                   >
                     <div className="flex items-center gap-4">
                       <div className={`w-12 h-12 rounded-2xl ${color.bg} ${color.text} flex items-center justify-center shrink-0 group-hover:scale-105 transition-all duration-300`}>

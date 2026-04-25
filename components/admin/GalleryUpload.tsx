@@ -14,6 +14,7 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [caption, setCaption] = useState("")
+  const [year, setYear] = useState(new Date().getFullYear())
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -30,6 +31,11 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
     
     if (!caption.trim()) {
       setError("Achievement title is mandatory")
+      return
+    }
+
+    if (!year || year < 1982 || year > 2100) {
+      setError("Please provide a valid year (1982-2100)")
       return
     }
 
@@ -55,13 +61,14 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
       })
       const base64Data = await base64Promise
 
-      // 3. Upload via Unified Server Action (Bypasses all client RLS and storage errors)
-      const result = await uploadMedia(base64Data, selectedFile.name, caption, type)
+      // 3. Upload via Unified Server Action
+      const result = await uploadMedia(base64Data, selectedFile.name, caption, type, Number(year))
 
       if (!result.success) throw new Error(result.error)
         
       setSuccess(true)
       setCaption("")
+      setYear(new Date().getFullYear())
       setSelectedFile(null)
       if (fileInputRef.current) fileInputRef.current.value = ""
         
@@ -86,10 +93,29 @@ export function GalleryUpload({ type = 'gallery' }: GalleryUploadProps) {
             <input 
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
-              placeholder={type === 'achievement' ? "e.g. Cricket Champion" : "e.g. Annual Sports Meet 2024"}
+              placeholder={type === 'achievement' ? "e.g. Cricket Champion" : "e.g. Annual Sports Meet"}
               className={cn(
                 "w-full pl-11 pr-4 py-4 bg-slate-50 border-2 rounded-2xl outline-none transition-all text-sm font-bold text-slate-900 placeholder:text-slate-400",
                 error && !caption.trim() ? "border-red-500/50 bg-red-50" : "border-slate-100 focus:border-blue-500 focus:ring-4 ring-blue-500/10"
+              )}
+            />
+          </div>
+        </div>
+
+        <div className="relative">
+          <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mb-2 ml-1">
+            Event Year <span className="text-red-500">*</span>
+          </label>
+          <div className="relative">
+            <Loader2 className={cn("absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500", loading && "animate-spin")} />
+            <input 
+              type="number"
+              value={year}
+              onChange={(e) => setYear(Number(e.target.value))}
+              placeholder="YYYY"
+              className={cn(
+                "w-full pl-11 pr-4 py-4 bg-slate-50 border-2 rounded-2xl outline-none transition-all text-sm font-bold text-slate-900 placeholder:text-slate-400",
+                error && (year < 1982 || year > 2100) ? "border-red-500/50 bg-red-50" : "border-slate-100 focus:border-blue-500 focus:ring-4 ring-blue-500/10"
               )}
             />
           </div>

@@ -22,6 +22,7 @@ CREATE TABLE achievements (
   description TEXT NOT NULL,
   date DATE NOT NULL,
   image_url TEXT,
+  year INTEGER NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
@@ -30,6 +31,7 @@ CREATE TABLE gallery (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   image_url TEXT NOT NULL,
   caption TEXT NOT NULL,
+  year INTEGER NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 

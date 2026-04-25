@@ -36,16 +36,19 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {[
-            { icon: <Calendar className="w-6 h-6" />, value: "42+", label: "Years of History", color: 'text-sky-600', bgColor: 'bg-sky-50', borderColor: 'border-sky-100' },
-            { icon: <Users className="w-6 h-6" />, value: "800+", label: "Glorious Alumni", color: 'text-emerald-600', bgColor: 'bg-emerald-50', borderColor: 'border-emerald-100' },
-            { icon: <GraduationCap className="w-6 h-6" />, value: "JEC", label: "Hostel 7 Identity", color: 'text-violet-600', bgColor: 'bg-violet-50', borderColor: 'border-violet-100' },
+            { tag: 'Legacy', icon: <Calendar className="w-6 h-6" />, value: "42+", label: "Years of History", color: 'text-sky-600', bgColor: 'bg-sky-50', borderColor: 'border-sky-100' },
+            { tag: 'Community', icon: <Users className="w-6 h-6" />, value: "800+", label: "Glorious Alumni", color: 'text-emerald-600', bgColor: 'bg-emerald-50', borderColor: 'border-emerald-100' },
+            { tag: 'Branding', icon: <GraduationCap className="w-6 h-6" />, value: "JEC", label: "Hostel 7 Identity", color: 'text-violet-600', bgColor: 'bg-violet-50', borderColor: 'border-violet-100' },
           ].map((stat, i) => (
-            <div key={i} className={`${stat.bgColor} border ${stat.borderColor} rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-lg transition-all duration-300`}>
-              <div className={`w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-6 ${stat.color} shadow-sm`}>
-                {stat.icon}
+            <div key={i} className={`group ${stat.bgColor} border ${stat.borderColor} rounded-3xl p-8 md:p-10 flex flex-col items-center text-center shadow-lg transition-all duration-300 hover:scale-105`}>
+              <div className="w-full flex items-center justify-between mb-6">
+                <div className={`w-14 h-14 rounded-2xl bg-white flex items-center justify-center ${stat.color} shadow-sm group-hover:scale-110 transition-transform`}>
+                  {stat.icon}
+                </div>
+                <span className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em] font-heading">{stat.tag}</span>
               </div>
-              <div className={`text-4xl font-bold ${stat.color} mb-1 tracking-tight`}>{stat.value}</div>
-              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</div>
+              <div className={`text-4xl font-bold ${stat.color} mb-1 tracking-tight font-heading`}>{stat.value}</div>
+              <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest font-heading">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -130,14 +133,20 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-12">
               {[
-                { label: "32 Resident Rooms", sub: "Spacious Living", color: 'text-blue-600', border: 'border-blue-100' },
-                { label: "Common Room", sub: "Legacy Center", color: 'text-amber-600', border: 'border-amber-100' },
-                { label: "Gym & Library", sub: "Dual Wellness", color: 'text-rose-600', border: 'border-rose-100' },
-                { label: "Modern Facilities", sub: "Hygiene Focused", color: 'text-teal-600', border: 'border-teal-100' },
+                { tag: 'Housing', label: "32 Resident Rooms", sub: "Spacious Living", color: 'text-blue-600', border: 'border-blue-100' },
+                { tag: 'Social', label: "Common Room", sub: "Legacy Center", color: 'text-amber-600', border: 'border-amber-100' },
+                { tag: 'Health', label: "Gym & Library", sub: "Dual Wellness", color: 'text-rose-600', border: 'border-rose-100' },
+                { tag: 'Standard', label: "Modern Facilities", sub: "Hygiene Focused", color: 'text-teal-600', border: 'border-teal-100' },
               ].map((item, i) => (
-                <div key={i} className={`bg-white p-6 md:p-8 rounded-3xl border ${item.border} shadow-lg text-center space-y-2 group transition-all duration-300`}>
-                  <div className={`text-sm md:text-base font-bold text-slate-900 leading-tight group-hover:${item.color}`}>{item.label}</div>
-                  <div className={`text-[8px] font-bold ${item.color} uppercase tracking-widest`}>{item.sub}</div>
+                <div key={i} className={`bg-white p-6 md:p-8 rounded-3xl border ${item.border} shadow-lg text-center space-y-4 group transition-all duration-300 hover:scale-105`}>
+                  <div className="flex items-center justify-between gap-4 mb-2">
+                    <span className="text-[7px] font-bold text-slate-300 uppercase tracking-widest font-heading">{item.tag}</span>
+                    <CheckCircle2 className={`w-3.5 h-3.5 ${item.color} opacity-20 group-hover:opacity-100 transition-opacity`} />
+                  </div>
+                  <div className="space-y-1">
+                    <div className={`text-sm md:text-base font-bold text-slate-900 leading-tight group-hover:${item.color} font-heading`}>{item.label}</div>
+                    <div className={`text-[8px] font-bold ${item.color} uppercase tracking-widest font-heading`}>{item.sub}</div>
+                  </div>
                 </div>
               ))}
             </div>

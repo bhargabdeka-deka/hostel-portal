@@ -39,17 +39,26 @@ export default function RulesPage() {
       </div>
 
       <div className="grid gap-6 md:gap-8">
-        {rules.map((rule, i) => (
-          <div key={i} className="group bg-white border border-slate-100 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col sm:flex-row gap-6 md:gap-8 items-start hover:shadow-lg hover:border-blue-100 transition-all duration-300">
-            <div className="w-14 h-14 md:w-16 md:h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm shrink-0">
-              {rule.icon}
+        {rules.map((rule, i) => {
+          const colors = [
+            { bg: 'bg-sky-50/50', border: 'border-sky-100', iconBg: 'bg-sky-100/50', iconText: 'text-sky-600' },
+            { bg: 'bg-emerald-50/50', border: 'border-emerald-100', iconBg: 'bg-emerald-100/50', iconText: 'text-emerald-600' },
+            { bg: 'bg-violet-50/50', border: 'border-violet-100', iconBg: 'bg-violet-100/50', iconText: 'text-violet-600' },
+            { bg: 'bg-rose-50/50', border: 'border-rose-100', iconBg: 'bg-rose-100/50', iconText: 'text-rose-600' },
+          ];
+          const color = colors[i % colors.length];
+          return (
+            <div key={i} className={`group ${color.bg} border ${color.border} rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col sm:flex-row gap-6 md:gap-8 items-start hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500`}>
+              <div className={`w-14 h-14 md:w-16 md:h-16 bg-white rounded-2xl flex items-center justify-center ${color.iconText} shadow-sm shrink-0 transition-transform duration-500 group-hover:scale-110`}>
+                {rule.icon}
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight uppercase font-heading">{rule.title}</h3>
+                <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed font-sans">{rule.details}</p>
+              </div>
             </div>
-            <div className="space-y-3">
-              <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight uppercase">{rule.title}</h3>
-              <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed">{rule.details}</p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="mt-16 md:mt-20 p-8 md:p-12 bg-slate-50 border border-slate-200 rounded-[2rem] md:rounded-[2.5rem] flex flex-col md:flex-row items-center gap-8 md:gap-10">

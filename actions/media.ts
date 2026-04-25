@@ -2,7 +2,7 @@
 import { createAdminClient } from '@/lib/supabase/admin'
 import { revalidatePath } from 'next/cache'
 
-export async function uploadMedia(base64Data: string, fileName: string, caption: string, type: 'gallery' | 'achievement') {
+export async function uploadMedia(base64Data: string, fileName: string, caption: string, type: 'gallery' | 'achievement', year: number) {
   const supabase = createAdminClient()
   
   try {
@@ -15,14 +15,11 @@ export async function uploadMedia(base64Data: string, fileName: string, caption:
     const { data: uploadData, error: uploadError } = await supabase.storage
       .from('images')
       .upload(filePath, buffer, {
-        contentType: 'image/jpeg', // Or dynamic based on fileName
+        contentType: 'image/jpeg',
         upsert: true
       })
 
-    if (uploadError) {
-      // If error is "Bucket not found", we could try to create it, but usually best to throw
-      throw uploadError
-    }
+    if (uploadError) throw uploadError
 
     // 3. Get Public URL
     const { data: { publicUrl } } = supabase.storage.from('images').getPublicUrl(filePath)
@@ -34,9 +31,10 @@ export async function uploadMedia(base64Data: string, fileName: string, caption:
           title: caption, 
           image_url: publicUrl, 
           description: 'Official Milestone', 
-          date: new Date().toISOString().split('T')[0] 
+          year: year,
+          date: `${year}-01-01`
         }
-      : { image_url: publicUrl, caption: caption }
+      : { image_url: publicUrl, caption: caption, year: year }
 
     const { error: insertError } = await supabase.from(table).insert([payload])
     if (insertError) throw insertError
