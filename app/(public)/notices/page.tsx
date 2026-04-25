@@ -21,7 +21,7 @@ export default async function AllNoticesPage() {
           <div className="p-3 bg-indigo-50 text-indigo-600 rounded-2xl shrink-0">
             <Bell className="w-6 h-6" />
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-none font-jakarta">Official notice board</h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-none font-sans">Official notice board</h1>
         </div>
         <p className="text-base md:text-lg text-slate-500 font-medium max-w-2xl leading-relaxed">
           Stay informed with the latest updates, event announcements, and official news from the ORION Hostel administration.

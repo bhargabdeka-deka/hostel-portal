@@ -91,12 +91,12 @@ export default async function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto py-32 text-center space-y-12">
-          <div className="inline-flex items-center px-5 py-2 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-[10px] md:text-[12px] font-bold tracking-[0.2em] backdrop-blur-md">
+          <div className="inline-flex items-center px-5 py-2 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-[11px] md:text-[13px] font-bold tracking-tight font-sans">
             Hostel No 7 • Jorhat Engineering College
           </div>
           
           <div className="space-y-10 md:space-y-16">
-            <h1 className="text-7xl sm:text-9xl md:text-[14rem] font-bold tracking-tighter uppercase leading-none cursor-default text-slate-900 drop-shadow-sm">
+            <h1 className="text-7xl sm:text-9xl md:text-[14rem] font-bold tracking-tighter leading-none cursor-default text-slate-900 font-sans">
               ORION
             </h1>
             <p className="text-xl sm:text-2xl md:text-4xl text-slate-900 font-bold italic max-w-4xl mx-auto px-4 leading-tight drop-shadow-sm">
@@ -121,10 +121,10 @@ export default async function HomePage() {
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between gap-4 mb-0.5">
-                  <div className={`text-2xl md:text-3xl font-bold text-slate-900 tracking-tight font-jakarta`}>{stat.value}</div>
-                  <span className="text-[10px] font-bold text-indigo-600 tracking-[0.2em] font-jakarta">{stat.tag}</span>
+                  <div className={`text-2xl md:text-3xl font-bold text-slate-900 tracking-tight font-sans`}>{stat.value}</div>
+                  <span className="text-[11px] font-bold text-indigo-600 tracking-tight font-sans">{stat.tag}</span>
                 </div>
-                <div className="text-[12px] font-bold text-slate-500 tracking-widest font-jakarta">{stat.label}</div>
+                <div className="text-[12px] font-bold text-slate-500 tracking-tight font-sans">{stat.label}</div>
               </div>
             </div>
           ))}
@@ -133,7 +133,7 @@ export default async function HomePage() {
 
       {/* Spirit Section */}
       <section className="max-w-7xl mx-auto px-6 py-40 text-center">
-        <h2 className="text-[12px] font-bold text-indigo-600 tracking-[0.6em] mb-20 font-jakarta">The Orion spirit</h2>
+        <h2 className="text-[11px] md:text-[13px] font-bold text-indigo-600 tracking-tight mb-20 font-sans">The Orion spirit</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {spirits.map((spirit, i) => (
             <div 
@@ -143,10 +143,10 @@ export default async function HomePage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-bl-full -mr-16 -mt-16 group-hover:bg-white/60 transition-colors"></div>
               <div className="flex items-center justify-between mb-8 relative z-10">
                 <div className={`${spirit.color} p-4 bg-white rounded-2xl inline-block shadow-sm group-hover:scale-110 transition-transform duration-500`}>{spirit.icon}</div>
-                <span className="text-[10px] md:text-[12px] font-bold text-indigo-600 tracking-[0.2em] font-jakarta">{spirit.tag}</span>
+                <span className="text-[11px] md:text-[13px] font-bold text-indigo-600 tracking-tight font-sans">{spirit.tag}</span>
               </div>
               <div className="space-y-4 relative z-10">
-                <h3 className={`text-3xl font-bold text-slate-900 tracking-tight font-heading uppercase`}>{spirit.title}</h3>
+                <h3 className={`text-3xl font-bold text-slate-900 tracking-tight font-sans`}>{spirit.title}</h3>
                 <p className="text-slate-600 text-base leading-relaxed font-medium font-sans">
                   {spirit.desc}
                 </p>
@@ -161,7 +161,7 @@ export default async function HomePage() {
       {/* Notices Section */}
       <section className="max-w-4xl mx-auto px-6 py-40">
         <div className="text-center space-y-6 mb-20">
-          <h2 className="text-[12px] font-bold text-indigo-600 tracking-[0.6em] font-jakarta text-center">Stay informed</h2>
+          <h2 className="text-[11px] md:text-[13px] font-bold text-indigo-600 tracking-tight font-sans text-center">Stay informed</h2>
           <h3 className="text-4xl md:text-6xl font-bold text-slate-900 flex items-center justify-center gap-4 tracking-tighter">
             Bulletin <Megaphone className="w-8 h-8 text-indigo-600" />
           </h3>
@@ -172,11 +172,11 @@ export default async function HomePage() {
             typedNotices.map((notice: Notice, i: number) => (
               <div key={notice.id} className={`p-8 md:p-12 hover:bg-slate-50 transition-all cursor-default group ${i !== typedNotices.length - 1 ? 'border-b border-slate-100' : ''}`}>
                 <div className="flex items-center justify-between gap-4 mb-4">
-                  <div className="text-[10px] font-bold text-slate-400 uppercase flex items-center gap-2 tracking-[0.2em] font-heading">
+                  <div className="text-[11px] font-bold text-slate-400 flex items-center gap-2 tracking-tight font-sans">
                     <Calendar className="w-3.5 h-3.5" />
                     {new Date(notice.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                   </div>
-                  <span className="text-[8px] md:text-[10px] font-bold text-blue-600 uppercase tracking-[0.2em] font-heading">Active Notice</span>
+                  <span className="text-[9px] md:text-[11px] font-bold text-blue-600 tracking-tight font-sans">Active Notice</span>
                 </div>
                 <h4 className="font-bold text-slate-900 text-xl md:text-2xl leading-tight group-hover:text-blue-600 transition-colors">
                   {notice.title}
@@ -186,7 +186,7 @@ export default async function HomePage() {
           ) : (
             <div className="p-32 text-center text-slate-400 font-medium italic">No active notices found</div>
           )}
-          <Link href="/notices" className="block w-full py-10 bg-slate-900 text-center text-[12px] font-bold uppercase tracking-[0.4em] text-white hover:bg-slate-800 transition-all">
+          <Link href="/notices" className="block w-full py-10 bg-slate-900 text-center text-[13px] font-bold tracking-tight text-white hover:bg-slate-800 transition-all font-sans">
             View All Announcements
           </Link>
         </div>
