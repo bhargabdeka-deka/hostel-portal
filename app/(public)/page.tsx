@@ -74,15 +74,6 @@ export default async function HomePage() {
   return (
     <main className="bg-transparent min-h-screen relative selection:bg-blue-500/20 overflow-x-hidden">
       {/* Background is handled by GridBackground in layout.tsx */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-[15%] w-[2px] h-full bg-gradient-to-b from-transparent via-indigo-500/20 to-transparent"></div>
-        <div className="absolute top-0 left-[50%] w-[2px] h-full bg-gradient-to-b from-transparent via-blue-500/20 to-transparent"></div>
-        <div className="absolute top-0 left-[85%] w-[2px] h-full bg-gradient-to-b from-transparent via-slate-500/20 to-transparent"></div>
-        
-        {/* Soft background glows */}
-        <div className="absolute top-[20%] -left-[10%] w-[40%] h-[40%] bg-indigo-50/30 blur-[120px] rounded-full"></div>
-        <div className="absolute top-[60%] -right-[10%] w-[40%] h-[40%] bg-blue-50/30 blur-[120px] rounded-full"></div>
-      </div>
 
       {/* Hero Section */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden px-6">
