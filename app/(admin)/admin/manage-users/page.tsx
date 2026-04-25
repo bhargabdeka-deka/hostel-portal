@@ -43,8 +43,8 @@ export default async function TeamManagement() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <h1 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase font-heading">Team Management</h1>
-          <p className="text-slate-500 mt-1 text-sm font-medium">Manage administrator access and roles for the ORION portal.</p>
+          <h1 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase font-heading">Team Management</h1>
+          <p className="text-slate-600 mt-1 text-sm font-medium">Manage administrator access and roles for the ORION portal.</p>
         </div>
       </div>
 
@@ -56,39 +56,39 @@ export default async function TeamManagement() {
 
         {/* Right: Active Team Members */}
         <div className="lg:col-span-8">
-          <section className="live-border bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] shadow-2xl flex flex-col relative overflow-hidden">
-            <div className="p-6 border-b border-white/5 flex items-center justify-between bg-white/[0.02]">
-              <h2 className="text-lg font-bold text-white uppercase tracking-tight font-heading">Active Team Members</h2>
-              <div className="px-4 py-1.5 bg-blue-600/10 text-blue-500 rounded-full text-[10px] font-black uppercase tracking-widest border border-blue-500/20">
+          <section className="bg-white border border-slate-200 rounded-[2.5rem] shadow-lg flex flex-col relative overflow-hidden">
+            <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+              <h2 className="text-lg font-bold text-slate-900 uppercase tracking-tight font-heading">Active Team Members</h2>
+              <div className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-[10px] font-black uppercase tracking-widest border border-blue-100">
                 {profiles.length} Users
               </div>
             </div>
             
-            <div className="divide-y divide-white/5">
+            <div className="divide-y divide-slate-100">
               {profiles.length > 0 ? profiles.map((profile) => (
-                <div key={profile.id} className="p-6 flex items-center justify-between hover:bg-white/[0.02] transition-all group">
+                <div key={profile.id} className="p-6 flex items-center justify-between hover:bg-slate-50 transition-all group">
                   <div className="flex items-center gap-4">
                     <div className={cn(
-                      "w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500 shadow-inner border border-transparent",
-                      profile.role === 'superadmin' ? "bg-blue-600 text-white" : "bg-white/5 text-slate-500 group-hover:bg-blue-600/10 group-hover:text-blue-500 group-hover:border-blue-500/20"
+                      "w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 shadow-inner border border-transparent",
+                      profile.role === 'superadmin' ? "bg-blue-600 text-white" : "bg-slate-100 text-slate-400 group-hover:bg-blue-600/10 group-hover:text-blue-600 group-hover:border-blue-100"
                     )}>
                       {profile.role === 'superadmin' ? <ShieldCheck className="w-6 h-6" /> : <User className="w-6 h-6" />}
                     </div>
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="font-bold text-white text-base tracking-tight capitalize">{profile.email.split('@')[0]}</span>
+                          <span className="font-bold text-slate-900 text-base tracking-tight capitalize">{profile.email.split('@')[0]}</span>
                           {profile.email === currentUser?.email && (
                             <span className="px-1.5 py-0.5 bg-blue-600 text-white text-[7px] font-black uppercase tracking-widest rounded-md">YOU</span>
                           )}
                           {profile.email === 'bhargab1234deka@gmail.com' && (
-                            <span className="px-1.5 py-0.5 bg-white text-slate-950 text-[7px] font-black uppercase tracking-widest rounded-md">OWNER</span>
+                            <span className="px-1.5 py-0.5 bg-slate-900 text-white text-[7px] font-black uppercase tracking-widest rounded-md">OWNER</span>
                           )}
                         </div>
                         <div className={cn(
                           "px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest border flex items-center gap-2 shadow-sm mt-1 w-fit",
                           profile.role === 'superadmin' 
-                          ? "bg-blue-600/10 text-blue-500 border-blue-500/20" 
-                          : "bg-white/5 text-slate-500 border-white/10"
+                          ? "bg-blue-50 text-blue-600 border-blue-100" 
+                          : "bg-slate-50 text-slate-400 border-slate-100"
                         )}>
                           {profile.role === 'superadmin' ? 'Super Admin' : 'Admin'}
                         </div>
@@ -103,15 +103,15 @@ export default async function TeamManagement() {
                 </div>
               )) : (
                 <div className="p-20 text-center">
-                  <UserPlus className="w-16 h-16 text-slate-800 mx-auto mb-4" />
-                  <p className="text-slate-600 font-bold uppercase tracking-widest">No team members found</p>
-                  <p className="text-xs text-slate-700 mt-2 font-medium">Add a new administrator using the form on the left.</p>
+                  <UserPlus className="w-16 h-16 text-slate-200 mx-auto mb-4" />
+                  <p className="text-slate-400 font-bold uppercase tracking-widest">No team members found</p>
+                  <p className="text-xs text-slate-500 mt-2 font-medium">Add a new administrator using the form on the left.</p>
                 </div>
               )}
             </div>
             
-            <div className="p-6 bg-white/[0.01] border-t border-white/5 text-center">
-              <p className="text-[10px] text-slate-600 font-bold uppercase tracking-widest leading-relaxed">
+            <div className="p-6 bg-slate-50 border-t border-slate-100 text-center">
+              <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest leading-relaxed">
                 Administrators can manage other administrators. Only the Primary SuperAdmin is protected from removal.
               </p>
             </div>

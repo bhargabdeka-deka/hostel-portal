@@ -2,17 +2,16 @@ import { Navigation } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-[#030712]/95 backdrop-blur-xl pt-16 pb-8 px-6 relative overflow-hidden border-t border-white/5">
-      {/* Decorative Gradient */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+    <footer className="bg-slate-50 pt-16 pb-8 px-6 relative overflow-hidden border-t border-slate-200">
+      {/* Decorative Gradient removed */}
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-12">
           <div className="max-w-sm space-y-6">
-            <h3 className="text-2xl font-black tracking-tighter text-white uppercase font-heading">
+            <h3 className="text-2xl font-black tracking-tighter text-slate-900 uppercase font-heading">
               ORION
             </h3>
-            <p className="text-slate-400 text-sm leading-relaxed font-medium">
+            <p className="text-slate-600 text-sm leading-relaxed font-medium">
               Building the future leaders of engineering through community, discipline, and a shared legacy since 1982. A sanctuary for excellence at Jorhat Engineering College.
             </p>
           </div>
@@ -25,23 +24,23 @@ export function Footer() {
                 rel="noopener noreferrer" 
                 className="flex items-start gap-3 group cursor-pointer"
               >
-                <Navigation className="w-5 h-5 text-white fill-white shrink-0 -rotate-45 group-hover:text-blue-400 group-hover:fill-blue-400 transition-colors" />
-                <p className="text-white text-base md:text-lg font-medium tracking-tight border-b border-white/20 pb-1 group-hover:border-blue-400/50 group-hover:text-blue-400 transition-all">
+                <Navigation className="w-5 h-5 text-slate-900 fill-slate-900 shrink-0 -rotate-45 group-hover:text-blue-600 group-hover:fill-blue-600 transition-colors" />
+                <p className="text-slate-900 text-base md:text-lg font-medium tracking-tight border-b border-slate-300 pb-1 group-hover:border-blue-600/50 group-hover:text-blue-600 transition-all">
                   Jorhat Engineering College, Garmur, Jorhat, Assam, 785007, India
                 </p>
               </a>
             </div>
 
             <div className="space-y-2">
-              <p className="text-white text-base md:text-lg font-bold">
+              <p className="text-slate-900 text-base md:text-lg font-bold">
                 Copyright © BhargabDeka 2026.
               </p>
             </div>
           </div>
         </div>
         
-        <div className="pt-6 border-t border-white/5 flex justify-center md:justify-start">
-          <p className="text-slate-600 text-[10px] font-black uppercase tracking-[0.3em]">
+        <div className="pt-6 border-t border-slate-200 flex justify-center md:justify-start">
+          <p className="text-slate-500 text-[10px] font-black uppercase tracking-[0.3em]">
             Sevenite Legacy • Est. 1982
           </p>
         </div>

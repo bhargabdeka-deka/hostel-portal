@@ -26,7 +26,7 @@ export default async function ManageNotices() {
             <h1 className="text-4xl font-black text-slate-900 tracking-tight uppercase">Broadcast Hub</h1>
             <p className="text-slate-500 font-medium">Manage and publish official announcements for all residents.</p>
           </div>
-          <div className="hidden md:block p-6 bg-slate-900 text-white rounded-[2rem] shadow-2xl">
+          <div className="hidden md:block p-6 bg-white border border-slate-200 text-blue-600 rounded-[2rem] shadow-lg">
             <Bell className="w-10 h-10" />
           </div>
         </div>

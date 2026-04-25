@@ -62,7 +62,7 @@ export function NoticeForm() {
           disabled={loading || success}
           className={cn(
             "w-full py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] transition-all active:scale-95 shadow-xl flex items-center justify-center gap-2",
-            success ? "bg-green-600 text-white" : "bg-slate-900 text-white hover:bg-slate-800"
+            success ? "bg-green-600 text-white" : "bg-blue-600 text-white hover:bg-blue-700 shadow-blue-900/20"
           )}
         >
           {loading ? (

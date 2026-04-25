@@ -1,5 +1,6 @@
 import { createClient } from "../../lib/supabase/server";
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   Calendar, 
@@ -10,6 +11,8 @@ import {
   Trophy, 
   Megaphone 
 } from 'lucide-react';
+
+export const revalidate = 60; // Revalidate every minute
 
 export default async function HomePage() {
   const supabase = await createClient();
@@ -89,28 +92,34 @@ export default async function HomePage() {
       {/* Background is handled by GridBackground in layout.tsx */}
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6">
+      <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden px-6 bg-slate-50">
         <div className="absolute inset-0 z-0">
-          <img src="/hero-hostel.jpeg" alt="Orion Hostel" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#020617]/70 backdrop-blur-[2px]"></div>
+          <Image 
+            src="/hero-hostel.jpeg" 
+            alt="Orion Hostel" 
+            fill
+            priority
+            className="object-cover" 
+          />
+          <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]"></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto py-24 text-center space-y-8 md:space-y-10">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-[8px] md:text-[10px] font-black uppercase tracking-widest backdrop-blur-md animate-float">
+        <div className="relative z-10 max-w-6xl mx-auto py-32 text-center space-y-12">
+          <div className="inline-flex items-center px-5 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] backdrop-blur-md">
             Hostel No 7 • Jorhat Engineering College
           </div>
           
-          <div className="space-y-4">
-            <h1 className="text-6xl sm:text-8xl md:text-[12rem] font-black tracking-tighter uppercase leading-none cursor-default transition-all duration-1000 hover:scale-110 group text-cyan-500 hover:drop-shadow-[0_0_50px_rgba(6,182,212,0.5)]">
+          <div className="space-y-6">
+            <h1 className="text-7xl sm:text-9xl md:text-[14rem] font-black tracking-tighter uppercase leading-none cursor-default text-slate-900 drop-shadow-sm">
               ORION
             </h1>
-            <p className="text-lg sm:text-xl md:text-3xl text-blue-100 font-medium italic opacity-90 max-w-2xl mx-auto px-4 leading-tight">
-              "We are not known by names but by a race — <span className="text-white font-bold not-italic">ORIONITE</span>"
+            <p className="text-xl sm:text-2xl md:text-4xl text-slate-600 font-medium italic max-w-3xl mx-auto px-4 leading-tight">
+              "We are not known by names but by a race — <span className="text-blue-600 font-bold not-italic">ORIONITE</span>"
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 pt-6">
-            <Link href="/about" className="w-full sm:w-auto bg-white text-slate-900 hover:bg-blue-50 px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-2xl flex items-center justify-center gap-2 group">
+          <div className="flex flex-wrap items-center justify-center gap-8 pt-10">
+            <Link href="/about" className="w-full sm:w-auto bg-slate-900 text-white hover:bg-slate-800 px-16 py-6 rounded-2xl font-black text-xs uppercase tracking-[0.2em] transition-all shadow-2xl hover:shadow-slate-200 flex items-center justify-center gap-2 group">
               Know About Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -123,15 +132,14 @@ export default async function HomePage() {
           {stats.map((stat, i) => (
             <div 
               key={i} 
-              className={`p-6 md:p-8 bg-slate-950/90 backdrop-blur-xl border ${stat.border} rounded-3xl shadow-2xl flex items-center gap-6 animate-float ${stat.shadow}`}
-              style={{ animationDelay: `${i * 0.5}s` }}
+              className={`p-6 md:p-8 bg-white border border-slate-100 rounded-3xl shadow-xl flex items-center gap-6`}
             >
-              <div className={`w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 ${stat.color}`}>
+              <div className={`w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 ${stat.color}`}>
                 {stat.icon}
               </div>
               <div>
-                <div className={`text-2xl md:text-3xl font-black ${stat.color} font-serif-premium tracking-tight`}>{stat.value}</div>
-                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{stat.label}</div>
+                <div className={`text-2xl md:text-3xl font-black text-slate-900 tracking-tight`}>{stat.value}</div>
+                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{stat.label}</div>
               </div>
             </div>
           ))}
@@ -139,52 +147,77 @@ export default async function HomePage() {
       </section>
 
       {/* Spirit Section */}
-      <section className="max-w-7xl mx-auto px-6 py-32 text-center">
-        <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] mb-16 font-heading">The Orion Spirit</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      <section className="max-w-7xl mx-auto px-6 py-40 text-center">
+        <h2 className="text-[12px] font-black text-blue-600 uppercase tracking-[0.6em] mb-20 font-heading">The Orion Spirit</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {spirits.map((spirit, i) => (
             <div 
               key={i} 
-              className={`p-8 md:p-10 bg-slate-950/90 backdrop-blur-xl border ${spirit.border} rounded-[2.5rem] text-left space-y-6 transition-all hover:bg-slate-900 group animate-float ${spirit.shadow}`}
-              style={{ animationDelay: `${(i + 3) * 0.8}s` }}
+              className={`p-10 md:p-14 bg-white border border-slate-100 rounded-[3rem] text-left space-y-8 transition-all hover:border-blue-200 hover:shadow-2xl hover:shadow-slate-200 group relative overflow-hidden`}
             >
-              <div className={`${spirit.color} group-hover:scale-110 transition-transform`}>{spirit.icon}</div>
-              <h3 className={`text-2xl font-black text-white tracking-tight font-serif-premium group-hover:${spirit.color} transition-colors`}>{spirit.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed font-medium">
-                {spirit.desc}
-              </p>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -mr-16 -mt-16 group-hover:bg-blue-50 transition-colors"></div>
+              <div className={`${spirit.color} relative z-10`}>{spirit.icon}</div>
+              <div className="space-y-4 relative z-10">
+                <h3 className={`text-3xl font-black text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors`}>{spirit.title}</h3>
+                <p className="text-slate-600 text-base leading-relaxed font-medium">
+                  {spirit.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Alumni Testimonials */}
+      <section className="bg-slate-900 py-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-[12px] font-black text-blue-400 uppercase tracking-[0.6em] mb-20 text-center font-heading">Global Brotherhood</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {alumni.map((person, i) => (
+              <div key={i} className="p-10 bg-white/5 border border-white/10 rounded-[2.5rem] backdrop-blur-sm space-y-6">
+                <p className="text-white text-lg font-medium italic leading-relaxed">"{person.quote}"</p>
+                <div className="flex items-center gap-4 pt-4">
+                  <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white font-black text-xs border border-white/10">
+                    {person.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-sm tracking-tight">{person.name}</div>
+                    <div className="text-slate-400 text-[10px] font-black uppercase tracking-widest">{person.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Notices Section */}
-      <section className="max-w-3xl mx-auto px-6 py-24">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] font-heading">Updates & Information</h2>
-          <h3 className="text-3xl md:text-4xl font-black text-white flex items-center justify-center gap-3 uppercase tracking-tighter">
-            Latest Notices <Megaphone className="w-6 h-6 text-blue-500" />
+      <section className="max-w-4xl mx-auto px-6 py-40">
+        <div className="text-center space-y-6 mb-20">
+          <h2 className="text-[12px] font-black text-blue-600 uppercase tracking-[0.6em] font-heading text-center">Stay Informed</h2>
+          <h3 className="text-4xl md:text-6xl font-black text-slate-900 flex items-center justify-center gap-4 uppercase tracking-tighter">
+            Bulletin <Megaphone className="w-8 h-8 text-blue-600" />
           </h3>
         </div>
         
-        <div className="border border-white/10 rounded-[3rem] overflow-hidden shadow-2xl bg-slate-950/90 backdrop-blur-xl">
+        <div className="border border-slate-200 rounded-[3rem] overflow-hidden shadow-2xl bg-white">
           {typedNotices.length > 0 ? (
             typedNotices.map((notice: Notice, i: number) => (
-              <div key={notice.id} className={`p-6 md:p-8 hover:bg-white/5 transition-colors ${i !== typedNotices.length - 1 ? 'border-b border-white/5' : ''}`}>
-                <div className="text-[10px] font-black text-slate-500 uppercase mb-3 flex items-center gap-2 tracking-widest">
-                  <Calendar className="w-3 h-3" />
+              <div key={notice.id} className={`p-8 md:p-12 hover:bg-slate-50 transition-all cursor-default group ${i !== typedNotices.length - 1 ? 'border-b border-slate-100' : ''}`}>
+                <div className="text-[10px] font-black text-slate-400 uppercase mb-4 flex items-center gap-2 tracking-[0.2em]">
+                  <Calendar className="w-3.5 h-3.5" />
                   {new Date(notice.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                 </div>
-                <h4 className="font-bold text-white text-base md:text-lg leading-tight hover:text-blue-400 cursor-pointer transition-colors">
+                <h4 className="font-bold text-slate-900 text-xl md:text-2xl leading-tight group-hover:text-blue-600 transition-colors">
                   {notice.title}
                 </h4>
               </div>
             ))
           ) : (
-            <div className="p-20 text-center text-slate-500 font-medium italic">No active notices found</div>
+            <div className="p-32 text-center text-slate-400 font-medium italic">No active notices found</div>
           )}
-          <Link href="/notices" className="block w-full py-6 bg-white text-center text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 hover:bg-slate-100 transition-all">
-            Browse All Notices
+          <Link href="/notices" className="block w-full py-10 bg-slate-900 text-center text-[12px] font-black uppercase tracking-[0.4em] text-white hover:bg-slate-800 transition-all">
+            View All Announcements
           </Link>
         </div>
       </section>
