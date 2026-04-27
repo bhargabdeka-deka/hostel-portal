@@ -88,9 +88,9 @@ export const metadata: Metadata = {
     apple: "/icon.jpeg",
   },
   // Google Search Console verification — replace with your actual token
-  // verification: {
-  //   google: "YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_TOKEN",
-  // },
+  verification: {
+    google: "47de421a33633894",
+  },
 };
 
 export default function RootLayout({
