@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import { ShieldAlert, BookOpen, Clock, Users, Coffee, HelpCircle, ShieldCheck } from 'lucide-react';
 
 export const revalidate = 86400; // Revalidate once a day
+
+export const metadata: Metadata = {
+  title: "Hostel Rules & Code of Conduct | ORION Hostel, JEC",
+  description:
+    "Official rules and regulations for residents of ORION Hostel (Hostel No 7), Jorhat Engineering College. Curfew timings, visitor policy, mess schedule, and disciplinary code of conduct.",
+  alternates: {
+    canonical: "https://orionjech7.vercel.app/rules",
+  },
+  openGraph: {
+    title: "Hostel Rules | ORION Hostel Code of Conduct",
+    description:
+      "Hostel rules and regulations for ORION Hostel residents — curfew hours, visitor policy, mess timings, and discipline guidelines at Jorhat Engineering College.",
+    url: "https://orionjech7.vercel.app/rules",
+  },
+};
 
 export default function RulesPage() {
   const rules = [

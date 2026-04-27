@@ -1,7 +1,23 @@
+import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import { Bell, Calendar, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { formatDate } from "@/lib/utils";
+
+export const metadata: Metadata = {
+  title: "Official Notice Board | ORION Hostel, JEC",
+  description:
+    "Stay updated with the latest official announcements, event notices, and administrative updates from ORION Hostel (Hostel No 7), Jorhat Engineering College, Assam.",
+  alternates: {
+    canonical: "https://orionjech7.vercel.app/notices",
+  },
+  openGraph: {
+    title: "Notice Board | ORION Hostel Announcements",
+    description:
+      "Official notices and announcements from ORION Hostel administration — Hostel No 7, Jorhat Engineering College, Assam.",
+    url: "https://orionjech7.vercel.app/notices",
+  },
+};
 
 export default async function AllNoticesPage() {
   const supabase = await createClient();

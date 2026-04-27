@@ -1,9 +1,26 @@
+import type { Metadata } from "next";
 import { Calendar, Trophy } from 'lucide-react';
 import { createClient } from '@/lib/supabase/server';
 import Image from 'next/image';
 import Lightbox from '@/components/ui/Lightbox';
 
 export const revalidate = 3600; // Revalidate every hour
+
+export const metadata: Metadata = {
+  title: "Gallery & Achievements | ORION Hostel, JEC",
+  description:
+    "Explore the visual legacy of ORION Hostel — Hostel No 7, Jorhat Engineering College. Browse our gallery of achievements, sports victories, cultural celebrations, and milestone events.",
+  alternates: {
+    canonical: "https://orionjech7.vercel.app/achievements",
+  },
+  openGraph: {
+    title: "Gallery & Achievements | ORION Hostel, JEC",
+    description:
+      "A visual record of 40+ years of the Orionite spirit — sports titles, cultural events, and milestones at Jorhat Engineering College.",
+    url: "https://orionjech7.vercel.app/achievements",
+    images: [{ url: "/hostel_about.jpeg", width: 1200, height: 630, alt: "ORION Hostel Gallery — Achievements and Events" }],
+  },
+};
 
 export default async function AchievementsPage() {
   const supabase = await createClient();
@@ -105,7 +122,7 @@ export default async function AchievementsPage() {
           <div className="absolute right-0 top-0 h-full w-full md:w-2/3">
             <Image 
               src="/hostel_about.jpeg" 
-              alt="Gallery" 
+              alt="ORION Hostel celebrations and events — Jorhat Engineering College" 
               fill
               className="object-cover opacity-80 md:opacity-100"
             />

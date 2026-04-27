@@ -1,7 +1,24 @@
+import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import { AlumniList } from "@/components/alumni/AlumniList";
 
 export const revalidate = 3600; // Revalidate every hour
+
+export const metadata: Metadata = {
+  title: "Alumni Network | ORION Hostel, Jorhat Engineering College",
+  description:
+    "Connect with the global ORION Hostel alumni network. 800+ Orionites who graduated from Jorhat Engineering College are now leading professionals worldwide. Register as an alumnus and join our community.",
+  alternates: {
+    canonical: "https://orionjech7.vercel.app/alumni",
+  },
+  openGraph: {
+    title: "ORION Alumni Network | 800+ Orionites Worldwide",
+    description:
+      "The ORION Hostel alumni community — 800+ graduates from JEC Jorhat leading careers globally. Connect, network, and stay connected with the Orionite family.",
+    url: "https://orionjech7.vercel.app/alumni",
+    images: [{ url: "/hero-hostel.jpeg", width: 1200, height: 630, alt: "ORION Hostel Alumni Network — Jorhat Engineering College" }],
+  },
+};
 
 export default async function AlumniPage() {
   const supabase = await createClient();

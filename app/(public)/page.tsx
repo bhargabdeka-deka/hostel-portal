@@ -1,4 +1,21 @@
+import type { Metadata } from "next";
 import { createClient } from "../../lib/supabase/server";
+
+export const metadata: Metadata = {
+  title: "ORION Hostel Portal | Hostel No 7, Jorhat Engineering College",
+  description:
+    "Welcome to ORION Hostel — Hostel No 7 at Jorhat Engineering College, Assam. Established in 1982, home to 75 residents, 800+ alumni, and a 40-year legacy of brotherhood, academics, and sports excellence.",
+  alternates: {
+    canonical: "https://orionjech7.vercel.app",
+  },
+  openGraph: {
+    title: "ORION Hostel | Hostel No 7, Jorhat Engineering College",
+    description:
+      "The official portal for ORION Hostel, JEC. Explore our notices, achievements, alumni network, and the Orionite legacy since 1982.",
+    url: "https://orionjech7.vercel.app",
+    images: [{ url: "/hero-hostel.jpeg", width: 1200, height: 630, alt: "ORION Hostel — Hostel No 7, Jorhat Engineering College" }],
+  },
+};
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
@@ -80,7 +97,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 z-0">
           <Image 
             src="/hero-hostel.jpeg" 
-            alt="Orion Hostel" 
+            alt="ORION Hostel — Hostel No 7, Jorhat Engineering College, Assam" 
             fill
             priority
             quality={85}

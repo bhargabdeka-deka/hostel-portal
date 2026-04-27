@@ -1,9 +1,25 @@
+import type { Metadata } from "next";
 import { MapPin, Mail, Phone, Clock, User, Shield, Info, Instagram } from 'lucide-react';
 import { createClient } from '@/lib/supabase/server';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: "Contact Us | ORION Hostel, Jorhat Engineering College",
+  description:
+    "Get in touch with ORION Hostel administration — Hostel No 7, Jorhat Engineering College, Assam. Contact the Superintendent, Warden, and current monitors. Find our location, phone numbers, and social links.",
+  alternates: {
+    canonical: "https://orionjech7.vercel.app/contact",
+  },
+  openGraph: {
+    title: "Contact ORION Hostel | JEC Hostel No 7",
+    description:
+      "Reach out to ORION Hostel administration for admissions, residency queries, or alumni registration. Hostel No 7, JEC Road, Jorhat, Assam 785007.",
+    url: "https://orionjech7.vercel.app/contact",
+  },
+};
 
 export default async function ContactPage() {
   const supabase = await createClient();

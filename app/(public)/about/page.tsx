@@ -1,9 +1,26 @@
+import type { Metadata } from "next";
 import { Calendar, Users, GraduationCap, History, Users2, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Lightbox from '@/components/ui/Lightbox';
 
 export const revalidate = 86400; // Revalidate once a day
+
+export const metadata: Metadata = {
+  title: "About ORION Hostel | History & Legacy Since 1982",
+  description:
+    "Learn the history of ORION Hostel (Hostel No 7) at Jorhat Engineering College, Assam. Founded in February 1982, our 40+ year legacy of academic excellence, brotherhood, and sports dominance defines the Orionite spirit.",
+  alternates: {
+    canonical: "https://orionjech7.vercel.app/about",
+  },
+  openGraph: {
+    title: "About ORION Hostel | 40+ Years of Legacy at JEC",
+    description:
+      "Discover the rich history and culture of ORION Hostel, Jorhat Engineering College — home to 800+ alumni and a tradition of excellence since 1982.",
+    url: "https://orionjech7.vercel.app/about",
+    images: [{ url: "/hostel_about.jpeg", width: 1200, height: 630, alt: "ORION Hostel Building — Jorhat Engineering College, Assam" }],
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -25,7 +42,7 @@ export default function AboutPage() {
           <div className="aspect-[4/3] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 relative">
             <Image 
               src="/hostel_about.jpeg" 
-              alt="ORION Hostel" 
+              alt="ORION Hostel building — Hostel No 7, Jorhat Engineering College, Assam, established 1982" 
               fill
               className="object-cover"
             />
