@@ -34,10 +34,12 @@ CREATE TABLE notices (
 ### 3. achievements table
 ```sql
 CREATE TABLE achievements (
-  id SERIAL PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   title TEXT NOT NULL,
   description TEXT NOT NULL,
   date DATE NOT NULL,
+  image_url TEXT,
+  year INTEGER NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 ```
@@ -45,9 +47,10 @@ CREATE TABLE achievements (
 ### 4. gallery table
 ```sql
 CREATE TABLE gallery (
-  id SERIAL PRIMARY KEY,
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   image_url TEXT NOT NULL,
-  caption TEXT,
+  caption TEXT NOT NULL,
+  year INTEGER NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 ```

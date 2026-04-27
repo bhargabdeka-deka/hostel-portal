@@ -14,8 +14,8 @@ export default async function ManageAchievements() {
     <div className="max-w-6xl mx-auto py-8 md:py-12 px-4 md:px-6 antialiased">
       <div className="flex items-center justify-between mb-8 md:mb-12">
         <div>
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight leading-tight font-jakarta">Gallery</h1>
-          <p className="text-slate-600 mt-2 font-medium text-sm md:text-base">Upload batch photos, milestones, and institutional honors.</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight leading-tight font-jakarta">Achievements</h1>
+          <p className="text-slate-600 mt-2 font-medium text-sm md:text-base">Upload institutional honors, sports milestones, and batch achievements.</p>
         </div>
       </div>
 
