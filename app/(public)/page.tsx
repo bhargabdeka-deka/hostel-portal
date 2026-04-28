@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import { createClient } from "../../lib/supabase/server";
 
 export const metadata: Metadata = {
-  title: "ORION Portal | Hostel No 7, Jorhat Engineering College",
+  title: "ORION Portal | JEC",
   description:
-    "Welcome to ORION — Hostel No 7 at Jorhat Engineering College, Assam. Established in 1982, home to 75 residents, 800+ alumni, and a 40-year legacy of brotherhood, academics, and sports excellence.",
+    "Welcome to ORION — Jorhat Engineering College, Assam. Established in 1982, home to 75 residents, 800+ alumni, and a 40-year legacy of brotherhood, academics, and sports excellence.",
   alternates: {
     canonical: "https://orionjech7.vercel.app",
   },
   openGraph: {
-    title: "ORION | Hostel No 7, Jorhat Engineering College",
+    title: "ORION | Jorhat Engineering College",
     description:
       "The official portal for ORION, JEC. Explore our notices, achievements, alumni network, and the Orionite legacy since 1982.",
     url: "https://orionjech7.vercel.app",
-    images: [{ url: "/hero-hostel.jpeg", width: 1200, height: 630, alt: "ORION — Hostel No 7, Jorhat Engineering College" }],
+    images: [{ url: "/hero-hostel.jpeg", width: 1200, height: 630, alt: "ORION — Jorhat Engineering College" }],
   },
 };
 import Link from 'next/link';

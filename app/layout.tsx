@@ -25,26 +25,22 @@ const BASE_URL = "https://orionjech7.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "ORION Portal | Hostel No 7, Jorhat Engineering College",
+    default: "ORION Portal | JEC",
     template: "%s | ORION — JEC",
   },
   description:
-    "Official digital portal for ORION (Hostel No 7), Jorhat Engineering College, Assam. Access notices, gallery, alumni network, hostel rules, and contact information for residents and administrators.",
+    "Official digital portal for ORION, Jorhat Engineering College, Assam. Access notices, gallery, alumni network, rules, and contact information.",
   keywords: [
     "ORION",
-    "Hostel 7 JEC",
-    "Jorhat Engineering College hostel",
-    "JEC hostel portal",
+    "JEC Hostel 7",
+    "Jorhat Engineering College",
     "Orionite",
     "hostel Jorhat Assam",
     "JEC Hostel No 7",
-    "hostel management portal",
-    "JEC alumni network",
-    "engineering college hostel Assam",
   ],
-  authors: [{ name: "ORION Administration, JEC" }],
-  creator: "ORION, Jorhat Engineering College",
-  publisher: "ORION, Jorhat Engineering College",
+  authors: [{ name: "ORION Administration" }],
+  creator: "ORION",
+  publisher: "ORION",
   robots: {
     index: true,
     follow: true,
@@ -61,21 +57,21 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: BASE_URL,
     siteName: "ORION Portal",
-    title: "ORION Portal | Hostel No 7, Jorhat Engineering College",
+    title: "ORION Portal | Jorhat Engineering College",
     description:
-      "Official digital portal for ORION (Hostel No 7), Jorhat Engineering College, Assam. Explore our alumni network, gallery, notices, and hostel information.",
+      "Official digital portal for ORION, Jorhat Engineering College. Explore our alumni network, gallery, notices, and more.",
     images: [
       {
         url: "/hero-hostel.jpeg",
         width: 1200,
         height: 630,
-        alt: "ORION — Hostel No 7, Jorhat Engineering College, Assam",
+        alt: "ORION — Jorhat Engineering College",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ORION Portal | Hostel No 7, JEC",
+    title: "ORION Portal | JEC",
     description:
       "Official portal for ORION, Jorhat Engineering College. Notices, alumni, gallery, and more.",
     images: ["/hero-hostel.jpeg"],
