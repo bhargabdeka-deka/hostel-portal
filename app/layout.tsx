@@ -25,13 +25,14 @@ const BASE_URL = "https://orionjech7.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "ORION Portal | JEC",
+    default: "ORION — Jorhat Engineering College Hostel 7",
     template: "%s | ORION — JEC",
   },
   description:
-    "Official digital portal for ORION, Jorhat Engineering College, Assam. Access notices, gallery, alumni network, rules, and contact information.",
+    "Official digital portal for ORION — Jorhat Engineering College Hostel 7. Access notices, gallery, alumni network, rules, and contact information.",
   keywords: [
     "ORION",
+    "Jorhat Engineering College Hostel 7",
     "JEC Hostel 7",
     "Jorhat Engineering College",
     "Orionite",
@@ -57,9 +58,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: BASE_URL,
     siteName: "ORION Portal",
-    title: "ORION Portal | Jorhat Engineering College",
+    title: "ORION — Jorhat Engineering College Hostel 7",
     description:
-      "Official digital portal for ORION, Jorhat Engineering College. Explore our alumni network, gallery, notices, and more.",
+      "Official digital portal for ORION — Jorhat Engineering College Hostel 7. Explore our alumni network, gallery, notices, and more.",
     images: [
       {
         url: "/hero-hostel.jpeg",
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ORION Portal | JEC",
+    title: "ORION — Jorhat Engineering College Hostel 7",
     description:
       "Official portal for ORION, Jorhat Engineering College. Notices, alumni, gallery, and more.",
     images: ["/hero-hostel.jpeg"],
