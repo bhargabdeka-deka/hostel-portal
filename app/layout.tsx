@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | ORION — JEC",
   },
   description:
-    "Official digital portal for ORION — Jorhat Engineering College Hostel 7. Access notices, gallery, alumni network, rules, and contact information.",
+    "Official portal for ORION — Jorhat Engineering College Hostel 7. Access notices, gallery, alumni network, rules, and contact information.",
   keywords: [
     "ORION",
     "Jorhat Engineering College Hostel 7",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "ORION Portal",
     title: "ORION — Jorhat Engineering College Hostel 7",
     description:
-      "Official digital portal for ORION — Jorhat Engineering College Hostel 7. Explore our alumni network, gallery, notices, and more.",
+      "Official portal for ORION — Jorhat Engineering College Hostel 7. Explore our alumni network, gallery, notices, and more.",
     images: [
       {
         url: "/hero-hostel.jpeg",
