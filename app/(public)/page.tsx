@@ -117,7 +117,7 @@ export default async function HomePage() {
               ORION
             </h1>
             <p className="text-xl sm:text-2xl md:text-4xl text-slate-900 font-bold italic max-w-4xl mx-auto px-4 leading-tight drop-shadow-sm">
-              "We are not known by names but by a race — <span className="text-indigo-700 font-black not-italic tracking-tight">Orionite</span>"
+              "We are not known by names but by a race — <span className="text-indigo-700 font-black not-italic tracking-tight">Orionite: warriors within</span>"
             </p>
           </div>
 

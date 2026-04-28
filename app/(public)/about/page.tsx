@@ -83,10 +83,13 @@ export default function AboutPage() {
           </div>
           <div className="space-y-6 text-slate-600 leading-relaxed font-medium text-sm md:text-base">
             <p>
-              In February 1982, ORION opened its doors to the brightest minds of the region. Founded on the principles of discipline and camaraderie, the hostel was named after the prominent constellation, symbolizing a beacon of light.
+              Established in 1982, Hostel 7 of Jorhat Engineering College was originally known by its birthname, <span className="text-indigo-600 font-bold">"The North-East House"</span>. Known as "The Maker" of many respected lives, the boarders celebrated the hostel's <span className="text-indigo-600 font-bold">Silver Jubilee in 2009</span> in an ornamented fashion.
             </p>
             <p>
-              Throughout the decades, Hostel 7 has evolved into a vibrant ecosystem of learning, sports, and cultural festivals that define the Jorhat Engineering College experience.
+              Now carrying the name <span className="text-indigo-600 font-bold">ORION</span>, the hostel is built upon a practical thought: "Magic is believing in yourself." Whether on the field or in the classroom, the Orionite spirit remains undefeated in its pursuit of excellence.
+            </p>
+            <p>
+              Our collective reflections find a voice in <span className="text-indigo-600 font-bold">"Arunabh"</span>, the hostel wall magazine. For us, it's more than just a name—it's a race. We are <span className="text-indigo-600 font-bold">Orionites</span>, the warriors within.
             </p>
           </div>
         </div>
