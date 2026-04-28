@@ -25,13 +25,13 @@ const BASE_URL = "https://orionjech7.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "ORION Hostel Portal | Hostel No 7, Jorhat Engineering College",
-    template: "%s | ORION Hostel — JEC",
+    default: "ORION Portal | Hostel No 7, Jorhat Engineering College",
+    template: "%s | ORION — JEC",
   },
   description:
-    "Official digital portal for ORION Hostel (Hostel No 7), Jorhat Engineering College, Assam. Access notices, gallery, alumni network, hostel rules, and contact information for residents and administrators.",
+    "Official digital portal for ORION (Hostel No 7), Jorhat Engineering College, Assam. Access notices, gallery, alumni network, hostel rules, and contact information for residents and administrators.",
   keywords: [
-    "ORION Hostel",
+    "ORION",
     "Hostel 7 JEC",
     "Jorhat Engineering College hostel",
     "JEC hostel portal",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     "JEC alumni network",
     "engineering college hostel Assam",
   ],
-  authors: [{ name: "ORION Hostel Administration, JEC" }],
-  creator: "ORION Hostel, Jorhat Engineering College",
-  publisher: "ORION Hostel, Jorhat Engineering College",
+  authors: [{ name: "ORION Administration, JEC" }],
+  creator: "ORION, Jorhat Engineering College",
+  publisher: "ORION, Jorhat Engineering College",
   robots: {
     index: true,
     follow: true,
@@ -60,31 +60,34 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: BASE_URL,
-    siteName: "ORION Hostel Portal",
-    title: "ORION Hostel Portal | Hostel No 7, Jorhat Engineering College",
+    siteName: "ORION Portal",
+    title: "ORION Portal | Hostel No 7, Jorhat Engineering College",
     description:
-      "Official digital portal for ORION Hostel (Hostel No 7), Jorhat Engineering College, Assam. Explore our alumni network, gallery, notices, and hostel information.",
+      "Official digital portal for ORION (Hostel No 7), Jorhat Engineering College, Assam. Explore our alumni network, gallery, notices, and hostel information.",
     images: [
       {
         url: "/hero-hostel.jpeg",
         width: 1200,
         height: 630,
-        alt: "ORION Hostel — Hostel No 7, Jorhat Engineering College, Assam",
+        alt: "ORION — Hostel No 7, Jorhat Engineering College, Assam",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ORION Hostel Portal | Hostel No 7, JEC",
+    title: "ORION Portal | Hostel No 7, JEC",
     description:
-      "Official portal for ORION Hostel, Jorhat Engineering College. Notices, alumni, gallery, and more.",
+      "Official portal for ORION, Jorhat Engineering College. Notices, alumni, gallery, and more.",
     images: ["/hero-hostel.jpeg"],
   },
   alternates: {
     canonical: BASE_URL,
   },
   icons: {
-    icon: "/icon.jpeg",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.jpeg", type: "image/jpeg" },
+    ],
     apple: "/icon.jpeg",
   },
   // Google Search Console verification — replace with your actual token
@@ -120,12 +123,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "CollegeOrUniversity",
-              name: "ORION Hostel — Hostel No 7, Jorhat Engineering College",
+              name: "ORION — Hostel No 7, Jorhat Engineering College",
               url: BASE_URL,
               logo: `${BASE_URL}/hostel_logo.jpeg`,
               image: `${BASE_URL}/hero-hostel.jpeg`,
               description:
-                "ORION Hostel (Hostel No 7) is a residential facility at Jorhat Engineering College, Assam, established in February 1982. Home to 75 residents and 800+ alumni worldwide.",
+                "ORION (Hostel No 7) is a residential facility at Jorhat Engineering College, Assam, established in February 1982. Home to 75 residents and 800+ alumni worldwide.",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Hostel No 7, JEC Road",
