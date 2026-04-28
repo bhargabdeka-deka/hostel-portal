@@ -82,11 +82,18 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.jpeg", type: "image/jpeg" },
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/android-chrome-192x192.png", type: "image/png", sizes: "192x192" },
+      { url: "/android-chrome-512x512.png", type: "image/png", sizes: "512x512" },
     ],
-    apple: "/icon.jpeg",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
   },
+  manifest: "/site.webmanifest",
   // Google Search Console verification — replace with your actual token
   verification: {
     google: "47de421a33633894",
@@ -104,6 +111,18 @@ export default function RootLayout({
       className={`${outfit.variable} ${inter.variable} ${plusJakarta.variable} h-full antialiased`}
     >
       <head>
+        {/* Favicon and Icon Links */}
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link rel="manifest" href="/site.webmanifest" />
+        
+        {/* Additional Meta Tags for Better SEO */}
+        <meta name="theme-color" content="#1f2937" />
+        <meta name="msapplication-TileColor" content="#1f2937" />
+        <meta name="msapplication-TileImage" content="/android-chrome-192x192.png" />
+        
         {/* Google Analytics — replace G-XXXXXXXXXX with your Measurement ID */}
         {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
         <script dangerouslySetInnerHTML={{ __html: `
