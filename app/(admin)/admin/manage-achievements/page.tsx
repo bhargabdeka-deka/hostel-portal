@@ -8,6 +8,7 @@ export default async function ManageAchievements() {
   const { data: achievements } = await supabase
     .from('achievements')
     .select('*')
+    .order('date', { ascending: false })
     .order('created_at', { ascending: false })
 
   return (

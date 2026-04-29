@@ -27,12 +27,14 @@ export default async function AchievementsPage() {
   const { data: achievements } = await supabase
     .from('achievements')
     .select('*')
-    .order('date', { ascending: true });
+    .order('date', { ascending: false })
+    .order('created_at', { ascending: false });
 
   const { data: gallery } = await supabase
     .from('gallery')
     .select('*')
-    .order('created_at', { ascending: true });
+    .order('year', { ascending: false })
+    .order('created_at', { ascending: false });
 
   return (
     <main className="bg-transparent min-h-screen selection:bg-purple-500/20 overflow-x-hidden">
