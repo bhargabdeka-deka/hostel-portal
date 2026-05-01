@@ -12,6 +12,7 @@ export default function Navbar() {
     { href: '/achievements', label: 'Achievements' },
     { href: '/gallery', label: 'Gallery' },
     { href: '/alumni', label: 'Alumni' },
+    { href: '/memories', label: 'Memories' },
     { href: '/rules', label: 'Rules' },
     { href: '/contact', label: 'Contact' },
   ];

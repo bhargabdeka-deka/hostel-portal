@@ -1,0 +1,81 @@
+import type { Metadata } from "next";
+import { createClient } from "@/lib/supabase/server";
+import { MemoriesList } from "@/components/memories/MemoriesList";
+import { MemorySubmissionForm } from "@/components/memories/MemorySubmissionForm";
+import { BookHeart, Plus } from "lucide-react";
+
+export const revalidate = 3600; // Revalidate every hour
+
+export const metadata: Metadata = {
+  title: "Memories | ORION Hostel, Jorhat Engineering College",
+  description:
+    "Stories of brotherhood, hostel life, unforgettable experiences, and the legacy of ORION. Read and share your hostel memories.",
+  alternates: {
+    canonical: "https://www.orionjech7.site/memories",
+  },
+  openGraph: {
+    title: "ORION Memories | Stories of Brotherhood & Legacy",
+    description:
+      "A collection of stories and experiences shared by Orionites over four decades. From late-night sessions to cultural fests, explore the legacy of ORION Hostel.",
+    url: "https://www.orionjech7.site/memories",
+    images: [{ url: "/hero-hostel.jpeg", width: 1200, height: 630, alt: "ORION Hostel Memories — Jorhat Engineering College" }],
+  },
+};
+
+export default async function MemoriesPage() {
+  const supabase = await createClient();
+  
+  const { data: memories } = await supabase
+    .from('memories')
+    .select('*')
+    .eq('status', 'approved')
+    .order('created_at', { ascending: false });
+
+  return (
+    <main className="bg-transparent min-h-screen selection:bg-indigo-500/20 pb-40">
+      {/* Header Section */}
+      <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-16 space-y-6">
+        <div className="flex items-center gap-4">
+          <div className="h-px w-12 bg-indigo-200"></div>
+          <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-[0.3em]">The Orion Spirit</span>
+        </div>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
+          <div className="space-y-6">
+            <h1 className="text-6xl md:text-8xl font-bold text-slate-900 tracking-tighter uppercase">
+              Memories<span className="text-blue-600">.</span>
+            </h1>
+            <p className="text-xl text-slate-600 font-medium max-w-2xl leading-relaxed">
+              Stories of brotherhood, hostel life, unforgettable experiences, and the legacy of ORION. A digital archive of what it means to be an Orionite.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 xl:grid-cols-12 gap-20">
+        <div className="xl:col-span-8">
+          <MemoriesList memories={memories || []} />
+        </div>
+        
+        {/* Submission Section Sidebar */}
+        <aside className="xl:col-span-4 space-y-12">
+          <div className="sticky top-32 space-y-8">
+            <div className="bg-indigo-600 rounded-[2.5rem] p-10 text-white shadow-2xl shadow-indigo-200 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-10 opacity-10 rotate-12 group-hover:rotate-45 transition-transform duration-700">
+                <BookHeart className="w-32 h-32" />
+              </div>
+              <div className="relative z-10 space-y-6">
+                <h3 className="text-3xl font-bold tracking-tight leading-tight">Your story is part of ORION's history.</h3>
+                <p className="text-indigo-100 font-medium text-sm leading-relaxed">
+                  Every Orionite has a unique story. Whether it's about a late-night mess session, a sports victory, or a lifelong friendship, share it with the world.
+                </p>
+              </div>
+            </div>
+            
+            <MemorySubmissionForm />
+          </div>
+        </aside>
+      </section>
+    </main>
+  );
+}

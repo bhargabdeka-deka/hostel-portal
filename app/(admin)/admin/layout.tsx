@@ -14,7 +14,8 @@ import {
   ShieldCheck,
   Menu,
   X,
-  ChevronRight
+  ChevronRight,
+  Heart
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Footer } from '@/components/shared/Footer';
@@ -78,7 +79,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { name: 'Monitors', href: '/admin/manage-monitors', icon: UserCheck, color: 'text-emerald-500' },
     { name: 'Gallery', href: '/admin/manage-achievements', icon: Trophy, color: 'text-violet-500' },
     { name: 'Alumni', href: '/admin/alumni', icon: Users, color: 'text-amber-500' },
-    { name: 'Access Control', href: '/admin/manage-users', icon: ShieldCheck, color: 'text-rose-500' },
+    { name: 'Memories', href: '/admin/memories', icon: Heart, color: 'text-rose-500' },
+    { name: 'Access Control', href: '/admin/manage-users', icon: ShieldCheck, color: 'text-sky-500' },
   ];
 
   const SidebarContent = () => (
