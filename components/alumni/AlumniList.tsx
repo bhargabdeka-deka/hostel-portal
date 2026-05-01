@@ -24,22 +24,22 @@ export function AlumniList({ alumni }: AlumniProps) {
       {/* Actions Bar */}
       <div className="space-y-4">
         <div className="flex justify-end">
-          <Link href="/alumni/register" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] hover:bg-blue-700 transition shadow-lg active:scale-95">
+          <Link href="/alumni/register" className="w-full sm:w-auto inline-flex items-center justify-center gap-4 bg-[#0F172A] text-white px-10 py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-[0.2em] hover:bg-[#C8A96B] hover:text-[#0F172A] transition-all duration-500 shadow-2xl active:scale-95 font-jakarta">
             <Users className="w-4 h-4" />
             Register as an Alumni
           </Link>
         </div>
 
-        <div className="flex items-stretch gap-2 bg-white p-2 md:p-4 rounded-3xl md:rounded-[2.5rem] border border-slate-200 shadow-lg">
+        <div className="flex items-stretch gap-4 bg-white p-3 md:p-6 rounded-[2.5rem] md:rounded-[3.5rem] border border-slate-100 shadow-2xl shadow-slate-200/50">
           <div className="relative flex-1 group">
-            <Search className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors" />
+            <Search className="absolute left-6 md:left-8 top-1/2 -translate-y-1/2 w-5 h-5 md:w-6 md:h-6 text-slate-300 group-focus-within:text-[#C8A96B] transition-colors duration-500" />
             <input 
               type="text" 
-              placeholder="Search by name or batch..." 
+              placeholder="Search by name, batch, or professional keywords..." 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               suppressHydrationWarning
-              className="w-full pl-10 md:pl-16 pr-4 md:pr-6 py-4 md:py-5 bg-slate-50 border border-slate-100 rounded-2xl md:rounded-3xl outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500/50 transition-all font-bold text-slate-900 text-sm md:text-base placeholder:text-slate-400 placeholder:font-medium"
+              className="w-full pl-14 md:pl-20 pr-6 md:pr-10 py-5 md:py-8 bg-slate-50 border border-slate-50 rounded-[2rem] md:rounded-[2.5rem] outline-none focus:ring-4 focus:ring-[#C8A96B]/5 focus:border-[#C8A96B]/20 transition-all font-black text-[#0F172A] text-sm md:text-lg placeholder:text-slate-300 placeholder:font-bold font-jakarta"
             />
           </div>
         </div>
@@ -53,13 +53,13 @@ export function AlumniList({ alumni }: AlumniProps) {
             return (
               <div key={person.id} className="bg-white border border-slate-100 rounded-[2rem] p-5 space-y-4 shadow-lg group hover:border-blue-100 transition-all duration-300 relative overflow-hidden">
                 <div className="relative z-10 space-y-6">
-                  <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-slate-50 text-slate-400 rounded-2xl flex items-center justify-center font-bold text-xs border border-slate-100 shrink-0">
+                  <div className="flex items-center gap-5">
+                  <div className="w-16 h-16 bg-slate-50 text-slate-300 rounded-[1.25rem] flex items-center justify-center font-black text-sm border border-slate-50 shrink-0">
                     {initials}
                   </div>
-                  <div className="overflow-hidden">
-                    <h3 className="font-bold text-slate-900 truncate uppercase tracking-tight">{person.name}</h3>
-                    <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full whitespace-nowrap">
+                  <div className="overflow-hidden space-y-1">
+                    <h3 className="font-black text-[#0F172A] truncate uppercase tracking-tight text-lg font-jakarta">{person.name}</h3>
+                    <span className="text-[9px] font-black text-[#C8A96B] uppercase tracking-[0.2em] bg-slate-50 px-3 py-1.5 rounded-full whitespace-nowrap font-jakarta">
                       {person.batch.replace(/(\d{4})-(\d{2})(\d{2})/, '$1-$3')} • {person.branch}
                     </span>
                   </div>
@@ -82,20 +82,20 @@ export function AlumniList({ alumni }: AlumniProps) {
                    </div>
                 </div>
 
-                <div className="flex items-center justify-between gap-4 pt-2">
+                <div className="flex items-center justify-between gap-4 pt-4">
                     {person.social_link ? (
                        <a 
                          href={person.social_link} 
                          target="_blank" 
                          rel="noopener noreferrer" 
-                         className="flex-1 flex items-center justify-center gap-2 py-3 bg-blue-600 text-white rounded-xl text-[10px] font-bold uppercase tracking-widest shadow-lg hover:bg-blue-700 transition-all"
+                         className="flex-1 flex items-center justify-center gap-3 py-5 bg-[#0F172A] text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl hover:bg-[#C8A96B] hover:text-[#0F172A] transition-all duration-500 font-jakarta"
                        >
-                         <LinkIcon className="w-3 h-3" />
-                         LinkedIn
+                         <LinkIcon className="w-4 h-4" />
+                         Professional Profile
                        </a>
                     ) : (
-                       <div className="flex-1 py-3 bg-slate-100 text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest text-center border border-slate-200 italic">
-                         Private Profile
+                       <div className="flex-1 py-5 bg-slate-50 text-slate-300 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] text-center border border-slate-100 italic font-jakarta">
+                         Identity Private
                        </div>
                     )}
                 </div>
@@ -116,11 +116,11 @@ export function AlumniList({ alumni }: AlumniProps) {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-100">
-                <th className="px-10 py-5 text-[10px] font-bold text-sky-500 uppercase tracking-[0.3em]">Identity</th>
-                <th className="px-10 py-5 text-[10px] font-bold text-emerald-500 uppercase tracking-[0.3em]">Graduation</th>
-                <th className="px-10 py-5 text-[10px] font-bold text-indigo-500 uppercase tracking-[0.3em]">Communication</th>
-                <th className="px-10 py-5 text-[10px] font-bold text-amber-600 uppercase tracking-[0.3em]">Professional Info</th>
-                <th className="px-10 py-5 text-[10px] font-bold text-rose-500 uppercase tracking-[0.3em] text-center">Portfolio</th>
+                <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta">Identity</th>
+                <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta">Graduation</th>
+                <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta">Communication</th>
+                <th className="px-10 py-8 text-[10px] font-black text-[#C8A96B] uppercase tracking-[0.3em] font-jakarta">Professional Info</th>
+                <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta text-center">Portfolio</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -130,15 +130,15 @@ export function AlumniList({ alumni }: AlumniProps) {
                   return (
                     <tr key={person.id} className="hover:bg-slate-50 even:bg-slate-50/40 transition-all duration-300 group relative border-b border-slate-50 last:border-0 overflow-hidden">
                       <td className="px-10 py-5 relative z-10">
-                        <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-slate-50 text-slate-400 rounded-2xl flex items-center justify-center font-bold text-xs border border-slate-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shrink-0">
+                        <div className="flex items-center gap-5">
+                          <div className="w-14 h-14 bg-slate-50 text-slate-300 rounded-[1.25rem] flex items-center justify-center font-black text-sm border border-slate-50 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-500 shrink-0">
                             {initials}
                           </div>
-                          <span className="font-bold text-slate-900 uppercase tracking-tight text-base">{person.name}</span>
+                          <span className="font-black text-[#0F172A] uppercase tracking-tight text-lg font-jakarta">{person.name}</span>
                         </div>
                       </td>
-                      <td className="px-10 py-5 relative z-10">
-                        <span className="text-[10px] text-blue-600 font-bold uppercase tracking-widest bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100 whitespace-nowrap">
+                      <td className="px-10 py-8 relative z-10">
+                        <span className="text-[10px] text-[#C8A96B] font-black uppercase tracking-[0.2em] bg-slate-50 px-4 py-2 rounded-full border border-slate-50 whitespace-nowrap font-jakarta">
                           {person.batch.replace(/(\d{4})-(\d{2})(\d{2})/, '$1-$3')} • {person.branch}
                         </span>
                       </td>
@@ -151,19 +151,19 @@ export function AlumniList({ alumni }: AlumniProps) {
                           <span className="text-xs text-slate-400 font-medium">at {person.company}</span>
                         </div>
                       </td>
-                      <td className="px-10 py-5 text-center relative z-10">
+                      <td className="px-10 py-8 relative z-10 text-center">
                         {person.social_link ? (
                           <a 
                             href={person.social_link} 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-xl transition-all text-[10px] font-bold uppercase tracking-widest shadow-lg"
+                            className="inline-flex items-center gap-3 px-6 py-4 bg-[#0F172A] text-white hover:bg-[#C8A96B] hover:text-[#0F172A] rounded-xl transition-all duration-500 text-[10px] font-black uppercase tracking-[0.2em] shadow-xl font-jakarta"
                           >
-                            <LinkIcon className="w-3 h-3" />
+                            <LinkIcon className="w-4 h-4" />
                             LinkedIn
                           </a>
                         ) : (
-                          <span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Private</span>
+                          <span className="text-[10px] font-black text-slate-200 uppercase tracking-[0.2em] font-jakarta">Identity Private</span>
                         )}
                       </td>
                     </tr>

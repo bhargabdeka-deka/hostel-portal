@@ -27,58 +27,58 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
             <div 
               key={memory.id} 
               onClick={() => setSelectedMemory(memory)}
-              className="cursor-pointer group bg-white border border-slate-100 rounded-[2rem] p-6 md:p-8 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-500 relative overflow-hidden flex flex-col md:flex-row md:items-center gap-6 md:gap-10"
+              className="cursor-pointer group bg-white border border-slate-100 rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-slate-200/40 hover:shadow-indigo-100/50 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden flex flex-col md:flex-row md:items-center gap-8 md:gap-14"
             >
-              <div className="absolute top-0 right-0 p-6 opacity-[0.02] group-hover:opacity-5 transition-opacity">
-                <Quote className="w-24 h-24" />
+              <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 transition-opacity">
+                <Quote className="w-32 h-32 text-[#0F172A]" />
               </div>
 
               {/* Date Column */}
-              <div className="flex-none flex md:flex-col items-center justify-center md:w-20 md:border-r border-slate-50 md:pr-10">
+              <div className="flex-none flex md:flex-col items-center justify-center md:w-24 md:border-r border-slate-100 md:pr-14">
                 <div className="text-center">
-                  <span className="block text-2xl font-black text-emerald-500 leading-none">
+                  <span className="block text-3xl font-black text-[#0F172A] leading-none font-jakarta tracking-tighter">
                     {new Date(memory.created_at).toLocaleDateString('en-US', { day: '2-digit' })}
                   </span>
-                  <span className="block text-[10px] font-bold text-rose-500 uppercase tracking-[0.2em] mt-1">
+                  <span className="block text-[11px] font-black text-[#C8A96B] uppercase tracking-[0.3em] mt-2 font-jakarta">
                     {new Date(memory.created_at).toLocaleDateString('en-US', { month: 'short' })}
                   </span>
                 </div>
               </div>
 
-              <div className="flex-1 space-y-2 relative z-10">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight leading-tight group-hover:text-slate-800 transition-colors line-clamp-1 font-jakarta">
+              <div className="flex-1 space-y-4 relative z-10">
+                <h3 className="text-2xl md:text-3xl font-black text-[#0F172A] tracking-tighter leading-tight group-hover:text-[#C8A96B] transition-colors line-clamp-1 font-jakarta">
                   {memory.title}
                 </h3>
-                <div className="space-y-1">
-                  <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed line-clamp-2 font-sans">
+                <div className="space-y-3">
+                  <p className="text-slate-500 text-base md:text-lg font-medium leading-relaxed line-clamp-2 font-sans">
                     {memory.story}
                   </p>
                   {memory.story.length > 120 && (
-                    <span className="text-blue-600 font-bold text-[10px] uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Read more <ChevronRight className="w-3 h-3" />
+                    <span className="text-[#C8A96B] font-black text-[10px] uppercase tracking-[0.2em] flex items-center gap-2 group-hover:gap-3 transition-all font-jakarta">
+                      Read full story <ChevronRight className="w-4 h-4" />
                     </span>
                   )}
                 </div>
               </div>
 
               {/* Author & Action Column */}
-              <div className="flex flex-row md:flex-row items-center justify-between md:justify-end gap-6 md:gap-10 pt-6 md:pt-0 border-t md:border-0 border-slate-50">
-                <div className="flex items-center gap-4 text-right">
+              <div className="flex flex-row md:flex-row items-center justify-between md:justify-end gap-8 md:gap-14 pt-8 md:pt-0 border-t md:border-0 border-slate-100">
+                <div className="flex items-center gap-5 text-right">
                   <div className="hidden sm:block">
-                    <span className="block text-[13px] font-bold text-slate-900 tracking-tight">{memory.full_name}</span>
-                    <span className="block text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">
+                    <span className="block text-sm font-black text-[#0F172A] tracking-tight font-jakarta">{memory.full_name}</span>
+                    <span className="block text-[9px] text-slate-400 font-black uppercase tracking-[0.2em] mt-1 font-jakarta">
                       {memory.batch} {memory.branch && ` • ${memory.branch}`}
                     </span>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 font-bold text-sm border border-slate-100 group-hover:bg-[#3B2F2F] group-hover:text-white transition-all shadow-sm font-jakarta">
+                  <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 font-black text-sm border border-slate-50 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-500 shadow-sm font-jakarta">
                     {memory.full_name.charAt(0)}
                   </div>
                 </div>
                 <button 
                   onClick={() => setSelectedMemory(memory)}
-                  className="p-4 bg-slate-50 text-slate-600 rounded-2xl hover:bg-[#0F172A] hover:text-white transition-all shadow-sm border border-slate-100"
+                  className="p-5 bg-slate-50 text-[#0F172A] rounded-2xl hover:bg-[#C8A96B] hover:text-white transition-all duration-500 shadow-sm border border-slate-50"
                 >
-                  <BookOpen className="w-5 h-5" />
+                  <BookOpen className="w-6 h-6" />
                 </button>
               </div>
             </div>

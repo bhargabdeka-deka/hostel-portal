@@ -37,12 +37,12 @@ export default async function ContactPage() {
     <main className="bg-transparent min-h-screen selection:bg-rose-500/20 overflow-x-hidden">
       {/* Header Section */}
       <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-12 md:pb-16 text-center space-y-6">
-        <div className="flex items-center justify-center gap-4">
-          <div className="h-px w-8 md:w-12 bg-indigo-200"></div>
-          <span className="text-[11px] md:text-[13px] font-bold text-indigo-600 tracking-tight font-sans">Contact information</span>
-          <div className="h-px w-8 md:w-12 bg-indigo-200"></div>
+        <div className="flex items-center justify-center gap-6">
+          <div className="h-px w-10 md:w-16 bg-[#C8A96B]/30"></div>
+          <span className="text-[11px] md:text-[12px] font-bold text-[#C8A96B] uppercase tracking-[0.3em] font-jakarta">Contact Information</span>
+          <div className="h-px w-10 md:w-16 bg-[#C8A96B]/30"></div>
         </div>
-        <h1 className="text-4xl md:text-7xl font-bold text-slate-900 tracking-tight leading-none font-jakarta">Connect.</h1>
+        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.05em] leading-none font-jakarta">Connect.</h1>
         <p className="text-base md:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed px-4">
           Have questions about admission or residency? Our administration team and monitors are here to assist you.
         </p>
@@ -60,16 +60,16 @@ export default async function ContactPage() {
                 target={c.link ? "_blank" : undefined}
                 rel={c.link ? "noopener noreferrer" : undefined}
                 className={cn(
-                  `p-8 md:p-10 ${c.bgColor} border ${c.borderColor} rounded-[2.5rem] shadow-lg hover:border-indigo-100 transition-all duration-300 text-center space-y-6 group block`,
-                  c.link && "cursor-pointer active:scale-95 shadow-slate-200/50"
+                  `p-10 md:p-14 bg-white border border-slate-100 rounded-[3rem] shadow-2xl shadow-slate-200/40 hover:-translate-y-2 transition-all duration-500 text-center space-y-8 group block`,
+                  c.link && "cursor-pointer active:scale-95"
                 )}
               >
-                <div className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white flex items-center justify-center mx-auto ${c.color} group-hover:scale-105 transition-transform duration-300 shrink-0 shadow-sm`}>
+                <div className={`w-16 h-16 md:w-20 md:h-20 rounded-[2rem] bg-slate-50 flex items-center justify-center mx-auto text-[#0F172A] group-hover:scale-110 transition-transform duration-500 shrink-0 shadow-sm border border-slate-100`}>
                   {c.icon}
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-[11px] font-bold text-indigo-600 tracking-tight font-sans">{c.title}</h3>
-                  <p className="text-base md:text-lg font-bold text-slate-900 leading-tight tracking-tight font-sans">{c.detail}</p>
+                <div className="space-y-4">
+                  <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] font-jakarta">{c.title}</h3>
+                  <p className="text-lg md:text-xl font-black text-[#0F172A] leading-tight tracking-tight font-jakarta">{c.detail}</p>
                 </div>
               </Wrapper>
             );
@@ -79,27 +79,29 @@ export default async function ContactPage() {
 
       {/* Superintendent Section */}
       <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="bg-slate-50 border border-slate-200 rounded-[3rem] md:rounded-[3.5rem] p-8 md:p-12 lg:p-20 relative overflow-hidden shadow-xl">
-          <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex-1 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-600 text-[11px] font-bold tracking-tight font-sans">
-                Administrative leadership
+        <div className="bg-[#0F172A] border border-[#0F172A] rounded-[3rem] md:rounded-[5rem] p-10 md:p-20 lg:p-32 relative overflow-hidden shadow-2xl shadow-indigo-900/30">
+          <div className="relative z-10 flex flex-col lg:flex-row items-center gap-16 md:gap-24">
+            <div className="flex-1 space-y-10 text-center lg:text-left">
+              <div className="inline-flex items-center px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white/50 text-[10px] font-bold tracking-[0.2em] uppercase font-jakarta">
+                Administrative Leadership
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight font-jakarta">Office of the <br/>Superintendent</h2>
-              <p className="text-slate-600 font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-sm md:text-base">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[1.1] font-jakarta">Office of the <br/><span className="text-[#C8A96B]">Superintendent</span></h2>
+              <p className="text-white/60 font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-base md:text-lg">
                 For official queries, admission approvals, and high-level administrative matters, please contact the Superintendent directly.
               </p>
             </div>
             
             <div className="w-full lg:w-auto">
-              <div className="bg-indigo-50 border border-indigo-100 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-12 min-w-0 md:min-w-[400px] shadow-lg shadow-indigo-200/20">
-                <div className="text-[11px] font-bold text-indigo-600 tracking-tight mb-4 font-sans">Current superintendent</div>
-                <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 tracking-tight font-sans">Mr. Jiten Borgohain</div>
+              <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[3rem] p-10 md:p-16 min-w-0 md:min-w-[450px] shadow-2xl space-y-10">
+                <div>
+                  <div className="text-[10px] font-bold text-[#C8A96B] uppercase tracking-[0.2em] mb-4 font-jakarta">Current Superintendent</div>
+                  <div className="text-3xl md:text-4xl font-black text-white tracking-tight font-jakarta">Mr. Jiten Borgohain</div>
+                </div>
                 <a 
                   href="tel:+919101481714" 
-                  className="flex items-center justify-center gap-4 p-5 bg-indigo-600 text-white rounded-2xl font-bold text-xs tracking-widest hover:bg-indigo-700 transition-all active:scale-95 shadow-lg"
+                  className="flex items-center justify-center gap-4 p-6 bg-[#C8A96B] text-[#0F172A] rounded-2xl font-black text-sm uppercase tracking-[0.2em] hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-xl shadow-[#C8A96B]/10"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-5 h-5" />
                   +91 91014 81714
                 </a>
               </div>
@@ -110,8 +112,9 @@ export default async function ContactPage() {
 
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="bg-white border border-slate-100 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 space-y-12 md:space-y-16 shadow-xl">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tighter font-jakarta">Current monitors</h2>
+          <div className="text-center space-y-6">
+            <div className="text-[10px] font-bold text-[#C8A96B] uppercase tracking-[0.4em] font-jakarta">Orion Leadership</div>
+            <h2 className="text-3xl md:text-6xl font-black text-[#0F172A] tracking-tighter font-jakarta">Current Monitors</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -128,27 +131,27 @@ export default async function ContactPage() {
                 return (
                   <div 
                     key={m.id} 
-                    className={`${color.bg} p-6 md:p-8 rounded-[2.5rem] border ${color.border} shadow-md hover:border-blue-200 transition-all duration-300 group flex flex-col items-center text-center gap-6`}
+                    className="bg-white p-8 md:p-10 rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-500 group flex flex-col items-center text-center gap-8"
                   >
-                    <div className={`w-14 h-14 rounded-2xl ${color.bg} ${color.text} flex items-center justify-center shrink-0 group-hover:scale-110 transition-all duration-300 shadow-sm`}>
-                      <User className="w-6 h-6" />
+                    <div className="w-20 h-20 rounded-[1.5rem] bg-slate-50 flex items-center justify-center shrink-0 group-hover:scale-110 transition-all duration-500 shadow-sm border border-slate-50">
+                      <User className="w-10 h-10 text-[#0F172A]/20" />
                     </div>
                     
-                    <div className="space-y-2">
-                      <div className={`text-[11px] font-bold ${color.text} tracking-tight font-sans uppercase`}>{m.role}</div>
-                      <div className="text-xl font-bold text-slate-900 tracking-tight font-sans group-hover:text-indigo-600 transition-colors leading-tight">{m.name}</div>
+                    <div className="space-y-3">
+                      <div className="text-[9px] font-bold text-[#C8A96B] tracking-[0.2em] font-jakarta uppercase">{m.role}</div>
+                      <div className="text-2xl font-black text-[#0F172A] tracking-tight font-jakarta group-hover:text-[#C8A96B] transition-colors leading-tight">{m.name}</div>
                     </div>
                     
-                    <div className="w-full pt-6 border-t border-black/5 space-y-3">
-                      <div className="flex items-center justify-center gap-2 text-indigo-600 text-[11px] font-bold tracking-tight font-sans">
+                    <div className="w-full pt-8 border-t border-slate-100 space-y-4">
+                      <div className="flex items-center justify-center gap-3 text-slate-400 text-[10px] font-bold uppercase tracking-widest font-jakarta">
                         Room {m.room}
                       </div>
                       {m.phone && (
                         <a 
                           href={`tel:${m.phone}`}
-                          className={`flex items-center justify-center gap-2.5 ${color.text} text-[11px] font-bold uppercase tracking-tight hover:opacity-80 transition-colors font-sans`}
+                          className="flex items-center justify-center gap-3 text-[#0F172A] text-xs font-bold uppercase tracking-widest hover:text-[#C8A96B] transition-colors font-jakarta"
                         >
-                          <Phone className="w-3.5 h-3.5" />
+                          <Phone className="w-4 h-4" />
                           {m.phone}
                         </a>
                       )}

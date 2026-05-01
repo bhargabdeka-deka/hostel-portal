@@ -39,8 +39,8 @@ export function Navbar() {
   return (
     <>
       <nav className="absolute top-0 left-0 right-0 z-[100] transition-all duration-300">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-20 h-20 md:h-28 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 text-2xl md:text-3xl font-black tracking-[-0.03em] text-slate-900 group font-jakarta">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-20 h-24 md:h-32 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-4 text-2xl md:text-3xl font-black tracking-[-0.05em] text-white group font-jakarta">
             <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-110 transition-all duration-500 relative shadow-xl border-2 border-white ring-4 ring-indigo-50">
               <Image 
                 src="/hostel_logo.jpeg" 
@@ -49,25 +49,25 @@ export function Navbar() {
                 className="object-cover scale-110" 
               />
             </div>
-            <span className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 bg-clip-text text-transparent drop-shadow-sm">
+            <span className="bg-gradient-to-br from-white via-white/80 to-white/60 bg-clip-text text-transparent drop-shadow-lg">
               Orion
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex gap-12 items-center h-full">
+          <div className="hidden md:flex gap-14 items-center h-full">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
                 href={link.href}
-                className="text-[15px] font-semibold tracking-tight transition-all duration-300 relative h-full flex items-center group font-jakarta"
+                className="text-[13px] font-bold uppercase tracking-[0.15em] transition-all duration-300 relative h-full flex items-center group font-jakarta"
               >
                 {(pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) && (
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-indigo-600 rounded-full"></div>
+                  <div className="absolute bottom-8 left-0 right-0 h-0.5 bg-[#C8A96B] rounded-full shadow-[0_0_10px_rgba(200,169,107,0.5)]"></div>
                 )}
                 <span className={cn(
-                  "transition-all duration-300 drop-shadow-sm",
-                  (pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) ? 'text-indigo-700' : 'text-slate-900 group-hover:text-indigo-600'
+                  "transition-all duration-300 drop-shadow-lg",
+                  (pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) ? 'text-[#C8A96B]' : 'text-white/80 group-hover:text-white'
                 )}>
                   {link.name}
                 </span>
@@ -78,7 +78,7 @@ export function Navbar() {
           <div className="flex items-center gap-4 md:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-slate-900 hover:bg-slate-100 rounded-xl transition-colors"
+              className="p-2 text-white hover:bg-white/10 rounded-xl transition-colors"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

@@ -27,14 +27,14 @@ export default function AboutPage() {
     <main className="bg-transparent min-h-screen selection:bg-amber-500/20 overflow-x-hidden">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-48 lg:pb-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-        <div className="flex-1 space-y-6 md:space-y-8 text-center lg:text-left">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-[10px] font-bold tracking-tight">
+        <div className="flex-1 space-y-8 md:space-y-10 text-center lg:text-left">
+          <div className="inline-flex items-center px-5 py-2 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase font-jakarta">
             Established February 1982
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter leading-[1.1] font-jakarta">
-            A Legacy of Excellence: <br/><span className="text-indigo-600">The Orion Story</span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.05em] leading-[1.05] font-jakarta">
+            A Legacy of <br/><span className="text-[#C8A96B]">Excellence.</span>
           </h1>
-          <p className="text-base md:text-xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
+          <p className="text-base md:text-xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 font-sans">
             Deeply rooted in the academic excellence of Jorhat Engineering College, Hostel 7—famously known as ORION—has been a cornerstone of student life for over four decades.
           </p>
         </div>
@@ -54,19 +54,19 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {[
-            { tag: 'Legacy', icon: <Calendar className="w-6 h-6" />, value: "42+", label: "Years of History", color: 'text-sky-600', bgColor: 'bg-sky-50', borderColor: 'border-sky-100' },
-            { tag: 'Community', icon: <Users className="w-6 h-6" />, value: "800+", label: "Glorious Alumni", color: 'text-emerald-600', bgColor: 'bg-emerald-50', borderColor: 'border-emerald-100' },
-            { tag: 'Branding', icon: <GraduationCap className="w-6 h-6" />, value: "JEC", label: "Hostel 7 Identity", color: 'text-violet-600', bgColor: 'bg-violet-50', borderColor: 'border-violet-100' },
+            { tag: 'Legacy', icon: <Calendar className="w-6 h-6" />, value: "42+", label: "Years of History", color: 'text-[#0F172A]', bgColor: 'bg-white', borderColor: 'border-slate-100' },
+            { tag: 'Community', icon: <Users className="w-6 h-6" />, value: "800+", label: "Glorious Alumni", color: 'text-[#0F172A]', bgColor: 'bg-white', borderColor: 'border-slate-100' },
+            { tag: 'Identity', icon: <GraduationCap className="w-6 h-6" />, value: "JEC", label: "Hostel 7 Heritage", color: 'text-[#C8A96B]', bgColor: 'bg-white', borderColor: 'border-slate-100' },
           ].map((stat, i) => (
-            <div key={i} className={`group ${stat.bgColor} border ${stat.borderColor} rounded-3xl p-6 md:p-10 flex flex-col items-center text-center shadow-lg transition-all duration-300 hover:scale-105`}>
-              <div className="w-full flex items-center justify-between mb-6">
-                <div className={`w-14 h-14 rounded-2xl bg-white flex items-center justify-center ${stat.color} shadow-sm group-hover:scale-110 transition-transform`}>
+            <div key={i} className={`group ${stat.bgColor} border ${stat.borderColor} rounded-[2.5rem] p-8 md:p-12 flex flex-col items-center text-center shadow-2xl shadow-slate-200/40 transition-all duration-500 hover:-translate-y-2`}>
+              <div className="w-full flex items-center justify-between mb-8">
+                <div className={`w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center ${stat.color} shadow-sm group-hover:scale-110 transition-transform duration-500`}>
                   {stat.icon}
                 </div>
-                <span className={`text-[11px] font-bold ${stat.color} tracking-tight font-sans`}>{stat.tag}</span>
+                <span className={`text-[10px] font-bold ${stat.color} uppercase tracking-[0.2em] font-sans opacity-50`}>{stat.tag}</span>
               </div>
-              <div className={`text-4xl font-bold ${stat.color} mb-1 tracking-tight font-sans`}>{stat.value}</div>
-              <div className="text-[12px] font-bold text-slate-900 tracking-tight font-jakarta">{stat.label}</div>
+              <div className={`text-4xl md:text-5xl font-black ${stat.color} mb-2 tracking-tighter font-jakarta`}>{stat.value}</div>
+              <div className="text-[11px] font-bold text-slate-400 uppercase tracking-widest font-jakarta">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -74,44 +74,46 @@ export default function AboutPage() {
 
       {/* History & Culture */}
       <section className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-        <div className="bg-blue-50/50 border border-blue-100 rounded-[2.5rem] p-6 md:p-12 shadow-lg">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-sm">
-              <History className="w-6 h-6 text-blue-600" />
+        <div className="bg-white border border-slate-100 rounded-[3rem] p-8 md:p-16 shadow-2xl shadow-slate-200/50">
+          <div className="flex items-center gap-5 mb-10">
+            <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 shadow-sm border border-slate-100">
+              <History className="w-7 h-7 text-[#0F172A]" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight font-heading">Our History</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] tracking-tight font-jakarta">Our History</h2>
           </div>
-          <div className="space-y-6 text-slate-600 leading-relaxed font-medium text-sm md:text-base">
+          <div className="space-y-8 text-slate-600 leading-relaxed font-medium text-base md:text-lg font-sans">
             <p>
-              Established in 1982, Hostel 7 of Jorhat Engineering College was originally known by its birthname, <span className="text-indigo-600 font-bold">"The North-East House"</span>. Known as "The Maker" of many respected lives, the boarders celebrated the hostel's <span className="text-indigo-600 font-bold">Silver Jubilee in 2009</span> in an ornamented fashion.
+              Established in 1982, Hostel 7 of Jorhat Engineering College was originally known by its birthname, <span className="text-[#0F172A] font-bold underline decoration-[#C8A96B] decoration-2 underline-offset-4">"The North-East House"</span>. Known as "The Maker" of many respected lives, the boarders celebrated the hostel's Silver Jubilee in 2009 in an ornamented fashion.
             </p>
             <p>
-              Now carrying the name <span className="text-indigo-600 font-bold">ORION</span>, the hostel is built upon a practical thought: "Magic is believing in yourself." Whether on the field or in the classroom, the Orionite spirit remains undefeated in its pursuit of excellence.
+              Now carrying the name <span className="text-[#0F172A] font-bold">ORION</span>, the hostel is built upon a practical thought: "Magic is believing in yourself." Whether on the field or in the classroom, the Orionite spirit remains undefeated in its pursuit of excellence.
             </p>
             <p>
-              Our collective reflections find a voice in <span className="text-indigo-600 font-bold">"Arunabh"</span>, the hostel wall magazine. For us, it's more than just a name—it's a race. We are <span className="text-indigo-600 font-bold">Orionites</span>, the warriors within.
+              Our collective reflections find a voice in <span className="text-[#0F172A] font-bold italic">"Arunabh"</span>, the hostel wall magazine. For us, it's more than just a name—it's a race. We are <span className="text-[#0F172A] font-bold uppercase tracking-widest text-sm">Orionites</span>, the warriors within.
             </p>
           </div>
         </div>
 
-        <div className="bg-emerald-50/50 border border-emerald-100 rounded-[2.5rem] p-6 md:p-12 shadow-lg">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm shrink-0">
-              <Users2 className="w-6 h-6 text-emerald-600" />
+        <div className="bg-[#0F172A] border border-[#0F172A] rounded-[3rem] p-8 md:p-16 shadow-2xl shadow-indigo-900/20 text-white">
+          <div className="flex items-center gap-5 mb-10">
+            <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center shadow-sm shrink-0 border border-white/10 backdrop-blur-sm">
+              <Users2 className="w-7 h-7 text-[#C8A96B]" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 tracking-tight font-heading">The Culture</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight font-jakarta">The Culture</h2>
           </div>
-          <p className="text-slate-600 leading-relaxed font-medium mb-8 text-sm md:text-base">
+          <p className="text-white/70 leading-relaxed font-medium mb-12 text-base md:text-lg font-sans">
             Hostel 7 is renowned for its unique "Orionite" culture—a blend of fierce loyalty, intellectual rigor, and celebratory spirit.
           </p>
-          <ul className="space-y-4">
+          <ul className="space-y-6">
             {[
               "Annual 'Phoenix' Festival Participation",
               "Legacy of Inter-Hostel Sports Dominance",
               "Mentorship-driven Senior-Junior relationships"
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-3 text-slate-700 font-bold text-xs md:text-sm uppercase tracking-tight">
-                <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" />
+              <li key={i} className="flex items-center gap-4 text-white/90 font-bold text-xs md:text-sm uppercase tracking-[0.1em] font-jakarta group">
+                <div className="w-8 h-8 rounded-full bg-[#C8A96B]/10 flex items-center justify-center group-hover:bg-[#C8A96B]/20 transition-colors">
+                  <CheckCircle2 className="w-4 h-4 text-[#C8A96B]" />
+                </div>
                 {item}
               </li>
             ))}
@@ -121,13 +123,13 @@ export default function AboutPage() {
 
       {/* Facilities & Infrastructure Section */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="bg-slate-50 border border-slate-200 rounded-[3rem] md:rounded-[4rem] p-6 md:p-12 lg:p-20 relative overflow-hidden">
-          <div className="max-w-4xl space-y-8 relative z-10">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-600 text-[10px] font-bold tracking-tight">
+        <div className="bg-white border border-slate-100 rounded-[3rem] md:rounded-[5rem] p-8 md:p-20 lg:p-32 relative overflow-hidden shadow-2xl shadow-slate-200/50">
+          <div className="max-w-4xl space-y-10 relative z-10">
+            <div className="inline-flex items-center px-5 py-2 rounded-full bg-slate-50 border border-slate-100 text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase font-jakarta">
               Hostel infrastructure
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tighter leading-tight font-sans">
-              A Home Built for <span className="text-indigo-600">Excellence.</span>
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-[#0F172A] tracking-tighter leading-tight font-jakarta">
+              A Home Built for <span className="text-[#C8A96B]">Excellence.</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-4">
               <div className="space-y-6 text-slate-600 font-medium leading-relaxed text-sm md:text-base">
@@ -152,21 +154,20 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 pt-16">
               {[
-                { tag: 'Housing', label: "32 Resident Rooms", sub: "Spacious Living", color: 'text-blue-600', border: 'border-blue-100' },
-                { tag: 'Social', label: "Common Room", sub: "Legacy Center", color: 'text-amber-600', border: 'border-amber-100' },
-                { tag: 'Health', label: "Gym & Library", sub: "Dual Wellness", color: 'text-indigo-600', border: 'border-indigo-100' },
-                { tag: 'Standard', label: "Modern Facilities", sub: "Hygiene Focused", color: 'text-teal-600', border: 'border-teal-100' },
+                { tag: 'Housing', label: "32 Resident Rooms", sub: "Spacious Living", color: 'text-[#0F172A]', border: 'border-slate-100' },
+                { tag: 'Social', label: "Common Room", sub: "Legacy Center", color: 'text-[#0F172A]', border: 'border-slate-100' },
+                { tag: 'Health', label: "Gym & Library", sub: "Dual Wellness", color: 'text-[#0F172A]', border: 'border-slate-100' },
+                { tag: 'Heritage', label: "Orion Legacy", sub: "Authentic Spirit", color: 'text-[#C8A96B]', border: 'border-slate-100' },
               ].map((item, i) => (
-                <div key={i} className={`bg-white p-6 md:p-8 rounded-3xl border ${item.border} shadow-lg text-center space-y-4 group transition-all duration-300 hover:scale-105`}>
+                <div key={i} className={`bg-slate-50/50 p-8 rounded-[2.5rem] border ${item.border} shadow-sm text-center space-y-6 group transition-all duration-500 hover:bg-white hover:shadow-xl hover:shadow-slate-200`}>
                   <div className="flex items-center justify-between gap-4 mb-2">
-                    <span className={`text-[10px] font-bold ${item.color} tracking-tight font-sans`}>{item.tag}</span>
-                    <CheckCircle2 className={`w-4 h-4 ${item.color} opacity-20 group-hover:opacity-100 transition-opacity`} />
+                    <span className={`text-[9px] font-bold ${item.color} uppercase tracking-[0.2em] font-jakarta opacity-50`}>{item.tag}</span>
                   </div>
-                  <div className="space-y-1">
-                    <div className={`text-base font-bold ${item.color} leading-tight font-sans`}>{item.label}</div>
-                    <div className={`text-[10px] font-bold ${item.color} tracking-tight font-sans`}>{item.sub}</div>
+                  <div className="space-y-2 text-left">
+                    <div className={`text-base font-bold ${item.color} leading-tight font-jakarta tracking-tight`}>{item.label}</div>
+                    <div className={`text-[10px] font-bold ${item.color} tracking-widest uppercase opacity-40`}>{item.sub}</div>
                   </div>
                 </div>
               ))}
