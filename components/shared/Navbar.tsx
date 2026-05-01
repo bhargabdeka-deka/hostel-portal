@@ -31,6 +31,7 @@ export function Navbar() {
     { name: 'About', href: '/about' },
     { name: 'Gallery', href: '/achievements' },
     { name: 'Alumni', href: '/alumni' },
+    { name: 'Memories', href: '/memories' },
     { name: 'Rules', href: '/rules' },
     { name: 'Contact', href: '/contact' },
   ];
