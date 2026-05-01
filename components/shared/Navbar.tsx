@@ -40,8 +40,8 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="absolute top-0 left-0 right-0 z-[100] transition-all duration-300">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-20 h-24 md:h-32 flex items-center justify-between gap-4">
+      <nav className="absolute top-0 left-0 right-0 z-[100] transition-all duration-500">
+        <div className="max-w-[1500px] mx-auto px-8 lg:px-16 h-24 md:h-28 flex items-center justify-between gap-8">
           <Link href="/" className={cn(
             "flex items-center gap-4 text-2xl md:text-3xl font-black tracking-[-0.05em] group font-jakarta transition-colors duration-300 relative z-[101]",
             (isHome && !isOpen) ? "text-white" : "text-[#0F172A]"
@@ -58,15 +58,15 @@ export function Navbar() {
               />
             </div>
             <span className={cn(
-              "drop-shadow-lg transition-all duration-300",
-              (isHome && !isOpen) ? "bg-gradient-to-br from-white via-white/80 to-white/60 bg-clip-text text-transparent" : "text-[#0F172A]"
+              "tracking-[-0.03em] transition-all duration-500",
+              (isHome && !isOpen) ? "bg-gradient-to-br from-white via-white/90 to-white/70 bg-clip-text text-transparent drop-shadow-sm" : "text-[#0F172A]"
             )}>
               Orion
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex gap-6 xl:gap-12 items-center h-full">
+          <div className="hidden lg:flex gap-8 xl:gap-10 items-center h-full">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
@@ -77,10 +77,10 @@ export function Navbar() {
                   <div className="absolute bottom-8 left-0 right-0 h-0.5 bg-[#C8A96B] rounded-full shadow-[0_0_10px_rgba(200,169,107,0.5)]"></div>
                 )}
                 <span className={cn(
-                  "transition-all duration-300 drop-shadow-sm",
+                  "transition-all duration-500",
                   (pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) 
                     ? 'text-[#C8A96B]' 
-                    : isHome ? 'text-white/80 group-hover:text-white' : 'text-slate-500 group-hover:text-[#0F172A]'
+                    : (isHome && !isOpen) ? 'text-white/70 group-hover:text-white' : 'text-slate-500 group-hover:text-[#0F172A]'
                 )}>
                   {link.name}
                 </span>

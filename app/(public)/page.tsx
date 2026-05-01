@@ -108,64 +108,70 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-[#0F172A]/40"></div>
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto py-32 text-center space-y-12">
-          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-white/80 text-[11px] md:text-[13px] font-bold tracking-[0.2em] uppercase font-jakarta">
+        <div className="relative z-10 max-w-6xl mx-auto py-32 text-center">
+          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 text-white/80 text-[11px] md:text-[12px] font-bold tracking-[0.3em] uppercase font-jakarta mb-10">
             Hostel No 7 • Jorhat Engineering College
           </div>
           
-          <div className="space-y-10 md:space-y-16">
-            <h1 className="text-7xl sm:text-9xl md:text-[10rem] lg:text-[12rem] font-black tracking-[-0.05em] leading-none cursor-default bg-gradient-to-b from-white via-white to-white/70 bg-clip-text text-transparent font-jakarta">
+          <div className="space-y-6 md:space-y-8">
+            <h1 className="text-7xl sm:text-8xl md:text-[9rem] lg:text-[11rem] font-black tracking-[-0.06em] leading-[0.8] cursor-default bg-gradient-to-b from-white via-white to-white/60 bg-clip-text text-transparent font-jakarta">
               ORION
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-white/90 font-medium max-w-4xl mx-auto px-4 leading-tight font-jakarta">
-              "We are not known by names but by a race — <span className="text-[#C8A96B] font-black tracking-tight">Orionite: warriors within</span>"
+            <p className="text-lg sm:text-xl md:text-2xl text-white/70 font-medium max-w-2xl mx-auto px-4 leading-relaxed font-jakarta tracking-tight">
+              "We are not known by names but by a race — <span className="text-[#C8A96B] font-bold">Orionite: warriors within</span>"
             </p>
           </div>
-
-
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="max-w-7xl mx-auto px-6 -mt-12 relative z-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <section className="max-w-6xl mx-auto px-8 -mt-24 relative z-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {stats.map((stat, i) => (
             <div 
               key={i} 
-              className={`p-8 md:p-10 ${stat.bgColor} border ${stat.borderColor} rounded-[2.5rem] shadow-2xl shadow-slate-200/40 flex items-center gap-8 group hover:-translate-y-2 transition-all duration-500`}
+              className={`p-10 md:p-12 ${stat.bgColor} border border-slate-200/50 rounded-[3.5rem] shadow-[0_30px_60px_-20px_rgba(15,23,42,0.12)] flex items-center gap-8 group hover:-translate-y-1 transition-all duration-700`}
             >
-              <div className={`w-12 h-12 rounded-2xl bg-white flex items-center justify-center shrink-0 ${stat.color} shadow-sm group-hover:scale-110 transition-transform`}>
+              <div className={`w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center shrink-0 ${stat.color} border border-slate-100 group-hover:scale-105 transition-transform duration-700`}>
                 {stat.icon}
               </div>
               <div className="flex-1">
-                <div className="flex items-center justify-between gap-4 mb-0.5">
-                  <div className={`text-2xl md:text-3xl font-bold ${stat.color} tracking-tight font-sans`}>{stat.value}</div>
-                  <span className={`text-[11px] font-bold ${stat.color} tracking-tight font-sans`}>{stat.tag}</span>
+                <div className="flex items-center justify-between gap-4 mb-1.5">
+                  <div className={`text-3xl md:text-4xl font-black ${stat.color} tracking-tighter font-jakarta`}>{stat.value}</div>
+                  <span className={`text-[10px] font-black ${stat.color} tracking-[0.1em] font-jakarta uppercase opacity-30`}>{stat.tag}</span>
                 </div>
-                <div className="text-[12px] font-bold text-slate-400 uppercase tracking-widest font-sans">{stat.label}</div>
+                <div className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.25em] font-jakarta leading-none">{stat.label}</div>
               </div>
             </div>
           ))}
         </div>
+
+        <div className="flex items-center justify-center gap-8 pt-20 pb-10">
+          <div className="h-px w-24 bg-slate-100"></div>
+          <div className="text-[10px] font-black text-slate-200 uppercase tracking-[0.5em]">The Orionite Way</div>
+          <div className="h-px w-24 bg-slate-100"></div>
+        </div>
       </section>
 
-      {/* Spirit Section */}
-      <section className="max-w-7xl mx-auto px-6 py-40 text-center">
-        <h2 className="text-[11px] md:text-[13px] font-bold text-slate-400 uppercase tracking-[0.3em] mb-20 font-jakarta">The Orion Spirit</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+      <section className="max-w-7xl mx-auto px-8 py-20 text-center">
+        <div className="flex items-center justify-center gap-8 mb-20">
+          <div className="h-[1px] w-16 bg-slate-100"></div>
+          <h2 className="text-[11px] font-black text-slate-300 uppercase tracking-[0.6em] font-jakarta">Orion Spirit</h2>
+          <div className="h-[1px] w-16 bg-slate-100"></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 xl:gap-14">
           {spirits.map((spirit, i) => (
             <div 
               key={i} 
-              className={`p-8 md:p-16 ${spirit.bgColor} border ${spirit.borderColor} rounded-[3.5rem] text-left space-y-10 transition-all hover:shadow-2xl hover:shadow-indigo-100/40 group relative overflow-hidden`}
+              className={`p-10 md:p-14 bg-white border border-slate-100/80 rounded-[5rem] text-left space-y-12 transition-all hover:shadow-[0_50px_100px_-30px_rgba(15,23,42,0.08)] group relative overflow-hidden`}
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/40 rounded-bl-full -mr-16 -mt-16 group-hover:bg-white/60 transition-colors"></div>
+              <div className="absolute top-0 right-0 w-40 h-40 bg-slate-50 rounded-bl-full -mr-20 -mt-20 group-hover:bg-[#C8A96B]/5 transition-colors duration-1000"></div>
               <div className="flex items-center justify-between mb-8 relative z-10">
-                <div className={`${spirit.color} p-4 bg-white rounded-2xl inline-block shadow-sm group-hover:scale-110 transition-transform duration-500`}>{spirit.icon}</div>
-                <span className={`text-[11px] md:text-[13px] font-bold ${spirit.color} tracking-tight font-sans`}>{spirit.tag}</span>
+                <div className={`${spirit.color} p-6 bg-slate-50/50 rounded-3xl inline-block border border-slate-100 group-hover:scale-105 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-1000`}>{spirit.icon}</div>
+                <span className={`text-[11px] font-black ${spirit.color} tracking-[0.2em] font-jakarta uppercase opacity-20`}>{spirit.tag}</span>
               </div>
-              <div className="space-y-4 relative z-10">
-                <h3 className={`text-3xl md:text-4xl font-bold text-[#0F172A] tracking-tighter font-jakarta`}>{spirit.title}</h3>
-                <p className="text-slate-500 text-lg leading-relaxed font-medium font-sans">
+              <div className="space-y-6 relative z-10">
+                <h3 className={`text-3xl md:text-4xl font-black text-[#0F172A] tracking-tighter font-jakarta leading-none`}>{spirit.title}</h3>
+                <p className="text-slate-500 text-lg leading-relaxed font-medium font-sans opacity-90">
                   {spirit.desc}
                 </p>
               </div>
@@ -176,38 +182,45 @@ export default async function HomePage() {
 
 
 
-      {/* Notices Section */}
-      <section className="max-w-4xl mx-auto px-6 py-40">
-        <div className="text-center space-y-8 mb-24">
-          <div className="inline-flex items-center px-5 py-2 rounded-full bg-slate-50 border border-slate-100 text-[#C8A96B] text-[10px] font-bold tracking-[0.3em] uppercase font-jakarta">
-            Stay Informed
+      <section className="max-w-4xl mx-auto px-8 py-20">
+        <div className="text-center space-y-8 mb-16">
+          <div className="inline-flex items-center px-6 py-2 rounded-full bg-slate-50 border border-slate-100 text-[#C8A96B] text-[10px] font-black tracking-[0.5em] uppercase font-jakarta">
+            Bulletin
           </div>
           <h3 className="text-4xl md:text-7xl font-black text-[#0F172A] flex items-center justify-center gap-6 tracking-tighter font-jakarta">
-            Bulletin <Megaphone className="w-10 h-10 text-[#C8A96B]" />
+            Notices <Megaphone className="w-10 h-10 text-[#C8A96B] opacity-30" />
           </h3>
         </div>
         
-        <div className="border border-slate-200 rounded-[3rem] overflow-hidden shadow-2xl bg-white">
+        <div className="border border-slate-200/80 rounded-[4rem] md:rounded-[5rem] overflow-hidden shadow-[0_40px_100px_-30px_rgba(15,23,42,0.08)] bg-white">
           {typedNotices.length > 0 ? (
             typedNotices.map((notice: Notice, i: number) => (
-              <div key={notice.id} className={`p-6 md:p-12 hover:bg-slate-50 transition-all cursor-default group ${i !== typedNotices.length - 1 ? 'border-b border-slate-100' : ''}`}>
-                <div className="flex items-center justify-between gap-4 mb-5">
-                  <div className="text-[10px] font-bold text-slate-400 flex items-center gap-2.5 tracking-[0.1em] uppercase font-jakarta">
-                    <Calendar className="w-3.5 h-3.5" />
+              <div key={notice.id} className={`p-10 md:p-16 hover:bg-slate-50/50 transition-all cursor-default group ${i !== typedNotices.length - 1 ? 'border-b border-slate-100' : ''}`}>
+                <div className="flex items-center justify-between gap-4 mb-6">
+                  <div className="text-[10px] font-black text-slate-300 flex items-center gap-4 tracking-[0.25em] uppercase font-jakarta">
+                    <Calendar className="w-4 h-4 opacity-50" />
                     {new Date(notice.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                   </div>
-                  <span className="text-[9px] md:text-[10px] font-bold text-[#C8A96B] uppercase tracking-[0.2em] font-jakarta">Active</span>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#C8A96B]/30 group-hover:bg-[#C8A96B] transition-colors"></div>
                 </div>
-                <h4 className="font-bold text-[#0F172A] text-xl md:text-3xl leading-tight group-hover:text-[#C8A96B] transition-colors font-jakarta tracking-tight">
+                <h4 className="font-black text-[#0F172A] text-2xl md:text-4xl leading-[1.05] group-hover:text-[#C8A96B] transition-colors font-jakarta tracking-tighter">
                   {notice.title}
                 </h4>
               </div>
             ))
           ) : (
-            <div className="p-32 text-center text-slate-400 font-medium italic">No active notices found</div>
+            <div className="py-40 px-10 text-center space-y-8">
+              <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center mx-auto text-slate-200 border border-slate-100/80">
+                <Megaphone className="w-10 h-10" />
+              </div>
+              <div className="space-y-3">
+                <p className="text-[#0F172A] font-black text-2xl md:text-3xl tracking-tighter font-jakarta leading-none">No Active Announcements.</p>
+                <p className="text-slate-400 font-medium text-lg font-sans max-w-sm mx-auto leading-relaxed">The legacy is quiet for a moment. Stay tuned for upcoming ORION updates.</p>
+              </div>
+            </div>
           )}
-          <Link href="/notices" className="block w-full py-12 bg-[#0F172A] text-center text-[11px] font-black uppercase tracking-[0.4em] text-white hover:bg-slate-800 transition-all font-jakarta">
-            View All Announcements
+          <Link href="/notices" className="block w-full py-16 bg-[#0F172A] text-center text-[11px] font-black uppercase tracking-[0.6em] text-white hover:bg-[#1E293B] transition-all font-jakarta border-t border-slate-800">
+            View Archives
           </Link>
         </div>
       </section>

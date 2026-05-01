@@ -2,7 +2,7 @@ import { Navigation } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-[#0F172A] pt-24 pb-12 px-6 relative overflow-hidden border-t border-slate-800">
+    <footer className="bg-[#0F172A] pt-16 pb-10 px-6 relative overflow-hidden border-t border-slate-800">
       {/* Premium ambient glow */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-slate-500/5 rounded-full blur-[100px] translate-y-1/2 translate-x-1/4" />
@@ -18,7 +18,7 @@ export function Footer() {
             </p>
           </div>
           
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6">
             <div className="space-y-4">
               <a 
                 href="https://maps.app.goo.gl/93zEARsiTheLytSk6" 
@@ -26,17 +26,21 @@ export function Footer() {
                 rel="noopener noreferrer" 
                 className="flex items-start gap-4 group cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#C8A96B] transition-all duration-500">
-                  <Navigation className="w-5 h-5 text-[#C8A96B] group-hover:text-[#0F172A] transition-colors" />
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#C8A96B] transition-all duration-500">
+                  <Navigation className="w-4 h-4 text-[#C8A96B] group-hover:text-[#0F172A] transition-colors" />
                 </div>
-                <p className="text-slate-300 text-base md:text-lg font-medium tracking-tight border-b border-white/5 pb-1 group-hover:border-[#C8A96B]/50 group-hover:text-white transition-all max-w-sm leading-tight font-sans">
-                  Jorhat Engineering College, Garmur, Jorhat, Assam, 785007, India
-                </p>
+                <div className="space-y-1">
+                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest font-jakarta">Location</p>
+                  <p className="text-slate-300 text-sm md:text-base font-medium tracking-tight border-b border-white/5 pb-1 group-hover:border-[#C8A96B]/50 group-hover:text-white transition-all max-w-xs leading-tight font-sans">
+                    Jorhat Engineering College, Garmur, Jorhat, Assam, 785007
+                  </p>
+                </div>
               </a>
             </div>
 
-            <div className="space-y-2">
-              <p className="text-slate-400 text-sm md:text-base font-bold font-heading tracking-tight">
+            <div className="space-y-1">
+              <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest font-jakarta">Crafted By</p>
+              <p className="text-slate-400 text-xs md:text-sm font-bold font-heading tracking-tight">
                 Copyright © <span className="text-slate-200">BhargabDeka 2026.</span>
               </p>
             </div>
