@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -108,6 +109,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-IN"
+      suppressHydrationWarning
       className={`${outfit.variable} ${inter.variable} ${plusJakarta.variable} h-full antialiased`}
     >
       <head>
@@ -159,8 +161,15 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full bg-background text-foreground font-sans antialiased relative">
-        {children}
+      <body className="min-h-full bg-white dark:bg-[#0F172A] text-slate-900 dark:text-slate-100 font-sans antialiased relative selection:bg-indigo-500/30">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

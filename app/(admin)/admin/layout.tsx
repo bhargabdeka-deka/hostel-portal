@@ -20,6 +20,7 @@ import {
 import { cn } from '@/lib/utils';
 import { Footer } from '@/components/shared/Footer';
 import { createClient } from '@/lib/supabase/client';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -103,8 +104,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <img src="/hostel_logo.jpeg" alt="ORION Logo" className="w-full h-full object-cover scale-110" />
           </div>
           <div>
-            <span className="font-black text-slate-900 tracking-tighter text-2xl block leading-none font-jakarta">Orion</span>
-            <span className="text-[11px] text-indigo-600 font-bold uppercase tracking-[0.3em]">Admin</span>
+            <span className="font-black text-slate-900 dark:text-white tracking-tighter text-2xl block leading-none font-jakarta">Orion</span>
+            <span className="text-[11px] text-indigo-600 dark:text-indigo-400 font-bold uppercase tracking-[0.3em]">Admin</span>
           </div>
         </Link>
       </div>
@@ -118,12 +119,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               href={item.href} 
               className={cn(
                 "group flex items-center justify-between p-4 rounded-2xl transition-all duration-300",
-                isActive ? "bg-indigo-600 text-white shadow-xl shadow-indigo-200" : "hover:bg-slate-100 text-slate-500"
+                isActive ? "bg-indigo-600 text-white shadow-xl shadow-indigo-200 dark:shadow-indigo-900/50" : "hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500"
               )}
             >
               <div className="flex items-center gap-4">
                 <item.icon className={cn("w-5 h-5 transition-colors", isActive ? "text-white" : item.color)} />
-                <span className={cn("text-[15px] font-bold tracking-tight", isActive ? "text-white" : "group-hover:text-slate-900")}>
+                <span className={cn("text-[15px] font-bold tracking-tight", isActive ? "text-white" : "group-hover:text-slate-900 dark:group-hover:text-white")}>
                   {item.name}
                 </span>
                 {item.name === 'Alumni' && pendingAlumniCount > 0 && (
@@ -142,7 +143,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         })}
       </nav>
 
-      <div className="p-6 space-y-2 border-t border-slate-200">
+      <div className="p-6 space-y-2 border-t border-slate-200 dark:border-slate-800">
         <form action="/auth/signout" method="post">
           <button 
             suppressHydrationWarning
@@ -154,13 +155,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </form>
       </div>
 
-      <div className="p-6 bg-slate-50 border-t border-slate-200 flex items-center gap-4">
-        <div className="w-10 h-10 rounded-full bg-white overflow-hidden shadow-sm border border-slate-200">
+      <div className="p-6 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800 flex items-center gap-4">
+        <div className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 overflow-hidden shadow-sm border border-slate-200 dark:border-slate-700">
           <img src="/hostel_logo.jpeg" alt="Admin" className="w-full h-full object-cover" />
         </div>
         <div className="overflow-hidden">
-          <div className="text-[13px] font-bold text-slate-900 truncate tracking-tight">Admin User</div>
-          <div className="text-[10px] text-slate-500 font-bold tracking-tight truncate">Orion Administrator</div>
+          <div className="text-[13px] font-bold text-slate-900 dark:text-white truncate tracking-tight">Admin User</div>
+          <div className="text-[10px] text-slate-500 dark:text-slate-400 font-bold tracking-tight truncate">Orion Administrator</div>
         </div>
       </div>
     </>
@@ -189,16 +190,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       {/* Sidebar - Desktop and Mobile */}
       <aside className={cn(
-        "fixed inset-y-0 left-0 z-[70] w-72 bg-slate-50 border-r border-slate-200 flex flex-col transition-transform duration-500 lg:sticky lg:translate-x-0 lg:h-screen",
+        "fixed inset-y-0 left-0 z-[70] w-72 bg-slate-50 dark:bg-[#0F172A] border-r border-slate-200 dark:border-slate-800 flex flex-col transition-transform duration-500 lg:sticky lg:translate-x-0 lg:h-screen",
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       )}>
         <SidebarContent />
       </aside>
 
       {/* Main Area */}
-      <main className={cn("flex-1 min-w-0 flex flex-col transition-colors duration-500", currentBg)}>
+      <main className={cn("flex-1 min-w-0 flex flex-col transition-colors duration-500", currentBg, "dark:bg-[#0F172A]")}>
         {/* Top Header */}
-        <header className="h-20 bg-white/40 backdrop-blur-xl border-b border-slate-200 flex items-center justify-between px-6 lg:px-10 sticky top-0 z-50">
+        <header className="h-20 bg-white/40 dark:bg-[#0F172A]/40 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-6 lg:px-10 sticky top-0 z-50">
           <div className="flex items-center gap-4 lg:gap-6 flex-1">
              <button 
                onClick={() => setIsSidebarOpen(true)}
@@ -210,9 +211,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
           
           <div className="flex items-center gap-3 lg:gap-6 ml-4 relative" ref={notificationRef}>
+            <ThemeToggle />
             <button 
               onClick={() => setShowNotifications(!showNotifications)}
-              className="relative p-2 text-slate-400 hover:text-slate-900 transition-colors hidden sm:block"
+              className="relative p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors hidden sm:block"
             >
               <Bell className="w-5 h-5" />
               {(pendingAlumniCount + pendingMemoriesCount) > 0 && (
