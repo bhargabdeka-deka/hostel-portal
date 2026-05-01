@@ -27,9 +27,9 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
             <div 
               key={memory.id} 
               onClick={() => setSelectedMemory(memory)}
-              className="cursor-pointer group bg-white dark:bg-slate-900/40 border border-slate-100 dark:border-slate-800 rounded-[2rem] p-6 md:p-8 shadow-xl shadow-slate-200/50 dark:shadow-none hover:shadow-2xl hover:shadow-indigo-100 dark:hover:bg-slate-900/60 transition-all duration-500 relative overflow-hidden flex flex-col md:flex-row md:items-center gap-6 md:gap-10"
+              className="cursor-pointer group bg-white border border-slate-100 rounded-[2rem] p-6 md:p-8 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-500 relative overflow-hidden flex flex-col md:flex-row md:items-center gap-6 md:gap-10"
             >
-              <div className="absolute top-0 right-0 p-6 opacity-[0.02] dark:opacity-[0.05] group-hover:opacity-5 transition-opacity">
+              <div className="absolute top-0 right-0 p-6 opacity-[0.02] group-hover:opacity-5 transition-opacity">
                 <Quote className="w-24 h-24" />
               </div>
 
@@ -99,11 +99,11 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
       {/* Full Memory Modal */}
       {selectedMemory && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-12">
-          <div className="absolute inset-0 bg-slate-900/60 dark:bg-black/80 backdrop-blur-md" onClick={() => setSelectedMemory(null)} />
-          <div className="relative bg-white dark:bg-[#0F172A] border dark:border-slate-800 w-full max-w-4xl max-h-[80vh] overflow-y-auto rounded-[3rem] shadow-2xl p-8 md:p-16 animate-in fade-in zoom-in duration-300">
+          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-md" onClick={() => setSelectedMemory(null)} />
+          <div className="relative bg-white border w-full max-w-4xl max-h-[80vh] overflow-y-auto rounded-[3rem] shadow-2xl p-8 md:p-16 animate-in fade-in zoom-in duration-300">
             <button 
               onClick={() => setSelectedMemory(null)}
-              className="absolute top-8 right-8 p-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors text-slate-400"
+              className="absolute top-8 right-8 p-3 hover:bg-slate-100 rounded-full transition-colors text-slate-400"
             >
               <X className="w-6 h-6" />
             </button>

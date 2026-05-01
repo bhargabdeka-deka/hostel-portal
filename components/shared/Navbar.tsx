@@ -40,7 +40,7 @@ export function Navbar() {
     <>
       <nav className="absolute top-0 left-0 right-0 z-[100] transition-all duration-300">
         <div className="max-w-[1600px] mx-auto px-6 md:px-20 h-20 md:h-28 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 text-2xl md:text-3xl font-black tracking-[-0.03em] text-slate-900 dark:text-white group font-jakarta">
+          <Link href="/" className="flex items-center gap-3 text-2xl md:text-3xl font-black tracking-[-0.03em] text-slate-900 group font-jakarta">
             <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-110 transition-all duration-500 relative shadow-xl border-2 border-white ring-4 ring-indigo-50">
               <Image 
                 src="/hostel_logo.jpeg" 
@@ -49,7 +49,7 @@ export function Navbar() {
                 className="object-cover scale-110" 
               />
             </div>
-            <span className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 dark:from-white dark:via-indigo-200 dark:to-white bg-clip-text text-transparent drop-shadow-sm">
+            <span className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 bg-clip-text text-transparent drop-shadow-sm">
               Orion
             </span>
           </Link>
@@ -67,7 +67,7 @@ export function Navbar() {
                 )}
                 <span className={cn(
                   "transition-all duration-300 drop-shadow-sm",
-                  (pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) ? 'text-indigo-700 dark:text-indigo-400' : 'text-slate-900 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400'
+                  (pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) ? 'text-indigo-700' : 'text-slate-900 group-hover:text-indigo-600'
                 )}>
                   {link.name}
                 </span>
@@ -78,7 +78,7 @@ export function Navbar() {
           <div className="flex items-center gap-4 md:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors"
+              className="p-2 text-slate-900 hover:bg-slate-100 rounded-xl transition-colors"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -97,7 +97,7 @@ export function Navbar() {
               href={link.href}
               className={cn(
                 "text-2xl font-bold tracking-widest transition-all duration-500",
-                pathname === link.href ? "text-indigo-600 dark:text-indigo-400 scale-110" : "text-slate-500 dark:text-slate-400",
+                pathname === link.href ? "text-indigo-600 scale-110" : "text-slate-500",
                 isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               )}
             style={{ transitionDelay: `${i * 50}ms` }}

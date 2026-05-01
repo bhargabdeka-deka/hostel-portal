@@ -44,26 +44,26 @@ export default async function AchievementsPage() {
           <div className="h-px w-6 md:w-12 bg-sky-200"></div>
           <span className="text-[11px] md:text-[13px] font-bold text-sky-600 tracking-tight font-sans">Capturing moments</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 dark:text-white tracking-tighter leading-[1.1] font-jakarta">
-          Hostel <span className="text-indigo-600 dark:text-indigo-400">Gallery</span>
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter leading-[1.1] font-jakarta">
+          Hostel <span className="text-indigo-600">Gallery</span>
         </h1>
-        <p className="text-sm md:text-xl text-slate-600 dark:text-slate-400 font-medium max-w-2xl leading-relaxed font-sans">
+        <p className="text-sm md:text-xl text-slate-600 font-medium max-w-2xl leading-relaxed font-sans">
           A visual legacy of our history, achievements, and brotherhood. From festive celebrations to major sports titles, explore the spirit of ORION.
         </p>
       </section>
  
       {/* Gallery Grid */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
-        <h2 className="text-[11px] md:text-[13px] font-bold text-rose-600 dark:text-rose-400 tracking-tight mb-8 md:mb-12 flex items-center gap-4 font-sans">
-          Visual history <div className="h-px flex-1 bg-rose-100 dark:bg-rose-900/30"></div>
+        <h2 className="text-[11px] md:text-[13px] font-bold text-rose-600 tracking-tight mb-8 md:mb-12 flex items-center gap-4 font-sans">
+          Visual history <div className="h-px flex-1 bg-rose-100"></div>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
           {achievements && achievements.length > 0 ? (
             achievements.map((achievement) => (
-              <div key={achievement.id} className="group bg-white dark:bg-slate-900/40 border border-slate-100 dark:border-slate-800 rounded-2xl md:rounded-[3rem] overflow-hidden hover:border-blue-100 dark:hover:border-blue-900/50 transition-all duration-500 shadow-xl shadow-slate-200/50 dark:shadow-none">
+              <div key={achievement.id} className="group bg-white border border-slate-100 rounded-2xl md:rounded-[3rem] overflow-hidden hover:border-blue-100 transition-all duration-500 shadow-xl shadow-slate-200/50">
                 <div className="p-3">
                   <Lightbox src={achievement.image_url || "/placeholder-achievement.png"} alt={achievement.title}>
-                    <div className="aspect-[16/10] relative overflow-hidden rounded-[2rem] bg-slate-50 dark:bg-slate-800/50">
+                    <div className="aspect-[16/10] relative overflow-hidden rounded-[2rem] bg-slate-50">
                       <Image 
                         src={achievement.image_url || "/placeholder-achievement.png"} 
                         alt={achievement.title}
@@ -76,19 +76,19 @@ export default async function AchievementsPage() {
                 </div>
                 <div className="p-4 md:p-6 pt-0 pb-6 md:pb-8">
                   <div className="mb-3">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-100 dark:border-indigo-900/50 rounded-full text-[10px] font-bold text-indigo-600 dark:text-indigo-400 tracking-tight">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 border border-indigo-100 rounded-full text-[10px] font-bold text-indigo-600 tracking-tight">
                       <Calendar className="w-3 h-3" />
                       {achievement.year || (achievement.date ? new Date(achievement.date).getFullYear() : 'N/A')}
                     </div>
                   </div>
-                  <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-white tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-snug">
+                  <h3 className="text-base md:text-lg font-bold text-slate-900 tracking-tight group-hover:text-indigo-600 transition-colors leading-snug">
                     {achievement.title}
                   </h3>
                 </div>
               </div>
             ))
           ) : (
-            <div className="col-span-full py-24 md:py-40 text-center bg-white dark:bg-slate-900/40 rounded-[2rem] md:rounded-[3rem] border border-slate-100 dark:border-slate-800 shadow-lg">
+            <div className="col-span-full py-24 md:py-40 text-center bg-white rounded-[2rem] md:rounded-[3rem] border border-slate-100 shadow-lg">
                <Trophy className="w-12 h-12 md:w-16 md:h-16 text-slate-200 mx-auto mb-6" />
                <h3 className="text-lg font-bold text-slate-400 uppercase tracking-widest">No entries yet</h3>
                <p className="text-slate-400 font-medium mt-2">The gallery is waiting for its first photo.</p>
@@ -99,24 +99,24 @@ export default async function AchievementsPage() {
 
       {/* Featured Trophy Section */}
       <section className="max-w-7xl mx-auto px-6 pb-32">
-        <div className="bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-[3rem] md:rounded-[4rem] overflow-hidden relative min-h-[400px] md:min-h-[500px] flex items-center shadow-xl dark:shadow-none">
-          <div className="absolute inset-0 bg-gradient-to-r from-white dark:from-[#0F172A] via-white/70 dark:via-[#0F172A]/70 md:via-white/40 dark:md:via-[#0F172A]/40 to-transparent z-10"></div>
+        <div className="bg-slate-50 border border-slate-200 rounded-[3rem] md:rounded-[4rem] overflow-hidden relative min-h-[400px] md:min-h-[500px] flex items-center shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 md:via-white/40 to-transparent z-10"></div>
           
           <div className="relative z-20 p-8 md:p-12 lg:p-24 max-w-2xl space-y-6 md:space-y-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter leading-tight font-jakarta">
-              A Legacy of <br/><span className="text-indigo-600 dark:text-indigo-400">Celebrations</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tighter leading-tight font-jakarta">
+              A Legacy of <br/><span className="text-indigo-600">Celebrations</span>
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 font-medium leading-relaxed text-sm md:text-lg font-sans">
+            <p className="text-slate-600 font-medium leading-relaxed text-sm md:text-lg font-sans">
               Our gallery captures the soul of Orion. From the high-octane energy of inter-hostel sports to the vibrant colors of Diwali and Holi, every photo tells a story of brotherhood.
             </p>
             <div className="flex gap-8 md:gap-16 pt-4">
               <div>
-                <div className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-1 font-jakarta">40+</div>
-                <div className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 tracking-tight">Years of memories</div>
+                <div className="text-3xl md:text-5xl font-bold text-slate-900 mb-1 font-jakarta">40+</div>
+                <div className="text-[10px] font-bold text-indigo-600 tracking-tight">Years of memories</div>
               </div>
               <div>
-                <div className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-1 font-jakarta">100%</div>
-                <div className="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 tracking-tight">Orionite spirit</div>
+                <div className="text-3xl md:text-5xl font-bold text-slate-900 mb-1 font-jakarta">100%</div>
+                <div className="text-[10px] font-bold text-indigo-600 tracking-tight">Orionite spirit</div>
               </div>
             </div>
           </div>

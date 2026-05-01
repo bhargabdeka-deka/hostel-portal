@@ -30,7 +30,7 @@ export function AlumniList({ alumni }: AlumniProps) {
           </Link>
         </div>
 
-        <div className="flex items-stretch gap-2 bg-white dark:bg-slate-900/50 p-2 md:p-4 rounded-3xl md:rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-lg">
+        <div className="flex items-stretch gap-2 bg-white p-2 md:p-4 rounded-3xl md:rounded-[2.5rem] border border-slate-200 shadow-lg">
           <div className="relative flex-1 group">
             <Search className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors" />
             <input 
@@ -39,7 +39,7 @@ export function AlumniList({ alumni }: AlumniProps) {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               suppressHydrationWarning
-              className="w-full pl-10 md:pl-16 pr-4 md:pr-6 py-4 md:py-5 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-2xl md:rounded-3xl outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500/50 transition-all font-bold text-slate-900 dark:text-white text-sm md:text-base placeholder:text-slate-400 placeholder:font-medium"
+              className="w-full pl-10 md:pl-16 pr-4 md:pr-6 py-4 md:py-5 bg-slate-50 border border-slate-100 rounded-2xl md:rounded-3xl outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500/50 transition-all font-bold text-slate-900 text-sm md:text-base placeholder:text-slate-400 placeholder:font-medium"
             />
           </div>
         </div>
@@ -51,21 +51,21 @@ export function AlumniList({ alumni }: AlumniProps) {
           filteredAlumni.map((person) => {
             const initials = person.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
             return (
-              <div key={person.id} className="bg-white dark:bg-slate-900/40 border border-slate-100 dark:border-slate-800 rounded-[2rem] p-5 space-y-4 shadow-lg group hover:border-blue-100 dark:hover:border-blue-900/50 transition-all duration-300 relative overflow-hidden">
+              <div key={person.id} className="bg-white border border-slate-100 rounded-[2rem] p-5 space-y-4 shadow-lg group hover:border-blue-100 transition-all duration-300 relative overflow-hidden">
                 <div className="relative z-10 space-y-6">
                   <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 text-slate-400 dark:text-slate-500 rounded-2xl flex items-center justify-center font-bold text-xs border border-slate-100 dark:border-slate-700 shrink-0">
+                  <div className="w-12 h-12 bg-slate-50 text-slate-400 rounded-2xl flex items-center justify-center font-bold text-xs border border-slate-100 shrink-0">
                     {initials}
                   </div>
                   <div className="overflow-hidden">
-                    <h3 className="font-bold text-slate-900 dark:text-white truncate uppercase tracking-tight">{person.name}</h3>
-                    <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest bg-blue-50 dark:bg-blue-950/30 px-3 py-1 rounded-full whitespace-nowrap">
+                    <h3 className="font-bold text-slate-900 truncate uppercase tracking-tight">{person.name}</h3>
+                    <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full whitespace-nowrap">
                       {person.batch.replace(/(\d{4})-(\d{2})(\d{2})/, '$1-$3')} • {person.branch}
                     </span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 pt-2 border-t border-slate-100 dark:border-slate-800">
+                <div className="grid grid-cols-2 gap-4 pt-2 border-t border-slate-100">
                    <div className="space-y-1">
                       <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
                         <Briefcase className="w-2.5 h-2.5" />
@@ -104,18 +104,18 @@ export function AlumniList({ alumni }: AlumniProps) {
             )
           })
         ) : (
-          <div className="py-20 text-center bg-white dark:bg-slate-900/40 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-lg">
+          <div className="py-20 text-center bg-white rounded-[2rem] border border-slate-100 shadow-lg">
             <Users className="w-12 h-12 text-slate-200 mx-auto mb-4" />
             <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest">No matching alumni</h3>
           </div>
         )}
       </div>
 
-      <div className="hidden lg:block overflow-hidden bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-[3rem] shadow-xl">
+      <div className="hidden lg:block overflow-hidden bg-white border border-slate-200 rounded-[3rem] shadow-xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
+              <tr className="bg-slate-50 border-b border-slate-100">
                 <th className="px-10 py-5 text-[10px] font-bold text-sky-500 uppercase tracking-[0.3em]">Identity</th>
                 <th className="px-10 py-5 text-[10px] font-bold text-emerald-500 uppercase tracking-[0.3em]">Graduation</th>
                 <th className="px-10 py-5 text-[10px] font-bold text-indigo-500 uppercase tracking-[0.3em]">Communication</th>
@@ -128,17 +128,17 @@ export function AlumniList({ alumni }: AlumniProps) {
                 filteredAlumni.map((person) => {
                   const initials = person.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
                   return (
-                    <tr key={person.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/30 even:bg-slate-50/40 dark:even:bg-slate-800/10 transition-all duration-300 group relative border-b border-slate-50 dark:border-slate-800 last:border-0 overflow-hidden">
+                    <tr key={person.id} className="hover:bg-slate-50 even:bg-slate-50/40 transition-all duration-300 group relative border-b border-slate-50 last:border-0 overflow-hidden">
                       <td className="px-10 py-5 relative z-10">
                         <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 text-slate-400 dark:text-slate-500 rounded-2xl flex items-center justify-center font-bold text-xs border border-slate-100 dark:border-slate-700 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shrink-0">
+                          <div className="w-12 h-12 bg-slate-50 text-slate-400 rounded-2xl flex items-center justify-center font-bold text-xs border border-slate-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shrink-0">
                             {initials}
                           </div>
                           <span className="font-bold text-slate-900 uppercase tracking-tight text-base">{person.name}</span>
                         </div>
                       </td>
                       <td className="px-10 py-5 relative z-10">
-                        <span className="text-[10px] text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest bg-blue-50 dark:bg-blue-950/30 px-4 py-1.5 rounded-full border border-blue-100 dark:border-blue-900/50 whitespace-nowrap">
+                        <span className="text-[10px] text-blue-600 font-bold uppercase tracking-widest bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100 whitespace-nowrap">
                           {person.batch.replace(/(\d{4})-(\d{2})(\d{2})/, '$1-$3')} • {person.branch}
                         </span>
                       </td>
