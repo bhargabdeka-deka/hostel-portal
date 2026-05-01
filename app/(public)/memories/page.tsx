@@ -34,40 +34,40 @@ export default async function MemoriesPage() {
   return (
     <main className="bg-transparent min-h-screen selection:bg-indigo-500/20 pb-40">
       {/* Header Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-16 space-y-6">
-        <div className="flex items-center gap-4">
+      <section className="max-w-7xl mx-auto px-6 pt-24 md:pt-32 pb-12 space-y-4 text-center md:text-left">
+        <div className="flex items-center justify-center md:justify-start gap-4">
           <div className="h-px w-12 bg-indigo-200"></div>
           <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-[0.3em]">The Orion Spirit</span>
         </div>
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
-          <div className="space-y-6">
-            <h1 className="text-6xl md:text-8xl font-bold text-slate-900 tracking-tighter uppercase">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="space-y-4">
+            <h1 className="text-6xl md:text-8xl font-bold text-slate-900 tracking-tighter uppercase leading-[0.9]">
               Memories<span className="text-blue-600">.</span>
             </h1>
-            <p className="text-xl text-slate-600 font-medium max-w-2xl leading-relaxed">
-              Stories of brotherhood, hostel life, unforgettable experiences, and the legacy of ORION. A digital archive of what it means to be an Orionite.
+            <p className="text-lg text-slate-500 font-medium max-w-xl leading-relaxed">
+              Stories of brotherhood, hostel life, and the legacy of ORION. A digital archive shared by Orionites across generations.
             </p>
           </div>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 xl:grid-cols-12 gap-20">
-        <div className="xl:col-span-8">
+      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 xl:grid-cols-12 gap-12">
+        <div className="xl:col-span-9">
           <MemoriesList memories={memories || []} />
         </div>
         
         {/* Submission Section Sidebar */}
-        <aside className="xl:col-span-4 space-y-12">
+        <aside className="xl:col-span-3 space-y-12">
           <div className="sticky top-32 space-y-8">
-            <div className="bg-indigo-600 rounded-[2.5rem] p-10 text-white shadow-2xl shadow-indigo-200 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-10 opacity-10 rotate-12 group-hover:rotate-45 transition-transform duration-700">
-                <BookHeart className="w-32 h-32" />
+            <div className="bg-indigo-600 rounded-[2rem] p-8 text-white shadow-2xl shadow-indigo-100 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-8 opacity-10 rotate-12 group-hover:rotate-45 transition-transform duration-700">
+                <BookHeart className="w-24 h-24" />
               </div>
-              <div className="relative z-10 space-y-6">
-                <h3 className="text-3xl font-bold tracking-tight leading-tight">Your story is part of ORION's history.</h3>
-                <p className="text-indigo-100 font-medium text-sm leading-relaxed">
-                  Every Orionite has a unique story. Whether it's about a late-night mess session, a sports victory, or a lifelong friendship, share it with the world.
+              <div className="relative z-10 space-y-4">
+                <h3 className="text-2xl font-bold tracking-tight leading-tight">Your story is part of ORION's history.</h3>
+                <p className="text-indigo-100 font-medium text-xs leading-relaxed">
+                  Every Orionite has a unique story. Whether it's about a late-night session or a sports victory, share it with the world.
                 </p>
               </div>
             </div>

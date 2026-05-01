@@ -20,7 +20,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
   return (
     <div className="space-y-12">
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 md:gap-8">
         {memories.length > 0 ? (
           memories.map((memory) => (
             <div 
@@ -68,11 +68,13 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
             </div>
           ))
         ) : (
-          <div className="col-span-full py-32 text-center space-y-4 bg-white border border-dashed border-slate-200 rounded-[3rem]">
-            <BookOpen className="w-16 h-16 text-slate-100 mx-auto" />
+          <div className="col-span-full py-20 text-center space-y-6 bg-slate-50/50 border-2 border-dashed border-slate-200 rounded-[2.5rem]">
+            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-sm border border-slate-100">
+              <BookOpen className="w-8 h-8 text-slate-200" />
+            </div>
             <div className="space-y-1">
-              <h4 className="text-lg font-bold text-slate-400 uppercase tracking-widest">No memories found</h4>
-              <p className="text-slate-300 font-medium italic">Be the first one to share a story!</p>
+              <h4 className="text-sm font-bold text-slate-500 uppercase tracking-[0.2em]">No memories found</h4>
+              <p className="text-slate-400 font-medium text-xs italic tracking-tight">Be the first one to share a story!</p>
             </div>
           </div>
         )}
@@ -87,7 +89,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
               onClick={() => setSelectedMemory(null)}
               className="absolute top-8 right-8 p-3 hover:bg-slate-100 rounded-full transition-colors text-slate-400"
             >
-              <XIcon className="w-6 h-6" />
+              <X className="w-6 h-6" />
             </button>
 
             <div className="space-y-10">
@@ -141,22 +143,3 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
   );
 }
 
-function XIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M18 6 6 18" />
-      <path d="m6 6 12 12" />
-    </svg>
-  );
-}
