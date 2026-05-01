@@ -109,7 +109,7 @@ export default async function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto py-32 lg:py-40 text-center">
-          <div className="inline-flex items-center px-7 py-3 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 text-white/60 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          <div className="inline-flex items-center px-7 py-3 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 text-white/90 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             Hostel No 7 • Jorhat Engineering College
           </div>
           
@@ -137,25 +137,25 @@ export default async function HomePage() {
               <div className="flex-1">
                 <div className="flex items-center justify-between gap-4 mb-2">
                   <div className={`text-4xl md:text-5xl font-black ${stat.color} tracking-tighter font-jakarta`}>{stat.value}</div>
-                  <span className={`text-[10px] font-black ${stat.color} tracking-[0.2em] font-jakarta uppercase opacity-60`}>{stat.tag}</span>
+                  <span className={`text-[10px] font-black ${stat.color} tracking-[0.2em] font-jakarta uppercase opacity-100`}>{stat.tag}</span>
                 </div>
-                <div className="text-[11px] font-black text-slate-500 uppercase tracking-[0.3em] font-jakarta leading-none">{stat.label}</div>
+                <div className="text-[11px] font-black text-slate-600 uppercase tracking-[0.3em] font-jakarta leading-none">{stat.label}</div>
               </div>
             </div>
           ))}
         </div>
 
         <div className="flex items-center justify-center gap-8 pt-20 pb-10">
-          <div className="h-px w-24 bg-slate-100"></div>
-          <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.5em]">The Orionite Way</div>
-          <div className="h-px w-24 bg-slate-100"></div>
+          <div className="h-px w-24 bg-slate-200"></div>
+          <div className="text-[10px] font-black text-slate-600 uppercase tracking-[0.5em]">The Orionite Way</div>
+          <div className="h-px w-24 bg-slate-200"></div>
         </div>
       </section>
       <section className="max-w-7xl mx-auto px-8 py-20 text-center">
-        <div className="flex items-center justify-center gap-10 py-24 opacity-20">
-          <div className="h-px w-32 bg-slate-200"></div>
-          <h2 className="text-[11px] font-black text-[#0F172A] uppercase tracking-[1em] font-jakarta pl-4">The Spirit</h2>
-          <div className="h-px w-32 bg-slate-200"></div>
+        <div className="flex items-center justify-center gap-10 py-24 opacity-60">
+          <div className="h-px w-32 bg-slate-300"></div>
+          <h2 className="text-[11px] font-black text-slate-700 uppercase tracking-[1em] font-jakarta pl-4">The Spirit</h2>
+          <div className="h-px w-32 bg-slate-300"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
           {spirits.map((spirit, i) => (
@@ -166,7 +166,7 @@ export default async function HomePage() {
               <div className="absolute top-0 right-0 w-48 h-48 bg-slate-50 rounded-bl-full -mr-24 -mt-24 group-hover:bg-[#C8A96B]/5 transition-colors duration-1000"></div>
               <div className="flex items-center justify-between mb-10 relative z-10">
                 <div className={`${spirit.color} p-6 bg-slate-50/50 rounded-[2rem] inline-block border border-slate-100 group-hover:scale-110 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-1000 shadow-sm`}>{spirit.icon}</div>
-                <span className={`text-[11px] font-black ${spirit.color} tracking-[0.3em] font-jakarta uppercase opacity-60`}>{spirit.tag}</span>
+                <span className={`text-[11px] font-black ${spirit.color} tracking-[0.3em] font-jakarta uppercase opacity-100`}>{spirit.tag}</span>
               </div>
               <div className="space-y-8 relative z-10">
                 <h3 className={`text-3xl md:text-5xl font-black text-[#0F172A] tracking-tighter font-jakarta leading-[0.95]`}>{spirit.title}</h3>
@@ -183,7 +183,7 @@ export default async function HomePage() {
 
       <section className="max-w-4xl mx-auto px-8 py-32 lg:py-40">
         <div className="text-center space-y-10 mb-20">
-          <div className="inline-flex items-center px-8 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-[#C8A96B] text-[10px] font-black tracking-[0.6em] uppercase font-jakarta">
+          <div className="inline-flex items-center px-8 py-2.5 rounded-full bg-slate-100/50 border border-slate-200 text-[#C8A96B] text-[10px] font-black tracking-[0.6em] uppercase font-jakarta">
             Institutional Bulletin
           </div>
           <h3 className="text-5xl md:text-8xl font-black text-[#0F172A] flex items-center justify-center gap-8 tracking-tighter font-jakarta">
@@ -196,7 +196,7 @@ export default async function HomePage() {
             typedNotices.map((notice: Notice, i: number) => (
               <div key={notice.id} className={`p-10 md:p-16 hover:bg-slate-50/50 transition-all cursor-default group ${i !== typedNotices.length - 1 ? 'border-b border-slate-100' : ''}`}>
                 <div className="flex items-center justify-between gap-4 mb-6">
-                  <div className="text-[10px] font-black text-slate-400 flex items-center gap-4 tracking-[0.25em] uppercase font-jakarta">
+                  <div className="text-[10px] font-black text-slate-500 flex items-center gap-4 tracking-[0.25em] uppercase font-jakarta">
                     <Calendar className="w-4 h-4 opacity-50" />
                     {new Date(notice.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                   </div>
@@ -214,7 +214,7 @@ export default async function HomePage() {
               </div>
               <div className="space-y-3">
                 <p className="text-[#0F172A] font-black text-2xl md:text-3xl tracking-tighter font-jakarta leading-none">No Active Announcements.</p>
-                <p className="text-slate-400 font-medium text-lg font-sans max-w-sm mx-auto leading-relaxed">The legacy is quiet for a moment. Stay tuned for upcoming ORION updates.</p>
+                <p className="text-slate-500 font-medium text-lg font-sans max-w-sm mx-auto leading-relaxed">The legacy is quiet for a moment. Stay tuned for upcoming ORION updates.</p>
               </div>
             </div>
           )}
