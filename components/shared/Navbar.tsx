@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -73,11 +72,10 @@ export function Navbar() {
                   {link.name}
                 </span>
               </Link>
-            <ThemeToggle />
+            ))}
           </div>
 
           <div className="flex items-center gap-4 md:hidden">
-            <ThemeToggle />
             <button 
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors"

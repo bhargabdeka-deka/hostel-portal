@@ -20,7 +20,6 @@ import {
 import { cn } from '@/lib/utils';
 import { Footer } from '@/components/shared/Footer';
 import { createClient } from '@/lib/supabase/client';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -211,7 +210,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
           
           <div className="flex items-center gap-3 lg:gap-6 ml-4 relative" ref={notificationRef}>
-            <ThemeToggle />
             <button 
               onClick={() => setShowNotifications(!showNotifications)}
               className="relative p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors hidden sm:block"

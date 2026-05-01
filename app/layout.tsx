@@ -164,8 +164,9 @@ export default function RootLayout({
       <body className="min-h-full bg-white dark:bg-[#0F172A] text-slate-900 dark:text-slate-100 font-sans antialiased relative selection:bg-indigo-500/30">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          forcedTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           {children}
