@@ -29,8 +29,8 @@ export default async function ContactPage() {
     .order('role', { ascending: true });
 
   const mainContacts = [
-    { icon: <MapPin className="w-5 h-5" />, title: "Location", detail: "Hostel No 7, JEC Road, Jorhat, Assam 785007", color: "text-indigo-600", bgColor: "bg-indigo-50/50", borderColor: "border-indigo-100", link: "https://www.google.com/maps/search/?api=1&query=Hostel+No+7+Jorhat+Engineering+College" },
-    { icon: <Instagram className="w-5 h-5" />, title: "Instagram", detail: "@orion_jec", color: "text-pink-600", bgColor: "bg-pink-50/50", borderColor: "border-pink-100", link: "https://www.instagram.com/orion_jec?igsh=azA3enkzZmZ3Y3Fu" },
+    { icon: <MapPin className="w-5 h-5 text-[#EA4335]" />, title: "Location", detail: "Hostel No 7, JEC Road, Jorhat, Assam 785007", color: "text-[#EA4335]", bgColor: "bg-red-50/50", borderColor: "border-red-100", link: "https://www.google.com/maps/search/?api=1&query=Hostel+No+7+Jorhat+Engineering+College" },
+    { icon: <Instagram className="w-5 h-5 text-[#E4405F]" />, title: "Instagram", detail: "@orion_jec", color: "text-[#E4405F]", bgColor: "bg-rose-50/50", borderColor: "border-rose-100", link: "https://www.instagram.com/orion_jec?igsh=azA3enkzZmZ3Y3Fu" },
   ];
 
   return (
@@ -64,7 +64,10 @@ export default async function ContactPage() {
                   c.link && "cursor-pointer active:scale-95"
                 )}
               >
-                <div className={`w-16 h-16 md:w-20 md:h-20 rounded-[2rem] bg-slate-50 flex items-center justify-center mx-auto text-[#0F172A] group-hover:scale-110 transition-transform duration-500 shrink-0 shadow-sm border border-slate-100`}>
+                <div className={cn(
+                  "w-16 h-16 md:w-20 md:h-20 rounded-[2rem] flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 shrink-0 shadow-sm border border-slate-100",
+                  i === 0 ? "bg-red-50" : "bg-rose-50"
+                )}>
                   {c.icon}
                 </div>
                 <div className="space-y-4">
@@ -131,19 +134,23 @@ export default async function ContactPage() {
                 return (
                   <div 
                     key={m.id} 
-                    className="bg-white p-8 md:p-10 rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/50 hover:-translate-y-2 transition-all duration-500 group flex flex-col items-center text-center gap-8"
+                    className="bg-slate-50/50 p-8 md:p-10 rounded-[3rem] border border-slate-100 shadow-xl shadow-slate-200/40 hover:bg-white hover:shadow-2xl hover:shadow-slate-300/40 hover:-translate-y-2 transition-all duration-500 group flex flex-col items-center text-center gap-8"
                   >
                     <div className="w-20 h-20 rounded-[1.5rem] bg-slate-50 flex items-center justify-center shrink-0 group-hover:scale-110 transition-all duration-500 shadow-sm border border-slate-50">
                       <User className="w-10 h-10 text-[#0F172A]/20" />
                     </div>
                     
                     <div className="space-y-3">
-                      <div className="text-[9px] font-bold text-[#C8A96B] tracking-[0.2em] font-jakarta uppercase">{m.role}</div>
-                      <div className="text-2xl font-black text-[#0F172A] tracking-tight font-jakarta group-hover:text-[#C8A96B] transition-colors leading-tight">{m.name}</div>
+                      <div className="text-[12px] font-black text-[#C8A96B] tracking-[0.2em] font-jakarta uppercase">
+                        {m.role}
+                      </div>
+                      <div className="text-2xl font-black text-[#0F172A] tracking-tighter font-jakarta group-hover:text-[#C8A96B] transition-colors leading-tight">
+                        {m.name}
+                      </div>
                     </div>
                     
                     <div className="w-full pt-8 border-t border-slate-100 space-y-4">
-                      <div className="flex items-center justify-center gap-3 text-slate-400 text-[10px] font-bold uppercase tracking-widest font-jakarta">
+                      <div className="flex items-center justify-center gap-3 text-slate-600 text-[11px] font-black uppercase tracking-[0.3em] font-jakarta">
                         Room {m.room}
                       </div>
                       {m.phone && (
