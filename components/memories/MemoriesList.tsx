@@ -39,7 +39,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-slate-900 tracking-tight leading-tight group-hover:text-indigo-600 transition-colors line-clamp-2">
+                <h3 className="text-2xl font-bold text-slate-900 tracking-tight leading-tight group-hover:text-slate-800 transition-colors line-clamp-2">
                   {memory.title}
                 </h3>
                 
@@ -50,7 +50,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
 
               <div className="pt-6 border-t border-slate-50 flex items-center justify-between relative z-10">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 font-bold text-xs border border-slate-100 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 font-bold text-xs border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all">
                     {memory.full_name.charAt(0)}
                   </div>
                   <div className="flex flex-col">
@@ -60,7 +60,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                 </div>
                 <button 
                   onClick={() => setSelectedMemory(memory)}
-                  className="p-3 bg-indigo-50 text-indigo-600 rounded-xl hover:bg-indigo-600 hover:text-white transition-all shadow-sm"
+                  className="p-3 bg-slate-50 text-slate-600 rounded-xl hover:bg-[#0F172A] hover:text-white transition-all shadow-sm border border-slate-100"
                 >
                   <BookOpen className="w-4 h-4" />
                 </button>
@@ -99,7 +99,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                 </h2>
                 <div className="flex items-center gap-6 pt-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shadow-lg shadow-indigo-100">
+                    <div className="w-12 h-12 rounded-2xl bg-[#0F172A] text-white flex items-center justify-center shadow-lg shadow-slate-200">
                       <User className="w-5 h-5" />
                     </div>
                     <div className="flex flex-col">
