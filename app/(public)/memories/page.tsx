@@ -60,7 +60,7 @@ export default async function MemoriesPage() {
         {/* Submission Section - Now below the list, wider layout */}
         <div className="max-w-7xl mx-auto w-full space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
-            <div className="lg:col-span-2 bg-[#0F172A] rounded-[2.5rem] p-12 text-slate-50 shadow-2xl shadow-indigo-100/20 relative overflow-hidden group flex flex-col justify-center border border-slate-800">
+            <div className="lg:col-span-2 bg-[#0F172A] rounded-[2.5rem] p-8 md:p-10 text-slate-50 shadow-2xl shadow-indigo-100/20 relative overflow-hidden group flex flex-col justify-center border border-slate-800">
               <div className="absolute top-0 right-0 p-12 opacity-[0.05] rotate-12 group-hover:rotate-45 transition-transform duration-700 text-indigo-400">
                 <BookHeart className="w-48 h-48" />
               </div>

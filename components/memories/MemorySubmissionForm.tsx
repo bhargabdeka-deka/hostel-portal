@@ -52,7 +52,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
 
   return (
     <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100">
-      <div className="p-8 md:p-12 border-b border-slate-50 flex items-center justify-between">
+      <div className="p-6 md:p-8 border-b border-slate-50 flex items-center justify-between">
         <div className="space-y-1">
           <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Share a Memory</h2>
           <p className="text-[11px] font-bold text-indigo-600 uppercase tracking-widest">Contribute to the ORION Legacy</p>
@@ -64,57 +64,57 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
         )}
       </div>
 
-      <form onSubmit={handleSubmit} className="p-8 md:p-12 space-y-8">
+      <form onSubmit={handleSubmit} className="p-6 md:p-10 space-y-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          <div className="col-span-2 lg:col-span-1 space-y-2">
+          <div className="col-span-2 lg:col-span-1 space-y-1.5">
             <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Full Name</label>
             <input 
               required
               name="fullName"
-              className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+              className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Batch</label>
             <input 
               required
               name="batch"
-              className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+              className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Branch</label>
             <input 
               required
               name="branch"
-              className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+              className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Room (Opt)</label>
             <input 
               name="roomNumber"
-              className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+              className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Memory Title</label>
           <input 
             required
             name="title"
-            className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+            className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Detailed Memory / Story</label>
           <textarea 
             required
             name="story"
-            rows={6}
-            className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 resize-none"
+            rows={4}
+            className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 resize-none"
           ></textarea>
         </div>
 
@@ -138,7 +138,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
 
         <button 
           disabled={isSubmitting}
-          className="w-full py-5 bg-[#0F172A] text-white rounded-[1.5rem] font-bold text-xs uppercase tracking-[0.3em] shadow-xl shadow-indigo-100/50 hover:bg-[#1e293b] transition-all flex items-center justify-center gap-3 disabled:opacity-50"
+          className="w-full py-4 bg-[#0F172A] text-white rounded-[1.25rem] font-bold text-xs uppercase tracking-[0.3em] shadow-xl shadow-indigo-100/50 hover:bg-[#1e293b] transition-all flex items-center justify-center gap-3 disabled:opacity-50"
         >
           {isSubmitting ? (
             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
