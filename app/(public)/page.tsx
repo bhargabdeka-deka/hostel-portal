@@ -52,34 +52,31 @@ export default async function HomePage() {
 
   const stats = [
     { 
-      tag: 'Heritage', 
-      label: 'Established', 
+      tag: 'Legacy', 
+      label: '42+ Years of Brotherhood', 
       value: '1982', 
       icon: <Calendar className="w-5 h-5" />, 
-      color: 'text-slate-600', 
+      color: 'text-slate-700', 
       bgColor: 'bg-white', 
       iconBg: 'bg-slate-50',
-      shadow: 'shadow-[0_40px_80px_-20px_rgba(15,23,42,0.08),0_20px_40px_-15px_rgba(15,23,42,0.04)]'
     },
     { 
-      tag: 'Residency', 
-      label: 'Residents', 
-      value: '75', 
+      tag: 'Community', 
+      label: '800+ Alumni Network', 
+      value: '800+', 
       icon: <Users className="w-5 h-5" />, 
-      color: 'text-[#0F172A]', 
-      bgColor: 'bg-white/95', 
+      color: 'text-indigo-950', 
+      bgColor: 'bg-white', 
       iconBg: 'bg-indigo-50/50',
-      shadow: 'shadow-[0_50px_100px_-20px_rgba(15,23,42,0.12),0_25px_50px_-15px_rgba(15,23,42,0.06)]'
     },
     { 
-      tag: 'Legacy', 
-      label: 'History', 
-      value: '40+ Years', 
+      tag: 'Identity', 
+      label: 'JEC Institutional Pride', 
+      value: 'JEC', 
       icon: <Award className="w-5 h-5" />, 
       color: 'text-[#C8A96B]', 
       bgColor: 'bg-white', 
       iconBg: 'bg-[#C8A96B]/5',
-      shadow: 'shadow-[0_40px_80px_-20px_rgba(15,23,42,0.08),0_20px_40px_-15px_rgba(15,23,42,0.04)]'
     },
   ];
 
@@ -161,9 +158,11 @@ export default async function HomePage() {
             <div 
               key={i} 
               className={cn(
-                "px-10 py-10 md:px-12 md:py-12 border rounded-[4rem] flex items-center gap-8 group hover:-translate-y-1.5 transition-all duration-700 hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.15)]",
+                "px-10 py-10 md:px-12 md:py-12 border rounded-[4rem] flex items-center gap-8 group hover:-translate-y-1.5 transition-all duration-700",
                 stat.bgColor,
-                i === 1 ? "border-slate-200 shadow-[0_30px_60px_-15px_rgba(15,23,42,0.12)]" : "border-slate-100 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.08)]"
+                i === 1 ? "border-indigo-100/50 shadow-[0_40px_80px_-20px_rgba(15,23,42,0.12)]" : 
+                i === 2 ? "border-[#C8A96B]/10 shadow-[0_30px_60px_-15px_rgba(15,23,42,0.08)]" :
+                "border-slate-100 shadow-[0_30px_60px_-15px_rgba(15,23,42,0.08)]"
               )}
             >
               <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-700", stat.color, stat.iconBg)}>
@@ -172,7 +171,11 @@ export default async function HomePage() {
               <div className="flex-1">
                 <div className="flex items-center justify-between gap-4 mb-2">
                   <div className={cn("text-3xl md:text-5xl font-black tracking-[-0.05em] font-jakarta", stat.color)}>{stat.value}</div>
-                  <span className={cn("text-[10px] font-black tracking-[0.2em] font-jakarta uppercase", i === 1 ? "text-slate-500" : stat.color, "opacity-100")}>{stat.tag}</span>
+                  <span className={cn("text-[10px] font-black tracking-[0.2em] font-jakarta uppercase opacity-100", 
+                    i === 0 ? "text-slate-400" : 
+                    i === 1 ? "text-indigo-400" : 
+                    "text-[#C8A96B]/70"
+                  )}>{stat.tag}</span>
                 </div>
                 <div className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] font-jakarta leading-none">{stat.label}</div>
               </div>
