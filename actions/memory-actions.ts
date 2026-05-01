@@ -25,7 +25,7 @@ export async function submitMemory(formData: {
   roomNumber?: string;
   title: string;
   story: string;
-  category: string;
+  category?: string;
 }) {
   const supabase = await createClient();
   
@@ -37,7 +37,7 @@ export async function submitMemory(formData: {
       room_number: formData.roomNumber,
       title: formData.title,
       story: formData.story,
-      category: formData.category,
+      category: formData.category || 'Story',
       status: 'pending'
     }]);
 

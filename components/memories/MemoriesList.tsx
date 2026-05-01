@@ -32,10 +32,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
               </div>
 
               <div className="space-y-4 relative z-10">
-                <div className="flex items-center justify-between">
-                  <span className="text-[9px] font-black text-indigo-600 uppercase tracking-widest bg-indigo-50 px-4 py-1.5 rounded-full border border-indigo-100">
-                    {memory.category}
-                  </span>
+                <div className="flex items-center justify-end">
                   <div className="text-[10px] font-bold text-slate-400 flex items-center gap-2 tracking-tight">
                     <Calendar className="w-3 h-3" />
                     {new Date(memory.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
@@ -95,9 +92,6 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
 
             <div className="space-y-10">
               <div className="space-y-6">
-                <span className="text-[10px] font-black text-indigo-600 uppercase tracking-widest bg-indigo-50 px-5 py-2 rounded-full border border-indigo-100 inline-block">
-                  {selectedMemory.category}
-                </span>
                 <h2 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tighter leading-[1.1]">
                   {selectedMemory.title}
                 </h2>

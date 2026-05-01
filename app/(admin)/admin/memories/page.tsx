@@ -73,17 +73,14 @@ export default async function AdminMemories() {
                   <div className="text-[11px] font-bold text-slate-700 truncate">{memory.full_name}</div>
                   <div className="text-[9px] font-bold text-indigo-500">Batch {memory.batch}</div>
                 </div>
-                <div className="space-y-1">
-                  <div className="text-[8px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1">
-                    <Tag className="w-3 h-3" /> Category
-                  </div>
-                  <div className="text-[11px] font-bold text-slate-700">{memory.category}</div>
-                  {memory.room_number && (
-                    <div className="text-[9px] font-bold text-slate-400 flex items-center gap-1">
-                      <Home className="w-2.5 h-2.5" /> Room {memory.room_number}
+                {memory.room_number && (
+                  <div className="space-y-1">
+                    <div className="text-[8px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-1">
+                      <Home className="w-2.5 h-2.5" /> Room
                     </div>
-                  )}
-                </div>
+                    <div className="text-[11px] font-bold text-slate-700">{memory.room_number}</div>
+                  </div>
+                )}
               </div>
             </div>
 

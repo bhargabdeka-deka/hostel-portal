@@ -21,7 +21,6 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
       roomNumber: formData.get('roomNumber') as string,
       title: formData.get('title') as string,
       story: formData.get('story') as string,
-      category: formData.get('category') as string,
     };
 
     const res = await submitMemory(data);
@@ -90,15 +89,6 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             <input 
               name="roomNumber"
               placeholder="e.g. 45"
-              className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
-            />
-          </div>
-          <div className="space-y-2">
-            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Category</label>
-            <input 
-              required
-              name="category"
-              placeholder="e.g. Hostel Life, Sports..."
               className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
