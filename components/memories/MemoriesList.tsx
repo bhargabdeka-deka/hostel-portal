@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react';
-import { Search, Filter, BookOpen, User, Calendar, Quote, ChevronRight } from 'lucide-react';
+import { Search, Filter, BookOpen, User, Calendar, Quote, ChevronRight, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface Memory {
