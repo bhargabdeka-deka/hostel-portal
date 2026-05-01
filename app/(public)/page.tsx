@@ -151,7 +151,7 @@ export default async function HomePage() {
           <div className="h-px w-24 bg-slate-100"></div>
         </div>
       </section>
-
+      <section className="max-w-7xl mx-auto px-8 py-20 text-center">
         <div className="flex items-center justify-center gap-10 py-24 opacity-20">
           <div className="h-px w-32 bg-slate-200"></div>
           <h2 className="text-[11px] font-black text-[#0F172A] uppercase tracking-[1em] font-jakarta pl-4">The Spirit</h2>
