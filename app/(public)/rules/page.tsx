@@ -33,7 +33,7 @@ export default function RulesPage() {
     { 
       icon: <Coffee />, 
       title: "Mess Timings", 
-      details: "Breakfast: 7:30-9:00 AM | Lunch: 12:30-2:00 PM | Dinner: 9:00-10:00 PM. No food allowed inside personal rooms." 
+      details: "Breakfast: 7:30-9:00 AM | Lunch: 12:30-2:00 PM | Dinner: 9:00-10:30 PM. No food allowed inside personal rooms." 
     },
     { 
       icon: <ShieldAlert />, 
