@@ -20,58 +20,64 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
 
   return (
     <div className="space-y-12">
-      {/* Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 md:gap-8">
+      {/* Rows */}
+      <div className="flex flex-col gap-6 md:gap-8">
         {memories.length > 0 ? (
           memories.map((memory) => (
             <div 
               key={memory.id} 
-              className="group bg-white border border-slate-100 rounded-[2.5rem] p-8 space-y-6 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-500 relative overflow-hidden"
+              className="group bg-white border border-slate-100 rounded-[2rem] p-6 md:p-8 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-500 relative overflow-hidden flex flex-col md:flex-row md:items-center gap-6 md:gap-10"
             >
-              <div className="absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-10 transition-opacity">
-                <Quote className="w-24 h-24 rotate-12" />
+              <div className="absolute top-0 right-0 p-6 opacity-[0.02] group-hover:opacity-5 transition-opacity">
+                <Quote className="w-24 h-24" />
               </div>
 
-              <div className="space-y-4 relative z-10">
-                <div className="flex items-center justify-end">
-                  <div className="text-[10px] font-bold text-slate-400 flex items-center gap-2 tracking-tight">
-                    <Calendar className="w-3 h-3" />
-                    {new Date(memory.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
-                  </div>
+              {/* Date Column */}
+              <div className="flex-none flex md:flex-col items-center justify-center md:w-20 md:border-r border-slate-50 md:pr-10">
+                <div className="text-center">
+                  <span className="block text-2xl font-black text-slate-900 leading-none">
+                    {new Date(memory.created_at).toLocaleDateString('en-US', { day: '2-digit' })}
+                  </span>
+                  <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1">
+                    {new Date(memory.created_at).toLocaleDateString('en-US', { month: 'short' })}
+                  </span>
                 </div>
+              </div>
 
-                <h3 className="text-2xl font-bold text-slate-900 tracking-tight leading-tight group-hover:text-slate-800 transition-colors line-clamp-2">
+              {/* Content Column */}
+              <div className="flex-1 space-y-2 relative z-10">
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight leading-tight group-hover:text-slate-800 transition-colors line-clamp-1">
                   {memory.title}
                 </h3>
-                
-                <p className="text-slate-500 text-sm font-medium leading-relaxed line-clamp-3 italic">
+                <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed line-clamp-2 italic">
                   "{memory.story}"
                 </p>
               </div>
 
-              <div className="pt-6 border-t border-slate-50 flex items-center justify-between relative z-10">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 font-bold text-xs border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all">
-                    {memory.full_name.charAt(0)}
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[13px] font-bold text-slate-900 tracking-tight">{memory.full_name}</span>
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+              {/* Author & Action Column */}
+              <div className="flex flex-row md:flex-row items-center justify-between md:justify-end gap-6 md:gap-10 pt-6 md:pt-0 border-t md:border-0 border-slate-50">
+                <div className="flex items-center gap-4 text-right">
+                  <div className="hidden sm:block">
+                    <span className="block text-[13px] font-bold text-slate-900 tracking-tight">{memory.full_name}</span>
+                    <span className="block text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">
                       {memory.batch} • {memory.branch}
                     </span>
+                  </div>
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 font-bold text-sm border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all shadow-sm">
+                    {memory.full_name.charAt(0)}
                   </div>
                 </div>
                 <button 
                   onClick={() => setSelectedMemory(memory)}
-                  className="p-3 bg-slate-50 text-slate-600 rounded-xl hover:bg-[#0F172A] hover:text-white transition-all shadow-sm border border-slate-100"
+                  className="p-4 bg-slate-50 text-slate-600 rounded-2xl hover:bg-[#0F172A] hover:text-white transition-all shadow-sm border border-slate-100"
                 >
-                  <BookOpen className="w-4 h-4" />
+                  <BookOpen className="w-5 h-5" />
                 </button>
               </div>
             </div>
           ))
         ) : (
-          <div className="col-span-full py-20 text-center space-y-6 bg-slate-50/50 border-2 border-dashed border-slate-200 rounded-[2.5rem]">
+          <div className="py-20 text-center space-y-6 bg-slate-50/50 border-2 border-dashed border-slate-200 rounded-[2.5rem]">
             <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-sm border border-slate-100">
               <BookOpen className="w-8 h-8 text-slate-200" />
             </div>
