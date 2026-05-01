@@ -118,7 +118,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 cursor-pointer"
           />
           <label htmlFor="consent" className="text-xs font-bold text-slate-500 tracking-tight cursor-pointer">
-            I confirm this submission is respectful and authentic.
+            i confirm this submission
           </label>
         </div>
 
