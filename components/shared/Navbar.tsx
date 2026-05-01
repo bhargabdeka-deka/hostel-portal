@@ -43,12 +43,12 @@ export function Navbar() {
       <nav className="absolute top-0 left-0 right-0 z-[100] transition-all duration-300">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-20 h-24 md:h-32 flex items-center justify-between gap-4">
           <Link href="/" className={cn(
-            "flex items-center gap-4 text-2xl md:text-3xl font-black tracking-[-0.05em] group font-jakarta transition-colors duration-300",
-            isHome ? "text-white" : "text-[#0F172A]"
+            "flex items-center gap-4 text-2xl md:text-3xl font-black tracking-[-0.05em] group font-jakarta transition-colors duration-300 relative z-[101]",
+            (isHome && !isOpen) ? "text-white" : "text-[#0F172A]"
           )}>
             <div className={cn(
               "w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-110 transition-all duration-500 relative shadow-xl border-2",
-              isHome ? "border-white ring-4 ring-indigo-50" : "border-slate-100 ring-4 ring-slate-50"
+              (isHome && !isOpen) ? "border-white ring-4 ring-indigo-50" : "border-slate-100 ring-4 ring-slate-50"
             )}>
               <Image 
                 src="/hostel_logo.jpeg" 
@@ -59,7 +59,7 @@ export function Navbar() {
             </div>
             <span className={cn(
               "drop-shadow-lg transition-all duration-300",
-              isHome ? "bg-gradient-to-br from-white via-white/80 to-white/60 bg-clip-text text-transparent" : "text-[#0F172A]"
+              (isHome && !isOpen) ? "bg-gradient-to-br from-white via-white/80 to-white/60 bg-clip-text text-transparent" : "text-[#0F172A]"
             )}>
               Orion
             </span>
@@ -88,12 +88,12 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4 lg:hidden">
+          <div className="flex items-center gap-4 lg:hidden relative z-[101]">
             <button 
               onClick={() => setIsOpen(!isOpen)}
               className={cn(
                 "p-2 rounded-xl transition-all duration-300",
-                isHome ? "text-white hover:bg-white/10" : "text-[#0F172A] hover:bg-slate-100"
+                (isHome && !isOpen) ? "text-white hover:bg-white/10" : "text-[#0F172A] hover:bg-slate-100"
               )}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
