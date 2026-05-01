@@ -60,7 +60,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                   <div className="hidden sm:block">
                     <span className="block text-[13px] font-bold text-slate-900 tracking-tight">{memory.full_name}</span>
                     <span className="block text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">
-                      {memory.batch} • {memory.branch}
+                      {memory.batch} {memory.branch && ` • ${memory.branch}`}
                     </span>
                   </div>
                   <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 font-bold text-sm border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all shadow-sm">
@@ -114,7 +114,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                     <div className="flex flex-col">
                       <span className="text-[15px] font-bold text-slate-900 tracking-tight">{selectedMemory.full_name}</span>
                       <span className="text-[11px] text-slate-500 font-bold uppercase tracking-widest">
-                        Batch {selectedMemory.batch} • {selectedMemory.branch}
+                        Batch {selectedMemory.batch} {selectedMemory.branch && ` • ${selectedMemory.branch}`}
                       </span>
                     </div>
                   </div>
