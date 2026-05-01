@@ -51,9 +51,36 @@ export default async function HomePage() {
   const typedNotices = (notices || []) as Notice[];
 
   const stats = [
-    { tag: 'Heritage', label: 'Established', value: '1982', icon: <Calendar className="w-5 h-5" />, color: 'text-slate-600', bgColor: 'bg-white', borderColor: 'border-slate-100' },
-    { tag: 'Residency', label: 'Residents', value: '75', icon: <Users className="w-5 h-5" />, color: 'text-slate-600', bgColor: 'bg-white', borderColor: 'border-slate-100' },
-    { tag: 'Legacy', label: 'History', value: '40+ Years', icon: <Award className="w-5 h-5" />, color: 'text-[#C8A96B]', bgColor: 'bg-white', borderColor: 'border-slate-100' },
+    { 
+      tag: 'Heritage', 
+      label: 'Established', 
+      value: '1982', 
+      icon: <Calendar className="w-5 h-5" />, 
+      color: 'text-slate-600', 
+      bgColor: 'bg-white', 
+      iconBg: 'bg-slate-50',
+      shadow: 'shadow-[0_50px_100px_-20px_rgba(15,23,42,0.1)]'
+    },
+    { 
+      tag: 'Residency', 
+      label: 'Residents', 
+      value: '75', 
+      icon: <Users className="w-5 h-5" />, 
+      color: 'text-[#0F172A]', 
+      bgColor: 'bg-white/95', 
+      iconBg: 'bg-indigo-50/50',
+      shadow: 'shadow-[0_60px_120px_-20px_rgba(15,23,42,0.15)]'
+    },
+    { 
+      tag: 'Legacy', 
+      label: 'History', 
+      value: '40+ Years', 
+      icon: <Award className="w-5 h-5" />, 
+      color: 'text-[#C8A96B]', 
+      bgColor: 'bg-white', 
+      iconBg: 'bg-[#C8A96B]/5',
+      shadow: 'shadow-[0_50px_100px_-20px_rgba(15,23,42,0.1)]'
+    },
   ];
 
   const spirits = [
@@ -133,15 +160,20 @@ export default async function HomePage() {
           {stats.map((stat, i) => (
             <div 
               key={i} 
-              className={`p-10 md:p-14 ${stat.bgColor} border border-slate-100/80 rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(15,23,42,0.12)] flex items-center gap-10 group hover:-translate-y-2 transition-all duration-700 hover:shadow-[0_60px_120px_-20px_rgba(15,23,42,0.18)]`}
+              className={cn(
+                "p-10 md:p-14 border rounded-[4rem] flex items-center gap-10 group hover:-translate-y-2 transition-all duration-700 hover:shadow-[0_60px_140px_-20px_rgba(15,23,42,0.2)]",
+                stat.bgColor,
+                stat.shadow,
+                i === 1 ? "border-slate-200" : "border-slate-100/80"
+              )}
             >
-              <div className={`w-16 h-16 rounded-[1.5rem] bg-slate-50 flex items-center justify-center shrink-0 ${stat.color} border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-700`}>
+              <div className={cn("w-16 h-16 rounded-[1.5rem] flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-700", stat.color, stat.iconBg)}>
                 {stat.icon}
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between gap-4 mb-2">
-                  <div className={`text-4xl md:text-5xl font-black ${stat.color} tracking-tighter font-jakarta`}>{stat.value}</div>
-                  <span className={`text-[10px] font-black ${stat.color} tracking-[0.2em] font-jakarta uppercase opacity-100`}>{stat.tag}</span>
+                  <div className={cn("text-4xl md:text-5xl font-black tracking-tighter font-jakarta", stat.color)}>{stat.value}</div>
+                  <span className={cn("text-[10px] font-black tracking-[0.2em] font-jakarta uppercase", i === 1 ? "text-slate-300" : stat.color, "opacity-100")}>{stat.tag}</span>
                 </div>
                 <div className="text-[11px] font-black text-slate-600 uppercase tracking-[0.3em] font-jakarta leading-none">{stat.label}</div>
               </div>
