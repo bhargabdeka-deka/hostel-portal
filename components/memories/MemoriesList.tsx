@@ -26,7 +26,8 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
           memories.map((memory) => (
             <div 
               key={memory.id} 
-              className="group bg-white border border-slate-100 rounded-[2rem] p-6 md:p-8 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-500 relative overflow-hidden flex flex-col md:flex-row md:items-center gap-6 md:gap-10"
+              onClick={() => setSelectedMemory(memory)}
+              className="cursor-pointer group bg-white border border-slate-100 rounded-[2rem] p-6 md:p-8 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-500 relative overflow-hidden flex flex-col md:flex-row md:items-center gap-6 md:gap-10"
             >
               <div className="absolute top-0 right-0 p-6 opacity-[0.02] group-hover:opacity-5 transition-opacity">
                 <Quote className="w-24 h-24" />
@@ -44,14 +45,20 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                 </div>
               </div>
 
-              {/* Content Column */}
               <div className="flex-1 space-y-2 relative z-10">
                 <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight leading-tight group-hover:text-slate-800 transition-colors line-clamp-1">
                   {memory.title}
                 </h3>
-                <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed line-clamp-2 italic">
-                  "{memory.story}"
-                </p>
+                <div className="space-y-1">
+                  <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed line-clamp-2 italic">
+                    "{memory.story}"
+                  </p>
+                  {memory.story.length > 120 && (
+                    <span className="text-blue-600 font-bold text-[10px] uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Read more <ChevronRight className="w-3 h-3" />
+                    </span>
+                  )}
+                </div>
               </div>
 
               {/* Author & Action Column */}
