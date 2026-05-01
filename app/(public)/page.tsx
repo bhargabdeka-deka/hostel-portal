@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 import Link from 'next/link';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 import { 
   ArrowRight, 
   Calendar, 
@@ -61,27 +62,30 @@ export default async function HomePage() {
       title: 'Brotherhood', 
       desc: 'More than just roommates, we are a family. The bonds formed within these walls last a lifetime, creating a support system that spans generations.', 
       icon: <Users2 className="w-6 h-6" />,
-      color: 'text-indigo-900',
-      bgColor: 'bg-white',
-      borderColor: 'border-slate-100',
+      accent: 'text-[#0F172A]',
+      tagColor: 'text-slate-400',
+      iconBg: 'bg-slate-50',
+      hoverIcon: 'group-hover:bg-[#0F172A]',
     },
     { 
       tag: 'Excellence',
       title: 'Academics', 
       desc: 'A legacy of engineering excellence. Orionites consistently rank among the toppers of Jorhat Engineering College, fostering a culture of peer learning.', 
       icon: <GraduationCap className="w-6 h-6" />,
-      color: 'text-indigo-900',
-      bgColor: 'bg-white',
-      borderColor: 'border-slate-100',
+      accent: 'text-indigo-950',
+      tagColor: 'text-indigo-400',
+      iconBg: 'bg-indigo-50/50',
+      hoverIcon: 'group-hover:bg-indigo-950',
     },
     { 
       tag: 'Resilience',
       title: 'Sports Heritage', 
       desc: 'Dominating the field. From the cricket pitch to the football ground, the Orionite grit is unmatched in every inter-hostel competition.', 
       icon: <Trophy className="w-6 h-6" />,
-      color: 'text-indigo-900',
-      bgColor: 'bg-white',
-      borderColor: 'border-slate-100',
+      accent: 'text-[#C8A96B]',
+      tagColor: 'text-[#C8A96B]',
+      iconBg: 'bg-[#C8A96B]/5',
+      hoverIcon: 'group-hover:bg-[#C8A96B]',
     },
   ];
 
@@ -163,10 +167,14 @@ export default async function HomePage() {
               key={i} 
               className={`p-12 md:p-16 bg-white border border-slate-100/80 rounded-[4rem] text-left space-y-12 transition-all duration-700 hover:shadow-[0_60px_120px_-30px_rgba(15,23,42,0.1)] group relative overflow-hidden`}
             >
-              <div className="absolute top-0 right-0 w-48 h-48 bg-slate-50 rounded-bl-full -mr-24 -mt-24 group-hover:bg-[#C8A96B]/5 transition-colors duration-1000"></div>
+              <div className={cn("absolute top-0 right-0 w-48 h-48 rounded-bl-full -mr-24 -mt-24 transition-colors duration-1000", 
+                i === 0 ? "bg-slate-50 group-hover:bg-slate-100" : 
+                i === 1 ? "bg-indigo-50/30 group-hover:bg-indigo-50/50" : 
+                "bg-[#C8A96B]/5 group-hover:bg-[#C8A96B]/10"
+              )}></div>
               <div className="flex items-center justify-between mb-10 relative z-10">
-                <div className={`${spirit.color} p-6 bg-slate-50/50 rounded-[2rem] inline-block border border-slate-100 group-hover:scale-110 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-1000 shadow-sm`}>{spirit.icon}</div>
-                <span className={`text-[11px] font-black ${spirit.color} tracking-[0.3em] font-jakarta uppercase opacity-100`}>{spirit.tag}</span>
+                <div className={cn(spirit.accent, spirit.iconBg, "p-6 rounded-[2rem] inline-block border border-slate-100 group-hover:scale-110 group-hover:text-white transition-all duration-1000 shadow-sm", spirit.hoverIcon)}>{spirit.icon}</div>
+                <span className={cn("text-[11px] font-black tracking-[0.3em] font-jakarta uppercase opacity-100", spirit.tagColor)}>{spirit.tag}</span>
               </div>
               <div className="space-y-8 relative z-10">
                 <h3 className={`text-3xl md:text-5xl font-black text-[#0F172A] tracking-tighter font-jakarta leading-[0.95]`}>{spirit.title}</h3>
