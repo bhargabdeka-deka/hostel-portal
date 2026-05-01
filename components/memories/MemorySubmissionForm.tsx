@@ -95,17 +95,12 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
           </div>
           <div className="space-y-2">
             <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Category</label>
-            <select 
+            <input 
               required
               name="category"
-              className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 appearance-none"
-            >
-              <option value="Hostel Life">Hostel Life</option>
-              <option value="Brotherhood">Brotherhood</option>
-              <option value="Events">Events</option>
-              <option value="Funny Moments">Funny Moments</option>
-              <option value="Achievement">Achievement</option>
-            </select>
+              placeholder="e.g. Hostel Life, Sports..."
+              className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+            />
           </div>
         </div>
 

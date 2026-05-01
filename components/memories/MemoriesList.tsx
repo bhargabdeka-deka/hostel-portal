@@ -15,62 +15,14 @@ interface Memory {
 }
 
 export function MemoriesList({ memories }: { memories: Memory[] }) {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [activeCategory, setActiveCategory] = useState('All');
   const [selectedMemory, setSelectedMemory] = useState<Memory | null>(null);
-
-  const categories = ['All', 'Hostel Life', 'Brotherhood', 'Events', 'Funny Moments', 'Achievement'];
-
-  const filteredMemories = memories.filter(memory => {
-    const matchesSearch = 
-      memory.full_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      memory.batch.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      memory.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      memory.story.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesCategory = activeCategory === 'All' || memory.category === activeCategory;
-    
-    return matchesSearch && matchesCategory;
-  });
 
   return (
     <div className="space-y-12">
-      {/* Search and Filters */}
-      <div className="space-y-8">
-        <div className="flex flex-col lg:flex-row gap-6">
-          <div className="flex-1 relative group">
-            <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-indigo-600 transition-colors" />
-            <input 
-              type="text" 
-              placeholder="Search stories, names, or batches..." 
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-16 pr-8 py-5 bg-white border border-slate-200 rounded-[2rem] outline-none focus:ring-8 focus:ring-indigo-500/5 focus:border-indigo-500/50 transition-all font-bold text-slate-900 text-base shadow-sm"
-            />
-          </div>
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={cn(
-                  "px-6 py-4 rounded-2xl font-bold text-[10px] uppercase tracking-widest transition-all whitespace-nowrap border",
-                  activeCategory === cat 
-                    ? "bg-indigo-600 text-white border-indigo-600 shadow-lg shadow-indigo-100" 
-                    : "bg-white text-slate-500 border-slate-200 hover:border-indigo-200"
-                )}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredMemories.length > 0 ? (
-          filteredMemories.map((memory) => (
+        {memories.length > 0 ? (
+          memories.map((memory) => (
             <div 
               key={memory.id} 
               className="group bg-white border border-slate-100 rounded-[2.5rem] p-8 space-y-6 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-500 relative overflow-hidden"
