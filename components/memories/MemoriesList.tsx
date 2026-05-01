@@ -27,26 +27,26 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
             <div 
               key={memory.id} 
               onClick={() => setSelectedMemory(memory)}
-              className="cursor-pointer group bg-white border border-slate-100 rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-slate-200/40 hover:shadow-indigo-100/50 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden flex flex-col md:flex-row md:items-center gap-8 md:gap-14"
+              className="cursor-pointer group bg-white border border-slate-100/80 rounded-[3.5rem] p-10 md:p-14 shadow-2xl shadow-slate-200/20 hover:shadow-indigo-100/30 hover:-translate-y-1.5 transition-all duration-700 relative overflow-hidden flex flex-col md:flex-row md:items-center gap-10 md:gap-16"
             >
-              <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 transition-opacity">
-                <Quote className="w-32 h-32 text-[#0F172A]" />
+              <div className="absolute top-0 right-0 p-12 opacity-[0.02] group-hover:opacity-[0.06] transition-all duration-1000">
+                <Quote className="w-48 h-48 text-[#0F172A]" />
               </div>
 
               {/* Date Column */}
-              <div className="flex-none flex md:flex-col items-center justify-center md:w-24 md:border-r border-slate-100 md:pr-14">
+              <div className="flex-none flex md:flex-col items-center justify-center md:w-32 md:border-r border-slate-100/60 md:pr-16">
                 <div className="text-center">
-                  <span className="block text-3xl font-black text-[#0F172A] leading-none font-jakarta tracking-tighter">
+                  <span className="block text-4xl font-black text-[#0F172A] leading-none font-jakarta tracking-[-0.08em]">
                     {new Date(memory.created_at).toLocaleDateString('en-US', { day: '2-digit' })}
                   </span>
-                  <span className="block text-[11px] font-black text-[#C8A96B] uppercase tracking-[0.3em] mt-2 font-jakarta">
+                  <span className="block text-[11px] font-black text-[#C8A96B] uppercase tracking-[0.4em] mt-3 font-jakarta">
                     {new Date(memory.created_at).toLocaleDateString('en-US', { month: 'short' })}
                   </span>
                 </div>
               </div>
 
               <div className="flex-1 space-y-4 relative z-10">
-                <h3 className="text-2xl md:text-3xl font-black text-[#0F172A] tracking-tighter leading-tight group-hover:text-[#C8A96B] transition-colors line-clamp-1 font-jakarta">
+                <h3 className="text-3xl md:text-4xl font-black text-[#0F172A] tracking-[-0.04em] leading-tight group-hover:text-[#C8A96B] transition-all duration-500 line-clamp-1 font-jakarta">
                   {memory.title}
                 </h3>
                 <div className="space-y-3">
@@ -54,8 +54,8 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                     {memory.story}
                   </p>
                   {memory.story.length > 120 && (
-                    <span className="text-[#C8A96B] font-black text-[10px] uppercase tracking-[0.2em] flex items-center gap-2 group-hover:gap-3 transition-all font-jakarta">
-                      Read full story <ChevronRight className="w-4 h-4" />
+                    <span className="text-[#C8A96B] font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-3 group-hover:gap-4 transition-all font-jakarta">
+                      Read full story <ChevronRight className="w-4 h-4 opacity-50" />
                     </span>
                   )}
                 </div>
@@ -63,14 +63,14 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
 
               {/* Author & Action Column */}
               <div className="flex flex-row md:flex-row items-center justify-between md:justify-end gap-8 md:gap-14 pt-8 md:pt-0 border-t md:border-0 border-slate-100">
-                <div className="flex items-center gap-5 text-right">
+                <div className="flex items-center gap-6 text-right">
                   <div className="hidden sm:block">
-                    <span className="block text-sm font-black text-[#0F172A] tracking-tight font-jakarta">{memory.full_name}</span>
-                    <span className="block text-[9px] text-slate-400 font-black uppercase tracking-[0.2em] mt-1 font-jakarta">
+                    <span className="block text-base font-black text-[#0F172A] tracking-tight font-jakarta leading-none">{memory.full_name}</span>
+                    <span className="block text-[10px] text-slate-500 font-black uppercase tracking-[0.3em] mt-2 font-jakarta opacity-80">
                       {memory.batch} {memory.branch && ` • ${memory.branch}`}
                     </span>
                   </div>
-                  <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-300 font-black text-sm border border-slate-50 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-500 shadow-sm font-jakarta">
+                  <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 font-black text-base border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-700 shadow-sm font-jakarta">
                     {memory.full_name.charAt(0)}
                   </div>
                 </div>

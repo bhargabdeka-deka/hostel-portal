@@ -53,9 +53,11 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
   return (
     <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100">
       <div className="p-6 md:p-8 border-b border-slate-50 flex items-center justify-between">
-        <div className="space-y-1">
-          <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Share a Memory</h2>
-          <p className="text-[11px] font-bold text-indigo-600 uppercase tracking-widest">Contribute to the ORION Legacy</p>
+        <div className="space-y-3">
+          <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-[-0.03em] font-jakarta">Share a Memory</h2>
+          <div className="inline-flex items-center px-5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100/50 text-indigo-600 text-[10px] font-black uppercase tracking-[0.25em] font-jakarta">
+            Contribute to the ORION Legacy
+          </div>
         </div>
         {onClose && (
           <button onClick={onClose} className="p-2 hover:bg-slate-100 rounded-full transition-colors text-slate-400">
@@ -66,55 +68,61 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
 
       <form onSubmit={handleSubmit} className="p-6 md:p-10 space-y-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          <div className="col-span-2 lg:col-span-1 space-y-1.5">
-            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Full Name</label>
+          <div className="col-span-2 lg:col-span-1 space-y-2">
+            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] ml-1 font-jakarta">Full Name</label>
             <input 
               required
               name="fullName"
-              className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+              placeholder="Ex: Bhargab Deka"
+              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 placeholder:text-slate-300 placeholder:font-medium"
             />
           </div>
-          <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Batch</label>
+          <div className="space-y-2">
+            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] ml-1 font-jakarta">Batch</label>
             <input 
               required
               name="batch"
-              className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+              placeholder="2020-24"
+              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 placeholder:text-slate-300 placeholder:font-medium"
             />
           </div>
-          <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Branch</label>
+          <div className="space-y-2">
+            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] ml-1 font-jakarta">Branch</label>
             <input 
               required
               name="branch"
-              className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+              placeholder="Civil"
+              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 placeholder:text-slate-300 placeholder:font-medium"
             />
           </div>
-          <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Room (Opt)</label>
+          <div className="space-y-2">
+            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] ml-1 font-jakarta">Room (Opt)</label>
             <input 
               name="roomNumber"
-              className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+              placeholder="42"
+              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 placeholder:text-slate-300 placeholder:font-medium"
             />
           </div>
         </div>
 
-        <div className="space-y-1.5">
-          <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Memory Title</label>
+        <div className="space-y-2">
+          <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] ml-1 font-jakarta">Memory Title</label>
           <input 
             required
             name="title"
-            className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+            placeholder="The Night of the Storm..."
+            className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 placeholder:text-slate-300 placeholder:font-medium"
           />
         </div>
 
-        <div className="space-y-1.5">
-          <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Detailed Memory / Story</label>
+        <div className="space-y-2">
+          <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] ml-1 font-jakarta">Detailed Memory / Story</label>
           <textarea 
             required
             name="story"
-            rows={4}
-            className="w-full px-5 py-3.5 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 resize-none"
+            rows={5}
+            placeholder="Tell your story..."
+            className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 resize-none placeholder:text-slate-300 placeholder:font-medium"
           ></textarea>
         </div>
 
