@@ -233,9 +233,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                     <h3 className="text-base font-bold text-slate-900 tracking-tight">Notifications</h3>
                     <p className="text-[11px] text-slate-600 font-medium">Recent portal updates</p>
                   </div>
-                  {pendingCount > 0 && (
+                  {(pendingAlumniCount + pendingMemoriesCount) > 0 && (
                     <div className="px-3 py-1 bg-indigo-600 text-white rounded-full text-[10px] font-bold tracking-tight">
-                      {pendingCount} New
+                      {pendingAlumniCount + pendingMemoriesCount} New
                     </div>
                   )}
                 </div>
