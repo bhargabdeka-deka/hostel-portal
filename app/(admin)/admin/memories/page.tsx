@@ -71,7 +71,9 @@ export default async function AdminMemories() {
                     <User className="w-3 h-3" /> Author
                   </div>
                   <div className="text-[11px] font-bold text-slate-700 truncate">{memory.full_name}</div>
-                  <div className="text-[9px] font-bold text-indigo-500">Batch {memory.batch}</div>
+                  <div className="text-[9px] font-bold text-indigo-500">
+                    Batch {memory.batch} • {memory.branch}
+                  </div>
                 </div>
                 {memory.room_number && (
                   <div className="space-y-1">

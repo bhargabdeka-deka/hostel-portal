@@ -7,6 +7,7 @@ interface Memory {
   id: string;
   full_name: string;
   batch: string;
+  branch: string;
   room_number?: string;
   title: string;
   story: string;
@@ -55,7 +56,9 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[13px] font-bold text-slate-900 tracking-tight">{memory.full_name}</span>
-                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Batch {memory.batch}</span>
+                    <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+                      {memory.batch} • {memory.branch}
+                    </span>
                   </div>
                 </div>
                 <button 
@@ -104,7 +107,9 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                     </div>
                     <div className="flex flex-col">
                       <span className="text-[15px] font-bold text-slate-900 tracking-tight">{selectedMemory.full_name}</span>
-                      <span className="text-[11px] text-slate-500 font-bold uppercase tracking-widest">Batch {selectedMemory.batch}</span>
+                      <span className="text-[11px] text-slate-500 font-bold uppercase tracking-widest">
+                        Batch {selectedMemory.batch} • {selectedMemory.branch}
+                      </span>
                     </div>
                   </div>
                   {selectedMemory.room_number && (

@@ -22,6 +22,7 @@ async function verifyAccess() {
 export async function submitMemory(formData: {
   fullName: string;
   batch: string;
+  branch: string;
   roomNumber?: string;
   title: string;
   story: string;
@@ -34,6 +35,7 @@ export async function submitMemory(formData: {
     .insert([{
       full_name: formData.fullName,
       batch: formData.batch,
+      branch: formData.branch,
       room_number: formData.roomNumber,
       title: formData.title,
       story: formData.story,

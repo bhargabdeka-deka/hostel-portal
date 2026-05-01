@@ -65,8 +65,8 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
       </div>
 
       <form onSubmit={handleSubmit} className="p-8 md:p-12 space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <div className="space-y-2">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="col-span-2 lg:col-span-1 space-y-2">
             <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Full Name</label>
             <input 
               required
@@ -79,6 +79,14 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             <input 
               required
               name="batch"
+              className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
+            />
+          </div>
+          <div className="space-y-2">
+            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Branch</label>
+            <input 
+              required
+              name="branch"
               className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
