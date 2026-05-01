@@ -21,10 +21,11 @@ export default function AlumniRegistration() {
       name: formData.get("name"),
       phone: formData.get("phone"),
       batch: formData.get("batch"),
+      branch: formData.get("branch"),
       job: formData.get("job"),
       company: formData.get("company"),
       social_link: formData.get("social_link"),
-      status: 'pending' // Rule: Always pending on submission
+      status: 'pending'
     }])
 
     // Artificial delay for better UX visibility
@@ -97,9 +98,15 @@ export default function AlumniRegistration() {
                 </div>
               </div>
               
-              <div className="space-y-2">
-                <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Batch (Year of Passing) <span className="text-red-500">*</span></label>
-                <input name="batch" required placeholder="e.g. 2018-2022" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Batch (Year of Passing) <span className="text-red-500">*</span></label>
+                  <input name="batch" required placeholder="e.g. 2018-22" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Branch <span className="text-red-500">*</span></label>
+                  <input name="branch" required placeholder="e.g. Civil" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
+                </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">

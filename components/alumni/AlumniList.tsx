@@ -14,6 +14,7 @@ export function AlumniList({ alumni }: AlumniProps) {
   const filteredAlumni = alumni?.filter(person => 
     person.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     person.batch.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    person.branch?.toLowerCase().includes(searchTerm.toLowerCase()) ||
     person.job?.toLowerCase().includes(searchTerm.toLowerCase()) ||
     person.company?.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -59,7 +60,7 @@ export function AlumniList({ alumni }: AlumniProps) {
                   <div className="overflow-hidden">
                     <h3 className="font-bold text-slate-900 truncate uppercase tracking-tight">{person.name}</h3>
                     <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full whitespace-nowrap">
-                      Batch {person.batch.replace(/(\d{4})-(\d{2})(\d{2})/, '$1-$3')}
+                      {person.batch.replace(/(\d{4})-(\d{2})(\d{2})/, '$1-$3')} • {person.branch}
                     </span>
                   </div>
                 </div>
@@ -138,7 +139,7 @@ export function AlumniList({ alumni }: AlumniProps) {
                       </td>
                       <td className="px-10 py-5 relative z-10">
                         <span className="text-[10px] text-blue-600 font-bold uppercase tracking-widest bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100 whitespace-nowrap">
-                          Batch {person.batch.replace(/(\d{4})-(\d{2})(\d{2})/, '$1-$3')}
+                          {person.batch.replace(/(\d{4})-(\d{2})(\d{2})/, '$1-$3')} • {person.branch}
                         </span>
                       </td>
                       <td className="px-10 py-5 relative z-10">

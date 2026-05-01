@@ -66,7 +66,7 @@ export default async function AdminAlumni() {
                   <h3 className="font-bold text-slate-900 text-lg tracking-tight truncate">{person.name}</h3>
                   <div className="flex flex-wrap gap-2 mt-1">
                     <span className="text-[9px] font-bold text-indigo-600 tracking-tight bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
-                      Batch {person.batch}
+                      {person.batch} • {person.branch}
                     </span>
                     <span className={cn(
                       "text-[10px] font-bold px-3 py-1 rounded-full border tracking-tight",
@@ -174,7 +174,7 @@ export default async function AdminAlumni() {
                       <div>
                         <p className="font-bold text-slate-900 text-lg tracking-tight">{person.name}</p>
                         <div className="flex items-center gap-3 mt-1">
-                          <p className="text-[11px] font-bold text-blue-600 tracking-tight">Batch {person.batch}</p>
+                          <p className="text-[11px] font-bold text-blue-600 tracking-tight">{person.batch} • {person.branch}</p>
                           <p className="text-[11px] font-medium text-slate-400 tracking-tight">Tel: {person.phone}</p>
                         </div>
                       </div>
