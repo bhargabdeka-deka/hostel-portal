@@ -148,7 +148,7 @@ export function AlumniList({ alumni }: AlumniProps) {
                       <td className="px-10 py-5 relative z-10">
                         <div className="flex flex-col">
                           <span className="text-sm font-bold text-slate-900 uppercase tracking-tight">{person.job}</span>
-                          <span className="text-xs text-slate-400 font-medium italic">at {person.company}</span>
+                          <span className="text-xs text-slate-400 font-medium">at {person.company}</span>
                         </div>
                       </td>
                       <td className="px-10 py-5 text-center relative z-10">
@@ -163,7 +163,7 @@ export function AlumniList({ alumni }: AlumniProps) {
                             LinkedIn
                           </a>
                         ) : (
-                          <span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest italic">Private</span>
+                          <span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Private</span>
                         )}
                       </td>
                     </tr>

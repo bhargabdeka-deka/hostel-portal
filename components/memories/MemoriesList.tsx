@@ -46,12 +46,12 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
               </div>
 
               <div className="flex-1 space-y-2 relative z-10">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight leading-tight group-hover:text-slate-800 transition-colors line-clamp-1">
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight leading-tight group-hover:text-slate-800 transition-colors line-clamp-1 font-jakarta">
                   {memory.title}
                 </h3>
                 <div className="space-y-1">
-                  <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed line-clamp-2 italic">
-                    "{memory.story}"
+                  <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed line-clamp-2 font-sans">
+                    {memory.story}
                   </p>
                   {memory.story.length > 120 && (
                     <span className="text-blue-600 font-bold text-[10px] uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
@@ -70,7 +70,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                       {memory.batch} {memory.branch && ` • ${memory.branch}`}
                     </span>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 font-bold text-sm border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 font-bold text-sm border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all shadow-sm font-jakarta">
                     {memory.full_name.charAt(0)}
                   </div>
                 </div>
@@ -90,7 +90,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
             </div>
             <div className="space-y-1">
               <h4 className="text-sm font-bold text-slate-500 uppercase tracking-[0.2em]">No memories found</h4>
-              <p className="text-slate-400 font-medium text-xs italic tracking-tight">Be the first one to share a story!</p>
+              <p className="text-slate-400 font-medium text-xs tracking-tight font-sans">Be the first one to share a story!</p>
             </div>
           </div>
         )}
@@ -138,8 +138,8 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
               </div>
 
               <div className="prose prose-slate max-w-none">
-                <p className="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed italic whitespace-pre-wrap">
-                  "{selectedMemory.story}"
+                <p className="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed whitespace-pre-wrap font-sans">
+                  {selectedMemory.story}
                 </p>
               </div>
 
