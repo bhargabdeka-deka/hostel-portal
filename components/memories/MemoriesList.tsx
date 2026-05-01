@@ -70,7 +70,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                       {memory.batch} {memory.branch && ` • ${memory.branch}`}
                     </span>
                   </div>
-                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 font-bold text-sm border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all shadow-sm font-jakarta">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 font-bold text-sm border border-slate-100 group-hover:bg-[#4A1D1F] group-hover:text-white transition-all shadow-sm font-jakarta">
                     {memory.full_name.charAt(0)}
                   </div>
                 </div>
