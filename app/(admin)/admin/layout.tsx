@@ -189,16 +189,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       {/* Sidebar - Desktop and Mobile */}
       <aside className={cn(
-        "fixed inset-y-0 left-0 z-[70] w-72 bg-slate-50 dark:bg-[#0F172A] border-r border-slate-200 dark:border-slate-800 flex flex-col transition-transform duration-500 lg:sticky lg:translate-x-0 lg:h-screen",
+        "fixed inset-y-0 left-0 z-[70] w-72 bg-slate-50 border-r border-slate-200 flex flex-col transition-transform duration-500 lg:sticky lg:translate-x-0 lg:h-screen",
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       )}>
         <SidebarContent />
       </aside>
 
       {/* Main Area */}
-      <main className={cn("flex-1 min-w-0 flex flex-col transition-colors duration-500", currentBg, "dark:bg-[#0F172A]")}>
+      <main className={cn("flex-1 min-w-0 flex flex-col transition-colors duration-500", currentBg)}>
         {/* Top Header */}
-        <header className="h-20 bg-white/40 dark:bg-[#0F172A]/40 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-6 lg:px-10 sticky top-0 z-50">
+        <header className="h-20 bg-white/40 backdrop-blur-xl border-b border-slate-200 flex items-center justify-between px-6 lg:px-10 sticky top-0 z-50">
           <div className="flex items-center gap-4 lg:gap-6 flex-1">
              <button 
                onClick={() => setIsSidebarOpen(true)}

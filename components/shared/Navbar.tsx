@@ -88,7 +88,7 @@ export function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div className={cn(
-        "fixed inset-0 z-[90] bg-white/98 dark:bg-[#0F172A]/98 backdrop-blur-2xl md:hidden transition-all duration-500 flex flex-col items-center justify-center space-y-8",
+        "fixed inset-0 z-[90] bg-white/98 backdrop-blur-2xl md:hidden transition-all duration-500 flex flex-col items-center justify-center space-y-8",
         isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
       )}>
         {navLinks.map((link, i) => (
