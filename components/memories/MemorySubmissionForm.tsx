@@ -115,7 +115,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             type="checkbox" 
             required 
             id="consent"
-            className="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 cursor-pointer"
+            className="w-4 h-4 rounded text-slate-900 focus:ring-slate-500 cursor-pointer"
           />
           <label htmlFor="consent" className="text-xs font-bold text-slate-500 tracking-tight cursor-pointer">
             i confirm this submission
@@ -130,13 +130,13 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
 
         <button 
           disabled={isSubmitting}
-          className="w-full py-5 bg-[#0a2e1f] text-white rounded-[1.5rem] font-bold text-xs uppercase tracking-[0.3em] shadow-xl shadow-emerald-100 hover:bg-[#071f15] transition-all flex items-center justify-center gap-3 disabled:opacity-50"
+          className="w-full py-5 bg-[#0F172A] text-white rounded-[1.5rem] font-bold text-xs uppercase tracking-[0.3em] shadow-xl shadow-indigo-100/50 hover:bg-[#1e293b] transition-all flex items-center justify-center gap-3 disabled:opacity-50"
         >
           {isSubmitting ? (
             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
           ) : (
             <>
-              <Send className="w-4 h-4 text-emerald-400" />
+              <Send className="w-4 h-4 text-indigo-400" />
               Submit Memory
             </>
           )}

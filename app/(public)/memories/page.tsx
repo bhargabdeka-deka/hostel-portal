@@ -60,18 +60,18 @@ export default async function MemoriesPage() {
         {/* Submission Section - Now below the list, wider layout */}
         <div className="max-w-7xl mx-auto w-full space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
-            <div className="lg:col-span-2 bg-[#0a2e1f] rounded-[2.5rem] p-12 text-emerald-50 shadow-2xl shadow-emerald-100 relative overflow-hidden group flex flex-col justify-center border border-emerald-800/50">
-              <div className="absolute top-0 right-0 p-12 opacity-[0.05] rotate-12 group-hover:rotate-45 transition-transform duration-700 text-emerald-400">
+            <div className="lg:col-span-2 bg-[#0F172A] rounded-[2.5rem] p-12 text-slate-50 shadow-2xl shadow-indigo-100/20 relative overflow-hidden group flex flex-col justify-center border border-slate-800">
+              <div className="absolute top-0 right-0 p-12 opacity-[0.05] rotate-12 group-hover:rotate-45 transition-transform duration-700 text-indigo-400">
                 <BookHeart className="w-48 h-48" />
               </div>
               <div className="relative z-10 space-y-8">
                 <h3 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight font-jakarta">Your story is part of ORION's history.</h3>
-                <p className="text-emerald-100/70 font-medium text-lg leading-relaxed max-w-md">
+                <p className="text-slate-400 font-medium text-lg leading-relaxed max-w-md">
                   Every Orionite has a unique story. Share your late-night memories and hostel victories with the world.
                 </p>
                 <div className="pt-6 flex items-center gap-6">
-                  <div className="h-px w-16 bg-emerald-400/50" />
-                  <span className="text-xs font-black uppercase tracking-[0.3em] text-emerald-400/80">Contribute to the legacy</span>
+                  <div className="h-px w-16 bg-indigo-500/50" />
+                  <span className="text-xs font-black uppercase tracking-[0.3em] text-indigo-400/80">Contribute to the legacy</span>
                 </div>
               </div>
             </div>
