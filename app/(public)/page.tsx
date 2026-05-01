@@ -139,7 +139,7 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-[#0F172A]/40"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto pt-32 pb-60 md:pt-40 md:pb-80 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto pt-32 pb-48 md:pt-40 md:pb-60 text-center">
           <div className="inline-flex items-center px-7 py-3 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 text-white/90 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             Hostel No 7 • Jorhat Engineering College
           </div>
@@ -155,27 +155,26 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-8 -mt-40 md:-mt-56 relative z-20">
+      <section className="max-w-7xl mx-auto px-8 -mt-24 md:-mt-32 relative z-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-12">
           {stats.map((stat, i) => (
             <div 
               key={i} 
               className={cn(
-                "px-10 py-14 md:px-16 md:py-20 border rounded-[4rem] flex items-center gap-10 group hover:-translate-y-2 transition-all duration-1000 hover:shadow-[0_70px_150px_-30px_rgba(15,23,42,0.25)]",
+                "px-10 py-10 md:px-12 md:py-12 border rounded-[4rem] flex items-center gap-8 group hover:-translate-y-1.5 transition-all duration-700 hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.15)]",
                 stat.bgColor,
-                stat.shadow,
-                i === 1 ? "border-slate-200" : "border-slate-100/80"
+                i === 1 ? "border-slate-200 shadow-[0_30px_60px_-15px_rgba(15,23,42,0.12)]" : "border-slate-100 shadow-[0_20px_50px_-15px_rgba(15,23,42,0.08)]"
               )}
             >
-              <div className={cn("w-16 h-16 rounded-[1.5rem] flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-700", stat.color, stat.iconBg)}>
+              <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-700", stat.color, stat.iconBg)}>
                 {stat.icon}
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between gap-4 mb-2">
-                  <div className={cn("text-4xl md:text-5xl font-black tracking-tighter font-jakarta", stat.color)}>{stat.value}</div>
-                  <span className={cn("text-[10px] font-black tracking-[0.2em] font-jakarta uppercase", i === 1 ? "text-slate-300" : stat.color, "opacity-100")}>{stat.tag}</span>
+                  <div className={cn("text-3xl md:text-5xl font-black tracking-[-0.05em] font-jakarta", stat.color)}>{stat.value}</div>
+                  <span className={cn("text-[10px] font-black tracking-[0.2em] font-jakarta uppercase", i === 1 ? "text-slate-500" : stat.color, "opacity-100")}>{stat.tag}</span>
                 </div>
-                <div className="text-[11px] font-black text-slate-600 uppercase tracking-[0.3em] font-jakarta leading-none">{stat.label}</div>
+                <div className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] font-jakarta leading-none">{stat.label}</div>
               </div>
             </div>
           ))}
