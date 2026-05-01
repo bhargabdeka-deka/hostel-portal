@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     "Learn the history of ORION Hostel (Hostel No 7) at Jorhat Engineering College, Assam. Founded in February 1982, our 40+ year legacy of academic excellence, brotherhood, and sports dominance defines the Orionite spirit.",
   alternates: {
-    canonical: "https://orionjech7.vercel.app/about",
+    canonical: "https://www.orionjech7.site/about",
   },
   openGraph: {
     title: "About ORION Hostel | 40+ Years of Legacy at JEC",
     description:
       "Discover the rich history and culture of ORION Hostel, Jorhat Engineering College — home to 800+ alumni and a tradition of excellence since 1982.",
-    url: "https://orionjech7.vercel.app/about",
+    url: "https://www.orionjech7.site/about",
     images: [{ url: "/hostel_about.jpeg", width: 1200, height: 630, alt: "ORION Hostel Building — Jorhat Engineering College, Assam" }],
   },
 };

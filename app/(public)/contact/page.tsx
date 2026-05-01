@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     "Get in touch with ORION Hostel administration — Hostel No 7, Jorhat Engineering College, Assam. Contact the Superintendent, Warden, and current monitors. Find our location, phone numbers, and social links.",
   alternates: {
-    canonical: "https://orionjech7.vercel.app/contact",
+    canonical: "https://www.orionjech7.site/contact",
   },
   openGraph: {
     title: "Contact ORION Hostel | JEC Hostel No 7",
     description:
       "Reach out to ORION Hostel administration for admissions, residency queries, or alumni registration. Hostel No 7, JEC Road, Jorhat, Assam 785007.",
-    url: "https://orionjech7.vercel.app/contact",
+    url: "https://www.orionjech7.site/contact",
   },
 };
 

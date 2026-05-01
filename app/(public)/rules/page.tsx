@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   description:
     "Official rules and regulations for residents of ORION Hostel (Hostel No 7), Jorhat Engineering College. Curfew timings, visitor policy, mess schedule, and disciplinary code of conduct.",
   alternates: {
-    canonical: "https://orionjech7.vercel.app/rules",
+    canonical: "https://www.orionjech7.site/rules",
   },
   openGraph: {
     title: "Hostel Rules | ORION Hostel Code of Conduct",
     description:
       "Hostel rules and regulations for ORION Hostel residents — curfew hours, visitor policy, mess timings, and discipline guidelines at Jorhat Engineering College.",
-    url: "https://orionjech7.vercel.app/rules",
+    url: "https://www.orionjech7.site/rules",
   },
 };
 

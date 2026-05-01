@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     "Stay updated with the latest official announcements, event notices, and administrative updates from ORION Hostel (Hostel No 7), Jorhat Engineering College, Assam.",
   alternates: {
-    canonical: "https://orionjech7.vercel.app/notices",
+    canonical: "https://www.orionjech7.site/notices",
   },
   openGraph: {
     title: "Notice Board | ORION Hostel Announcements",
     description:
       "Official notices and announcements from ORION Hostel administration — Hostel No 7, Jorhat Engineering College, Assam.",
-    url: "https://orionjech7.vercel.app/notices",
+    url: "https://www.orionjech7.site/notices",
   },
 };
 

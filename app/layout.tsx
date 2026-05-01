@@ -20,7 +20,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const BASE_URL = "https://orionjech7.vercel.app";
+const BASE_URL = "https://www.orionjech7.site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

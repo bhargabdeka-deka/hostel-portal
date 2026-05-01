@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     "Connect with the global ORION Hostel alumni network. 800+ Orionites who graduated from Jorhat Engineering College are now leading professionals worldwide. Register as an alumnus and join our community.",
   alternates: {
-    canonical: "https://orionjech7.vercel.app/alumni",
+    canonical: "https://www.orionjech7.site/alumni",
   },
   openGraph: {
     title: "ORION Alumni Network | 800+ Orionites Worldwide",
     description:
       "The ORION Hostel alumni community — 800+ graduates from JEC Jorhat leading careers globally. Connect, network, and stay connected with the Orionite family.",
-    url: "https://orionjech7.vercel.app/alumni",
+    url: "https://www.orionjech7.site/alumni",
     images: [{ url: "/hero-hostel.jpeg", width: 1200, height: 630, alt: "ORION Hostel Alumni Network — Jorhat Engineering College" }],
   },
 };

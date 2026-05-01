@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     "Explore the visual legacy of ORION Hostel — Hostel No 7, Jorhat Engineering College. Browse our gallery of achievements, sports victories, cultural celebrations, and milestone events.",
   alternates: {
-    canonical: "https://orionjech7.vercel.app/achievements",
+    canonical: "https://www.orionjech7.site/achievements",
   },
   openGraph: {
     title: "Gallery & Achievements | ORION Hostel, JEC",
     description:
       "A visual record of 40+ years of the Orionite spirit — sports titles, cultural events, and milestones at Jorhat Engineering College.",
-    url: "https://orionjech7.vercel.app/achievements",
+    url: "https://www.orionjech7.site/achievements",
     images: [{ url: "/hostel_about.jpeg", width: 1200, height: 630, alt: "ORION Hostel Gallery — Achievements and Events" }],
   },
 };
