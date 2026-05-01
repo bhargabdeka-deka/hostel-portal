@@ -78,30 +78,30 @@ export default function ComplaintPage() {
           <form action={handleSubmit} className="space-y-6">
             <div className="space-y-4">
               <div>
-                <label className="block text-[10px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Your Name (Optional)</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-2 uppercase tracking-widest">Your Name (Optional)</label>
                 <input 
                   name="name" 
                   placeholder="e.g. John Doe"
-                  className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all" 
+                  className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all font-medium" 
                 />
               </div>
               <div>
-                <label className="block text-[10px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Room Number</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-2 uppercase tracking-widest">Room Number</label>
                 <input 
                   name="room" 
                   required 
                   placeholder="e.g. B-204"
-                  className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all" 
+                  className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all font-medium" 
                 />
               </div>
               <div>
-                <label className="block text-[10px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Issue Description</label>
+                <label className="block text-[10px] font-black text-slate-500 mb-2 uppercase tracking-widest">Issue Description</label>
                 <textarea 
                   name="issue" 
                   required 
                   rows={4} 
                   placeholder="Describe what's wrong..."
-                  className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all resize-none" 
+                  className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all resize-none font-medium" 
                 />
               </div>
             </div>

@@ -66,10 +66,10 @@ export default async function AllNoticesPage() {
             </div>
           ))
         ) : (
-          <div className="py-24 md:py-32 text-center bg-slate-50 rounded-[3rem] border-2 border-dashed border-slate-200">
-            <Bell className="w-12 h-12 md:w-16 md:h-16 text-slate-200 mx-auto mb-4" />
-            <h3 className="text-lg md:text-xl font-bold text-slate-400 tracking-tight font-sans">No current announcements</h3>
-            <p className="text-slate-400 font-medium text-sm mt-2 font-sans">The board is currently clear.</p>
+          <div className="py-24 md:py-32 text-center bg-slate-50/50 rounded-[3rem] border-2 border-dashed border-slate-200">
+            <Bell className="w-12 h-12 md:w-16 md:h-16 text-slate-300 mx-auto mb-4" />
+            <h3 className="text-lg md:text-xl font-black text-slate-500 tracking-tight font-jakarta uppercase">No current announcements</h3>
+            <p className="text-slate-500 font-medium text-sm mt-2 font-sans opacity-80">The board is currently clear.</p>
           </div>
         )}
       </div>

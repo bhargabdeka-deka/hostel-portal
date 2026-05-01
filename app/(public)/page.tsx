@@ -137,9 +137,9 @@ export default async function HomePage() {
               <div className="flex-1">
                 <div className="flex items-center justify-between gap-4 mb-1.5">
                   <div className={`text-3xl md:text-4xl font-black ${stat.color} tracking-tighter font-jakarta`}>{stat.value}</div>
-                  <span className={`text-[10px] font-black ${stat.color} tracking-[0.1em] font-jakarta uppercase opacity-30`}>{stat.tag}</span>
+                  <span className={`text-[10px] font-black ${stat.color} tracking-[0.1em] font-jakarta uppercase opacity-60`}>{stat.tag}</span>
                 </div>
-                <div className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.25em] font-jakarta leading-none">{stat.label}</div>
+                <div className="text-[11px] font-black text-slate-500 uppercase tracking-[0.25em] font-jakarta leading-none">{stat.label}</div>
               </div>
             </div>
           ))}
@@ -147,7 +147,7 @@ export default async function HomePage() {
 
         <div className="flex items-center justify-center gap-8 pt-20 pb-10">
           <div className="h-px w-24 bg-slate-100"></div>
-          <div className="text-[10px] font-black text-slate-200 uppercase tracking-[0.5em]">The Orionite Way</div>
+          <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.5em]">The Orionite Way</div>
           <div className="h-px w-24 bg-slate-100"></div>
         </div>
       </section>
@@ -155,7 +155,7 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-8 py-20 text-center">
         <div className="flex items-center justify-center gap-8 mb-20">
           <div className="h-[1px] w-16 bg-slate-100"></div>
-          <h2 className="text-[11px] font-black text-slate-300 uppercase tracking-[0.6em] font-jakarta">Orion Spirit</h2>
+          <h2 className="text-[11px] font-black text-slate-400 uppercase tracking-[0.6em] font-jakarta">Orion Spirit</h2>
           <div className="h-[1px] w-16 bg-slate-100"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 xl:gap-14">
@@ -167,7 +167,7 @@ export default async function HomePage() {
               <div className="absolute top-0 right-0 w-40 h-40 bg-slate-50 rounded-bl-full -mr-20 -mt-20 group-hover:bg-[#C8A96B]/5 transition-colors duration-1000"></div>
               <div className="flex items-center justify-between mb-8 relative z-10">
                 <div className={`${spirit.color} p-6 bg-slate-50/50 rounded-3xl inline-block border border-slate-100 group-hover:scale-105 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-1000`}>{spirit.icon}</div>
-                <span className={`text-[11px] font-black ${spirit.color} tracking-[0.2em] font-jakarta uppercase opacity-20`}>{spirit.tag}</span>
+                <span className={`text-[11px] font-black ${spirit.color} tracking-[0.2em] font-jakarta uppercase opacity-60`}>{spirit.tag}</span>
               </div>
               <div className="space-y-6 relative z-10">
                 <h3 className={`text-3xl md:text-4xl font-black text-[#0F172A] tracking-tighter font-jakarta leading-none`}>{spirit.title}</h3>
@@ -197,7 +197,7 @@ export default async function HomePage() {
             typedNotices.map((notice: Notice, i: number) => (
               <div key={notice.id} className={`p-10 md:p-16 hover:bg-slate-50/50 transition-all cursor-default group ${i !== typedNotices.length - 1 ? 'border-b border-slate-100' : ''}`}>
                 <div className="flex items-center justify-between gap-4 mb-6">
-                  <div className="text-[10px] font-black text-slate-300 flex items-center gap-4 tracking-[0.25em] uppercase font-jakarta">
+                  <div className="text-[10px] font-black text-slate-400 flex items-center gap-4 tracking-[0.25em] uppercase font-jakarta">
                     <Calendar className="w-4 h-4 opacity-50" />
                     {new Date(notice.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                   </div>
@@ -210,7 +210,7 @@ export default async function HomePage() {
             ))
           ) : (
             <div className="py-40 px-10 text-center space-y-8">
-              <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center mx-auto text-slate-200 border border-slate-100/80">
+              <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center mx-auto text-slate-300 border border-slate-100/80">
                 <Megaphone className="w-10 h-10" />
               </div>
               <div className="space-y-3">

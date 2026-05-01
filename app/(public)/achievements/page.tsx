@@ -89,9 +89,9 @@ export default async function AchievementsPage() {
             ))
           ) : (
             <div className="col-span-full py-24 md:py-40 text-center bg-white rounded-[2rem] md:rounded-[3rem] border border-slate-100 shadow-lg">
-               <Trophy className="w-12 h-12 md:w-16 md:h-16 text-slate-200 mx-auto mb-6" />
-               <h3 className="text-lg font-bold text-slate-400 uppercase tracking-widest">No entries yet</h3>
-               <p className="text-slate-400 font-medium mt-2">The gallery is waiting for its first photo.</p>
+               <Trophy className="w-12 h-12 md:w-16 md:h-16 text-slate-300 mx-auto mb-6" />
+               <h3 className="text-lg font-black text-slate-500 uppercase tracking-[0.3em] font-jakarta">No entries yet</h3>
+               <p className="text-slate-500 font-medium mt-2 opacity-80 font-sans">The gallery is waiting for its first photo.</p>
             </div>
           )}
         </div>

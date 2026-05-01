@@ -107,7 +107,7 @@ export default async function ContactPage() {
                   {c.icon}
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] font-jakarta">{c.title}</h3>
+                  <h3 className="text-[11px] font-black text-slate-500 uppercase tracking-[0.3em] font-jakarta">{c.title}</h3>
                   <p className="text-lg md:text-xl font-black text-[#0F172A] leading-tight tracking-tight font-jakarta">{c.detail}</p>
                 </div>
               </Wrapper>
@@ -136,7 +136,7 @@ export default async function ContactPage() {
             <div className="w-full lg:w-auto">
               <div className="bg-[#1E293B]/30 border border-white/5 rounded-[2.5rem] p-10 md:p-14 min-w-0 md:min-w-[480px] shadow-inner space-y-12">
                 <div className="space-y-4">
-                  <div className="text-[10px] font-black text-[#C8A96B] uppercase tracking-[0.3em] font-jakarta opacity-60">Current Superintendent</div>
+                  <div className="text-[10px] font-black text-[#C8A96B] uppercase tracking-[0.3em] font-jakarta opacity-80">Current Superintendent</div>
                   <div className="text-3xl md:text-5xl font-black text-white tracking-tighter font-jakarta">Mr. Jiten Borgohain</div>
                 </div>
                 <a 

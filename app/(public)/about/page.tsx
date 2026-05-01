@@ -28,7 +28,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-8 pt-32 pb-12 md:pt-40 md:pb-16 lg:pt-48 lg:pb-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div className="flex-1 space-y-10 text-center lg:text-left">
-          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-400 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
             Established February 1982
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[0.95] font-jakarta">
@@ -63,10 +63,10 @@ export default function AboutPage() {
                 <div className={`w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center ${stat.color} border border-slate-100 shadow-sm group-hover:scale-110 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-700`}>
                   {stat.icon}
                 </div>
-                <span className={`text-[10px] font-black ${stat.color} uppercase tracking-[0.2em] font-jakarta opacity-30`}>{stat.tag}</span>
+                <span className={`text-[10px] font-black ${stat.color} uppercase tracking-[0.2em] font-jakarta opacity-60`}>{stat.tag}</span>
               </div>
               <div className={`text-5xl md:text-6xl font-black ${stat.color} mb-3 tracking-tighter font-jakarta`}>{stat.value}</div>
-              <div className="text-[11px] font-black text-slate-400 uppercase tracking-[0.4em] font-jakarta leading-none">{stat.label}</div>
+              <div className="text-[11px] font-black text-slate-500 uppercase tracking-[0.3em] font-jakarta leading-none">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -125,7 +125,7 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-8 py-20">
         <div className="bg-white border border-slate-100/80 rounded-[4rem] md:rounded-[5rem] p-12 md:p-24 lg:p-32 relative overflow-hidden shadow-[0_60px_120px_-40px_rgba(15,23,42,0.08)]">
           <div className="max-w-5xl space-y-12 relative z-10">
-            <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-400 text-[10px] font-black tracking-[0.4em] uppercase font-jakarta">
+            <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] font-black tracking-[0.4em] uppercase font-jakarta">
               Infrastructure
             </div>
             <h2 className="text-3xl md:text-5xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.05em] leading-[0.95] font-jakarta">
@@ -146,7 +146,7 @@ export default function AboutPage() {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {["Table Tennis", "Chess", "Cricket", "Football", "Volleyball", "Badminton"].map((sport) => (
-                    <span key={sport} className="px-5 py-2 bg-slate-50 border border-slate-100 rounded-full text-[9px] font-black uppercase text-slate-400 tracking-[0.2em] shadow-sm hover:bg-white hover:text-[#C8A96B] transition-colors cursor-default">
+                    <span key={sport} className="px-5 py-2 bg-slate-50 border border-slate-100 rounded-full text-[9px] font-black uppercase text-slate-500 tracking-[0.2em] shadow-sm hover:bg-white hover:text-[#C8A96B] transition-colors cursor-default">
                       {sport}
                     </span>
                   ))}
@@ -163,11 +163,11 @@ export default function AboutPage() {
               ].map((item, i) => (
                 <div key={i} className={`bg-slate-50/40 p-10 rounded-[3rem] border ${item.border} shadow-sm text-center space-y-8 group transition-all duration-700 hover:bg-white hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.12)]`}>
                   <div className="flex items-center justify-between gap-4">
-                    <span className={`text-[10px] font-black ${item.color} uppercase tracking-[0.2em] font-jakarta opacity-20`}>{item.tag}</span>
+                    <span className={`text-[10px] font-black ${item.color} uppercase tracking-[0.2em] font-jakarta opacity-60`}>{item.tag}</span>
                   </div>
                   <div className="space-y-3 text-left">
                     <div className={`text-lg font-black ${item.color} leading-tight font-jakarta tracking-tight`}>{item.label}</div>
-                    <div className={`text-[11px] font-black ${item.color} tracking-[0.3em] uppercase opacity-30 font-jakarta`}>{item.sub}</div>
+                    <div className={`text-[11px] font-black ${item.color} tracking-[0.2em] uppercase opacity-60 font-jakarta`}>{item.sub}</div>
                   </div>
                 </div>
               ))}
