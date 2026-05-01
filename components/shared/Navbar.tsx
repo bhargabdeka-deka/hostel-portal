@@ -36,12 +36,20 @@ export function Navbar() {
     { name: 'Contact', href: '/contact' },
   ];
 
+  const isHome = pathname === '/';
+
   return (
     <>
       <nav className="absolute top-0 left-0 right-0 z-[100] transition-all duration-300">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-20 h-24 md:h-32 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-4 text-2xl md:text-3xl font-black tracking-[-0.05em] text-white group font-jakarta">
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-110 transition-all duration-500 relative shadow-xl border-2 border-white ring-4 ring-indigo-50">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-20 h-24 md:h-32 flex items-center justify-between gap-4">
+          <Link href="/" className={cn(
+            "flex items-center gap-4 text-2xl md:text-3xl font-black tracking-[-0.05em] group font-jakarta transition-colors duration-300",
+            isHome ? "text-white" : "text-[#0F172A]"
+          )}>
+            <div className={cn(
+              "w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-110 transition-all duration-500 relative shadow-xl border-2",
+              isHome ? "border-white ring-4 ring-indigo-50" : "border-slate-100 ring-4 ring-slate-50"
+            )}>
               <Image 
                 src="/hostel_logo.jpeg" 
                 alt="Orion Hostel Logo" 
@@ -49,13 +57,16 @@ export function Navbar() {
                 className="object-cover scale-110" 
               />
             </div>
-            <span className="bg-gradient-to-br from-white via-white/80 to-white/60 bg-clip-text text-transparent drop-shadow-lg">
+            <span className={cn(
+              "drop-shadow-lg transition-all duration-300",
+              isHome ? "bg-gradient-to-br from-white via-white/80 to-white/60 bg-clip-text text-transparent" : "text-[#0F172A]"
+            )}>
               Orion
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex gap-14 items-center h-full">
+          <div className="hidden lg:flex gap-6 xl:gap-12 items-center h-full">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
@@ -66,8 +77,10 @@ export function Navbar() {
                   <div className="absolute bottom-8 left-0 right-0 h-0.5 bg-[#C8A96B] rounded-full shadow-[0_0_10px_rgba(200,169,107,0.5)]"></div>
                 )}
                 <span className={cn(
-                  "transition-all duration-300 drop-shadow-lg",
-                  (pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) ? 'text-[#C8A96B]' : 'text-white/80 group-hover:text-white'
+                  "transition-all duration-300 drop-shadow-sm",
+                  (pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) 
+                    ? 'text-[#C8A96B]' 
+                    : isHome ? 'text-white/80 group-hover:text-white' : 'text-slate-500 group-hover:text-[#0F172A]'
                 )}>
                   {link.name}
                 </span>
@@ -75,10 +88,13 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4 md:hidden">
+          <div className="flex items-center gap-4 lg:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-white hover:bg-white/10 rounded-xl transition-colors"
+              className={cn(
+                "p-2 rounded-xl transition-all duration-300",
+                isHome ? "text-white hover:bg-white/10" : "text-[#0F172A] hover:bg-slate-100"
+              )}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -88,7 +104,7 @@ export function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div className={cn(
-        "fixed inset-0 z-[90] bg-white/98 backdrop-blur-2xl md:hidden transition-all duration-500 flex flex-col items-center justify-center space-y-8",
+        "fixed inset-0 z-[90] bg-white/98 backdrop-blur-2xl lg:hidden transition-all duration-500 flex flex-col items-center justify-center space-y-8",
         isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
       )}>
         {navLinks.map((link, i) => (
