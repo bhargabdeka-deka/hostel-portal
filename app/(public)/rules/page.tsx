@@ -46,11 +46,11 @@ export default function RulesPage() {
     <main className="bg-transparent min-h-screen selection:bg-amber-500/20">
     <div className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-5xl mx-auto overflow-x-hidden">
       <div className="text-center mb-16 md:mb-20">
-        <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-amber-50 border border-amber-100 rounded-full text-[11px] font-bold tracking-tight mb-6 text-amber-600 font-sans">
+        <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 rounded-full text-[11px] font-bold tracking-tight mb-6 text-amber-600 dark:text-amber-400 font-sans">
           Institutional code of conduct
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight mb-4 font-sans">Hostel rules</h1>
-        <p className="text-base md:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white tracking-tight mb-4 font-sans">Hostel rules</h1>
+        <p className="text-base md:text-xl text-slate-600 dark:text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed">
           Maintaining a respectful and organized environment is key to our community success. Please adhere to the following guidelines.
         </p>
       </div>
@@ -58,33 +58,33 @@ export default function RulesPage() {
       <div className="grid gap-6 md:gap-8">
         {rules.map((rule, i) => {
           const colors = [
-            { bg: 'bg-sky-50/50', border: 'border-sky-100', iconBg: 'bg-sky-100/50', iconText: 'text-sky-600' },
-            { bg: 'bg-emerald-50/50', border: 'border-emerald-100', iconBg: 'bg-emerald-100/50', iconText: 'text-emerald-600' },
-            { bg: 'bg-violet-50/50', border: 'border-violet-100', iconBg: 'bg-violet-100/50', iconText: 'text-violet-600' },
-            { bg: 'bg-rose-50/50', border: 'border-rose-100', iconBg: 'bg-rose-100/50', iconText: 'text-rose-600' },
+            { bg: 'bg-sky-50/50 dark:bg-sky-950/20', border: 'border-sky-100 dark:border-sky-900/50', iconBg: 'bg-sky-100/50', iconText: 'text-sky-600 dark:text-sky-400' },
+            { bg: 'bg-emerald-50/50 dark:bg-emerald-950/20', border: 'border-emerald-100 dark:border-emerald-900/50', iconBg: 'bg-emerald-100/50', iconText: 'text-emerald-600 dark:text-emerald-400' },
+            { bg: 'bg-violet-50/50 dark:bg-violet-950/20', border: 'border-violet-100 dark:border-violet-900/50', iconBg: 'bg-violet-100/50', iconText: 'text-violet-600 dark:text-violet-400' },
+            { bg: 'bg-rose-50/50 dark:bg-rose-950/20', border: 'border-rose-100 dark:border-rose-900/50', iconBg: 'bg-rose-100/50', iconText: 'text-rose-600 dark:text-rose-400' },
           ];
           const color = colors[i % colors.length];
           return (
-            <div key={i} className={`group ${color.bg} border ${color.border} rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col sm:flex-row gap-6 md:gap-8 items-start hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500`}>
-              <div className={`w-14 h-14 md:w-16 md:h-16 bg-white rounded-2xl flex items-center justify-center ${color.iconText} shadow-sm shrink-0 transition-transform duration-500 group-hover:scale-110`}>
+            <div key={i} className={`group ${color.bg} border ${color.border} rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-10 flex flex-col sm:flex-row gap-6 md:gap-8 items-start hover:shadow-xl hover:shadow-slate-200/50 dark:shadow-none transition-all duration-500`}>
+              <div className={`w-14 h-14 md:w-16 md:h-16 bg-white dark:bg-slate-800 rounded-2xl flex items-center justify-center ${color.iconText} shadow-sm dark:shadow-none shrink-0 transition-transform duration-500 group-hover:scale-110`}>
                 {rule.icon}
               </div>
               <div className="space-y-3">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight font-sans">{rule.title}</h3>
-                <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed font-sans">{rule.details}</p>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white tracking-tight font-sans">{rule.title}</h3>
+                <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed font-sans">{rule.details}</p>
               </div>
             </div>
           );
         })}
       </div>
 
-      <div className="mt-16 md:mt-20 p-8 md:p-12 bg-slate-50 border border-slate-200 rounded-[2rem] md:rounded-[2.5rem] flex flex-col md:flex-row items-center gap-8 md:gap-10">
-        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-indigo-600 shadow-md shrink-0 border border-slate-200">
+      <div className="mt-16 md:mt-20 p-8 md:p-12 bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-[2rem] md:rounded-[2.5rem] flex flex-col md:flex-row items-center gap-8 md:gap-10">
+        <div className="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center text-indigo-600 dark:text-indigo-400 shadow-md dark:shadow-none shrink-0 border border-slate-200 dark:border-slate-700">
           <HelpCircle className="w-8 h-8" />
         </div>
         <div className="text-center md:text-left">
-           <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2 font-sans">Have specific questions?</h4>
-           <p className="text-sm md:text-base text-slate-600 font-medium leading-relaxed">Contact the warden or superintendent for clarifications regarding any policy.</p>
+           <h4 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-2 font-sans">Have specific questions?</h4>
+           <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 font-medium leading-relaxed">Contact the warden or superintendent for clarifications regarding any policy.</p>
         </div>
       </div>
     </div>
