@@ -36,10 +36,10 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
               {/* Date Column */}
               <div className="flex-none flex md:flex-col items-center justify-center md:w-20 md:border-r border-slate-50 md:pr-10">
                 <div className="text-center">
-                  <span className="block text-2xl font-black text-slate-900 leading-none">
+                  <span className="block text-2xl font-black text-emerald-500 leading-none">
                     {new Date(memory.created_at).toLocaleDateString('en-US', { day: '2-digit' })}
                   </span>
-                  <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1">
+                  <span className="block text-[10px] font-bold text-rose-500 uppercase tracking-[0.2em] mt-1">
                     {new Date(memory.created_at).toLocaleDateString('en-US', { month: 'short' })}
                   </span>
                 </div>
