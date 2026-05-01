@@ -73,8 +73,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             <input 
               required
               name="fullName"
-              placeholder="Ex: Bhargab Deka"
-              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 placeholder:text-slate-300 placeholder:font-medium"
+              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
           <div className="space-y-2">
@@ -82,8 +81,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             <input 
               required
               name="batch"
-              placeholder="2020-24"
-              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 placeholder:text-slate-300 placeholder:font-medium"
+              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
           <div className="space-y-2">
@@ -91,16 +89,14 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             <input 
               required
               name="branch"
-              placeholder="Civil"
-              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 placeholder:text-slate-300 placeholder:font-medium"
+              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
           <div className="space-y-2">
             <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] ml-1 font-jakarta">Room (Opt)</label>
             <input 
               name="roomNumber"
-              placeholder="42"
-              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 placeholder:text-slate-300 placeholder:font-medium"
+              className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
         </div>
@@ -110,8 +106,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
           <input 
             required
             name="title"
-            placeholder="The Night of the Storm..."
-            className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 placeholder:text-slate-300 placeholder:font-medium"
+            className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
           />
         </div>
 
@@ -121,8 +116,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             required
             name="story"
             rows={5}
-            placeholder="Tell your story..."
-            className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 resize-none placeholder:text-slate-300 placeholder:font-medium"
+            className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 resize-none"
           ></textarea>
         </div>
 
