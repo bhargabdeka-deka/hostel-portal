@@ -81,30 +81,33 @@ export default async function ContactPage() {
       </section>
 
       {/* Superintendent Section */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="bg-[#0F172A] border border-[#0F172A] rounded-[3rem] md:rounded-[5rem] p-10 md:p-20 lg:p-32 relative overflow-hidden shadow-2xl shadow-indigo-900/30">
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <div className="bg-[#0F172A] border border-white/5 rounded-[2.5rem] md:rounded-[3.5rem] p-12 md:p-24 lg:p-28 relative overflow-hidden shadow-[0_40px_100px_-20px_rgba(15,23,42,0.4)]">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
           <div className="relative z-10 flex flex-col lg:flex-row items-center gap-16 md:gap-24">
-            <div className="flex-1 space-y-10 text-center lg:text-left">
-              <div className="inline-flex items-center px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white/50 text-[10px] font-bold tracking-[0.2em] uppercase font-jakarta">
+            <div className="flex-1 space-y-12 text-center lg:text-left">
+              <div className="inline-flex items-center px-6 py-2 rounded-full bg-white/[0.03] border border-white/10 text-white/40 text-[10px] font-black tracking-[0.4em] uppercase font-jakarta">
                 Administrative Leadership
               </div>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[1.1] font-jakarta">Office of the <br/><span className="text-[#C8A96B]">Superintendent</span></h2>
-              <p className="text-white/60 font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-base md:text-lg">
+              <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-[-0.04em] leading-[1.05] font-jakarta">
+                Office of the <br/><span className="text-[#C8A96B] font-black italic">Superintendent</span>
+              </h2>
+              <p className="text-white/50 font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-base md:text-lg font-sans">
                 For official queries, admission approvals, and high-level administrative matters, please contact the Superintendent directly.
               </p>
             </div>
             
             <div className="w-full lg:w-auto">
-              <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-[3rem] p-10 md:p-16 min-w-0 md:min-w-[450px] shadow-2xl space-y-10">
-                <div>
-                  <div className="text-[10px] font-bold text-[#C8A96B] uppercase tracking-[0.2em] mb-4 font-jakarta">Current Superintendent</div>
-                  <div className="text-3xl md:text-4xl font-black text-white tracking-tight font-jakarta">Mr. Jiten Borgohain</div>
+              <div className="bg-[#1E293B]/30 border border-white/5 rounded-[2.5rem] p-10 md:p-14 min-w-0 md:min-w-[480px] shadow-inner space-y-12">
+                <div className="space-y-4">
+                  <div className="text-[10px] font-black text-[#C8A96B] uppercase tracking-[0.3em] font-jakarta opacity-60">Current Superintendent</div>
+                  <div className="text-3xl md:text-5xl font-black text-white tracking-tighter font-jakarta">Mr. Jiten Borgohain</div>
                 </div>
                 <a 
                   href="tel:+919101481714" 
-                  className="flex items-center justify-center gap-4 p-6 bg-[#C8A96B] text-[#0F172A] rounded-2xl font-black text-sm uppercase tracking-[0.2em] hover:bg-white hover:scale-105 transition-all active:scale-95 shadow-xl shadow-[#C8A96B]/10"
+                  className="flex items-center justify-center gap-5 py-6 px-8 bg-[#C8A96B] text-[#0F172A] rounded-xl font-black text-[11px] uppercase tracking-[0.3em] hover:bg-white transition-colors active:scale-95 shadow-[0_20px_40px_-10px_rgba(200,169,107,0.3)]"
                 >
-                  <Phone className="w-5 h-5" />
+                  <Phone className="w-4 h-4 fill-current" />
                   +91 91014 81714
                 </a>
               </div>
