@@ -24,7 +24,8 @@ import { createClient } from '@/lib/supabase/client';
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [pendingCount, setPendingCount] = useState(0);
+  const [pendingAlumniCount, setPendingAlumniCount] = useState(0);
+  const [pendingMemoriesCount, setPendingMemoriesCount] = useState(0);
   const [showNotifications, setShowNotifications] = useState(false);
   const notificationRef = useRef<HTMLDivElement>(null);
 
@@ -39,28 +40,39 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Fetch pending alumni count
+  // Fetch pending counts
   useEffect(() => {
-    const fetchPendingCount = async () => {
+    const fetchPendingCounts = async () => {
       const supabase = createClient();
-      const { count, error } = await supabase
+      
+      // Alumni
+      const { count: alumniCount } = await supabase
         .from('alumni')
         .select('*', { count: 'exact', head: true })
         .eq('status', 'pending');
       
-      if (!error && count !== null) {
-        setPendingCount(count);
-      }
+      if (alumniCount !== null) setPendingAlumniCount(alumniCount);
+
+      // Memories
+      const { count: memoriesCount } = await supabase
+        .from('memories')
+        .select('*', { count: 'exact', head: true })
+        .eq('status', 'pending');
+      
+      if (memoriesCount !== null) setPendingMemoriesCount(memoriesCount);
     };
 
-    fetchPendingCount();
+    fetchPendingCounts();
     
     // Set up real-time subscription
     const supabase = createClient();
     const channel = supabase
-      .channel('alumni-changes')
+      .channel('pending-changes')
       .on('postgres_changes', { event: '*', schema: 'public', table: 'alumni' }, () => {
-        fetchPendingCount();
+        fetchPendingCounts();
+      })
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'memories' }, () => {
+        fetchPendingCounts();
       })
       .subscribe();
 
@@ -114,9 +126,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 <span className={cn("text-[15px] font-bold tracking-tight", isActive ? "text-white" : "group-hover:text-slate-900")}>
                   {item.name}
                 </span>
-                {item.name === 'Alumni' && pendingCount > 0 && (
+                {item.name === 'Alumni' && pendingAlumniCount > 0 && (
                   <div className="w-5 h-5 rounded-full bg-indigo-600 text-white text-[9px] font-black flex items-center justify-center">
-                    {pendingCount}
+                    {pendingAlumniCount}
+                  </div>
+                )}
+                {item.name === 'Memories' && pendingMemoriesCount > 0 && (
+                  <div className="w-5 h-5 rounded-full bg-indigo-600 text-white text-[9px] font-black flex items-center justify-center">
+                    {pendingMemoriesCount}
                   </div>
                 )}
               </div>
@@ -198,9 +215,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               className="relative p-2 text-slate-400 hover:text-slate-900 transition-colors hidden sm:block"
             >
               <Bell className="w-5 h-5" />
-              {pendingCount > 0 && (
+              {(pendingAlumniCount + pendingMemoriesCount) > 0 && (
                 <div className="absolute top-2.5 right-2.5 w-4 h-4 bg-indigo-600 rounded-full border-2 border-white flex items-center justify-center">
-                  <span className="text-[7px] font-black text-white">{pendingCount}</span>
+                  <span className="text-[7px] font-black text-white">{pendingAlumniCount + pendingMemoriesCount}</span>
                 </div>
               )}
             </button>
@@ -224,27 +241,44 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 </div>
 
                 <div className="max-h-[400px] overflow-y-auto">
-                  {pendingCount > 0 ? (
-                    <Link 
-                      href="/admin/alumni" 
-                      className="flex items-center gap-6 p-8 hover:bg-white/50 transition-colors group"
-                      onClick={() => setShowNotifications(false)}
-                    >
-                      <div className="w-14 h-14 rounded-2xl bg-white text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all shrink-0 shadow-sm border border-indigo-100">
-                        <Users className="w-7 h-7" />
-                      </div>
-                      <div className="flex-1 space-y-1">
-                        <div className="text-sm font-bold text-slate-900 tracking-tight leading-tight">
-                          Alumni Request
-                        </div>
-                        <p className="text-[12px] text-slate-600 font-medium">
-                          <span className="font-bold text-indigo-600">{pendingCount}</span> Pending
-                        </p>
-                        <div className="flex items-center gap-1 text-[11px] font-bold text-indigo-600 pt-1 tracking-tight">
-                          Review request <ChevronRight className="w-3.5 h-3.5" />
-                        </div>
-                      </div>
-                    </Link>
+                  {pendingAlumniCount + pendingMemoriesCount > 0 ? (
+                    <div className="divide-y divide-slate-100">
+                      {pendingAlumniCount > 0 && (
+                        <Link 
+                          href="/admin/alumni" 
+                          className="flex items-center gap-6 p-8 hover:bg-white/50 transition-colors group"
+                          onClick={() => setShowNotifications(false)}
+                        >
+                          <div className="w-14 h-14 rounded-2xl bg-white text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all shrink-0 shadow-sm border border-indigo-100">
+                            <Users className="w-7 h-7" />
+                          </div>
+                          <div className="flex-1 space-y-1">
+                            <div className="text-sm font-bold text-slate-900 tracking-tight leading-tight">Alumni Request</div>
+                            <p className="text-[12px] text-slate-600 font-medium">
+                              <span className="font-bold text-indigo-600">{pendingAlumniCount}</span> Pending registrations
+                            </p>
+                          </div>
+                        </Link>
+                      )}
+                      
+                      {pendingMemoriesCount > 0 && (
+                        <Link 
+                          href="/admin/memories" 
+                          className="flex items-center gap-6 p-8 hover:bg-white/50 transition-colors group"
+                          onClick={() => setShowNotifications(false)}
+                        >
+                          <div className="w-14 h-14 rounded-2xl bg-white text-rose-500 group-hover:bg-rose-500 group-hover:text-white transition-all shrink-0 shadow-sm border border-rose-100">
+                            <Heart className="w-7 h-7" />
+                          </div>
+                          <div className="flex-1 space-y-1">
+                            <div className="text-sm font-bold text-slate-900 tracking-tight leading-tight">New Memories</div>
+                            <p className="text-[12px] text-slate-600 font-medium">
+                              <span className="font-bold text-rose-500">{pendingMemoriesCount}</span> Pending stories
+                            </p>
+                          </div>
+                        </Link>
+                      )}
+                    </div>
                   ) : (
                     <div className="p-12 text-center space-y-3">
                       <Bell className="w-10 h-10 text-indigo-200 mx-auto" />
