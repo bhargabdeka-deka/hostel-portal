@@ -131,7 +131,6 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                   Submitted on {new Date(selectedMemory.created_at).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Part of the ORION Legacy</span>
                 </div>
               </div>
