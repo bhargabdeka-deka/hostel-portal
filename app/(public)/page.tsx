@@ -139,7 +139,7 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-[#0F172A]/40"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto py-32 lg:py-40 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto pt-32 pb-60 md:pt-40 md:pb-80 text-center">
           <div className="inline-flex items-center px-7 py-3 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 text-white/90 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             Hostel No 7 • Jorhat Engineering College
           </div>
@@ -155,7 +155,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-8 -mt-24 md:-mt-32 relative z-20">
+      <section className="max-w-7xl mx-auto px-8 -mt-40 md:-mt-56 relative z-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-12">
           {stats.map((stat, i) => (
             <div 
