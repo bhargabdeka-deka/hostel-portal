@@ -59,7 +59,7 @@ export default async function HomePage() {
       color: 'text-slate-600', 
       bgColor: 'bg-white', 
       iconBg: 'bg-slate-50',
-      shadow: 'shadow-[0_50px_100px_-20px_rgba(15,23,42,0.1)]'
+      shadow: 'shadow-[0_40px_80px_-20px_rgba(15,23,42,0.08),0_20px_40px_-15px_rgba(15,23,42,0.04)]'
     },
     { 
       tag: 'Residency', 
@@ -69,7 +69,7 @@ export default async function HomePage() {
       color: 'text-[#0F172A]', 
       bgColor: 'bg-white/95', 
       iconBg: 'bg-indigo-50/50',
-      shadow: 'shadow-[0_60px_120px_-20px_rgba(15,23,42,0.15)]'
+      shadow: 'shadow-[0_50px_100px_-20px_rgba(15,23,42,0.12),0_25px_50px_-15px_rgba(15,23,42,0.06)]'
     },
     { 
       tag: 'Legacy', 
@@ -79,7 +79,7 @@ export default async function HomePage() {
       color: 'text-[#C8A96B]', 
       bgColor: 'bg-white', 
       iconBg: 'bg-[#C8A96B]/5',
-      shadow: 'shadow-[0_50px_100px_-20px_rgba(15,23,42,0.1)]'
+      shadow: 'shadow-[0_40px_80px_-20px_rgba(15,23,42,0.08),0_20px_40px_-15px_rgba(15,23,42,0.04)]'
     },
   ];
 
@@ -161,7 +161,7 @@ export default async function HomePage() {
             <div 
               key={i} 
               className={cn(
-                "p-10 md:p-14 border rounded-[4rem] flex items-center gap-10 group hover:-translate-y-2 transition-all duration-700 hover:shadow-[0_60px_140px_-20px_rgba(15,23,42,0.2)]",
+                "px-10 py-14 md:px-16 md:py-20 border rounded-[4rem] flex items-center gap-10 group hover:-translate-y-2 transition-all duration-1000 hover:shadow-[0_70px_150px_-30px_rgba(15,23,42,0.25)]",
                 stat.bgColor,
                 stat.shadow,
                 i === 1 ? "border-slate-200" : "border-slate-100/80"
@@ -181,10 +181,10 @@ export default async function HomePage() {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-8 pt-20 pb-10">
-          <div className="h-px w-24 bg-slate-200"></div>
-          <div className="text-[10px] font-black text-slate-600 uppercase tracking-[0.5em]">The Orionite Way</div>
-          <div className="h-px w-24 bg-slate-200"></div>
+        <div className="flex items-center justify-center gap-8 pt-24 pb-12">
+          <div className="h-px w-24 bg-slate-200/80"></div>
+          <div className="text-[11px] font-black text-slate-800 uppercase tracking-[0.6em] font-jakarta">The Orionite Way</div>
+          <div className="h-px w-24 bg-slate-200/80"></div>
         </div>
       </section>
       <section className="max-w-7xl mx-auto px-8 py-20 text-center">
