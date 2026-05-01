@@ -71,7 +71,6 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             <input 
               required
               name="fullName"
-              placeholder="e.g. John Doe"
               className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
@@ -80,7 +79,6 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             <input 
               required
               name="batch"
-              placeholder="e.g. 2018-2022"
               className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
@@ -88,7 +86,6 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Room Number (Optional)</label>
             <input 
               name="roomNumber"
-              placeholder="e.g. 45"
               className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
             />
           </div>
@@ -99,7 +96,6 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
           <input 
             required
             name="title"
-            placeholder="e.g. The Night of the Cultural Fest"
             className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
           />
         </div>
@@ -110,7 +106,6 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             required
             name="story"
             rows={6}
-            placeholder="Tell your story..."
             className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900 resize-none"
           ></textarea>
         </div>
