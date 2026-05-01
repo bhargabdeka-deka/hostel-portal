@@ -41,7 +41,7 @@ export default async function MemoriesPage() {
         </div>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-4">
-            <h1 className="text-6xl md:text-8xl font-bold text-slate-900 tracking-tighter uppercase leading-[0.9]">
+            <h1 className="text-6xl md:text-8xl font-bold text-slate-900 tracking-tight leading-[0.9] font-jakarta">
               Memories<span className="text-blue-600">.</span>
             </h1>
             <p className="text-lg text-slate-500 font-medium max-w-xl leading-relaxed">
