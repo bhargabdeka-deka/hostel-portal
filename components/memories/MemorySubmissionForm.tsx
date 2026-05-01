@@ -65,7 +65,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
       </div>
 
       <form onSubmit={handleSubmit} className="p-8 md:p-12 space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <div className="space-y-2">
             <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Full Name</label>
             <input 
@@ -75,7 +75,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             />
           </div>
           <div className="space-y-2">
-            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Batch / Passing Year</label>
+            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Batch</label>
             <input 
               required
               name="batch"
@@ -83,7 +83,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             />
           </div>
           <div className="space-y-2">
-            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Room Number (Optional)</label>
+            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Room (Opt)</label>
             <input 
               name="roomNumber"
               className="w-full px-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
