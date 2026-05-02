@@ -110,7 +110,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
 
             <div className="space-y-10">
               <div className="space-y-6">
-                <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tighter leading-[1.1]">
+                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
                   {selectedMemory.title}
                 </h2>
                 <div className="flex items-center gap-6 pt-4">
@@ -138,7 +138,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
               </div>
 
               <div className="prose prose-slate max-w-none">
-                <p className="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed whitespace-pre-wrap font-sans">
+                <p className="text-lg md:text-xl text-slate-600 font-medium leading-[1.6] whitespace-pre-wrap font-sans">
                   {selectedMemory.story}
                 </p>
               </div>
