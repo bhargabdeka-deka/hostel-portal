@@ -19,6 +19,16 @@ export function AlumniList({ alumni }: AlumniProps) {
     person.company?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const getLinkLabel = (url: string) => {
+    if (!url) return 'Not Shared';
+    const lowercaseUrl = url.toLowerCase();
+    if (lowercaseUrl.includes('linkedin.com')) return 'LinkedIn';
+    if (lowercaseUrl.includes('github.com')) return 'GitHub';
+    if (lowercaseUrl.includes('behance.net') || lowercaseUrl.includes('dribbble.com')) return 'Portfolio';
+    if (lowercaseUrl.includes('twitter.com') || lowercaseUrl.includes('x.com')) return 'Twitter';
+    return 'Website';
+  };
+
   return (
     <div className="space-y-8 md:space-y-16">
       {/* Actions Bar */}
@@ -93,11 +103,11 @@ export function AlumniList({ alumni }: AlumniProps) {
                           className="flex-1 flex items-center justify-center gap-3 py-5 bg-[#0F172A] text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl hover:bg-[#C8A96B] hover:text-[#0F172A] transition-all duration-500 font-jakarta"
                         >
                           <LinkIcon className="w-4 h-4" />
-                          Professional Profile
+                          {getLinkLabel(person.social_link)}
                         </a>
                      ) : (
-                        <div className="flex-1 py-5 bg-slate-50 text-slate-300 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] text-center border border-slate-100 italic font-jakarta">
-                          Identity Private
+                        <div className="flex-1 py-5 bg-slate-50 text-slate-400 rounded-2xl text-[10px] font-bold uppercase tracking-[0.1em] text-center border border-slate-100 font-jakarta opacity-60">
+                          Not Shared
                         </div>
                      )}
                  </div>
@@ -162,10 +172,10 @@ export function AlumniList({ alumni }: AlumniProps) {
                             className="inline-flex items-center gap-3 px-6 py-4 bg-[#0F172A] text-white hover:bg-[#C8A96B] hover:text-[#0F172A] rounded-xl transition-all duration-500 text-[10px] font-black uppercase tracking-[0.2em] shadow-xl font-jakarta"
                           >
                             <LinkIcon className="w-4 h-4" />
-                            LinkedIn
+                            {getLinkLabel(person.social_link)}
                           </a>
                         ) : (
-                          <span className="text-[10px] font-black text-slate-200 uppercase tracking-[0.2em] font-jakarta">Identity Private</span>
+                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.1em] font-jakarta opacity-60">Not Shared</span>
                         )}
                       </td>
                     </tr>
