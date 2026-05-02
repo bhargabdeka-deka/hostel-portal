@@ -40,22 +40,22 @@ export default function HostelAnthem() {
       </div>
 
       {/* Preview Card Section */}
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-2xl mx-auto px-4">
         <div 
-          className="relative bg-white p-6 sm:p-10 md:p-14 rounded-[2.5rem] md:rounded-[4rem] border border-slate-100 shadow-[0_50px_100px_-20px_rgba(15,23,42,0.08)] overflow-hidden group transition-all duration-700 hover:-translate-y-2"
+          className="relative bg-white p-6 sm:p-8 rounded-[2.5rem] md:rounded-[3.5rem] border border-slate-100 shadow-[0_50px_100px_-20px_rgba(15,23,42,0.08)] overflow-hidden group transition-all duration-700 hover:-translate-y-2"
         >
           {/* Subtle Decorative Accent */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#C8A96B]/5 rounded-bl-full -mr-32 -mt-32 transition-colors duration-1000 group-hover:bg-[#C8A96B]/10 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-48 h-48 bg-[#C8A96B]/5 rounded-bl-full -mr-24 -mt-24 transition-colors duration-1000 group-hover:bg-[#C8A96B]/10 pointer-events-none"></div>
           
           <div 
-            className="relative aspect-[3/4] sm:aspect-video w-full overflow-hidden rounded-[1.5rem] sm:rounded-[2.5rem] bg-slate-50 border border-slate-100 cursor-pointer shadow-inner"
+            className="relative aspect-[3/4.5] w-full overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-slate-50 border border-slate-100 cursor-pointer shadow-inner"
             onClick={() => setIsOpen(true)}
           >
             <Image 
               src="/hostel_song.jpeg" 
               alt="Orion Hostel Anthem Lyrics Preview" 
               fill 
-              className="object-contain p-4 sm:p-8 transition-transform duration-1000 group-hover:scale-105"
+              className="object-contain p-4 sm:p-6 transition-transform duration-1000 group-hover:scale-105"
               priority
             />
             
@@ -99,18 +99,22 @@ export default function HostelAnthem() {
 
           {/* Scrollable Container for Long Lyrics */}
           <div 
-            className="w-full h-full flex flex-col items-center animate-in zoom-in-95 duration-700 overflow-y-auto selection:bg-[#C8A96B]/30"
+            className="w-full h-full flex flex-col items-center animate-in zoom-in-95 duration-700 overflow-y-auto selection:bg-[#C8A96B]/30 custom-scrollbar"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="w-full max-w-5xl py-12 md:py-24">
-              <img 
-                src="/hostel_song.jpeg" 
-                alt="Orion Hostel Anthem Official Lyrics" 
-                className="w-full h-auto object-contain rounded-2xl shadow-[0_0_100px_rgba(0,0,0,0.5)] ring-1 ring-white/10"
-              />
+            {/* Image Container with Paper Aesthetic */}
+            <div className="w-full max-w-4xl py-8 sm:py-16 md:py-20 px-4 sm:px-8 flex flex-col items-center">
+              <div className="relative w-full bg-white shadow-[0_30px_100px_rgba(0,0,0,0.6)] rounded-sm overflow-hidden ring-1 ring-white/10">
+                <img 
+                  src="/hostel_song.jpeg" 
+                  alt="Orion Hostel Anthem Official Lyrics" 
+                  className="w-full h-auto block"
+                />
+              </div>
               
-              <div className="mt-16 text-center pb-12 opacity-40">
-                <p className="text-white text-[10px] font-black uppercase tracking-[0.4em] font-jakarta">Official Orion Hostel Anthem • Hostel Identity</p>
+              <div className="mt-12 text-center pb-8 opacity-40">
+                <p className="text-white text-[10px] sm:text-[11px] font-black uppercase tracking-[0.4em] font-jakarta">Official Orion Hostel Anthem • Hostel Identity</p>
+                <p className="text-white/60 text-[9px] mt-2 font-medium font-sans">© Orion Hostel — All Rights Reserved</p>
               </div>
             </div>
           </div>

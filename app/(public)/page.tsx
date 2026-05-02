@@ -158,21 +158,21 @@ export default async function HomePage() {
             <div 
               key={i} 
               className={cn(
-                "px-8 py-8 sm:px-10 sm:py-12 md:px-14 md:py-16 border rounded-[2.5rem] sm:rounded-[3.5rem] flex items-center justify-center gap-6 sm:gap-10 group hover:-translate-y-2 transition-all duration-700 ease-out",
+                "px-10 py-10 sm:px-12 sm:py-14 md:px-16 md:py-20 border rounded-[2.5rem] sm:rounded-[3.5rem] flex items-center justify-start gap-6 sm:gap-10 group hover:-translate-y-2 transition-all duration-700 ease-out",
                 stat.bgColor,
                 i === 1 ? "border-indigo-100/50 shadow-[0_40px_100px_-20px_rgba(15,23,42,0.1)]" : 
                 i === 2 ? "border-[#C8A96B]/10 shadow-[0_30px_80px_-20px_rgba(15,23,42,0.08)]" :
                 "border-slate-100 shadow-[0_30px_80px_-20px_rgba(15,23,42,0.08)]"
               )}
             >
-              <div className={cn("w-12 h-12 sm:w-16 sm:h-16 rounded-2xl sm:rounded-[1.25rem] flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 shadow-sm", stat.color, stat.iconBg)}>
+              <div className={cn("w-14 h-14 sm:w-20 sm:h-20 rounded-2xl sm:rounded-[1.5rem] flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 shadow-sm", stat.color, stat.iconBg)}>
                 {stat.icon}
               </div>
-              <div className="flex flex-col items-start gap-1.5 sm:gap-2">
+              <div className="flex flex-col items-start gap-1 sm:gap-1.5">
                 <div className={cn("text-4xl sm:text-5xl md:text-7xl font-black tracking-[-0.08em] font-jakarta leading-none select-none", stat.color)}>
                   {stat.value}
                 </div>
-                <div className={cn("text-[10px] sm:text-[11px] font-black uppercase tracking-[0.15em] font-jakarta opacity-40", stat.color)}>
+                <div className={cn("text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] font-jakarta opacity-40 whitespace-nowrap", stat.color)}>
                   {stat.label}
                 </div>
               </div>
@@ -196,7 +196,7 @@ export default async function HomePage() {
           {spirits.map((spirit, i) => (
             <div 
               key={i} 
-              className={`p-8 sm:p-10 md:p-14 bg-white border border-slate-100/80 rounded-[2.5rem] md:rounded-[3rem] text-left space-y-8 sm:space-y-10 transition-all duration-700 hover:shadow-[0_50px_100px_-20px_rgba(15,23,42,0.08)] group relative overflow-hidden hover:-translate-y-2`}
+              className={`p-7 sm:p-9 md:p-12 bg-white border border-slate-100/80 rounded-[2.5rem] md:rounded-[3rem] text-left space-y-7 sm:space-y-9 transition-all duration-700 hover:shadow-[0_50px_100px_-20px_rgba(15,23,42,0.08)] group relative overflow-hidden hover:-translate-y-2`}
             >
               <div className={cn("absolute top-0 right-0 w-48 h-48 rounded-bl-full -mr-24 -mt-24 transition-colors duration-1000", 
                 i === 0 ? "bg-slate-50 group-hover:bg-slate-100" : 
@@ -208,7 +208,7 @@ export default async function HomePage() {
                 <span className={cn("text-[10px] font-black tracking-[0.15em] font-jakarta uppercase opacity-80", spirit.tagColor)}>{spirit.tag}</span>
               </div>
               <div className="space-y-4 sm:space-y-6 relative z-10">
-                <h3 className="text-[clamp(1.5rem,4.5vw,2.85rem)] font-black text-[#0F172A] tracking-[-0.05em] font-jakarta leading-[1.05] break-words hyphens-none">
+                <h3 className="text-[clamp(1.5rem,3.5vw,2.35rem)] font-black text-[#0F172A] tracking-[-0.06em] font-jakarta leading-[1.05] break-normal overflow-visible">
                   {spirit.title}
                 </h3>
                 <p className="text-slate-500 text-base sm:text-lg md:text-[1.1rem] leading-relaxed font-medium font-sans opacity-90">
