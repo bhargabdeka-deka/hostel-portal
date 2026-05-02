@@ -32,6 +32,8 @@ import {
 
 export const revalidate = 60; // Revalidate every minute
 
+import HostelAnthem from '@/components/HostelAnthem';
+
 export default async function HomePage() {
   const supabase = await createClient();
   
@@ -53,6 +55,7 @@ export default async function HomePage() {
   const stats = [
     { 
       value: '1982', 
+      label: 'Established',
       icon: <Calendar className="w-6 h-6" />, 
       color: 'text-slate-900', 
       bgColor: 'bg-white', 
@@ -60,6 +63,7 @@ export default async function HomePage() {
     },
     { 
       value: '800+', 
+      label: 'Alumni Network',
       icon: <Users className="w-6 h-6" />, 
       color: 'text-indigo-900', 
       bgColor: 'bg-white', 
@@ -67,6 +71,7 @@ export default async function HomePage() {
     },
     { 
       value: 'JEC', 
+      label: 'Institutional Legacy',
       icon: <Award className="w-6 h-6" />, 
       color: 'text-[#A38A56]', 
       bgColor: 'bg-white', 
@@ -163,8 +168,13 @@ export default async function HomePage() {
               <div className={cn("w-12 h-12 sm:w-16 sm:h-16 rounded-2xl sm:rounded-[1.25rem] flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 shadow-sm", stat.color, stat.iconBg)}>
                 {stat.icon}
               </div>
-              <div className={cn("text-4xl sm:text-5xl md:text-7xl font-black tracking-[-0.08em] font-jakarta leading-none select-none", stat.color)}>
-                {stat.value}
+              <div className="flex flex-col items-start gap-1.5 sm:gap-2">
+                <div className={cn("text-4xl sm:text-5xl md:text-7xl font-black tracking-[-0.08em] font-jakarta leading-none select-none", stat.color)}>
+                  {stat.value}
+                </div>
+                <div className={cn("text-[10px] sm:text-[11px] font-black uppercase tracking-[0.15em] font-jakarta opacity-40", stat.color)}>
+                  {stat.label}
+                </div>
               </div>
             </div>
           ))}
@@ -198,7 +208,9 @@ export default async function HomePage() {
                 <span className={cn("text-[10px] font-black tracking-[0.15em] font-jakarta uppercase opacity-80", spirit.tagColor)}>{spirit.tag}</span>
               </div>
               <div className="space-y-4 sm:space-y-6 relative z-10">
-                <h3 className={`text-2xl sm:text-3xl lg:text-5xl font-black text-[#0F172A] tracking-[-0.05em] font-jakarta leading-[1.1] break-words`}>{spirit.title}</h3>
+                <h3 className="text-[clamp(1.5rem,4.5vw,2.85rem)] font-black text-[#0F172A] tracking-[-0.05em] font-jakarta leading-[1.05] break-words hyphens-none">
+                  {spirit.title}
+                </h3>
                 <p className="text-slate-500 text-base sm:text-lg md:text-[1.1rem] leading-relaxed font-medium font-sans opacity-90">
                   {spirit.desc}
                 </p>
@@ -208,7 +220,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-
+      <HostelAnthem />
 
       <section className="max-w-4xl mx-auto px-6 sm:px-8 py-20 sm:py-32 lg:py-40">
         <div className="text-center space-y-6 sm:space-y-8 mb-12 sm:mb-16 px-4">
