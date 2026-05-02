@@ -56,7 +56,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
       <div className="p-6 md:p-8 border-b border-slate-50 flex items-center justify-between">
         <div className="space-y-3">
           <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-[-0.03em] font-jakarta">Share a Memory</h2>
-          <div className="inline-flex items-center px-5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100/50 text-indigo-600 text-[10px] font-black uppercase tracking-[0.12em] font-jakarta">
+          <div className="inline-flex items-center px-5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100/50 text-indigo-600 text-[10px] font-black uppercase tracking-[0.05em] font-jakarta">
             Contribute to the ORION Legacy
           </div>
         </div>
@@ -70,7 +70,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
       <form onSubmit={handleSubmit} className="p-6 md:p-10 space-y-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           <div className="col-span-2 lg:col-span-1 space-y-2">
-            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.12em] ml-1 font-jakarta">Full Name</label>
+            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.05em] ml-1 font-jakarta">Full Name</label>
             <input 
               required
               name="fullName"
@@ -78,7 +78,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             />
           </div>
           <div className="space-y-2">
-            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.12em] ml-1 font-jakarta">Batch</label>
+            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.05em] ml-1 font-jakarta">Batch</label>
             <input 
               required
               name="batch"
@@ -86,7 +86,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             />
           </div>
           <div className="space-y-2">
-            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.12em] ml-1 font-jakarta">Branch</label>
+            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.05em] ml-1 font-jakarta">Branch</label>
             <input 
               required
               name="branch"
@@ -94,7 +94,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
             />
           </div>
           <div className="space-y-2">
-            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.12em] ml-1 font-jakarta">Room (Opt)</label>
+            <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.05em] ml-1 font-jakarta">Room (Opt)</label>
             <input 
               name="roomNumber"
               className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all font-bold text-slate-900"
@@ -103,7 +103,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
         </div>
 
         <div className="space-y-2">
-          <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] ml-1 font-jakarta">Memory Title</label>
+          <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.05em] ml-1 font-jakarta">Memory Title</label>
           <input 
             required
             name="title"
@@ -112,7 +112,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
         </div>
 
         <div className="space-y-2">
-          <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] ml-1 font-jakarta">Detailed Memory / Story</label>
+          <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.05em] ml-1 font-jakarta">Detailed Memory / Story</label>
           <textarea 
             required
             name="story"
