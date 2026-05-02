@@ -50,7 +50,7 @@ export function AchievementList({ initialAchievements }: AchievementListProps) {
                     <Calendar className="w-3 h-3 text-blue-600" />
                     {achievement.date}
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900 truncate tracking-tight">
+                  <h4 className="text-sm font-bold text-slate-900 break-words tracking-tight leading-tight">
                     {achievement.title}
                   </h4>
                 </div>

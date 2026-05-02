@@ -51,7 +51,7 @@ export default function ComplaintPage() {
               Swift Resolution
             </div>
           </div>
-          <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[0.95] mb-8 font-jakarta">
+          <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[1.1] sm:leading-[0.95] mb-8 font-jakarta">
             Report an <span className="text-blue-600">Issue</span>
           </h1>
           <p className="text-lg text-slate-600 mb-8 leading-relaxed">

@@ -45,7 +45,7 @@ export default async function AchievementsPage() {
             Capturing moments
           </div>
         </div>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[0.95] font-jakarta">
+        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[1.1] sm:leading-[0.95] font-jakarta">
           Hostel <span className="text-indigo-600">Gallery</span>
         </h1>
         <p className="text-sm md:text-xl text-slate-600 font-medium max-w-2xl leading-relaxed font-sans">
@@ -82,7 +82,7 @@ export default async function AchievementsPage() {
                       {achievement.year || (achievement.date ? new Date(achievement.date).getFullYear() : 'N/A')}
                     </div>
                   </div>
-                  <h3 className="text-base md:text-lg font-bold text-slate-900 tracking-tight group-hover:text-indigo-600 transition-colors leading-snug">
+                  <h3 className="text-base md:text-lg font-bold text-slate-900 tracking-tight group-hover:text-indigo-600 transition-colors leading-snug break-words">
                     {achievement.title}
                   </h3>
                 </div>
@@ -100,14 +100,14 @@ export default async function AchievementsPage() {
 
       {/* Featured Trophy Section */}
       <section className="max-w-7xl mx-auto px-6 pb-32">
-        <div className="bg-slate-50 border border-slate-200 rounded-[3rem] md:rounded-[4rem] overflow-hidden relative min-h-[400px] md:min-h-[500px] flex items-center shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 md:via-white/40 to-transparent z-10"></div>
+        <div className="bg-white border border-slate-200 rounded-[3rem] md:rounded-[4rem] overflow-hidden relative min-h-[400px] md:min-h-[500px] flex items-center shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white md:via-white/90 lg:via-white/60 to-transparent z-10"></div>
           
           <div className="relative z-20 p-8 md:p-12 lg:p-24 max-w-2xl space-y-6 md:space-y-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tighter leading-tight font-jakarta">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tighter leading-tight font-jakarta">
               A Legacy of <br/><span className="text-indigo-600">Celebrations</span>
             </h2>
-            <p className="text-slate-600 font-medium leading-relaxed text-sm md:text-lg font-sans">
+            <p className="text-slate-700 font-medium leading-relaxed text-base md:text-lg font-sans">
               Our gallery captures the soul of Orion. From the high-octane energy of inter-hostel sports to the vibrant colors of Diwali and Holi, every photo tells a story of brotherhood.
             </p>
             <div className="flex gap-8 md:gap-16 pt-4">

@@ -38,7 +38,7 @@ export default async function AllNoticesPage() {
             Institutional Bulletin
           </div>
         </div>
-        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[0.95] font-jakarta">Official notice board</h1>
+        <h1 className="text-4xl sm:text-6xl lg:text-[5rem] font-black text-[#0F172A] tracking-[-0.04em] leading-[1.05] mb-8 font-jakarta">Official notice board</h1>
         <p className="text-base md:text-lg text-slate-500 font-medium max-w-2xl leading-relaxed">
           Stay informed with the latest updates, event announcements, and official news from the ORION Hostel administration.
         </p>
@@ -51,7 +51,7 @@ export default async function AllNoticesPage() {
               <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 mb-6 md:mb-8 pb-6 md:pb-8 border-b border-slate-50">
                 <div className="flex items-center gap-3 overflow-hidden min-w-0">
                   <div className="w-1.5 h-6 bg-indigo-600 shrink-0"></div>
-                  <h2 className="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors tracking-tight truncate flex-1">
+                  <h2 className="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors tracking-tight break-words flex-1 leading-tight">
                     {notice.title}
                   </h2>
                 </div>
