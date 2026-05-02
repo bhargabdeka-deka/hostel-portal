@@ -48,14 +48,14 @@ export default function HostelAnthem() {
           <div className="absolute top-0 right-0 w-48 h-48 bg-[#C8A96B]/5 rounded-bl-full -mr-24 -mt-24 transition-colors duration-1000 group-hover:bg-[#C8A96B]/10 pointer-events-none"></div>
           
           <div 
-            className="relative aspect-[3/4.5] w-full overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-slate-50 border border-slate-100 cursor-pointer shadow-inner"
+            className="relative aspect-[3/4.5] w-full overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-white border border-slate-100 cursor-pointer shadow-inner"
             onClick={() => setIsOpen(true)}
           >
             <Image 
-              src="/hostel_song.jpeg" 
+              src="/hostel_song.png" 
               alt="Orion Hostel Anthem Lyrics Preview" 
               fill 
-              className="object-contain p-4 sm:p-6 transition-transform duration-1000 group-hover:scale-105"
+              className="object-cover object-top transition-transform duration-1000 group-hover:scale-105"
               priority
             />
             
@@ -106,9 +106,9 @@ export default function HostelAnthem() {
             <div className="w-full max-w-4xl py-8 sm:py-16 md:py-20 px-4 sm:px-8 flex flex-col items-center">
               <div className="relative w-full bg-white shadow-[0_30px_100px_rgba(0,0,0,0.6)] rounded-sm overflow-hidden ring-1 ring-white/10">
                 <img 
-                  src="/hostel_song.jpeg" 
+                  src="/hostel_song.png" 
                   alt="Orion Hostel Anthem Official Lyrics" 
-                  className="w-full h-auto block"
+                  className="w-full h-auto block object-contain"
                 />
               </div>
               
