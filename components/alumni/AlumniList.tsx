@@ -66,91 +66,93 @@ export function AlumniList({ alumni }: AlumniProps) {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 pt-2 border-t border-slate-100">
-                   <div className="space-y-1">
-                      <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
-                        <Briefcase className="w-2.5 h-2.5" />
-                        Occupation
-                      </div>
-                      <div className="text-[11px] font-bold text-slate-600 break-words">{person.job}</div>
-                   </div>
-                   <div className="space-y-1 text-right">
-                      <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest flex items-center justify-end gap-1.5">
-                        <Phone className="w-2.5 h-2.5" />
-                        Contact
-                      </div>
-                      <div className="text-[11px] font-bold text-slate-600">{person.phone || 'N/A'}</div>
-                   </div>
-                </div>
-
-                <div className="flex items-center justify-between gap-4 pt-4">
-                    {person.social_link ? (
-                       <a 
-                         href={person.social_link} 
-                         target="_blank" 
-                         rel="noopener noreferrer" 
-                         className="flex-1 flex items-center justify-center gap-3 py-5 bg-[#0F172A] text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl hover:bg-[#C8A96B] hover:text-[#0F172A] transition-all duration-500 font-jakarta"
-                       >
-                         <LinkIcon className="w-4 h-4" />
-                         Professional Profile
-                       </a>
-                    ) : (
-                       <div className="flex-1 py-5 bg-slate-50 text-slate-300 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] text-center border border-slate-100 italic font-jakarta">
-                         Identity Private
+                    <div className="space-y-1">
+                       <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-1.5">
+                         <Briefcase className="w-2.5 h-2.5" />
+                         Professional Role
                        </div>
-                    )}
-                </div>
-                </div>
-              </div>
-            )
-          })
-        ) : (
-          <div className="py-20 text-center bg-white rounded-[2rem] border border-slate-100 shadow-lg">
-            <Users className="w-12 h-12 text-slate-200 mx-auto mb-4" />
-            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest">No matching alumni</h3>
-          </div>
-        )}
-      </div>
+                       <div className="text-[11px] font-bold text-slate-600 break-words">
+                         {person.job} <span className="text-slate-400 font-medium lowercase">at</span> {person.company}
+                       </div>
+                    </div>
+                    <div className="space-y-1 text-right">
+                       <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest flex items-center justify-end gap-1.5">
+                         <Phone className="w-2.5 h-2.5" />
+                         Contact
+                       </div>
+                       <div className="text-[11px] font-bold text-slate-600">{person.phone || 'N/A'}</div>
+                    </div>
+                 </div>
 
-      <div className="hidden lg:block overflow-hidden bg-white border border-slate-200 rounded-[3rem] shadow-xl">
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="bg-slate-50 border-b border-slate-100">
-                <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta">Identity</th>
-                <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta">Graduation</th>
-                <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta">Communication</th>
-                <th className="px-10 py-8 text-[10px] font-black text-[#C8A96B] uppercase tracking-[0.3em] font-jakarta">Professional Info</th>
-                <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta text-center">Portfolio</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-100">
-              {filteredAlumni && filteredAlumni.length > 0 ? (
-                filteredAlumni.map((person) => {
-                  const initials = person.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
-                  return (
-                    <tr key={person.id} className="hover:bg-slate-50 even:bg-slate-50/40 transition-all duration-300 group relative border-b border-slate-50 last:border-0 overflow-hidden">
-                      <td className="px-10 py-5 relative z-10">
-                        <div className="flex items-center gap-5">
-                          <div className="w-14 h-14 bg-slate-50 text-slate-300 rounded-[1.25rem] flex items-center justify-center font-black text-sm border border-slate-50 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-500 shrink-0">
-                            {initials}
-                          </div>
-                          <span className="font-black text-[#0F172A] uppercase tracking-tight text-lg font-jakarta">{person.name}</span>
+                 <div className="flex items-center justify-between gap-4 pt-4">
+                     {person.social_link ? (
+                        <a 
+                          href={person.social_link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="flex-1 flex items-center justify-center gap-3 py-5 bg-[#0F172A] text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl hover:bg-[#C8A96B] hover:text-[#0F172A] transition-all duration-500 font-jakarta"
+                        >
+                          <LinkIcon className="w-4 h-4" />
+                          Professional Profile
+                        </a>
+                     ) : (
+                        <div className="flex-1 py-5 bg-slate-50 text-slate-300 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] text-center border border-slate-100 italic font-jakarta">
+                          Identity Private
                         </div>
-                      </td>
-                      <td className="px-10 py-8 relative z-10">
-                        <span className="text-[10px] text-[#C8A96B] font-black uppercase tracking-[0.2em] bg-slate-50 px-4 py-2 rounded-full border border-slate-50 whitespace-nowrap font-jakarta">
-                          {person.batch.replace(/(\d{4})-(\d{2})(\d{2})/, '$1-$3')} • {person.branch}
-                        </span>
-                      </td>
-                      <td className="px-10 py-5 relative z-10">
-                        <span className="text-sm font-bold text-slate-600 tracking-tight">{person.phone || 'N/A'}</span>
-                      </td>
-                      <td className="px-10 py-5 relative z-10">
-                        <div className="flex flex-col">
-                          <span className="text-sm font-bold text-slate-900 uppercase tracking-tight">{person.job}</span>
-                          <span className="text-xs text-slate-400 font-medium">at {person.company}</span>
-                        </div>
-                      </td>
+                     )}
+                 </div>
+                 </div>
+               </div>
+             )
+           })
+         ) : (
+           <div className="py-20 text-center bg-white rounded-[2rem] border border-slate-100 shadow-lg">
+             <Users className="w-12 h-12 text-slate-200 mx-auto mb-4" />
+             <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest">No matching alumni</h3>
+           </div>
+         )}
+       </div>
+
+       <div className="hidden lg:block overflow-hidden bg-white border border-slate-200 rounded-[3rem] shadow-xl">
+         <div className="overflow-x-auto">
+           <table className="w-full text-left border-collapse">
+             <thead>
+               <tr className="bg-slate-50 border-b border-slate-100">
+                 <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta">Identity</th>
+                 <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta">Graduation</th>
+                 <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta">Communication</th>
+                 <th className="px-10 py-8 text-[10px] font-black text-[#C8A96B] uppercase tracking-[0.3em] font-jakarta">Professional Info</th>
+                 <th className="px-10 py-8 text-[10px] font-black text-[#0F172A] uppercase tracking-[0.3em] font-jakarta text-center">Portfolio</th>
+               </tr>
+             </thead>
+             <tbody className="divide-y divide-slate-100">
+               {filteredAlumni && filteredAlumni.length > 0 ? (
+                 filteredAlumni.map((person) => {
+                   const initials = person.name.split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase();
+                   return (
+                     <tr key={person.id} className="hover:bg-slate-50 even:bg-slate-50/40 transition-all duration-300 group relative border-b border-slate-50 last:border-0 overflow-hidden">
+                       <td className="px-10 py-5 relative z-10">
+                         <div className="flex items-center gap-5">
+                           <div className="w-14 h-14 bg-slate-50 text-slate-300 rounded-[1.25rem] flex items-center justify-center font-black text-sm border border-slate-50 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-500 shrink-0">
+                             {initials}
+                           </div>
+                           <span className="font-black text-[#0F172A] uppercase tracking-tight text-lg font-jakarta">{person.name}</span>
+                         </div>
+                       </td>
+                       <td className="px-10 py-8 relative z-10">
+                         <span className="text-[10px] text-[#C8A96B] font-black uppercase tracking-[0.2em] bg-slate-50 px-4 py-2 rounded-full border border-slate-50 whitespace-nowrap font-jakarta">
+                           {person.batch.replace(/(\d{4})-(\d{2})(\d{2})/, '$1-$3')} • {person.branch}
+                         </span>
+                       </td>
+                       <td className="px-10 py-5 relative z-10">
+                         <span className="text-sm font-bold text-slate-600 tracking-tight">{person.phone || 'N/A'}</span>
+                       </td>
+                       <td className="px-10 py-5 relative z-10">
+                         <div className="flex flex-col">
+                           <span className="text-sm font-bold text-slate-900 uppercase tracking-tight">{person.job}</span>
+                           <span className="text-xs text-slate-400 font-medium">at {person.company}</span>
+                         </div>
+                       </td>
                       <td className="px-10 py-8 relative z-10 text-center">
                         {person.social_link ? (
                           <a 
