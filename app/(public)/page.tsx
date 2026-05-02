@@ -130,17 +130,18 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/40 via-transparent to-[#0F172A]"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto pt-32 pb-48 md:pt-40 md:pb-60 text-center">
-          <div className="inline-flex items-center px-7 py-3 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 text-white/90 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+        <div className="relative z-10 max-w-7xl mx-auto pt-24 pb-32 sm:pt-32 sm:pb-48 md:pt-40 md:pb-60 text-center">
+          <div className="inline-flex items-center px-7 py-3 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 text-white/90 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta mb-8 sm:mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
             Hostel No 7 • Jorhat Engineering College
           </div>
           
-          <div className="space-y-10 md:space-y-12">
-            <h1 className="text-[clamp(4.5rem,20vw,15rem)] font-black tracking-[-0.08em] leading-[0.8] cursor-default bg-gradient-to-b from-white via-white to-white/80 bg-clip-text text-transparent font-jakarta animate-in fade-in zoom-in-95 duration-1000 delay-200 select-none px-4">
+          <div className="space-y-8 sm:space-y-12">
+            <h1 className="text-[clamp(3.5rem,18vw,15rem)] font-black tracking-[-0.08em] leading-[0.8] cursor-default bg-gradient-to-b from-white via-white to-white/80 bg-clip-text text-transparent font-jakarta animate-in fade-in zoom-in-95 duration-1000 delay-200 select-none px-4">
               ORION
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-[1.75rem] text-white/60 font-medium max-w-2xl mx-auto px-6 leading-[1.6] font-jakarta tracking-tight animate-in fade-in slide-in-from-top-4 duration-1000 delay-500">
-              "We are not known by names but by a race — <br/><span className="text-[#C8A96B] font-black tracking-wide">Orionite: warriors within</span>"
+            <p className="text-base sm:text-xl md:text-2xl lg:text-[1.75rem] text-white/60 font-medium max-w-2xl mx-auto px-6 leading-[1.6] font-jakarta tracking-tight animate-in fade-in slide-in-from-top-4 duration-1000 delay-500 text-balance">
+              "We are not known by names <br className="block sm:hidden" /> but by a race — <br/>
+              <span className="text-[#C8A96B] font-black tracking-wide">Orionite: warriors within</span>"
             </p>
           </div>
         </div>
