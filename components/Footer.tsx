@@ -9,7 +9,7 @@ export default function Footer() {
           </div>
           
           <div className="space-y-6">
-            <p className="text-[10px] md:text-[11px] font-black text-white/40 uppercase tracking-[0.5em] font-jakarta leading-relaxed">
+            <p className="text-[10px] md:text-[11px] font-black text-white/40 uppercase tracking-[0.15em] font-jakarta leading-relaxed">
               Jorhat Engineering College <span className="mx-4 text-white/10">•</span> Hostel No. 7
             </p>
             <p className="text-sm md:text-base text-white/30 font-medium italic font-jakarta max-w-lg mx-auto opacity-80">
@@ -18,7 +18,7 @@ export default function Footer() {
           </div>
 
           <div className="pt-10 border-t border-white/5 w-full">
-            <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.4em] font-jakarta">
+            <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.15em] font-jakarta">
               &copy; {new Date().getFullYear()} ORION Portal <span className="mx-3">•</span> Legacy Since 1982
             </p>
           </div>

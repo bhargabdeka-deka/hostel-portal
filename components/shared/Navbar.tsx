@@ -71,7 +71,7 @@ export function Navbar() {
               <Link 
                 key={link.href} 
                 href={link.href}
-                className="text-[12px] font-bold uppercase tracking-[0.2em] transition-all duration-300 relative h-full flex items-center group font-jakarta"
+                className="text-[12px] font-bold uppercase tracking-[0.1em] transition-all duration-300 relative h-full flex items-center group font-jakarta"
               >
                 {(pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) && (
                   <div className="absolute bottom-8 left-0 right-0 h-px bg-[#C8A96B] shadow-[0_0_8px_rgba(200,169,107,0.4)]"></div>
@@ -112,7 +112,7 @@ export function Navbar() {
               key={link.href} 
               href={link.href}
               className={cn(
-                "text-2xl font-bold tracking-widest transition-all duration-500",
+                "text-2xl font-bold tracking-[0.1em] transition-all duration-500",
                 pathname === link.href ? "text-indigo-600 scale-110" : "text-slate-500",
                 isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               )}

@@ -36,7 +36,7 @@ export default async function MemoriesPage() {
       {/* Header Section */}
       <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 lg:pt-48 pb-16 space-y-12 text-center md:text-left">
         <div className="flex items-center justify-center md:justify-start gap-6">
-          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] md:text-[11px] font-black tracking-[0.15em] uppercase font-jakarta">
             The Orion Spirit
           </div>
         </div>
@@ -61,18 +61,18 @@ export default async function MemoriesPage() {
         {/* Submission Section - Now below the list, wider layout */}
         <div className="max-w-7xl mx-auto w-full space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
-            <div className="lg:col-span-2 bg-[#0F172A] rounded-[3.5rem] p-10 md:p-16 text-slate-50 shadow-2xl shadow-indigo-100/10 relative overflow-hidden group flex flex-col justify-center border border-slate-800">
+            <div className="lg:col-span-2 bg-[#0F172A] rounded-[3rem] sm:rounded-[3.5rem] p-8 sm:p-16 text-slate-50 shadow-2xl shadow-indigo-100/10 relative overflow-hidden group flex flex-col justify-center border border-slate-800">
               <div className="absolute top-0 right-0 p-12 opacity-[0.03] rotate-12 group-hover:rotate-45 transition-transform duration-1000 text-indigo-400">
                 <BookHeart className="w-64 h-64" />
               </div>
-              <div className="relative z-10 space-y-10">
-                <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.04em] leading-[1.1] sm:leading-[0.95] font-jakarta">Your story is part of ORION's history.</h3>
-                <p className="text-slate-400 font-medium text-lg lg:text-xl leading-relaxed max-w-md opacity-80">
+              <div className="relative z-10 space-y-8 sm:space-y-10">
+                <h3 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.04em] leading-[1.2] sm:leading-[0.95] font-jakarta">Your story is part of ORION's history.</h3>
+                <p className="text-slate-400 font-medium text-base sm:text-lg lg:text-xl leading-relaxed max-w-md opacity-80">
                   Every Orionite has a unique story. Share your late-night memories and hostel victories with the world.
                 </p>
-                <div className="pt-8 flex items-center gap-6">
-                  <div className="h-px w-20 bg-indigo-500/30" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.5em] text-indigo-400">Contribute to the legacy</span>
+                <div className="pt-10 sm:pt-12 flex items-center gap-4 sm:gap-6">
+                  <div className="h-px w-12 sm:w-20 bg-indigo-500/30" />
+                  <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.12em] sm:tracking-[0.15em] text-indigo-400">Contribute to the legacy</span>
                 </div>
               </div>
             </div>

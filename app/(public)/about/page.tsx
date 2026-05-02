@@ -28,7 +28,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-8 pt-32 pb-12 md:pt-40 md:pb-16 lg:pt-48 lg:pb-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div className="flex-1 space-y-10 text-center lg:text-left">
-          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] md:text-[11px] font-black tracking-[0.15em] uppercase font-jakarta">
             Established February 1982
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[1.1] sm:leading-[0.95] font-jakarta">
@@ -63,10 +63,10 @@ export default function AboutPage() {
                 <div className={`w-12 h-12 sm:w-16 h-16 rounded-2xl ${stat.iconBg} flex items-center justify-center ${stat.color} border border-slate-100 shadow-sm group-hover:scale-110 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-700`}>
                   {stat.icon}
                 </div>
-                <span className={`text-[9px] sm:text-[10px] font-black ${stat.color} uppercase tracking-[0.2em] font-jakarta opacity-60`}>{stat.tag}</span>
+                <span className={`text-[9px] sm:text-[10px] font-black ${stat.color} uppercase tracking-[0.1em] font-jakarta opacity-60`}>{stat.tag}</span>
               </div>
               <div className={`text-3xl sm:text-5xl md:text-6xl font-black ${stat.color} mb-2 sm:mb-3 tracking-tighter font-jakarta`}>{stat.value}</div>
-              <div className="text-[10px] sm:text-[11px] font-black text-slate-500 uppercase tracking-[0.3em] font-jakarta leading-none">{stat.label}</div>
+              <div className="text-[10px] sm:text-[11px] font-black text-slate-500 uppercase tracking-[0.12em] font-jakarta leading-none">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -89,33 +89,33 @@ export default function AboutPage() {
               Now carrying the name <span className="text-[#0F172A] font-bold">ORION</span>, the hostel is built upon a practical thought: "Magic is believing in yourself." Whether on the field or in the classroom, the Orionite spirit remains undefeated in its pursuit of excellence.
             </p>
             <p>
-              Our collective reflections find a voice in <span className="text-[#0F172A] font-bold">"Arunabh"</span>, the hostel wall magazine. For us, it's more than just a name—it's a race. We are <span className="text-[#0F172A] font-bold uppercase tracking-[0.2em] text-xs">Orionites</span>, the warriors within.
+              Our collective reflections find a voice in <span className="text-[#0F172A] font-bold">"Arunabh"</span>, the hostel wall magazine. For us, it's more than just a name—it's a race. We are <span className="text-[#0F172A] font-bold uppercase tracking-[0.1em] text-xs">Orionites</span>, the warriors within.
             </p>
           </div>
         </div>
 
-        <div className="bg-[#0F172A] border border-[#0F172A] rounded-[4rem] p-10 md:p-16 shadow-[0_40px_100px_-30px_rgba(15,23,42,0.3)] text-white relative overflow-hidden group">
+        <div className="bg-[#0F172A] border border-[#0F172A] rounded-[3rem] sm:rounded-[4rem] p-8 sm:p-16 shadow-[0_40px_100px_-30px_rgba(15,23,42,0.3)] text-white relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-bl-full -mr-32 -mt-32 group-hover:bg-white/10 transition-colors duration-1000"></div>
-          <div className="flex items-center gap-6 mb-12 relative z-10">
-            <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center shadow-sm shrink-0 border border-white/10 backdrop-blur-sm group-hover:scale-110 group-hover:bg-[#C8A96B] group-hover:text-[#0F172A] transition-all duration-700">
-              <Users2 className="w-7 h-7" />
+          <div className="flex items-center gap-4 sm:gap-6 mb-8 sm:mb-12 relative z-10">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/5 flex items-center justify-center shadow-sm shrink-0 border border-white/10 backdrop-blur-sm group-hover:scale-110 group-hover:bg-[#C8A96B] group-hover:text-[#0F172A] transition-all duration-700">
+              <Users2 className="w-6 h-6 sm:w-7 sm:h-7" />
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tighter font-jakarta">The Culture</h2>
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-black text-white tracking-tighter font-jakarta">The Culture</h2>
           </div>
-          <p className="text-white/60 leading-relaxed font-medium mb-12 text-lg font-sans relative z-10">
+          <p className="text-white/60 leading-relaxed font-medium mb-10 sm:mb-12 text-base sm:text-lg font-sans relative z-10 opacity-90">
             Hostel 7 is renowned for its unique "Orionite" culture—a blend of fierce loyalty, intellectual rigor, and celebratory spirit.
           </p>
-          <ul className="space-y-8 relative z-10">
+          <ul className="space-y-6 sm:space-y-8 relative z-10">
             {[
               "Annual 'Phoenix' Festival Participation",
               "Legacy of Inter-Hostel Sports Dominance",
               "Mentorship-driven Senior-Junior relationships"
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-5 text-white/90 font-bold text-xs md:text-sm uppercase tracking-[0.2em] font-jakarta group/item">
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover/item:bg-[#C8A96B]/20 transition-colors border border-white/5">
-                  <CheckCircle2 className="w-5 h-5 text-[#C8A96B]" />
+              <li key={i} className="flex items-center gap-4 sm:gap-5 text-white/90 font-bold text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] font-jakarta group/item">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 flex items-center justify-center group-hover/item:bg-[#C8A96B]/20 transition-colors border border-white/5 shrink-0">
+                  <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#C8A96B]" />
                 </div>
-                {item}
+                <span className="leading-tight">{item}</span>
               </li>
             ))}
           </ul>
@@ -125,7 +125,7 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-8 py-20">
         <div className="bg-white border border-slate-100/80 rounded-[4rem] md:rounded-[5rem] p-12 md:p-24 lg:p-32 relative overflow-hidden shadow-[0_60px_120px_-40px_rgba(15,23,42,0.08)]">
           <div className="max-w-5xl space-y-12 relative z-10">
-            <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] font-black tracking-[0.4em] uppercase font-jakarta">
+            <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] font-black tracking-[0.15em] uppercase font-jakarta">
               Infrastructure
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-black text-[#0F172A] tracking-[-0.05em] leading-[1.1] sm:leading-[0.95] font-jakarta">
@@ -146,7 +146,7 @@ export default function AboutPage() {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {["Table Tennis", "Chess", "Cricket", "Football", "Volleyball", "Badminton"].map((sport) => (
-                    <span key={sport} className="px-5 py-2 bg-slate-50 border border-slate-100 rounded-full text-[9px] font-black uppercase text-slate-500 tracking-[0.2em] shadow-sm hover:bg-white hover:text-[#C8A96B] transition-colors cursor-default">
+                    <span key={sport} className="px-5 py-2 bg-slate-50 border border-slate-100 rounded-full text-[9px] font-black uppercase text-slate-500 tracking-[0.12em] shadow-sm hover:bg-white hover:text-[#C8A96B] transition-colors cursor-default">
                       {sport}
                     </span>
                   ))}
@@ -163,11 +163,11 @@ export default function AboutPage() {
               ].map((item, i) => (
                 <div key={i} className={`bg-slate-50/40 p-10 rounded-[3rem] border ${item.border} shadow-sm text-center space-y-8 group transition-all duration-700 hover:bg-white hover:shadow-[0_40px_80px_-20px_rgba(15,23,42,0.12)]`}>
                   <div className="flex items-center justify-between gap-4">
-                    <span className={`text-[10px] font-black ${item.color} uppercase tracking-[0.2em] font-jakarta opacity-60`}>{item.tag}</span>
+                    <span className={`text-[10px] font-black ${item.color} uppercase tracking-[0.12em] font-jakarta opacity-60`}>{item.tag}</span>
                   </div>
                   <div className="space-y-3 text-left">
                     <div className={`text-lg font-black ${item.color} leading-tight font-jakarta tracking-tight`}>{item.label}</div>
-                    <div className={`text-[11px] font-black ${item.color} tracking-[0.2em] uppercase opacity-60 font-jakarta`}>{item.sub}</div>
+                    <div className={`text-[11px] font-black ${item.color} tracking-[0.12em] uppercase opacity-60 font-jakarta`}>{item.sub}</div>
                   </div>
                 </div>
               ))}
@@ -183,7 +183,7 @@ export default function AboutPage() {
           Reach out to us for any queries regarding admissions, rules, or alumni registration.
         </p>
         <div className="flex justify-center pt-10">
-          <Link href="/contact" className="w-full sm:w-auto bg-slate-900 text-white px-16 py-6 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] hover:bg-slate-800 transition shadow-2xl hover:shadow-slate-200">
+          <Link href="/contact" className="w-full sm:w-auto bg-slate-900 text-white px-16 py-6 rounded-2xl font-bold text-xs uppercase tracking-[0.15em] hover:bg-slate-800 transition shadow-2xl hover:shadow-slate-200">
             Contact Us
           </Link>
         </div>

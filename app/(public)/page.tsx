@@ -131,7 +131,7 @@ export default async function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto pt-24 pb-32 sm:pt-32 sm:pb-48 md:pt-40 md:pb-60 text-center">
-          <div className="inline-flex items-center px-4 sm:px-7 py-2 sm:py-3 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 text-white/90 text-[clamp(8px,2.4vw,11px)] font-bold tracking-[0.1em] sm:tracking-[0.4em] uppercase font-jakarta mb-6 sm:mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000 whitespace-nowrap">
+          <div className="inline-flex items-center px-4 sm:px-7 py-2 sm:py-3 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 text-white/90 text-[clamp(8px,2.4vw,11px)] font-bold tracking-[0.05em] sm:tracking-[0.15em] uppercase font-jakarta mb-6 sm:mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000 whitespace-nowrap">
             Hostel No 7 • Jorhat Engineering College
           </div>
           
@@ -172,14 +172,14 @@ export default async function HomePage() {
 
         <div className="flex items-center justify-center gap-6 sm:gap-8 pt-16 sm:pt-24 pb-8 sm:pb-12">
           <div className="h-px w-16 sm:w-24 bg-slate-200/80"></div>
-          <div className="text-[10px] sm:text-[11px] font-black text-slate-900 uppercase tracking-[0.3em] sm:tracking-[0.6em] font-jakarta">The Orionite Way</div>
+          <div className="text-[10px] sm:text-[11px] font-black text-slate-900 uppercase tracking-[0.15em] sm:tracking-[0.2em] font-jakarta">The Orionite Way</div>
           <div className="h-px w-16 sm:w-24 bg-slate-200/80"></div>
         </div>
       </section>
       <section className="max-w-7xl mx-auto px-8 py-20 text-center">
         <div className="flex items-center justify-center gap-6 sm:gap-10 py-16 sm:py-24 opacity-80 sm:opacity-60">
           <div className="h-px w-20 sm:w-32 bg-slate-300"></div>
-          <h2 className="text-[11px] font-black text-slate-900 uppercase tracking-[0.4em] sm:tracking-[1em] font-jakarta pl-4 whitespace-nowrap">The Spirit</h2>
+          <h2 className="text-[11px] font-black text-slate-900 uppercase tracking-[0.1em] sm:tracking-[0.15em] font-jakarta pl-4 whitespace-nowrap">The Spirit</h2>
           <div className="h-px w-20 sm:w-32 bg-slate-300"></div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-14">
@@ -195,7 +195,7 @@ export default async function HomePage() {
               )}></div>
               <div className="flex items-center justify-between mb-6 sm:mb-8 relative z-10">
                 <div className={cn(spirit.accent, spirit.iconBg, "p-4 sm:p-5 rounded-[1.25rem] sm:rounded-[1.5rem] inline-block border border-slate-100 group-hover:scale-110 group-hover:text-white transition-all duration-1000 shadow-sm", spirit.hoverIcon)}>{spirit.icon}</div>
-                <span className={cn("text-[10px] font-black tracking-[0.3em] font-jakarta uppercase opacity-80", spirit.tagColor)}>{spirit.tag}</span>
+                <span className={cn("text-[10px] font-black tracking-[0.15em] font-jakarta uppercase opacity-80", spirit.tagColor)}>{spirit.tag}</span>
               </div>
               <div className="space-y-4 sm:space-y-6 relative z-10">
                 <h3 className={`text-2xl sm:text-3xl lg:text-5xl font-black text-[#0F172A] tracking-[-0.05em] font-jakarta leading-[1.1] break-words`}>{spirit.title}</h3>
@@ -222,7 +222,7 @@ export default async function HomePage() {
             typedNotices.map((notice: Notice, i: number) => (
               <div key={notice.id} className={`p-8 sm:p-14 hover:bg-slate-50/50 transition-all cursor-default group ${i !== typedNotices.length - 1 ? 'border-b border-slate-100' : ''}`}>
                 <div className="flex items-center justify-between gap-4 mb-4">
-                  <div className="text-[10px] font-black text-slate-400 flex items-center gap-4 tracking-[0.25em] uppercase font-jakarta">
+                  <div className="text-[10px] font-black text-slate-400 flex items-center gap-4 tracking-[0.12em] uppercase font-jakarta">
                     <Calendar className="w-3.5 h-3.5 opacity-40" />
                     {new Date(notice.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                   </div>
@@ -243,8 +243,8 @@ export default async function HomePage() {
               </div>
             </div>
           )}
-          <Link href="/notices" className="block w-full py-10 sm:py-12 bg-[#0F172A] text-center text-[10px] font-black uppercase tracking-[0.6em] sm:tracking-[1em] text-white hover:bg-[#1E293B] transition-all font-jakarta border-t border-slate-800 group/link">
-            <span className="group-hover:tracking-[1.2em] transition-all duration-700">View Archives</span>
+          <Link href="/notices" className="block w-full py-10 sm:py-12 bg-[#0F172A] text-center text-[10px] font-black uppercase tracking-[0.1em] sm:tracking-[0.15em] text-white hover:bg-[#1E293B] transition-all font-jakarta border-t border-slate-800 group/link">
+            <span className="group-hover:tracking-[0.4em] transition-all duration-700">View Archives</span>
           </Link>
         </div>
       </section>

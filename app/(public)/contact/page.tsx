@@ -74,7 +74,7 @@ export default async function ContactPage() {
       {/* Header Section */}
       <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-12 md:pb-16 text-center space-y-12">
         <div className="flex items-center justify-center gap-6">
-          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-indigo-600 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-indigo-600 text-[10px] md:text-[11px] font-black tracking-[0.15em] uppercase font-jakarta">
             Contact Information
           </div>
         </div>
@@ -107,7 +107,7 @@ export default async function ContactPage() {
                   {c.icon}
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-[11px] font-black text-slate-500 uppercase tracking-[0.3em] font-jakarta">{c.title}</h3>
+                  <h3 className="text-[11px] font-black text-slate-500 uppercase tracking-[0.12em] font-jakarta">{c.title}</h3>
                   <p className="text-lg md:text-xl font-black text-[#0F172A] leading-tight tracking-tight font-jakarta">{c.detail}</p>
                 </div>
               </Wrapper>
@@ -116,39 +116,39 @@ export default async function ContactPage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-        <div className="bg-[#0F172A] border border-slate-800 rounded-[2.5rem] p-10 md:p-16 lg:p-20 relative overflow-hidden shadow-xl">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+        <div className="bg-[#0F172A] border border-slate-800 rounded-[2rem] sm:rounded-[2.5rem] p-8 sm:p-16 lg:p-20 relative overflow-hidden shadow-xl">
           {/* Subtle Institutional Accent */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           
-          <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-            <div className="flex-1 space-y-8 text-center lg:text-left">
-              <div className="inline-flex items-center px-5 py-2 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 text-[10px] font-bold tracking-[0.3em] uppercase font-jakarta">
+          <div className="relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
+            <div className="flex-1 space-y-6 sm:space-y-8 text-center lg:text-left">
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 text-[9px] sm:text-[10px] font-bold tracking-[0.1em] sm:tracking-[0.15em] uppercase font-jakarta">
                 Administration
               </div>
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] sm:leading-tight font-jakarta">
+              <h2 className="text-2xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.2] sm:leading-tight font-jakarta">
                 Office of the <br className="hidden sm:block" /><span className="text-indigo-400">Superintendent</span>
               </h2>
-              <p className="text-slate-400 font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-base md:text-lg">
+              <p className="text-slate-400 font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-sm sm:text-base md:text-lg opacity-80">
                 Official queries regarding admissions, hostel residency, and administrative matters should be directed to the Superintendent's office.
               </p>
             </div>
             
             <div className="w-full lg:w-auto">
-              <div className="bg-slate-900/40 border border-slate-800 rounded-[2rem] p-10 md:p-12 min-w-0 md:min-w-[450px] shadow-lg space-y-10">
-                <div className="space-y-3">
-                  <div className="text-[10px] font-bold text-indigo-400 uppercase tracking-[0.2em] font-jakarta">Current Superintendent</div>
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight font-jakarta leading-tight">Mr. Jiten Borgohain</div>
+              <div className="bg-slate-900/40 border border-slate-800 rounded-[1.5rem] sm:rounded-[2rem] p-6 sm:p-12 min-w-0 md:min-w-[450px] shadow-lg space-y-8 sm:space-y-10">
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="text-[9px] sm:text-[10px] font-bold text-indigo-400 uppercase tracking-[0.1em] sm:tracking-[0.12em] font-jakarta">Current Superintendent</div>
+                  <div className="text-xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight font-jakarta leading-tight">Mr. Jiten Borgohain</div>
                 </div>
                 
-                <div className="h-px w-full bg-slate-800" />
+                <div className="h-px w-full bg-slate-800/50" />
                 
                 <a 
                   href="tel:+919101481714" 
-                  className="flex items-center justify-center gap-4 py-5 px-8 bg-indigo-600 text-white rounded-xl font-bold text-[11px] uppercase tracking-[0.2em] hover:bg-indigo-700 transition-colors active:scale-95 shadow-lg shadow-indigo-900/20"
+                  className="flex items-center justify-center gap-3 sm:gap-4 py-4 sm:py-5 px-4 sm:px-8 bg-indigo-600 text-white rounded-xl font-bold text-[10px] sm:text-[11px] uppercase tracking-[0.1em] sm:tracking-[0.12em] hover:bg-indigo-700 transition-colors active:scale-95 shadow-lg shadow-indigo-900/20 w-full whitespace-nowrap"
                 >
-                  <Phone className="w-4 h-4" />
-                  +91 91014 81714
+                  <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                  <span className="truncate">+91 91014 81714</span>
                 </a>
               </div>
             </div>
@@ -159,7 +159,7 @@ export default async function ContactPage() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="bg-white border border-slate-100 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 space-y-12 md:space-y-16 shadow-xl">
           <div className="text-center space-y-6">
-            <div className="text-[10px] font-bold text-indigo-600 uppercase tracking-[0.4em] font-jakarta">Orion Leadership</div>
+            <div className="text-[10px] font-bold text-indigo-600 uppercase tracking-[0.15em] font-jakarta">Orion Leadership</div>
             <h2 className="text-3xl sm:text-5xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[1.1] sm:leading-[0.95] font-jakarta">Current Monitors</h2>
           </div>
 
@@ -184,7 +184,7 @@ export default async function ContactPage() {
                     </div>
                     
                     <div className="space-y-3">
-                      <div className={cn("text-[12px] font-black tracking-[0.2em] font-jakarta uppercase", color.text)}>
+                      <div className={cn("text-[12px] font-black tracking-[0.1em] font-jakarta uppercase", color.text)}>
                         {m.role}
                       </div>
                       <div className="text-2xl font-black text-[#0F172A] tracking-tighter font-jakarta group-hover:text-[#C8A96B] transition-colors leading-tight">
@@ -193,7 +193,7 @@ export default async function ContactPage() {
                     </div>
                     
                     <div className="w-full pt-8 border-t border-slate-100 space-y-4">
-                      <div className="flex items-center justify-center gap-3 text-slate-600 text-[11px] font-black uppercase tracking-[0.3em] font-jakarta">
+                      <div className="flex items-center justify-center gap-3 text-slate-600 text-[11px] font-black uppercase tracking-[0.12em] font-jakarta">
                         Room {m.room}
                       </div>
                       {m.phone && (

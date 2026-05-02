@@ -21,7 +21,7 @@ export function Footer() {
           {/* RIGHT: Info & Legal */}
           <div className="flex flex-col gap-12 md:text-right md:items-end">
             <div className="space-y-4">
-              <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] font-jakarta">Location</p>
+              <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.15em] font-jakarta">Location</p>
               <a 
                 href="https://maps.app.goo.gl/93zEARsiTheLytSk6" 
                 target="_blank" 
@@ -41,7 +41,7 @@ export function Footer() {
         </div>
         
         <div className="pt-12 border-t border-white/[0.03] flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-[#C8A96B]/80 text-[10px] font-black tracking-[0.3em] sm:tracking-[0.6em] font-jakarta uppercase text-center md:text-left">
+          <p className="text-[#C8A96B]/80 text-[10px] font-black tracking-[0.15em] sm:tracking-[0.25em] font-jakarta uppercase text-center md:text-left">
             The Orionite Legacy • Established 1982
           </p>
           <div className="hidden md:flex items-center gap-4 text-white/20">

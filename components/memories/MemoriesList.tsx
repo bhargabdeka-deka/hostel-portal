@@ -39,7 +39,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                   <span className="block text-4xl font-black text-[#0F172A] leading-none font-jakarta tracking-[-0.08em]">
                     {new Date(memory.created_at).toLocaleDateString('en-US', { day: '2-digit' })}
                   </span>
-                  <span className="block text-[11px] font-black text-[#C8A96B] uppercase tracking-[0.4em] mt-3 font-jakarta">
+                  <span className="block text-[11px] font-black text-[#C8A96B] uppercase tracking-[0.15em] mt-3 font-jakarta">
                     {new Date(memory.created_at).toLocaleDateString('en-US', { month: 'short' })}
                   </span>
                 </div>
@@ -54,7 +54,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                     {memory.story}
                   </p>
                   {memory.story.length > 120 && (
-                    <span className="text-[#C8A96B] font-black text-[10px] uppercase tracking-[0.3em] flex items-center gap-3 group-hover:gap-4 transition-all font-jakarta">
+                    <span className="text-[#C8A96B] font-black text-[10px] uppercase tracking-[0.12em] flex items-center gap-3 group-hover:gap-4 transition-all font-jakarta">
                       Read full story <ChevronRight className="w-4 h-4 opacity-50" />
                     </span>
                   )}
@@ -66,7 +66,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                 <div className="flex items-center gap-6 text-right">
                   <div className="hidden sm:block">
                     <span className="block text-base font-black text-[#0F172A] tracking-tight font-jakarta leading-none">{memory.full_name}</span>
-                    <span className="block text-[10px] text-slate-500 font-black uppercase tracking-[0.3em] mt-2 font-jakarta opacity-80">
+                    <span className="block text-[10px] text-slate-500 font-black uppercase tracking-[0.12em] mt-2 font-jakarta opacity-80">
                       {memory.batch} {memory.branch && ` • ${memory.branch}`}
                     </span>
                   </div>
@@ -89,7 +89,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
               <BookOpen className="w-8 h-8 text-slate-200" />
             </div>
             <div className="space-y-1">
-              <h4 className="text-sm font-bold text-slate-500 uppercase tracking-[0.2em]">No memories found</h4>
+              <h4 className="text-sm font-bold text-slate-500 uppercase tracking-[0.12em]">No memories found</h4>
               <p className="text-slate-400 font-medium text-xs tracking-tight font-sans">Be the first one to share a story!</p>
             </div>
           </div>
@@ -120,7 +120,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                     </div>
                     <div className="flex flex-col">
                       <span className="text-[15px] font-bold text-slate-900 tracking-tight">{selectedMemory.full_name}</span>
-                      <span className="text-[11px] text-slate-500 font-bold uppercase tracking-widest">
+                      <span className="text-[11px] text-slate-500 font-bold uppercase tracking-[0.1em]">
                         Batch {selectedMemory.batch} {selectedMemory.branch && ` • ${selectedMemory.branch}`}
                       </span>
                     </div>
@@ -130,7 +130,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                   )}
                   {selectedMemory.room_number && (
                     <div className="flex flex-col">
-                      <span className="text-[11px] text-slate-400 font-bold uppercase tracking-widest">Room</span>
+                      <span className="text-[11px] text-slate-400 font-bold uppercase tracking-[0.1em]">Room</span>
                       <span className="text-[15px] font-bold text-slate-900 tracking-tight">{selectedMemory.room_number}</span>
                     </div>
                   )}
@@ -149,7 +149,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
                   Submitted on {new Date(selectedMemory.created_at).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Part of the ORION Legacy</span>
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.1em]">Part of the ORION Legacy</span>
                 </div>
               </div>
             </div>
