@@ -28,17 +28,17 @@ export default async function AllNoticesPage() {
 
   return (
     <div className="max-w-5xl mx-auto pt-32 pb-16 md:pt-40 md:pb-24 px-6 overflow-x-hidden">
-      <div className="mb-12 md:mb-16">
-        <Link href="/" className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-bold text-[11px] tracking-tight mb-8 transition-colors font-sans">
+      <div className="mb-12 md:mb-20">
+        <Link href="/" className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-bold text-[11px] tracking-tight mb-12 transition-colors font-sans">
           <ArrowLeft className="w-4 h-4" />
           Back to home
         </Link>
-        <div className="flex items-center gap-4 mb-4">
-          <div className="p-3 bg-indigo-50 text-indigo-600 rounded-2xl shrink-0">
-            <Bell className="w-6 h-6" />
+        <div className="flex items-center gap-6 mb-10">
+          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-indigo-600 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+            Institutional Bulletin
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-none font-sans">Official notice board</h1>
         </div>
+        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[0.95] font-jakarta">Official notice board</h1>
         <p className="text-base md:text-lg text-slate-500 font-medium max-w-2xl leading-relaxed">
           Stay informed with the latest updates, event announcements, and official news from the ORION Hostel administration.
         </p>

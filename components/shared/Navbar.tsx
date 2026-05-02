@@ -58,7 +58,7 @@ export function Navbar() {
               />
             </div>
             <span className={cn(
-              "tracking-[-0.03em] transition-all duration-500",
+              "tracking-[-0.04em] transition-all duration-500 text-xl md:text-2xl lg:text-3xl",
               (isHome && !isOpen) ? "bg-gradient-to-br from-white via-white/90 to-white/70 bg-clip-text text-transparent drop-shadow-sm" : "text-[#0F172A]"
             )}>
               Orion
@@ -66,21 +66,21 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex gap-8 xl:gap-10 items-center h-full">
+          <div className="hidden lg:flex gap-10 xl:gap-14 items-center h-full">
             {navLinks.map((link) => (
               <Link 
                 key={link.href} 
                 href={link.href}
-                className="text-[13px] font-bold uppercase tracking-[0.15em] transition-all duration-300 relative h-full flex items-center group font-jakarta"
+                className="text-[12px] font-bold uppercase tracking-[0.2em] transition-all duration-300 relative h-full flex items-center group font-jakarta"
               >
                 {(pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) && (
-                  <div className="absolute bottom-8 left-0 right-0 h-0.5 bg-[#C8A96B] rounded-full shadow-[0_0_10px_rgba(200,169,107,0.5)]"></div>
+                  <div className="absolute bottom-8 left-0 right-0 h-px bg-[#C8A96B] shadow-[0_0_8px_rgba(200,169,107,0.4)]"></div>
                 )}
                 <span className={cn(
                   "transition-all duration-500",
                   (pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) 
                     ? 'text-[#C8A96B]' 
-                    : (isHome && !isOpen) ? 'text-white/70 group-hover:text-white' : 'text-slate-500 group-hover:text-[#0F172A]'
+                    : (isHome && !isOpen) ? 'text-white/60 group-hover:text-white group-hover:scale-105' : 'text-slate-500 group-hover:text-[#0F172A] group-hover:scale-105'
                 )}>
                   {link.name}
                 </span>

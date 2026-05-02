@@ -46,7 +46,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
               </div>
 
               <div className="flex-1 space-y-4 relative z-10">
-                <h3 className="text-3xl md:text-4xl font-black text-[#0F172A] tracking-[-0.04em] leading-tight group-hover:text-[#C8A96B] transition-all duration-500 line-clamp-1 font-jakarta">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#0F172A] tracking-[-0.04em] leading-tight group-hover:text-[#C8A96B] transition-all duration-500 line-clamp-2 font-jakarta">
                   {memory.title}
                 </h3>
                 <div className="space-y-3">
@@ -110,7 +110,7 @@ export function MemoriesList({ memories }: { memories: Memory[] }) {
 
             <div className="space-y-10">
               <div className="space-y-6">
-                <h2 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tighter leading-[1.1]">
+                <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tighter leading-[1.1]">
                   {selectedMemory.title}
                 </h2>
                 <div className="flex items-center gap-6 pt-4">

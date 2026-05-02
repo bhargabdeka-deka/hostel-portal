@@ -68,8 +68,8 @@ export default function AlumniRegistration() {
             <div className="inline-flex p-4 bg-indigo-600/10 rounded-2xl mb-8">
               <GraduationCap className="w-10 h-10 text-indigo-600" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-8 leading-tight">
-              Join the <span className="text-indigo-600">Alumni Network</span>
+            <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[0.95] mb-8 font-jakarta">
+              Join the <span className="text-indigo-600">Network.</span>
             </h1>
             <p className="text-xl text-slate-600 mb-10 leading-relaxed">
               Stay connected with ORION Hostel. Join our network to mentor current residents, network with peers, and stay updated with alumni events.

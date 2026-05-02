@@ -72,13 +72,13 @@ export default async function ContactPage() {
   return (
     <main className="bg-transparent min-h-screen selection:bg-rose-500/20 overflow-x-hidden">
       {/* Header Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-12 md:pb-16 text-center space-y-6">
+      <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-12 md:pb-16 text-center space-y-12">
         <div className="flex items-center justify-center gap-6">
-          <div className="h-px w-10 md:w-16 bg-[#C8A96B]/30"></div>
-          <span className="text-[11px] md:text-[12px] font-bold text-[#C8A96B] uppercase tracking-[0.3em] font-jakarta">Contact Information</span>
-          <div className="h-px w-10 md:w-16 bg-[#C8A96B]/30"></div>
+          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-indigo-600 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+            Contact Information
+          </div>
         </div>
-        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.05em] leading-none font-jakarta">Connect.</h1>
+        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[1.1] sm:leading-[0.95] font-jakarta">Connect</h1>
         <p className="text-base md:text-xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed px-4">
           Have questions about admission or residency? Our administration team and monitors are here to assist you.
         </p>
@@ -116,34 +116,38 @@ export default async function ContactPage() {
         </div>
       </section>
 
-      {/* Superintendent Section */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="bg-[#0F172A] border border-white/5 rounded-[2.5rem] md:rounded-[3.5rem] p-12 md:p-24 lg:p-28 relative overflow-hidden shadow-[0_40px_100px_-20px_rgba(15,23,42,0.4)]">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
-          <div className="relative z-10 flex flex-col lg:flex-row items-center gap-16 md:gap-24">
-            <div className="flex-1 space-y-12 text-center lg:text-left">
-              <div className="inline-flex items-center px-6 py-2 rounded-full bg-white/[0.03] border border-white/10 text-white/40 text-[10px] font-black tracking-[0.4em] uppercase font-jakarta">
-                Administrative Leadership
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-20">
+        <div className="bg-[#0F172A] border border-slate-800 rounded-[2.5rem] p-10 md:p-16 lg:p-20 relative overflow-hidden shadow-xl">
+          {/* Subtle Institutional Accent */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          
+          <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+            <div className="flex-1 space-y-8 text-center lg:text-left">
+              <div className="inline-flex items-center px-5 py-2 rounded-full bg-slate-800/50 border border-slate-700 text-slate-400 text-[10px] font-bold tracking-[0.3em] uppercase font-jakarta">
+                Administration
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-[-0.04em] leading-[1.05] font-jakarta">
-                Office of the <br/><span className="text-[#C8A96B] font-black italic">Superintendent</span>
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] sm:leading-tight font-jakarta">
+                Office of the <br className="hidden sm:block" /><span className="text-indigo-400">Superintendent</span>
               </h2>
-              <p className="text-white/50 font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-base md:text-lg font-sans">
-                For official queries, admission approvals, and high-level administrative matters, please contact the Superintendent directly.
+              <p className="text-slate-400 font-medium leading-relaxed max-w-md mx-auto lg:mx-0 text-base md:text-lg">
+                Official queries regarding admissions, hostel residency, and administrative matters should be directed to the Superintendent's office.
               </p>
             </div>
             
             <div className="w-full lg:w-auto">
-              <div className="bg-[#1E293B]/30 border border-white/5 rounded-[2.5rem] p-10 md:p-14 min-w-0 md:min-w-[480px] shadow-inner space-y-12">
-                <div className="space-y-4">
-                  <div className="text-[10px] font-black text-[#C8A96B] uppercase tracking-[0.3em] font-jakarta opacity-80">Current Superintendent</div>
-                  <div className="text-3xl md:text-5xl font-black text-white tracking-tighter font-jakarta">Mr. Jiten Borgohain</div>
+              <div className="bg-slate-900/40 border border-slate-800 rounded-[2rem] p-10 md:p-12 min-w-0 md:min-w-[450px] shadow-lg space-y-10">
+                <div className="space-y-3">
+                  <div className="text-[10px] font-bold text-indigo-400 uppercase tracking-[0.2em] font-jakarta">Current Superintendent</div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight font-jakarta leading-tight">Mr. Jiten Borgohain</div>
                 </div>
+                
+                <div className="h-px w-full bg-slate-800" />
+                
                 <a 
                   href="tel:+919101481714" 
-                  className="flex items-center justify-center gap-5 py-6 px-8 bg-[#C8A96B] text-[#0F172A] rounded-xl font-black text-[11px] uppercase tracking-[0.3em] hover:bg-white transition-colors active:scale-95 shadow-[0_20px_40px_-10px_rgba(200,169,107,0.3)]"
+                  className="flex items-center justify-center gap-4 py-5 px-8 bg-indigo-600 text-white rounded-xl font-bold text-[11px] uppercase tracking-[0.2em] hover:bg-indigo-700 transition-colors active:scale-95 shadow-lg shadow-indigo-900/20"
                 >
-                  <Phone className="w-4 h-4 fill-current" />
+                  <Phone className="w-4 h-4" />
                   +91 91014 81714
                 </a>
               </div>
@@ -155,8 +159,8 @@ export default async function ContactPage() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="bg-white border border-slate-100 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 lg:p-20 space-y-12 md:space-y-16 shadow-xl">
           <div className="text-center space-y-6">
-            <div className="text-[10px] font-bold text-[#C8A96B] uppercase tracking-[0.4em] font-jakarta">Orion Leadership</div>
-            <h2 className="text-3xl md:text-6xl font-black text-[#0F172A] tracking-tighter font-jakarta">Current Monitors</h2>
+            <div className="text-[10px] font-bold text-indigo-600 uppercase tracking-[0.4em] font-jakarta">Orion Leadership</div>
+            <h2 className="text-3xl sm:text-5xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[1.1] sm:leading-[0.95] font-jakarta">Current Monitors</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -180,7 +184,7 @@ export default async function ContactPage() {
                     </div>
                     
                     <div className="space-y-3">
-                      <div className="text-[12px] font-black text-[#C8A96B] tracking-[0.2em] font-jakarta uppercase">
+                      <div className={cn("text-[12px] font-black tracking-[0.2em] font-jakarta uppercase", color.text)}>
                         {m.role}
                       </div>
                       <div className="text-2xl font-black text-[#0F172A] tracking-tighter font-jakarta group-hover:text-[#C8A96B] transition-colors leading-tight">
@@ -206,7 +210,7 @@ export default async function ContactPage() {
                 );
               })
             ) : (
-              <div className="col-span-full py-12 text-center text-slate-500 italic font-medium">
+              <div className="col-span-full py-12 text-center text-slate-500 font-medium">
                 Leadership roles for the current semester are being finalized.
               </div>
             )}

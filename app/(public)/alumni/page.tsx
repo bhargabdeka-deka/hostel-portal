@@ -32,15 +32,16 @@ export default async function AlumniPage() {
   return (
     <main className="bg-transparent min-h-screen selection:bg-indigo-500/20">
       {/* Header Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-16 space-y-6">
+      <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-16 space-y-10">
         <div className="flex items-center gap-4">
-          <div className="h-px w-12 bg-indigo-200"></div>
-          <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-[0.3em]">Our Community</span>
+          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+            Our Community
+          </div>
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight uppercase">
+        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[1.1] sm:leading-[0.95] font-jakarta">
           Global <span className="text-blue-600">Alumni</span> Network
         </h1>
-        <p className="text-xl text-slate-600 font-medium max-w-2xl leading-relaxed">
+        <p className="text-lg sm:text-xl text-slate-600 font-medium max-w-2xl leading-relaxed">
           The ORION legacy lives on through our residents who are now leading in top global organizations. Connect, network, and grow with the Orionite family.
         </p>
       </section>

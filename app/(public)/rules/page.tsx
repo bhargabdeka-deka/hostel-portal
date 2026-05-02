@@ -46,10 +46,12 @@ export default function RulesPage() {
     <main className="bg-transparent min-h-screen selection:bg-amber-500/20">
     <div className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-5xl mx-auto overflow-x-hidden">
       <div className="text-center mb-24 md:mb-32">
-        <div className="inline-flex items-center justify-center gap-6 px-5 py-2 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-bold tracking-[0.3em] uppercase mb-10 text-[#C8A96B] font-jakarta">
-          Institutional Code of Conduct
+        <div className="flex items-center justify-center gap-6">
+          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-indigo-600 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+            Institutional Code of Conduct
+          </div>
         </div>
-        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.05em] mb-8 font-jakarta">Hostel Rules.</h1>
+        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[1.1] sm:leading-[0.95] mt-10 mb-8 font-jakarta">Hostel Rules</h1>
         <p className="text-base md:text-xl text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed px-4 font-sans">
           Maintaining a respectful and organized environment is key to our community success. Please adhere to the following guidelines.
         </p>
@@ -70,7 +72,7 @@ export default function RulesPage() {
                 {rule.icon}
               </div>
               <div className="space-y-4">
-                <h3 className="text-2xl md:text-3xl font-black text-[#0F172A] tracking-tight font-jakarta">{rule.title}</h3>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0F172A] tracking-[-0.04em] font-jakarta leading-tight">{rule.title}</h3>
                 <p className="text-base md:text-lg text-slate-500 font-medium leading-relaxed font-sans">{rule.details}</p>
               </div>
             </div>

@@ -18,6 +18,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
     const data = {
       fullName: formData.get('fullName') as string,
       batch: formData.get('batch') as string,
+      branch: formData.get('branch') as string,
       roomNumber: formData.get('roomNumber') as string,
       title: formData.get('title') as string,
       story: formData.get('story') as string,
@@ -54,7 +55,7 @@ export function MemorySubmissionForm({ onClose }: { onClose?: () => void }) {
     <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100">
       <div className="p-6 md:p-8 border-b border-slate-50 flex items-center justify-between">
         <div className="space-y-3">
-          <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-[-0.03em] font-jakarta">Share a Memory</h2>
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-[-0.03em] font-jakarta">Share a Memory</h2>
           <div className="inline-flex items-center px-5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100/50 text-indigo-600 text-[10px] font-black uppercase tracking-[0.25em] font-jakarta">
             Contribute to the ORION Legacy
           </div>

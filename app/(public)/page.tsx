@@ -52,31 +52,25 @@ export default async function HomePage() {
 
   const stats = [
     { 
-      tag: 'Legacy', 
-      label: '42+ Years of Brotherhood', 
       value: '1982', 
-      icon: <Calendar className="w-5 h-5" />, 
-      color: 'text-slate-700', 
+      icon: <Calendar className="w-6 h-6" />, 
+      color: 'text-slate-900', 
       bgColor: 'bg-white', 
       iconBg: 'bg-slate-50',
     },
     { 
-      tag: 'Community', 
-      label: '800+ Alumni Network', 
       value: '800+', 
-      icon: <Users className="w-5 h-5" />, 
-      color: 'text-indigo-950', 
+      icon: <Users className="w-6 h-6" />, 
+      color: 'text-indigo-900', 
       bgColor: 'bg-white', 
       iconBg: 'bg-indigo-50/50',
     },
     { 
-      tag: 'Identity', 
-      label: 'JEC Institutional Pride', 
       value: 'JEC', 
-      icon: <Award className="w-5 h-5" />, 
-      color: 'text-[#C8A96B]', 
+      icon: <Award className="w-6 h-6" />, 
+      color: 'text-[#A38A56]', 
       bgColor: 'bg-white', 
-      iconBg: 'bg-[#C8A96B]/5',
+      iconBg: 'bg-[#A38A56]/5',
     },
   ];
 
@@ -128,12 +122,12 @@ export default async function HomePage() {
             alt="ORION Hostel — Hostel No 7, Jorhat Engineering College, Assam" 
             fill
             priority
-            quality={85}
+            quality={90}
             sizes="100vw"
-            className="object-cover" 
+            className="object-cover scale-105" 
           />
-          <div className="absolute inset-0 bg-[#0F172A]/70 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-[#0F172A]/40"></div>
+          <div className="absolute inset-0 bg-[#0F172A]/65 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/40 via-transparent to-[#0F172A]"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto pt-32 pb-48 md:pt-40 md:pb-60 text-center">
@@ -142,11 +136,11 @@ export default async function HomePage() {
           </div>
           
           <div className="space-y-10 md:space-y-12">
-            <h1 className="text-8xl sm:text-[10rem] md:text-[13rem] lg:text-[15rem] font-black tracking-[-0.07em] leading-[0.85] cursor-default bg-gradient-to-b from-white via-white/90 to-white/40 bg-clip-text text-transparent font-jakarta animate-in fade-in zoom-in-95 duration-1000 delay-200">
+            <h1 className="text-[clamp(4.5rem,20vw,15rem)] font-black tracking-[-0.08em] leading-[0.8] cursor-default bg-gradient-to-b from-white via-white to-white/80 bg-clip-text text-transparent font-jakarta animate-in fade-in zoom-in-95 duration-1000 delay-200 select-none px-4">
               ORION
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/50 font-medium max-w-3xl mx-auto px-6 leading-[1.4] font-jakarta tracking-tight animate-in fade-in slide-in-from-top-4 duration-1000 delay-500">
-              "We are not known by names but by a race — <br/><span className="text-[#C8A96B] font-black italic">Orionite: warriors within</span>"
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-[1.75rem] text-white/60 font-medium max-w-2xl mx-auto px-6 leading-[1.6] font-jakarta tracking-tight animate-in fade-in slide-in-from-top-4 duration-1000 delay-500">
+              "We are not known by names but by a race — <br/><span className="text-[#C8A96B] font-black tracking-wide">Orionite: warriors within</span>"
             </p>
           </div>
         </div>
@@ -158,26 +152,18 @@ export default async function HomePage() {
             <div 
               key={i} 
               className={cn(
-                "px-10 py-10 md:px-12 md:py-12 border rounded-[4rem] flex items-center gap-8 group hover:-translate-y-1.5 transition-all duration-700",
+                "px-10 py-12 md:px-14 md:py-16 border rounded-[3.5rem] flex items-center justify-center gap-10 group hover:-translate-y-2 transition-all duration-700 ease-out",
                 stat.bgColor,
-                i === 1 ? "border-indigo-100/50 shadow-[0_40px_80px_-20px_rgba(15,23,42,0.12)]" : 
-                i === 2 ? "border-[#C8A96B]/10 shadow-[0_30px_60px_-15px_rgba(15,23,42,0.08)]" :
-                "border-slate-100 shadow-[0_30px_60px_-15px_rgba(15,23,42,0.08)]"
+                i === 1 ? "border-indigo-100/50 shadow-[0_40px_100px_-20px_rgba(15,23,42,0.1)]" : 
+                i === 2 ? "border-[#C8A96B]/10 shadow-[0_30px_80px_-20px_rgba(15,23,42,0.08)]" :
+                "border-slate-100 shadow-[0_30px_80px_-20px_rgba(15,23,42,0.08)]"
               )}
             >
-              <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-700", stat.color, stat.iconBg)}>
+              <div className={cn("w-16 h-16 rounded-[1.25rem] flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 shadow-sm", stat.color, stat.iconBg)}>
                 {stat.icon}
               </div>
-              <div className="flex-1">
-                <div className="flex items-center justify-between gap-4 mb-2">
-                  <div className={cn("text-3xl md:text-5xl font-black tracking-[-0.05em] font-jakarta", stat.color)}>{stat.value}</div>
-                  <span className={cn("text-[10px] font-black tracking-[0.2em] font-jakarta uppercase opacity-100", 
-                    i === 0 ? "text-slate-400" : 
-                    i === 1 ? "text-indigo-400" : 
-                    "text-[#C8A96B]/70"
-                  )}>{stat.tag}</span>
-                </div>
-                <div className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] font-jakarta leading-none">{stat.label}</div>
+              <div className={cn("text-5xl md:text-7xl font-black tracking-[-0.08em] font-jakarta leading-none select-none", stat.color)}>
+                {stat.value}
               </div>
             </div>
           ))}
@@ -195,24 +181,24 @@ export default async function HomePage() {
           <h2 className="text-[11px] font-black text-slate-700 uppercase tracking-[1em] font-jakarta pl-4">The Spirit</h2>
           <div className="h-px w-32 bg-slate-300"></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-14">
           {spirits.map((spirit, i) => (
             <div 
               key={i} 
-              className={`p-12 md:p-16 bg-white border border-slate-100/80 rounded-[4rem] text-left space-y-12 transition-all duration-700 hover:shadow-[0_60px_120px_-30px_rgba(15,23,42,0.1)] group relative overflow-hidden`}
+              className={`p-10 md:p-14 bg-white border border-slate-100/80 rounded-[3rem] text-left space-y-10 transition-all duration-700 hover:shadow-[0_50px_100px_-20px_rgba(15,23,42,0.08)] group relative overflow-hidden hover:-translate-y-2`}
             >
               <div className={cn("absolute top-0 right-0 w-48 h-48 rounded-bl-full -mr-24 -mt-24 transition-colors duration-1000", 
                 i === 0 ? "bg-slate-50 group-hover:bg-slate-100" : 
                 i === 1 ? "bg-indigo-50/30 group-hover:bg-indigo-50/50" : 
                 "bg-[#C8A96B]/5 group-hover:bg-[#C8A96B]/10"
               )}></div>
-              <div className="flex items-center justify-between mb-10 relative z-10">
-                <div className={cn(spirit.accent, spirit.iconBg, "p-6 rounded-[2rem] inline-block border border-slate-100 group-hover:scale-110 group-hover:text-white transition-all duration-1000 shadow-sm", spirit.hoverIcon)}>{spirit.icon}</div>
-                <span className={cn("text-[11px] font-black tracking-[0.3em] font-jakarta uppercase opacity-100", spirit.tagColor)}>{spirit.tag}</span>
+              <div className="flex items-center justify-between mb-8 relative z-10">
+                <div className={cn(spirit.accent, spirit.iconBg, "p-5 rounded-[1.5rem] inline-block border border-slate-100 group-hover:scale-110 group-hover:text-white transition-all duration-1000 shadow-sm", spirit.hoverIcon)}>{spirit.icon}</div>
+                <span className={cn("text-[10px] font-black tracking-[0.3em] font-jakarta uppercase opacity-80", spirit.tagColor)}>{spirit.tag}</span>
               </div>
-              <div className="space-y-8 relative z-10">
-                <h3 className={`text-3xl md:text-5xl font-black text-[#0F172A] tracking-tighter font-jakarta leading-[0.95]`}>{spirit.title}</h3>
-                <p className="text-slate-500 text-lg md:text-xl leading-relaxed font-medium font-sans opacity-90">
+              <div className="space-y-6 relative z-10">
+                <h3 className={`text-3xl sm:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-[-0.05em] font-jakarta leading-[1.1] break-words`}>{spirit.title}</h3>
+                <p className="text-slate-500 text-lg md:text-[1.1rem] leading-relaxed font-medium font-sans opacity-90">
                   {spirit.desc}
                 </p>
               </div>
@@ -224,44 +210,40 @@ export default async function HomePage() {
 
 
       <section className="max-w-4xl mx-auto px-8 py-32 lg:py-40">
-        <div className="text-center space-y-10 mb-20">
-          <div className="inline-flex items-center px-8 py-2.5 rounded-full bg-slate-100/50 border border-slate-200 text-[#C8A96B] text-[10px] font-black tracking-[0.6em] uppercase font-jakarta">
-            Institutional Bulletin
-          </div>
-          <h3 className="text-5xl md:text-8xl font-black text-[#0F172A] flex items-center justify-center gap-8 tracking-tighter font-jakarta">
-            Notices <Megaphone className="w-12 h-12 lg:w-16 lg:h-16 text-[#C8A96B] opacity-20" />
+        <div className="text-center space-y-8 mb-16 px-4">
+          <h3 className="text-4xl sm:text-6xl lg:text-8xl font-black text-[#0F172A] flex items-center justify-center gap-6 sm:gap-8 tracking-[-0.06em] font-jakarta">
+            Notices <Megaphone className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-[#C8A96B] opacity-10 shrink-0" />
           </h3>
         </div>
         
-        <div className="border border-slate-200/80 rounded-[4rem] md:rounded-[5rem] overflow-hidden shadow-[0_40px_100px_-30px_rgba(15,23,42,0.08)] bg-white">
+        <div className="border border-slate-200/80 rounded-[3rem] overflow-hidden shadow-[0_40px_100px_-30px_rgba(15,23,42,0.06)] bg-white">
           {typedNotices.length > 0 ? (
             typedNotices.map((notice: Notice, i: number) => (
-              <div key={notice.id} className={`p-10 md:p-16 hover:bg-slate-50/50 transition-all cursor-default group ${i !== typedNotices.length - 1 ? 'border-b border-slate-100' : ''}`}>
-                <div className="flex items-center justify-between gap-4 mb-6">
-                  <div className="text-[10px] font-black text-slate-500 flex items-center gap-4 tracking-[0.25em] uppercase font-jakarta">
-                    <Calendar className="w-4 h-4 opacity-50" />
+              <div key={notice.id} className={`p-10 md:p-14 hover:bg-slate-50/50 transition-all cursor-default group ${i !== typedNotices.length - 1 ? 'border-b border-slate-100' : ''}`}>
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <div className="text-[10px] font-black text-slate-400 flex items-center gap-4 tracking-[0.25em] uppercase font-jakarta">
+                    <Calendar className="w-3.5 h-3.5 opacity-40" />
                     {new Date(notice.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                   </div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#C8A96B]/30 group-hover:bg-[#C8A96B] transition-colors"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#C8A96B]/20 group-hover:bg-[#C8A96B] transition-colors"></div>
                 </div>
-                <h4 className="font-black text-[#0F172A] text-2xl md:text-4xl leading-[1.05] group-hover:text-[#C8A96B] transition-colors font-jakarta tracking-tighter">
+                <h4 className="font-black text-[#0F172A] text-xl sm:text-2xl md:text-[2.25rem] leading-[1.2] group-hover:text-[#C8A96B] transition-colors font-jakarta tracking-[-0.05em] break-words">
                   {notice.title}
                 </h4>
               </div>
             ))
           ) : (
-            <div className="py-40 px-10 text-center space-y-8">
-              <div className="w-20 h-20 bg-slate-50 rounded-3xl flex items-center justify-center mx-auto text-slate-300 border border-slate-100/80">
-                <Megaphone className="w-10 h-10" />
+            <div className="py-32 px-10 text-center space-y-6">
+              <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto text-slate-300 border border-slate-100/80">
+                <Megaphone className="w-8 h-8" />
               </div>
-              <div className="space-y-3">
-                <p className="text-[#0F172A] font-black text-2xl md:text-3xl tracking-tighter font-jakarta leading-none">No Active Announcements.</p>
-                <p className="text-slate-500 font-medium text-lg font-sans max-w-sm mx-auto leading-relaxed">The legacy is quiet for a moment. Stay tuned for upcoming ORION updates.</p>
+              <div className="space-y-2">
+                <p className="text-[#0F172A] font-black text-2xl md:text-3xl tracking-tight font-jakarta leading-none">No Active Announcements</p>
               </div>
             </div>
           )}
-          <Link href="/notices" className="block w-full py-16 bg-[#0F172A] text-center text-[11px] font-black uppercase tracking-[0.8em] text-white hover:bg-[#1E293B] transition-all font-jakarta border-t border-slate-800 group/link">
-            <span className="group-hover:tracking-[1em] transition-all duration-700">View Archives</span>
+          <Link href="/notices" className="block w-full py-12 bg-[#0F172A] text-center text-[10px] font-black uppercase tracking-[1em] text-white hover:bg-[#1E293B] transition-all font-jakarta border-t border-slate-800 group/link">
+            <span className="group-hover:tracking-[1.2em] transition-all duration-700">View Archives</span>
           </Link>
         </div>
       </section>

@@ -58,7 +58,7 @@ export function AlumniList({ alumni }: AlumniProps) {
                     {initials}
                   </div>
                   <div className="overflow-hidden space-y-1">
-                    <h3 className="font-black text-[#0F172A] truncate uppercase tracking-tight text-lg font-jakarta">{person.name}</h3>
+                    <h3 className="font-black text-[#0F172A] break-words uppercase tracking-tight text-lg font-jakarta">{person.name}</h3>
                     <span className="text-[9px] font-black text-[#C8A96B] uppercase tracking-[0.2em] bg-slate-50 px-3 py-1.5 rounded-full whitespace-nowrap font-jakarta">
                       {person.batch.replace(/(\d{4})-(\d{2})(\d{2})/, '$1-$3')} • {person.branch}
                     </span>
@@ -71,7 +71,7 @@ export function AlumniList({ alumni }: AlumniProps) {
                         <Briefcase className="w-2.5 h-2.5" />
                         Occupation
                       </div>
-                      <div className="text-[11px] font-bold text-slate-600 truncate">{person.job}</div>
+                      <div className="text-[11px] font-bold text-slate-600 break-words">{person.job}</div>
                    </div>
                    <div className="space-y-1 text-right">
                       <div className="text-[8px] font-bold text-slate-400 uppercase tracking-widest flex items-center justify-end gap-1.5">

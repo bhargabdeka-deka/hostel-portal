@@ -39,12 +39,13 @@ export default async function AchievementsPage() {
   return (
     <main className="bg-transparent min-h-screen selection:bg-purple-500/20 overflow-x-hidden">
       {/* Header Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-8 md:pb-16 space-y-4 md:space-y-6">
+      <section className="max-w-7xl mx-auto px-6 pt-32 md:pt-40 pb-8 md:pb-16 space-y-10">
         <div className="flex items-center gap-3">
-          <div className="h-px w-6 md:w-12 bg-sky-200"></div>
-          <span className="text-[11px] md:text-[13px] font-bold text-sky-600 tracking-tight font-sans">Capturing moments</span>
+          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+            Capturing moments
+          </div>
         </div>
-        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-slate-900 tracking-tighter leading-[1.1] font-jakarta">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[0.95] font-jakarta">
           Hostel <span className="text-indigo-600">Gallery</span>
         </h1>
         <p className="text-sm md:text-xl text-slate-600 font-medium max-w-2xl leading-relaxed font-sans">

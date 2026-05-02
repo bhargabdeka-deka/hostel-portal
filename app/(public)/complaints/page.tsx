@@ -46,10 +46,12 @@ export default function ComplaintPage() {
     <div className="max-w-4xl mx-auto pt-32 pb-20 px-6 min-h-screen">
       <div className="grid md:grid-cols-2 gap-16">
         <div>
-          <div className="inline-flex p-3 bg-blue-50 rounded-2xl mb-6">
-            <MessageSquare className="w-8 h-8 text-blue-600" />
+          <div className="flex items-center gap-6 mb-10">
+            <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-blue-600 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+              Swift Resolution
+            </div>
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 mb-6 uppercase">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-[#0F172A] tracking-[-0.06em] leading-[0.95] mb-8 font-jakarta">
             Report an <span className="text-blue-600">Issue</span>
           </h1>
           <p className="text-lg text-slate-600 mb-8 leading-relaxed">
