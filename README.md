@@ -24,7 +24,11 @@ This is the official web portal for ORION Hostel (Hostel No. 7) at Jorhat Engine
 hostel-portal/
 ├── actions/                # Server actions for database operations
 │   ├── admin-actions.ts    # Admin-only functions
-│   └── public-actions.ts   # Publicly accessible functions
+│   ├── complaints.ts       # Complaint management
+│   ├── media.ts            # Image and file handling
+│   ├── memory-actions.ts   # Gallery and memory functions
+│   ├── notices.ts          # Notice board management
+│   └── users.ts            # User and profile management
 ├── app/                    # Next.js App Router
 │   ├── (admin)/            # Admin dashboard routes
 │   ├── (public)/           # User-facing routes (About, Gallery, Rules, etc.)
@@ -38,8 +42,11 @@ hostel-portal/
 │   ├── shared/             # Navbar, Footer
 │   └── ui/                 # Reusable atomic components
 ├── lib/                    # Library configurations
-│   └── supabase/           # Supabase client setup
+│   ├── supabase/           # Supabase client and server setup
+│   ├── supabaseClient.ts   # Legacy client instance
+│   └── utils.ts            # UI utility functions
 ├── public/                 # Static assets (Logos, Images)
+├── types/                  # TypeScript definitions
 ├── supabase_schema.sql     # Database structure and policies
 └── middleware.ts           # Authentication and route protection
 ```
