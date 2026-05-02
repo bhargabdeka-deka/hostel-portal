@@ -58,14 +58,14 @@ export default function AboutPage() {
             { tag: 'Community', icon: <Users className="w-6 h-6" />, value: "800+", label: "Glorious Alumni", color: 'text-indigo-900', bgColor: 'bg-white', borderColor: 'border-indigo-100/30', iconBg: 'bg-indigo-50/50' },
             { tag: 'Identity', icon: <GraduationCap className="w-6 h-6" />, value: "JEC", label: "Hostel 7 Heritage", color: 'text-[#A38A56]', bgColor: 'bg-white', borderColor: 'border-[#A38A56]/10', iconBg: 'bg-[#A38A56]/5' },
           ].map((stat, i) => (
-            <div key={i} className={`group ${stat.bgColor} border ${stat.borderColor} rounded-[4rem] p-10 md:p-14 flex flex-col items-center text-center shadow-[0_40px_80px_-20px_rgba(15,23,42,0.06)] transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_50px_100px_-20px_rgba(15,23,42,0.1)]`}>
-              <div className="w-full flex items-center justify-between mb-10">
-                <div className={`w-16 h-16 rounded-2xl ${stat.iconBg} flex items-center justify-center ${stat.color} border border-slate-100 shadow-sm group-hover:scale-110 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-700`}>
+            <div key={i} className={`group ${stat.bgColor} border ${stat.borderColor} rounded-[2.5rem] sm:rounded-[4rem] p-8 sm:p-10 md:p-14 flex flex-col items-center text-center shadow-[0_40px_80px_-20px_rgba(15,23,42,0.06)] transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_50px_100px_-20px_rgba(15,23,42,0.1)]`}>
+              <div className="w-full flex items-center justify-between mb-6 sm:mb-10">
+                <div className={`w-12 h-12 sm:w-16 h-16 rounded-2xl ${stat.iconBg} flex items-center justify-center ${stat.color} border border-slate-100 shadow-sm group-hover:scale-110 group-hover:bg-[#0F172A] group-hover:text-white transition-all duration-700`}>
                   {stat.icon}
                 </div>
-                <span className={`text-[10px] font-black ${stat.color} uppercase tracking-[0.2em] font-jakarta opacity-60`}>{stat.tag}</span>
+                <span className={`text-[9px] sm:text-[10px] font-black ${stat.color} uppercase tracking-[0.2em] font-jakarta opacity-60`}>{stat.tag}</span>
               </div>
-              <div className={`text-4xl sm:text-5xl md:text-6xl font-black ${stat.color} mb-3 tracking-tighter font-jakarta`}>{stat.value}</div>
+              <div className={`text-3xl sm:text-5xl md:text-6xl font-black ${stat.color} mb-2 sm:mb-3 tracking-tighter font-jakarta`}>{stat.value}</div>
               <div className="text-[10px] sm:text-[11px] font-black text-slate-500 uppercase tracking-[0.3em] font-jakarta leading-none">{stat.label}</div>
             </div>
           ))}

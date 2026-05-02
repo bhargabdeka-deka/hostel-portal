@@ -147,22 +147,22 @@ export default async function HomePage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-8 -mt-24 md:-mt-32 relative z-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 xl:gap-12">
           {stats.map((stat, i) => (
             <div 
               key={i} 
               className={cn(
-                "px-10 py-12 md:px-14 md:py-16 border rounded-[3.5rem] flex items-center justify-center gap-10 group hover:-translate-y-2 transition-all duration-700 ease-out",
+                "px-8 py-8 sm:px-10 sm:py-12 md:px-14 md:py-16 border rounded-[2.5rem] sm:rounded-[3.5rem] flex items-center justify-center gap-6 sm:gap-10 group hover:-translate-y-2 transition-all duration-700 ease-out",
                 stat.bgColor,
                 i === 1 ? "border-indigo-100/50 shadow-[0_40px_100px_-20px_rgba(15,23,42,0.1)]" : 
                 i === 2 ? "border-[#C8A96B]/10 shadow-[0_30px_80px_-20px_rgba(15,23,42,0.08)]" :
                 "border-slate-100 shadow-[0_30px_80px_-20px_rgba(15,23,42,0.08)]"
               )}
             >
-              <div className={cn("w-16 h-16 rounded-[1.25rem] flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 shadow-sm", stat.color, stat.iconBg)}>
+              <div className={cn("w-12 h-12 sm:w-16 sm:h-16 rounded-2xl sm:rounded-[1.25rem] flex items-center justify-center shrink-0 border border-slate-100 group-hover:bg-[#0F172A] group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 shadow-sm", stat.color, stat.iconBg)}>
                 {stat.icon}
               </div>
-              <div className={cn("text-5xl md:text-7xl font-black tracking-[-0.08em] font-jakarta leading-none select-none", stat.color)}>
+              <div className={cn("text-4xl sm:text-5xl md:text-7xl font-black tracking-[-0.08em] font-jakarta leading-none select-none", stat.color)}>
                 {stat.value}
               </div>
             </div>
