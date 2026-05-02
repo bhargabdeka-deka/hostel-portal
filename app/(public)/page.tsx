@@ -131,7 +131,7 @@ export default async function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto pt-24 pb-32 sm:pt-32 sm:pb-48 md:pt-40 md:pb-60 text-center">
-          <div className="inline-flex items-center px-7 py-3 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 text-white/90 text-[10px] sm:text-[11px] font-bold tracking-[0.2em] sm:tracking-[0.4em] uppercase font-jakarta mb-6 sm:mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          <div className="inline-flex items-center px-4 sm:px-7 py-2 sm:py-3 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 text-white/90 text-[clamp(8px,2.4vw,11px)] font-bold tracking-[0.1em] sm:tracking-[0.4em] uppercase font-jakarta mb-6 sm:mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000 whitespace-nowrap">
             Hostel No 7 • Jorhat Engineering College
           </div>
           
