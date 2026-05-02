@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server"
 import { updateMemoryStatus, deleteMemory } from "@/actions/memory-actions"
 import { BookOpen, Check, X, Trash2, User, Calendar, Tag, Home } from 'lucide-react'
+import { DeleteMemoryButton } from "@/components/admin/DeleteMemoryButton"
 import { cn } from "@/lib/utils"
 import { revalidatePath } from "next/cache"
 
@@ -107,14 +108,7 @@ export default async function AdminMemories() {
                   </button>
                 </form>
               )}
-              <form action={async () => {
-                "use server"
-                await deleteMemory(memory.id)
-              }}>
-                <button className="p-3 bg-white border border-slate-200 text-slate-400 hover:text-red-500 hover:border-red-100 rounded-xl transition-all">
-                  <Trash2 className="w-4 h-4" />
-                </button>
-              </form>
+              <DeleteMemoryButton id={memory.id} />
             </div>
           </div>
         ))}

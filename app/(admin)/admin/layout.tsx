@@ -98,13 +98,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const SidebarContent = () => (
     <>
       <div className="p-8">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full overflow-hidden shadow-lg border-2 border-slate-100">
-            <img src="/hostel_logo.jpeg" alt="ORION Logo" className="w-full h-full object-cover scale-110" />
+        <Link href="/" className="flex items-center gap-4 group no-underline">
+          <div className="w-12 h-12 rounded-full overflow-hidden shadow-md border-2 border-slate-100 shrink-0 transition-transform group-hover:scale-105 duration-300 bg-white">
+            <img src="/hostel_logo.jpeg" alt="ORION Logo" className="w-full h-full object-cover" />
           </div>
-          <div>
-            <span className="font-black text-slate-900 dark:text-white tracking-tighter text-2xl block leading-none font-jakarta">Orion</span>
-            <span className="text-[11px] text-indigo-600 dark:text-indigo-400 font-bold uppercase tracking-[0.3em]">Admin</span>
+          <div className="flex flex-col justify-center min-w-0">
+            <span className="font-extrabold text-[#1E3A8A] tracking-tight text-[28px] block leading-[0.9] font-jakarta whitespace-nowrap">
+              Orion
+            </span>
+            <span className="text-[12px] text-blue-600 font-bold uppercase tracking-[0.4em] mt-1 block leading-none">
+              ADMIN
+            </span>
           </div>
         </Link>
       </div>
@@ -189,7 +193,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       {/* Sidebar - Desktop and Mobile */}
       <aside className={cn(
-        "fixed inset-y-0 left-0 z-[70] w-72 bg-slate-50 border-r border-slate-200 flex flex-col transition-transform duration-500 lg:sticky lg:translate-x-0 lg:h-screen",
+        "fixed inset-y-0 left-0 z-[70] w-72 bg-white border-r border-slate-200 flex flex-col transition-transform duration-500 lg:sticky lg:translate-x-0 lg:h-screen shadow-xl lg:shadow-none",
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       )}>
         <SidebarContent />

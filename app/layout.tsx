@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { Toaster } from "sonner";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -170,6 +171,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Toaster position="top-right" expand={false} richColors />
         </ThemeProvider>
       </body>
     </html>
