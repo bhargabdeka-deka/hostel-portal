@@ -47,7 +47,7 @@ export default function RulesPage() {
     <div className="pt-32 pb-16 md:pt-40 md:pb-24 px-6 max-w-5xl mx-auto overflow-x-hidden">
       <div className="text-center mb-24 md:mb-32">
         <div className="flex items-center justify-center gap-6">
-          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-indigo-600 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+          <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-indigo-600 text-[10px] md:text-[11px] font-black tracking-[0.15em] uppercase font-jakarta">
             Institutional Code of Conduct
           </div>
         </div>

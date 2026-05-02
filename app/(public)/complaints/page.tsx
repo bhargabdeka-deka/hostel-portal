@@ -47,7 +47,7 @@ export default function ComplaintPage() {
       <div className="grid md:grid-cols-2 gap-16">
         <div>
           <div className="flex items-center gap-6 mb-10">
-            <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-blue-600 text-[10px] md:text-[11px] font-black tracking-[0.4em] uppercase font-jakarta">
+            <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-slate-50 border border-slate-100 text-blue-600 text-[10px] md:text-[11px] font-black tracking-[0.15em] uppercase font-jakarta">
               Swift Resolution
             </div>
           </div>

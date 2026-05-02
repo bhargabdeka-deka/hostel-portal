@@ -244,7 +244,7 @@ export default async function HomePage() {
             </div>
           )}
           <Link href="/notices" className="block w-full py-10 sm:py-12 bg-[#0F172A] text-center text-[10px] font-black uppercase tracking-[0.1em] sm:tracking-[0.15em] text-white hover:bg-[#1E293B] transition-all font-jakarta border-t border-slate-800 group/link">
-            <span className="group-hover:tracking-[0.4em] transition-all duration-700">View Archives</span>
+            <span className="group-hover:tracking-[0.25em] transition-all duration-700">View Archives</span>
           </Link>
         </div>
       </section>
