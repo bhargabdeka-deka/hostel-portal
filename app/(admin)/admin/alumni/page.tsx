@@ -87,7 +87,15 @@ export default async function AdminAlumni() {
                     Professional role
                   </div>
                   <div className="text-sm font-bold text-slate-600">
-                    {person.job} at {person.company}
+                    {!person.job && !person.company ? (
+                      <span className="text-slate-400 italic font-medium">Details not provided</span>
+                    ) : (
+                      <>
+                        {person.job}
+                        {person.job && person.company && <span className="text-slate-400 font-medium lowercase"> at </span>}
+                        {person.company}
+                      </>
+                    )}
                   </div>
                 </div>
                 
@@ -184,7 +192,15 @@ export default async function AdminAlumni() {
                     <div className="flex flex-col gap-1.5">
                       <div className="flex items-center gap-1.5 text-slate-900 font-bold text-sm tracking-tight">
                         <Briefcase className="w-4 h-4 text-indigo-500" />
-                        {person.job} <span className="text-slate-400 font-medium">at</span> {person.company}
+                        {!person.job && !person.company ? (
+                          <span className="text-slate-400 italic font-medium">Details not provided</span>
+                        ) : (
+                          <>
+                            {person.job}
+                            {person.job && person.company && <span className="text-slate-400 font-medium lowercase"> at </span>}
+                            {person.company}
+                          </>
+                        )}
                       </div>
                       {person.social_link && (
                         <a 

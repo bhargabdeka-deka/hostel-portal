@@ -22,8 +22,8 @@ export default function AlumniRegistration() {
       phone: formData.get("phone"),
       batch: formData.get("batch"),
       branch: formData.get("branch"),
-      job: formData.get("job"),
-      company: formData.get("company"),
+      job: formData.get("job") || null,
+      company: formData.get("company") || null,
       social_link: formData.get("social_link"),
       status: 'pending'
     }])
@@ -90,39 +90,39 @@ export default function AlumniRegistration() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Full name <span className="text-red-500">*</span></label>
-                  <input name="name" required placeholder="John Doe" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
+                  <input name="name" required className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold text-sm" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Phone number <span className="text-red-500">*</span></label>
-                  <input name="phone" required placeholder="+91..." className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
+                  <input name="phone" required className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold text-sm" />
                 </div>
               </div>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Batch (Year of Passing) <span className="text-red-500">*</span></label>
-                  <input name="batch" required placeholder="e.g. 2018-22" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
+                  <input name="batch" required className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold text-sm" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Branch <span className="text-red-500">*</span></label>
-                  <input name="branch" required placeholder="e.g. Civil" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
+                  <input name="branch" required className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold text-sm" />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Occupation <span className="text-red-500">*</span></label>
-                  <input name="job" required placeholder="e.g. Engineer" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
+                  <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Current Role / Profession</label>
+                  <input name="job" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold text-sm" />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Company <span className="text-red-500">*</span></label>
-                  <input name="company" required placeholder="Google, Amazon..." className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
+                  <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Organization / Business / Institution</label>
+                  <input name="company" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold text-sm" />
                 </div>
               </div>
 
                 <div className="space-y-2">
                   <label className="text-[11px] font-bold text-slate-500 tracking-tight ml-1">Social link (LinkedIn/Portfolio)</label>
-                  <input name="social_link" placeholder="https://linkedin.com/in/..." className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold placeholder:text-slate-300 text-sm" />
+                  <input name="social_link" className="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500/50 transition-all text-slate-900 font-bold text-sm" />
                 </div>
 
               {error && (

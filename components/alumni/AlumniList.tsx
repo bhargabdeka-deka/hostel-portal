@@ -82,7 +82,15 @@ export function AlumniList({ alumni }: AlumniProps) {
                          Professional Role
                        </div>
                        <div className="text-[11px] font-bold text-slate-600 break-words">
-                         {person.job} <span className="text-slate-400 font-medium lowercase">at</span> {person.company}
+                         {!person.job && !person.company ? (
+                           <span className="text-slate-400 italic font-medium">Career details not shared</span>
+                         ) : (
+                           <>
+                             {person.job}
+                             {person.job && person.company && <span className="text-slate-400 font-medium lowercase"> at </span>}
+                             {person.company}
+                           </>
+                         )}
                        </div>
                     </div>
                     <div className="space-y-1 text-right">
@@ -159,8 +167,14 @@ export function AlumniList({ alumni }: AlumniProps) {
                        </td>
                        <td className="px-10 py-5 relative z-10">
                          <div className="flex flex-col">
-                           <span className="text-sm font-bold text-slate-900 uppercase tracking-tight">{person.job}</span>
-                           <span className="text-xs text-slate-400 font-medium">at {person.company}</span>
+                           {!person.job && !person.company ? (
+                             <span className="text-sm font-bold text-slate-400 italic">Career details not shared</span>
+                           ) : (
+                             <>
+                               {person.job && <span className="text-sm font-bold text-slate-900 uppercase tracking-tight">{person.job}</span>}
+                               {person.company && <span className="text-xs text-slate-400 font-medium">{person.job ? `at ${person.company}` : person.company}</span>}
+                             </>
+                           )}
                          </div>
                        </td>
                       <td className="px-10 py-8 relative z-10 text-center">
